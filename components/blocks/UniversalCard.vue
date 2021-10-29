@@ -1,0 +1,33 @@
+<template>
+  <section :class="card.box_layout" >
+    <div >
+      <img v-if="card.has_header_image" :src="card.image" class="header-image">
+      <img v-if="card.has_background" />
+      <img v-if="card.has_top_icon" />
+      <h2 v-if="card.has_header_text" v-html="card.heading"></h2>
+      <h3 v-if="card.has_sub_header_text" v-html="card.sub_heading"></h3>
+      <div  v-if="card.has_body_text" class="body-text" v-html="card.body_text"></div>
+      <div class="main-button-wrapper">
+        <button v-if="card.has_button_text" v-html="card.button_text" class="main-button"></button>
+      </div>
+      <div class="sub-button-wrapper">
+        <button v-if="card.has_sub_button_text" v-html="card.sub_button_text" class="sub-button"></button>
+      </div>
+      <img v-if="card.has_bottom_icon" class="bottom-image" />
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  props: {
+    card: {
+      type: [Object, Array]
+    },
+  },
+}
+</script>
+
+<style scoped>
+
+</style>

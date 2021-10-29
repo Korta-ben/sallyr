@@ -44,6 +44,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -51,10 +52,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
-  
+
   googleFonts: {
     families: {
-      'Kumba+Sans': {
+      'Kumbh+Sans': {
         wght: [100,200,300,400,500,600,700,800]
       },
       Raleway: {

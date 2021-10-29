@@ -1,22 +1,30 @@
 import axios from "axios";
 
 export const state = () => {
-  // hikingTrails:[]
-  // landmarks:[]
-  // stories:[]
-  // parking:[]
   topMenu: []
-  // footerBlocks: []
+  homePage:[]
+  theProduct:[]
+  theIndoorFarming:[]
+  theTeam:[]
 }
 
 export const mutations = {
+
   setTopMenu(state, topMenu){
     state.topMenu = topMenu
   },
-
-  // setFooterBlocks(state, footerBlocks){
-  //   state.footerBlocks = footerBlocks;
-  // },
+  setHomePage(state, homePage){
+    state.homePage = homePage;
+  },
+  setTheProduct(state, theProduct){
+    state.theProduct = theProduct;
+  },
+  setTheIndoorFarming(state, theIndoorFarming){
+    state.theIndoorFarming = theIndoorFarming;
+  },
+  setTheTeam(state, theTeam){
+    state.theTeam = theTeam;
+  }
 
 }
 
@@ -30,13 +38,20 @@ export const actions = {
     try{
 
       const  topMenu  = await axios.get('https://apisr.kortaben.work/wp-json/menus/v1/menus/main')
-      // const  footerBlocks  = await axios.get(`https://api.stockamollan.guide/wp-json/wp/v2/sevardheter?per_page=100&orderby=title&order=asc`)
-      // const stories  = await axios.get(`https://api.stockamollan.guide/wp-json/wp/v2/sagner?per_page=100&orderby=title&order=asc`)
-      // commit('setHikingTrails', hikingTrails.data.sort( (a, b) => b.acf.position.localeCompare(a.acf.position) ));
-      // console.log(topMenu.data.items)
+      const  homePage  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/45')
+      const  theProduct  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/47')
+      const  theIndoorFarming  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/51')
+      const  theTeam  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/53')
+
+
+
+      // console.log(homePage.data)
       commit('setTopMenu', topMenu.data.items);
-      // commit('setFooterBlocks', footerBlocks.data);
-      // commit('setStories', stories.data);
+      commit('setHomePage', homePage.data);
+      commit('setTheProduct', theProduct.data);
+      commit('setTheIndoorFarming', theIndoorFarming.data);
+      commit('setTheTeam', theTeam.data);
+
 
     }catch (e) {
       console.error(e);
@@ -48,10 +63,16 @@ export const getters = {
   getTopMenu(state){
     return state.topMenu
   },
-  // getFooterBlocks(state){
-  //   return state.footerBlocks
-  // },
-  // getStories(state){
-  //   return state.stories
-  // }
+  getHomePage(state){
+    return state.homePage
+  },
+  getTheProduct(state){
+    return state.theProduct
+  },
+  getTheIndoorFarming(state){
+    return state.theIndoorFarming
+  },
+  getTheTeam(state){
+    return state.theTeam
+  }
 }

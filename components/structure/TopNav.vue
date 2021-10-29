@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-srwhite  fixed w-full">
-    <div class="py-8 md:py-5 px-5 md:px-30.25 flex justify-between max-w-screen-1.5xl m-auto">
+    <div class="py-8 md:py-5 px-5  flex justify-between max-w-screen-1.5lg  m-auto">
       <ul
         class="w-2/5
         hidden
@@ -8,7 +8,7 @@
         py-3
         text-srblue
         font-bold
-justify-between"
+         justify-between"
       >
         <li v-for="item in menuItems" :key="item.id" class="px-5 py-1 text-base inline-block" >
           <span v-if="item.child_items"  v-html="item.title" @click="showChild = !showChild"></span>
@@ -26,29 +26,6 @@ justify-between"
           <span v-if="!item.child_items" v-html="item.title"></span>
 
         </li>
-<!--        <li class="px-5 py-1 text-base inline-block" >-->
-<!--          <span  @click="showChild = !showChild">Menu</span>-->
-<!--          <ul-->
-<!--            :class="{'opacity-0' : !showChild}"-->
-<!--            class="absolute bg-srwhite transition-opacity w-56  duration-300 ease-in-out"-->
-<!--          >-->
-<!--            <li class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">-->
-<!--              Team-->
-<!--            </li>-->
-<!--            <li class="py-3 text-sm px-5 border-l-4 border-srwhite  border-srwhite  hover:border-srblue">-->
-<!--              Cases-->
-<!--            </li>-->
-<!--            <li class="py-3 text-sm px-5 border-l-4 border-srwhite  border-srwhite hover:border-srblue">-->
-<!--              News-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="px-5 py-1 text-base inline-block">-->
-<!--          Product-->
-<!--        </li>-->
-<!--        <li class="px-5 py-1 text-base inline-block">-->
-<!--          Pricing-->
-<!--        </li>-->
       </ul>
       <img
         src="~/assets/images/sally-r-logo.svg"

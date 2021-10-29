@@ -19,12 +19,11 @@ footer ul li{
   @apply text-srwhite text-base leading-4 pb-2.5;
 }
 
+
 @responsive {
   .footer-has-bg{
     @apply bg-no-repeat bg-right bg-fixed;
     background-image: url('~/assets/images/dot-footer.png');
-    /*background-image: url('~/assets/images/dot-footer.webp');*/
-
   }
 }
 
