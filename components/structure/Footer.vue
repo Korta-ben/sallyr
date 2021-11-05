@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-srblue w-full px-5">
-    <div class="py-30.25 max-w-screen-1.5xl m-auto md:px-50 md:flex md:justify-between md:flex-wrap footer-has-bg ">
+  <footer class="bg-srblue w-full px-5  ">
+    <div class="py-30.25 xl:max-w-screen-1.5lg  m-auto px-5 lg:px-10 xg:px-28 md:flex md:justify-between md:flex-wrap ">
       <div class="pb-12">
         <h3>
           Products
@@ -38,7 +38,7 @@
 <!--      <div class=" hidden md:block absolute float-right top-24 overflow-hidden w-full max-w-7xl">-->
 <!--        -->
 <!--      </div>-->
-      <div class="w-full">
+      <div class="w-full flex flex-col">
         <img
           src="~/assets/images/logo-white-sally-r.svg"
           class="m-auto pb-10"
@@ -46,10 +46,12 @@
         <div
           class="w-56 m-auto bg-srwhite pt-0.5 rounded-sm"
         />
+        <img src="~/assets/images/footer-dooted.webp" class="the-footer-bg">
       </div>
-<!--      <img src="~/assets/images/dot-footer.png" class="hidden md:block absolute top-24 ">-->
+
 
     </div>
+
   </footer>
 </template>
 

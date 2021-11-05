@@ -2,18 +2,19 @@
   <div>
     <section class="news px-5 pb-25">
       <h2 class="font-bold text-5xl leading-13.75 text-center py-11.5">What’s new at Sally R?</h2>
-      <div class="story-wrapper grid grid-cols-1 gap-6">
+      <div class="story-wrapper grid grid-cols-1 gap-6 lg:grid-cols-2  xl:max-w-screen-1.5lg m-auto">
+        <Stories />
         <Stories />
         <Stories />
         <Stories />
       </div>
     </section>
 
-    <section class=" px-5 grid grid-cols-1 gap-x-4" >
+    <section class=" px-5 grid grid-cols-1 gap-x-4 " >
       <TeamsBox v-for="team in teams" :key="team.index" :member="team"></TeamsBox>
     </section>
 
-    <UniversalCard class="team-wwu" v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
+    <UniversalCard class="team-wwu md:max-w-md w-full m-auto" v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
   </div>
 </template>
 

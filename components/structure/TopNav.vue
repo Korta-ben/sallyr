@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-srwhite  fixed w-full">
+  <nav class="bg-srwhite  fixed w-full z-50">
     <div class="py-8 md:py-5 px-5  flex justify-between max-w-screen-1.5lg  m-auto">
       <ul
         class="w-2/5
@@ -11,7 +11,13 @@
          justify-between"
       >
         <li v-for="item in menuItems" :key="item.id" class="px-5 py-1 text-base inline-block" >
-          <span v-if="item.child_items"  v-html="item.title" @click="showChild = !showChild"></span>
+          <span v-if="item.child_items"  @click="showChild = !showChild">
+            <NuxtLink
+              :to="{name:item.slug}">
+            {{ item.title }}
+          </NuxtLink>
+          </span>
+
           <ul
             v-if="item.child_items"
             :class="{'opacity-0' : !showChild}"
@@ -20,10 +26,18 @@
             <li
               v-for="child in item.child_items"
               class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">
-              {{ child.title }}
+              <NuxtLink
+                :to="{name:child.slug}">
+
+              {{ child.title }}</NuxtLink>
             </li>
           </ul>
-          <span v-if="!item.child_items" v-html="item.title"></span>
+          <span v-if="!item.child_items" >
+            <NuxtLink
+              :to="{name:item.slug}">
+            {{ item.title }}
+          </NuxtLink>
+          </span>
 
         </li>
       </ul>
@@ -36,7 +50,12 @@
         font-bold text-base  flex-wrap content-center justify-end "
       >
         <img src="~/assets/images/plant.svg" class="inline pr-1.5">
-        <span>Indoor Farming</span>
+        <span>
+           <NuxtLink
+             to="/indoor-farming">
+            Indoor Farming
+          </NuxtLink>
+        </span>
       </div>
       <div class="md:hidden flex flex-col gap-y-1" @click="showMenu = !showMenu">
         <div

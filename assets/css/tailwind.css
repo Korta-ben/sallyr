@@ -18,12 +18,23 @@ footer h3{
 footer ul li{
   @apply text-srwhite text-base leading-4 pb-2.5;
 }
+.the-footer-bg{
+  display: none;
+}
+@screen xl{
+  .the-footer-bg{
+    display: block;
+    width: 176px;
+    margin-top: -351px;
+    margin-left: 52.8%;
+  }
+}
 
 
 @responsive {
   .footer-has-bg{
-    @apply bg-no-repeat bg-right bg-fixed;
-    background-image: url('~/assets/images/dot-footer.png');
+    @apply bg-no-repeat bg-center;
+    background-image: url('~/assets/images/doted-footer.webp');
   }
 }
 

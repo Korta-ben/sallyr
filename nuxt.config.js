@@ -29,7 +29,8 @@ export default {
     dirs: [
       '~/components',
       '~/components/blocks',
-      '~/components/structure'
+      '~/components/structure',
+      '~/components/animations'
     ]
   },
 
