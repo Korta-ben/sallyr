@@ -78,7 +78,7 @@ export default {
 
 }
 
-.main_animation_conteiner{
+.home_hvac_system .main_animation_conteiner{
   @apply -mt-24  pb-24
   lg:-mt-60  lg:pb-24 lg:ml-0 lg:pl-25;
 }
