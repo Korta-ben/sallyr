@@ -3,7 +3,7 @@
    <div>
      Our price plans
    </div>
-   <
+
    <p>
 
    </p>

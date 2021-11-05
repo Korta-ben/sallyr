@@ -80,7 +80,7 @@ export default {
 
 .home_hvac_system .main_animation_conteiner{
   @apply -mt-24  pb-24
-  lg:-mt-60  lg:pb-24 lg:ml-0 lg:pl-25;
+  lg:-mt-60  lg:pb-24 lg:ml-0 lg:pr-48;
 }
 .home_hvac_system  h2{
   @apply text-srblue text-3xl m-auto leading-8 px-5 pb-5
@@ -154,15 +154,15 @@ export default {
 }
 .home_indoor_farming h2:before{
   @apply block mx-auto pb-7;
-  content: url("~/assets/images/green-phone.png");
+  content: url("~/assets/images/green-plant.png");
 }
 
-@screen sm{
-  .home_indoor_farming h2:before{
-    @apply block mx-auto pb-7;
-    content: url("~/assets/images/green-plant.png");
-  }
-}
+/*@screen sm{*/
+/*  .home_indoor_farming h2:before{*/
+/*    @apply block mx-auto pb-7;*/
+/*    content: url("~/assets/images/green-plant.png");*/
+/*  }*/
+/*}*/
 .home_indoor_farming .body-text{
   @apply px-12.75 pb-9
   md:max-w-120 md:px-3.5
