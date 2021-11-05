@@ -6,6 +6,7 @@ export const state = () => {
   theProduct:[]
   theIndoorFarming:[]
   theTeam:[]
+  thePricing:[]
 }
 
 export const mutations = {
@@ -24,7 +25,11 @@ export const mutations = {
   },
   setTheTeam(state, theTeam){
     state.theTeam = theTeam;
+  },
+  setThePricing(state, thePricing){
+    state.thePricing = thePricing
   }
+
 
 }
 
@@ -42,6 +47,8 @@ export const actions = {
       const  theProduct  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/47')
       const  theIndoorFarming  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/51')
       const  theTeam  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/53')
+      const  thePricing  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/49')
+
 
 
 
@@ -51,6 +58,7 @@ export const actions = {
       commit('setTheProduct', theProduct.data);
       commit('setTheIndoorFarming', theIndoorFarming.data);
       commit('setTheTeam', theTeam.data);
+      commit('setThePricing', thePricing.data);
 
 
     }catch (e) {
@@ -74,5 +82,8 @@ export const getters = {
   },
   getTheTeam(state){
     return state.theTeam
+  },
+  getThePricing(state){
+    return state.thePricing
   }
 }

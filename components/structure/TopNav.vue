@@ -31,6 +31,23 @@
 
               {{ child.title }}</NuxtLink>
             </li>
+            <li
+
+              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">
+              <NuxtLink
+                to="/news">
+
+                News</NuxtLink>
+            </li>
+            <li
+
+              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">
+              <NuxtLink
+                to="/cases">
+
+                Cases</NuxtLink>
+            </li>
+
           </ul>
           <span v-if="!item.child_items" >
             <NuxtLink
@@ -41,10 +58,14 @@
 
         </li>
       </ul>
-      <img
-        src="~/assets/images/sally-r-logo.svg"
-        alt="Take control of your air quality."
-      >
+      <NuxtLink class="self-center"
+        to="/">
+        <img
+          src="~/assets/images/sally-r-logo.svg"
+          alt="Take control of your air quality."
+        >
+      </NuxtLink>
+
       <div
         class="hidden md:flex w-2/5 py-3 text-srblue
         font-bold text-base  flex-wrap content-center justify-end "
@@ -89,28 +110,49 @@
         text-srblue
         font-bold"
         >
-          <li class="px-5 py-1 text-base">
-            <span @click="showChild = !showChild">Menu</span>
-            <ul v-if="showChild">
-              <li class="py-1 text-sm">
-                Team
+          <li v-for="item in menuItems" :key="item.id" class="px-5 py-1 text-base">
+            <span @click="showChild = !showChild"><NuxtLink
+              :to="{name:item.slug}">
+            {{ item.title }}
+          </NuxtLink></span>
+
+
+            <ul
+              v-if="item.child_items "
+            >
+              <li
+                v-for="child in item.child_items"
+                class="py-1 text-sm">
+                <NuxtLink
+                  :to="{name:child.slug}">
+
+                  {{ child.title }}</NuxtLink>
               </li>
-              <li class="py-1 text-sm">
-                Cases
+              <li
+
+                class="py-1 text-sm">
+                <NuxtLink
+                  to="/news">
+
+                  News</NuxtLink>
               </li>
-              <li class="py-1 text-sm">
-                News
+              <li
+
+                class="py-1 text-sm">
+                <NuxtLink
+                  to="/cases">
+
+                  Cases</NuxtLink>
               </li>
             </ul>
+
           </li>
+
           <li class="px-5 py-1 text-base">
-            Product
-          </li>
-          <li class="px-5 py-1 text-base">
-            Pricing
-          </li>
-          <li class="px-5 py-1 text-base">
-            Indoor Farming
+            <NuxtLink
+              to="/indoor-farming">
+              Indoor Farming
+            </NuxtLink>
           </li>
         </ul>
       </transition>
