@@ -75,9 +75,20 @@ export default {
 }
 .home_hvac_system>div{
   @apply   px-5 flex flex-col text-center w-full xl:max-w-screen-1.5lg  content-center m-auto;
-
 }
+/*.home_hvac_system>div .body-text:after{*/
+/*  @apply relative ml-0 animate-bounce;*/
+/*content:  url("~/assets/images/temprature.svg");*/
+/*  top: 418px;*/
+/*  left: -258px;*/
 
+/*}*/
+/*.home_hvac_system>div .main-button-wrapper:after{*/
+/*  @apply relative animate-bounce;*/
+/*  top: -35px;*/
+/*  left:-400px;*/
+/*  content:  url("~/assets/images/drops.svg");*/
+/*}*/
 .home_hvac_system .main_animation_conteiner{
   @apply -mt-24  pb-24
   lg:-mt-60  lg:pb-24 lg:ml-0 lg:pr-48;
