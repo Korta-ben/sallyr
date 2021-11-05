@@ -3,7 +3,8 @@
     <!--      <?xml version="1.0" encoding="utf-8"?>-->
     <!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg version="1.1" id="wipRevSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         width="2000px" height="1389.68px" viewBox="0 0 2000 1389.68" enable-background="new 0 0 2000 1389.68" xml:space="preserve">
+         width="694px" height="482px" viewBox="0 0 2000 1389.68" enable-background="new 0 0 2000 1389.68"
+         xml:space="preserve">
 <g id="gScaleAll">
 	<g id="gPointMove">
 		<circle fill="#6FA18A" cx="225.18" cy="692.21" r="10.55"/>
