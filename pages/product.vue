@@ -19,12 +19,15 @@ export default {
 /*the product page*/
 /*1. product header*/
 .product_header {
-  @apply bg-no-repeat xl:max-w-screen-1.5lg m-auto;
-  background-image: url("~/assets/images/blue-blur-2.webp");
-  background-position: right 50%;
+  @apply bg-no-repeat max-w-screen-1.5xl  m-auto;
+  background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/blue-blur-2.webp"),
+  url("~/assets/images/product-hero-bg.webp");
+  background-position: right 50%,
+  0% -20%,
+  top center;
 }
 .product_header>div {
-  @apply flex flex-col pt-12 text-center px-5 m-auto
+  @apply flex flex-col pt-12 text-center px-5 m-auto max-w-screen-1.5lg
   lg:max-w-2.5xl lg:text-12.5 lg:leading-13.75;
 }
 
@@ -54,11 +57,13 @@ export default {
 2. product_optimize_top
 */
 .product_optimize_top{
-  @apply xl:max-w-screen-1.5lg m-auto;
+  /*background-image: url("~/assets/images/product-opt1-bg.webp");*/
+  @apply xl:max-w-screen-1.5lg m-auto bg-no-repeat;
 }
+
 .product_optimize_top>div{
   @apply px-5 m-auto
-  lg:max-w-screen-1.5lg lg:pl-30.25;
+  lg:max-w-screen-1.5lg;
 }
 .product_optimize_top h2{
   @apply font-bold leading-11 text-5xl  sm:text-6.5xl text-srblue pb-7
@@ -79,11 +84,19 @@ export default {
 4. product optimization bottom
 */
 .product_optimize_bottom{
-@apply md:w-1/2 md:mr-0 pl-5 relative  xl:max-w-screen-1.5lg m-auto lg:m-auto
-   lg:w-full
+background-image: url("~/assets/images/product-opt2-lines-bg.webp");
+  background-position: 68% 127%;
+@apply md:mr-0 pl-5 relative  xl:max-w-screen-1.5lg m-auto lg:m-auto
+   lg:w-full bg-no-repeat ;
 }
+/*.product_optimize_bottom:before{*/
+/*  @apply absolute overflow-hidden;*/
+/*  content:url("~/assets/images/product-opt2-lines-bg.webp");*/
+
+/*}*/
+
 .product_optimize_bottom>div{
-  @apply flex flex-col mt-15 lg:max-w-3.5xl ml-auto;
+  @apply flex flex-col mt-15 lg:max-w-3.5xl ml-auto md:w-1/2 ;
   background: radial-gradient(50% 50% at 50% 50%, #918EFF4D 0%, #AEB9F44D 100%);
   border-top-left-radius: 20px;
 }
@@ -127,17 +140,19 @@ export default {
 /*
 6. product_low_maintenance
 */
-.product_low_maintenance {
-  background: radial-gradient(50% 50% at 50% 50%, #918EFF33 0%, #AEB9F433 100%);
-  backdrop-filter: blur(126px);
 
-}
 .product_low_maintenance>div{
   @apply flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto;
 }
-.product_low_maintenance div h2{
+.product_low_maintenance>div h2{
   @apply pt-0.5 text-center font-bold  text-3xl leading-8 pb-4
 
+}
+.product_low_maintenance>div h2:before {
+  @apply hidden lg:block lg:absolute lg:ml-0 lg:mr-0;
+  content:url("~/assets/images/blue-blur-2.webp");
+  margin-left: 130px;
+  margin-top: -360px;
 }
 .product_low_maintenance .body-text p{
   @apply text-center font-semibold leading-5 pt-px pb-9 m-auto md:max-w-sm
@@ -164,7 +179,7 @@ export default {
 7. product feature
 */
 .product_feature{
-  @apply xl:max-w-screen-1.5lg m-auto ;
+  @apply max-w-screen-1.5xl  m-auto ;
 }
 .product_feature>div{
   @apply flex flex-col px-5 pb-14
@@ -200,9 +215,14 @@ export default {
 }
 
 /*product feature first*/
+
+.product_feature.first>div{
+  /*@apply max-w-screen-1.5lg*/
+}
 .product_feature.first>div h2{
   @apply lg:-ml-36
 }
+
 .product_feature.first>div .header-image{
   @apply lg:max-w-2xs lg:w-full
 }
@@ -211,12 +231,21 @@ export default {
 }
 
 /*product feature second*/
+.product_feature.second{
+  background: url("~/assets/images/product-opt2-lines-bg.webp");
+  background-position: 0% 82%;
+  @apply  bg-no-repeat max-w-screen-1.5lg;
+}
+.product_feature.second>div{
+  /*@applymax-w-screen-1.5lg;*/
+}
 .product_feature.second>div .header-image{
   @apply lg:max-w-xs lg:w-full
 }
 .product_feature.second>div h2{
   @apply lg:w-91.5
 }
+
 .product_feature.second>div{
   @apply lg:flex-row-reverse
 }
@@ -229,6 +258,9 @@ export default {
 }
 
 /* product feature third*/
+.product_feature.third>div{
+  /*@apply max-w-screen-1.5lg*/
+}
 .product_feature.third>div h2{
   @apply lg:text-left lg:mt-0
 }

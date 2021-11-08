@@ -27,10 +27,14 @@ export default {
 1. indoor_farming_hero
 */
 .indoor_farming_hero{
-  /*@apply  md:pt-25*/
+  background-image:url("~/assets/images/indoor-hero-bg.webp") ;
+  @apply max-w-screen-1.5xl m-auto bg-no-repeat;
 }
 .indoor_farming_hero>div{
-  @apply flex flex-col lg:grid  px-5 lg:px-10 xg:px-20 grid-cols-1 lg:grid-cols-5  xl:max-w-screen-1.5lg m-auto ;
+  background-image:url("~/assets/images/indoor-hero-blur-bg.webp") ;
+
+  @apply bg-no-repeat flex flex-col lg:grid  px-5 lg:px-10 xg:px-20 grid-cols-1 lg:grid-cols-5
+  xl:max-w-screen-1.5lg m-auto ;
 }
 .indoor_farming_hero>div h2{
   @apply font-bold text-6.5xl leading-11 pt-10 pb-5
@@ -71,7 +75,7 @@ export default {
 }
 .indoor_farming_cc>div h2{
   @apply  pt-23.25 pb-6 font-bold text-srblue text-3xl leading-8
-  lg:max-w-139.25 lg:self-end lg:text-12.5 lg:leading-13.75 lg:pt-0 lg:-mt-29;
+  lg:max-w-139.25 lg:self-end lg:text-12.5 lg:leading-13.75 lg:pt-0 lg:-mt-29  lg:text-right;
 }
 .indoor_farming_cc>div .body-text{
   @apply lg:max-w-2xs lg:w-full lg:self-end ;
