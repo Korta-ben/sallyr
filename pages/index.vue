@@ -25,16 +25,18 @@ export default {
   1.header
 */
 .home_header{
-  @apply bg-no-repeat md:pt-25 xl:max-w-screen-1.5lg  content-center m-auto;
-  background-image:url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/blue-blur-1.webp");
-  background-position:right 90% , left -8%
+  @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl  content-center m-auto;
+  background-image:url("~/assets/images/blue-blur-2.webp"),
+  url("~/assets/images/blue-blur-1.webp"),
+url("~/assets/images/hero-bg.webp");
+  background-position:right 90% , left 0%, center top;
 
 }
 /*.home_header>div {*/
 /*  @apply flex flex-col lg:flex-row px-5 lg:px-10 xg:px-28 lg:flex-wrap xg:justify-between lg:justify-around;*/
 /*}*/
 .home_header>div {
-  @apply flex flex-col lg:grid  px-5 lg:px-10 xg:px-28 grid-cols-1 lg:grid-cols-5;
+  @apply flex m-auto flex-col lg:grid  px-5 lg:px-10 xg:px-28 grid-cols-1 lg:grid-cols-5 max-w-screen-1.5lg;
 }
 .home_header  h2{
   @apply font-bold pb-12 text-6.5xl leading-11 w-full  md:text-22.5 md:leading-25  xl:max-w-139.25
@@ -70,25 +72,33 @@ export default {
   2.home_hvac_system
 */
 .home_hvac_system{
-  @apply flex flex-col;
+
   background: #F1F2F8;
+  @apply flex flex-col;
+
 }
 .home_hvac_system>div{
-  @apply   px-5 flex flex-col text-center w-full xl:max-w-screen-1.5lg  content-center m-auto;
-}
-/*.home_hvac_system>div .body-text:after{*/
-/*  @apply relative ml-0 animate-bounce;*/
-/*content:  url("~/assets/images/temprature.svg");*/
-/*  top: 418px;*/
-/*  left: -258px;*/
 
-/*}*/
-/*.home_hvac_system>div .main-button-wrapper:after{*/
-/*  @apply relative animate-bounce;*/
-/*  top: -35px;*/
-/*  left:-400px;*/
-/*  content:  url("~/assets/images/drops.svg");*/
-/*}*/
+  background: url("~/assets/images/blue-blur-2.webp");
+  background-position: 104% 117%;
+  @apply bg-no-repeat bg-right-bottom px-5 flex flex-col text-center w-full xl:max-w-screen-1.5lg  content-center m-auto;
+}
+.home_hvac_system>div .body-text:after{
+  @apply hidden   duration-500 ease-in-out mt-56 transform hover:-translate-y-1
+  lg:block lg:absolute lg:-ml-36;
+content:  url("~/assets/images/temprature.svg");
+
+}
+.home_hvac_system>div .main-button:before{
+  @apply hidden  lg:-ml-91.5 lg:mt-12
+  lg:block lg:absolute;
+  content:  url("~/assets/images/drops.svg");
+}
+.home_hvac_system>div .main-button:after{
+  @apply hidden  lg:-ml-40 lg:mt-56
+  lg:block lg:absolute;
+  content:  url("~/assets/images/co2.svg");
+}
 .home_hvac_system .main_animation_conteiner{
   @apply -mt-24  pb-24
   lg:-mt-60  lg:pb-24 lg:ml-0 lg:pr-48;
@@ -96,6 +106,11 @@ export default {
 .home_hvac_system  h2{
   @apply text-srblue text-3xl m-auto leading-8 px-5 pb-5
   md:max-w-120
+}
+.home_hvac_system>div .body-text:before{
+  @apply hidden lg:block lg:absolute lg:ml-111;
+  content: url("~/assets/images/pie.svg");
+
 }
 .home_hvac_system  .body-text{
   @apply text-sm leading-5 pb-36  m-auto
@@ -117,6 +132,11 @@ export default {
 .home_ready_to_talk{
  @apply lg:px-28 xl:max-w-screen-1.5lg m-auto
 }
+/*.home_ready_to_talk:before{*/
+/*  @apply hidden mt-11 lg:ml-32*/
+/*  lg:block lg:absolute 1.5xl:left-1/4;*/
+/*  content:  url("~/assets/images/co2.svg");*/
+/*}*/
 .home_ready_to_talk>div:before{
   @apply self-end	pr-16 -mt-5  mr-0;
   content: url("~/assets/images/line-below-hvac-system.webp");
@@ -149,12 +169,11 @@ export default {
 
 /* 4. home_indoor_farming */
 .home_indoor_farming{
-  @apply bg-no-repeat bg-center;
-  background-image: url("~/assets/images/indoor-farming-bg.webp");
-  padding-bottom: 76px;
+  @apply bg-no-repeat bg-center pb-52 max-w-screen-1.5xl  m-auto;
+  background-image: url("~/assets/images/indoor-farming-bg.webp"), url("~/assets/images/wave-home-greenwebp.webp");
 }
 .home_indoor_farming>div{
-  @apply  flex flex-col pt-12 items-center text-center
+  @apply  flex flex-col pt-12 items-center text-center m-auto max-w-screen-1.5lg ;
 }
 .home_indoor_farming .header-image {
   @apply  w-10 pb-17.5

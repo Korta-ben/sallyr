@@ -1,0 +1,23 @@
+<svg width="705" height="706" viewBox="0 0 705 706" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.2" filter="url(#filter0_f_0:1)">
+<ellipse cx="352.5" cy="353" rx="226.5" ry="227" fill="url(#paint0_radial_0:1)"/>
+</g>
+<g clip-path="url(#clip0_0:1)">
+<path d="M388.85 309.73C388.765 312.805 387.56 315.742 385.46 317.99C381.7 322.35 375.06 325.86 366.82 327.86C356.513 330.247 345.797 330.247 335.49 327.86C327.26 325.86 320.61 322.35 316.85 317.99C315.311 316.289 314.23 314.224 313.71 311.99L351.16 309.73L333.64 292.05C339.349 290.49 345.242 289.71 351.16 289.73C372.02 289.73 388.85 298.73 388.85 309.73ZM388.22 323.62C384.22 328.16 377.01 331.82 368.15 333.9C357.042 336.394 345.518 336.394 334.41 333.9C325.54 331.82 318.41 328.16 314.34 323.62C313.901 323.134 313.49 322.623 313.11 322.09C311.583 320.045 310.74 317.571 310.7 315.02V332.22C310.699 332.783 310.742 333.344 310.83 333.9C310.975 334.792 311.223 335.665 311.57 336.5C315.42 345.9 331.75 352.96 351.28 352.96C372.58 352.96 390.05 344.57 391.73 333.9C391.813 333.344 391.856 332.782 391.86 332.22V314.97C391.763 318.191 390.465 321.259 388.22 323.57V323.62Z" stroke="#918EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320.16 287C308.16 290.33 300 297 300 304.64C300 305.386 300.08 306.131 300.24 306.86L337.69 304.64L320.16 287Z" stroke="#FF981F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_f_0:1" x="0" y="0" width="705" height="706" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="63" result="effect1_foregroundBlur_0:1"/>
+</filter>
+<radialGradient id="paint0_radial_0:1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(352.5 353) rotate(90) scale(227 226.5)">
+<stop stop-color="#918EFF"/>
+<stop offset="1" stop-color="#AEB9F4"/>
+</radialGradient>
+<clipPath id="clip0_0:1">
+<rect width="93.86" height="67.91" fill="white" transform="translate(299 286)"/>
+</clipPath>
+</defs>
+</svg>
