@@ -78,7 +78,6 @@ url("~/assets/images/hero-bg.webp");
 
 }
 .home_hvac_system>div{
-
   background: url("~/assets/images/blue-blur-2.webp");
   background-position: 104% 117%;
   @apply bg-no-repeat bg-right-bottom px-5 flex flex-col text-center w-full xl:max-w-screen-1.5lg  content-center m-auto;
@@ -90,12 +89,12 @@ content:  url("~/assets/images/temprature.svg");
 
 }
 .home_hvac_system>div .main-button:before{
-  @apply hidden  lg:-ml-91.5 lg:mt-12
+  @apply hidden  lg:-ml-80 lg:mt-12
   lg:block lg:absolute;
   content:  url("~/assets/images/drops.svg");
 }
-.home_hvac_system>div .main-button:after{
-  @apply hidden  lg:-ml-40 lg:mt-56
+.home_hvac_system>div .main-button-wrapper:after{
+  @apply hidden  lg:ml-64 lg:mt-11.5
   lg:block lg:absolute;
   content:  url("~/assets/images/co2.svg");
 }
@@ -108,7 +107,9 @@ content:  url("~/assets/images/temprature.svg");
   md:max-w-120
 }
 .home_hvac_system>div .body-text:before{
-  @apply hidden lg:block lg:absolute lg:ml-111;
+  @apply absolute mt-33.75 ml-16
+    md:mt-52 md:ml-56
+  lg:block  lg:ml-111 lg:mt-0;
   content: url("~/assets/images/pie.svg");
 
 }
@@ -146,6 +147,14 @@ content:  url("~/assets/images/temprature.svg");
 }
 .home_ready_to_talk  h2{
   @apply font-bold pb-11  text-6.5xl leading-11
+}
+.home_ready_to_talk  h2:before{
+  @apply absolute -mt-60 lg:hidden;
+  content: url("~/assets/images/kwh.svg");
+}
+.home_ready_to_talk:before{
+  @apply absolute  lg:hidden pl-25 -mt-6;
+  content: url("~/assets/images/rtt-h2-after.svg");
 }
 .home_ready_to_talk  h3{
   @apply text-base flex flex-col md:flex-row
