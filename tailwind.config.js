@@ -38,7 +38,7 @@ module.exports = {
         },
         'bounce-slow2': {
           "0%":{
-            transform: "translateY(-6%)",
+            transform: "translateY(6%)",
             "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
           },
           "50%":{
@@ -46,7 +46,7 @@ module.exports = {
             "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
           },
           "100%":{
-            transform: "translateY(-6%)",
+            transform: "translateY(6%)",
             "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
           }
 
