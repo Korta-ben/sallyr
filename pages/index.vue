@@ -83,18 +83,18 @@ url("~/assets/images/hero-bg.webp");
   @apply bg-no-repeat bg-right-bottom px-5 flex flex-col text-center w-full xl:max-w-screen-1.5lg  content-center m-auto;
 }
 .home_hvac_system>div .body-text:after{
-  @apply hidden   duration-500 ease-in-out mt-56 transform hover:-translate-y-1
+  @apply hidden   duration-500 ease-in-out mt-56 animate-bounce-slow2
   lg:block lg:absolute lg:-ml-36;
 content:  url("~/assets/images/temprature.svg");
 
 }
 .home_hvac_system>div .main-button:before{
-  @apply hidden  lg:-ml-80 lg:mt-12
+  @apply hidden  lg:-ml-80 lg:mt-12 animate-bounce-slow1
   lg:block lg:absolute;
   content:  url("~/assets/images/drops.svg");
 }
 .home_hvac_system>div .main-button-wrapper:after{
-  @apply hidden  lg:ml-64 lg:mt-11.5
+  @apply hidden  lg:ml-64 lg:mt-11.5 animate-bounce-slow3
   lg:block lg:absolute;
   content:  url("~/assets/images/co2.svg");
 }
@@ -122,7 +122,7 @@ content:  url("~/assets/images/temprature.svg");
   md:flex md:mb-35.25
 }
 .home_hvac_system  .main-button:after{
-  @apply pl-4;
+  @apply pl-4 ;
   content: url("~/assets/images/right-blue.svg");
 }
 
@@ -149,11 +149,11 @@ content:  url("~/assets/images/temprature.svg");
   @apply font-bold pb-11  text-6.5xl leading-11
 }
 .home_ready_to_talk  h2:before{
-  @apply absolute -mt-60 lg:hidden;
+  @apply absolute -mt-60 lg:hidden animate-bounce-slow1;
   content: url("~/assets/images/kwh.svg");
 }
 .home_ready_to_talk:before{
-  @apply absolute  lg:hidden pl-25 -mt-6;
+  @apply absolute  lg:hidden pl-25 -mt-6 animate-bounce-slow2;
   content: url("~/assets/images/rtt-h2-after.svg");
 }
 .home_ready_to_talk  h3{

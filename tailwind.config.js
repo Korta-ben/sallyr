@@ -3,6 +3,7 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+
     colors: {
       srblue: '#164CD6',
       srorange: '#FF981F',
@@ -14,6 +15,58 @@ module.exports = {
     },
 
     extend: {
+      animation: {
+        'bounce-slow1': 'bounce-slow1 4s infinite',
+        'bounce-slow2': 'bounce-slow2 3s infinite',
+        'bounce-slow3': 'bounce-slow3 2s infinite',
+      },
+      keyframes: {
+        'bounce-slow1': {
+          "0%":{
+            transform: "translateY(-5%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%":{
+            transform: "translateY(0)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "100%":{
+            transform: "translateY(-5%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          }
+
+        },
+        'bounce-slow2': {
+          "0%":{
+            transform: "translateY(-6%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%":{
+            transform: "translateY(0)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "100%":{
+            transform: "translateY(-6%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          }
+
+        },
+        'bounce-slow3': {
+          "0%":{
+            transform: "translateY(-4%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%":{
+            transform: "translateY(0)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "100%":{
+            transform: "translateY(-4%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          }
+
+        }
+      },
       maxWidth:{
         '2xs':'363px',
         107:'428px',
