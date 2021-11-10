@@ -61,7 +61,7 @@ export default {
   @apply bg-no-repeat bg-top
 }
 .team-wwu>div{
-  @apply px-5 pt-23.25
+  @apply px-5 pt-4
 }
 .team-wwu h3{
   @apply text-center font-bold text-lg leading-6 pb-8.5

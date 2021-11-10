@@ -8,14 +8,14 @@
 <!--           class="object-cover rounded-tl-2xl 	w-full md:rounded-0  md:w-45.5">-->
     </div>
     <div class="p-11.5 lg:w-2/3">
-      <h3 class="font-bold  text-xl leading-6 text-srblue ">
+      <h3 class="font-bold pb-8 text-xl leading-6 text-srblue ">
         Sally R signs framework agreement with Unibail-Rodamco-Westfield Nordic
       </h3>
       <p class="pb-9">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <div class="font-bold text-base leading-4 text-srblue">
-        Read more ->
+      <div class="font-bold read-more text-base leading-4 text-srblue flex p-2">
+        Read more
       </div>
     </div>
   </div>
@@ -28,5 +28,8 @@ export default {
 </script>
 
 <style >
-
+ .read-more:after{
+   @apply pl-2;
+   content:url("~/assets/images/right-blue.svg");
+ }
 </style>
