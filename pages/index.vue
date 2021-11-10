@@ -219,14 +219,19 @@ content:  url("~/assets/images/temprature.svg");
 5. home_mission
 */
 .home_mission{
-  @apply  text-sm text-xl font-semibold text-srwhite pt-12.75 bg-no-repeat bg-top bg-srblue;
-  background-image: url("~/assets/images/mission-bg.png");
+
+  background: url("~/assets/images/arch.svg"),linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(22,76,214,1) 10%);
+
+
+  @apply  1.5xl:bg-cover text-sm text-xl font-semibold text-srwhite pt-12 lg:pt-40 bg-no-repeat bg-top ;
+}
+.home_mission:before{
+
+
 }
 .home_mission>div{
   @apply flex flex-col px-5 bg-srblue flex-wrap
     lg:flex-row lg:justify-between
-
-;
 
 }
 .home_mission .header-image{
@@ -237,9 +242,7 @@ content:  url("~/assets/images/temprature.svg");
 
 
 }
-.home_mission:before{
 
-}
 @screen lg{
   /*.home_mission h2{*/
   /*  @apply w-1/2;*/
@@ -248,6 +251,10 @@ content:  url("~/assets/images/temprature.svg");
     @apply block order-2 justify-self-end	;
 
   }
+  /*.home_mission>div:before{*/
+  /*  content: url("~/assets/images/astroanut.svg");*/
+  /*  @apply absolute right-0 mt-10*/
+  /*   }*/
   .home_mission>div {
     @apply m-auto grid xl:max-w-screen-1.5lg ;
     grid-template-columns: repeat(2, 1fr);
@@ -264,6 +271,12 @@ content:  url("~/assets/images/temprature.svg");
   .home_mission .main-button-wrapper{@apply xl:pl-28;
     grid-area: 3 / 1 / 4 / 2; }
   .home_mission .header-image{ grid-area: 1 / 2 / 4 / 3; }
+  .home_mission>div:before{
+    content: url("~/assets/images/astroanut.svg");
+    @apply justify-self-end absolute mt-64 animate-bounce-astro;
+    grid-area: 2 / 2 / 3 / 3;
+
+  }
 
 }
 

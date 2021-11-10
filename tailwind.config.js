@@ -19,8 +19,24 @@ module.exports = {
         'bounce-slow1': 'bounce-slow1 4s infinite',
         'bounce-slow2': 'bounce-slow2 3s infinite',
         'bounce-slow3': 'bounce-slow3 2s infinite',
+        'bounce-astro': 'bounce-astro 6s infinite',
       },
       keyframes: {
+        'bounce-astro': {
+          "0%":{
+            transform: "translateY(-10%)",
+            // "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%":{
+            transform: "translateY(0)",
+            // "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "100%":{
+            transform: "translateY(-10%)",
+            // "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          }
+
+        },
         'bounce-slow1': {
           "0%":{
             transform: "translateY(-5%)",
