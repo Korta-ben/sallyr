@@ -11,9 +11,9 @@
          justify-between"
       >
         <li v-for="item in menuItems" :key="item.id" class="px-5 py-1 text-base inline-block" >
-          <span v-if="item.child_items"  @click="showChild = !showChild">
+          <span v-if="item.child_items"  @click="showChild = !showChild" class="haschilditem">
             <NuxtLink
-              :to="{name:item.slug}">
+              :to="{name:item.slug  }">
             {{ item.title }}
           </NuxtLink>
           </span>
@@ -186,4 +186,17 @@ export default {
   transform: translateX(10px);
   opacity: 0;
 }
+.haschilditem:after{
+  content: url("~/assets/images/plus-menu.svg");
+  margin-top: -2px;
+  padding-left: 5px;
+  @apply absolute
+}
+/*nav ul a{*/
+/*  @apply flex flex-col items-center*/
+/*}*/
+/*nav ul a.current-page:after{*/
+/*  @apply absolute mt-2;*/
+/*  content: url("~/assets/images/anchor-footer.png");*/
+/*}*/
 </style>

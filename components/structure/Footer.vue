@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-srblue w-full px-5  ">
     <div class="py-30.25 xl:max-w-screen-1.5lg  m-auto px-5 lg:px-10 xg:px-28 md:flex md:justify-between md:flex-wrap ">
-      <div class="pb-12">
+      <div class="pb-12 w-52">
         <h3>
           Products
         </h3>
@@ -12,8 +12,8 @@
         </ul>
       </div>
 
-      <div class="pb-12">
-        <h3>
+      <div class="pb-12 w-52 flex flex-col items-center">
+        <h3 class="pl-7.5">
           Sally R
         </h3>
         <ul class="font-normal">
@@ -23,7 +23,7 @@
         </ul>
       </div>
 
-      <div class="pb-12">
+      <div class="pb-12 w-52">
         <h3>
           Contact
         </h3>

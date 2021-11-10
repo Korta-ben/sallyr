@@ -70,6 +70,10 @@ export default {
   lg:text-22.5  lg:leading-25 lg:max-w-4xl
 
 }
+.product_optimize_top h2:after{
+  @apply hidden lg:inline-block  lg:absolute lg:pl-80 lg:-mt-9 lg:mx-auto;
+  content:url("~/assets/images/waterfall.webp");
+}
 
 .product_optimize_top h3{
   @apply  pb-7 font-bold text-xl leading-6 text-srblue
@@ -94,9 +98,12 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 /*  content:url("~/assets/images/product-opt2-lines-bg.webp");*/
 
 /*}*/
+.product_optimize_bottom{
+  @apply max-w-screen-1.5xl
+}
 
 .product_optimize_bottom>div{
-  @apply flex flex-col mt-15 lg:max-w-3.5xl ml-auto md:w-1/2 ;
+  @apply flex flex-col mt-15 lg:max-w-3.5xl ml-auto md:w-1/2 lg:w-full;
   background: radial-gradient(50% 50% at 50% 50%, #918EFF4D 0%, #AEB9F44D 100%);
   border-top-left-radius: 20px;
 }
@@ -109,7 +116,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   lg:order-none lg:max-w-139.25 lg:text-12.5 lg:leading-13.75 lg:-ml-65 ;
 }
 .product_optimize_bottom>div .body-text{
-  @apply pl-5 -mt-24 pb-27.25 pt-8;
+  @apply md:pl-10 lg:pl-24 -mt-24 pb-27.25 pt-8;
 
 }
 .product_optimize_bottom>div .body-text p{

@@ -115,7 +115,7 @@ export default {
   ;
 }
 .indoor_food>div h2:before{
-  @apply self-center pb-16;
+  @apply self-center pb-1;
   content:url("~/assets/images/green-plant.png");
 }
 .indoor_food>div h3{
@@ -158,6 +158,7 @@ export default {
 }
 .indoor_maximize>div .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
+  lg:mb-32
 }
 
 
@@ -197,7 +198,7 @@ export default {
   content:''
 }
 .thelist ul{
-  @apply pb-20
+  @apply pb-20 lg:pb-44
   md:w-5/12 gap-x-8;
 }
 </style>

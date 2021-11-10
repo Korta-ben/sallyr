@@ -36,7 +36,7 @@ url("~/assets/images/hero-bg.webp");
 /*  @apply flex flex-col lg:flex-row px-5 lg:px-10 xg:px-28 lg:flex-wrap xg:justify-between lg:justify-around;*/
 /*}*/
 .home_header>div {
-  @apply flex m-auto flex-col lg:grid  px-5 lg:px-10 xg:px-28 grid-cols-1 lg:grid-cols-5 max-w-screen-1.5lg;
+  @apply flex m-auto flex-col lg:grid  px-5 lg:px-10 xg:pr-28 grid-cols-1 lg:grid-cols-5 max-w-screen-1.5lg;
 }
 .home_header  h2{
   @apply font-bold pb-12 text-6.5xl leading-11 w-full  md:text-22.5 md:leading-25  xl:max-w-139.25
@@ -52,15 +52,23 @@ url("~/assets/images/hero-bg.webp");
 @apply col-span-5 lg:col-span-2 lg:col-end-6 lg:mr-auto lg:-mt-15
 }
 .home_header .sub-button-wrapper{
-  @apply col-span-5 lg:col-span-2 lg:col-end-6 lg:mr-auto lg:-mt-7.5
+  @apply col-span-5 lg:col-span-2 lg:col-end-7  lg:-mt-7.5
 }
 .home_header  .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
+  hover:bg-srblue hover:text-srwhite
+}
+.home_header .main-button:hover:after{
+  @apply pl-4;
+  content: url("~/assets/images/white-right.svg");
+  /*-webkit-mask-image: url("~/assets/images/right-blue.svg");*/
 }
 .home_header .main-button:after{
   @apply pl-4;
   content: url("~/assets/images/right-blue.svg");
+  /*-webkit-mask-image: url("~/assets/images/right-blue.svg");*/
 }
+
 .home_header  .sub-button {
   @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44
 }
@@ -119,7 +127,11 @@ content:  url("~/assets/images/temprature.svg");
 }
 .home_hvac_system  .main-button{
   @apply hidden m-auto border-srblue font-bold py-6 px-7 border-2 text-base leading-4 block text-srblue
-  md:flex md:mb-35.25
+  md:flex md:mb-35.25 hover:bg-srblue hover:text-srwhite
+}
+.home_hvac_system  .main-button:hover:after{
+  @apply pl-4 ;
+  content: url("~/assets/images/white-right.svg");
 }
 .home_hvac_system  .main-button:after{
   @apply pl-4 ;
@@ -207,8 +219,13 @@ content:  url("~/assets/images/temprature.svg");
   md:max-w-120 md:px-3.5
 }
 .home_indoor_farming .main-button{
-  @apply px-16 font-bold flex text-base leading-4 py-6 px-7.5  border-2 border-srblack;
+  @apply px-16 font-bold flex text-base leading-4 py-6 px-7.5  border-2 border-srblack
+  hover:bg-srblack hover:text-srwhite;
   font-family: 'Kumbh Sans', sans-serif;
+}
+.home_indoor_farming .main-button:hover:after{
+  @apply pl-4;
+  content: url("~/assets/images/white-right.svg");
 }
 .home_indoor_farming .main-button:after{
   @apply pl-4;
@@ -230,7 +247,7 @@ content:  url("~/assets/images/temprature.svg");
 
 }
 .home_mission>div{
-  @apply flex flex-col px-5 bg-srblue flex-wrap
+  @apply flex flex-col pl-5 bg-srblue flex-wrap
     lg:flex-row lg:justify-between
 
 }
@@ -264,15 +281,17 @@ content:  url("~/assets/images/temprature.svg");
   }
 
   .home_mission h2 {
-    @apply xl:pl-28;
+    @apply xl:px-5;
     grid-area: 1 / 1 / 2 / 2; }
-  .home_mission .body-text{@apply xl:pl-28  -mt-29;
+  .home_mission .body-text{
+    @apply xl:px-5  -mt-29;
     grid-area: 2 / 1 / 3 / 2; }
-  .home_mission .main-button-wrapper{@apply xl:pl-28;
+  .home_mission .main-button-wrapper{@apply xl:px-5;
     grid-area: 3 / 1 / 4 / 2; }
   .home_mission .header-image{ grid-area: 1 / 2 / 4 / 3; }
   .home_mission>div:before{
     content: url("~/assets/images/astroanut.svg");
+
     @apply justify-self-end absolute mt-64 animate-bounce-astro;
     grid-area: 2 / 2 / 3 / 3;
 
@@ -286,8 +305,12 @@ content:  url("~/assets/images/temprature.svg");
 
 .home_mission .main-button{
   @apply  font-bold flex text-base leading-4 py-6 px-7.5 mt-11 border-2 border-srwhite w-65 m-auto
-  lg:ml-0;
+  lg:ml-0 hover:text-srblue hover:bg-srwhite;
   font-family: 'Kumbh Sans', sans-serif;
+}
+.home_mission .main-button:hover:after{
+  @apply pl-4;
+  content: url("~/assets/images/right-blue.svg");
 }
 .home_mission .main-button:after{
   @apply pl-4;
