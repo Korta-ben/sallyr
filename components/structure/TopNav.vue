@@ -14,7 +14,7 @@
           <span v-if="item.child_items"   class="haschilditem">
             <NuxtLink
               :to="{name:item.slug  }">
-            {{ item.title }}a
+            {{ item.title }}
           </NuxtLink>
           </span>
 
@@ -112,7 +112,7 @@
         font-bold"
         >
           <li v-for="item in menuItems" :key="item.id" class="px-5 py-1 text-base">
-            <span @click="showChild = !showChild"><NuxtLink
+            <span ><NuxtLink
               :to="{name:item.slug}">
             {{ item.title }}
           </NuxtLink></span>
