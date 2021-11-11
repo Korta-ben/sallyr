@@ -10,19 +10,20 @@
         font-bold
          justify-between"
       >
-        <li v-for="item in menuItems" :key="item.id" class="px-5 py-1 text-base inline-block" >
-          <span v-if="item.child_items"  @click="showChild = !showChild" class="haschilditem">
+        <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base inline-block" >
+          <span v-if="item.child_items"   class="haschilditem">
             <NuxtLink
               :to="{name:item.slug  }">
-            {{ item.title }}
+            {{ item.title }}a
           </NuxtLink>
           </span>
 
           <ul
             v-if="item.child_items"
-            :class="{'opacity-0' : !showChild}"
-            class="absolute bg-srwhite transition-opacity w-56  duration-300 ease-in-out"
+            class="hidden absolute bg-srwhite transition-opacity w-56  duration-300 ease-in-out"
           >
+<!--            :class="{'opacity-0' : !showChild}"-->
+
             <li
               v-for="child in item.child_items"
               class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">
@@ -191,6 +192,9 @@ export default {
   margin-top: -2px;
   padding-left: 5px;
   @apply absolute
+}
+.parent-item:focus-within>ul{
+  display: block;
 }
 /*nav ul a{*/
 /*  @apply flex flex-col items-center*/
