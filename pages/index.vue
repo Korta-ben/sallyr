@@ -56,10 +56,10 @@ url("~/assets/images/hero-bg.webp");
 }
 .home_header  .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
-  hover:bg-srblue hover:text-srwhite
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
 }
 .home_header .main-button:hover:after{
-  @apply pl-4;
+  @apply pl-4 transition duration-500 ease-in-out;
   content: url("~/assets/images/white-right.svg");
   /*-webkit-mask-image: url("~/assets/images/right-blue.svg");*/
 }
@@ -127,10 +127,10 @@ content:  url("~/assets/images/temprature.svg");
 }
 .home_hvac_system  .main-button{
   @apply hidden m-auto border-srblue font-bold py-6 px-7 border-2 text-base leading-4 block text-srblue
-  md:flex md:mb-35.25 hover:bg-srblue hover:text-srwhite
+  md:flex md:mb-35.25 hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
 }
 .home_hvac_system  .main-button:hover:after{
-  @apply pl-4 ;
+  @apply pl-4 transition duration-500 ease-in-out;
   content: url("~/assets/images/white-right.svg");
 }
 .home_hvac_system  .main-button:after{
@@ -220,15 +220,15 @@ content:  url("~/assets/images/temprature.svg");
 }
 .home_indoor_farming .main-button{
   @apply px-16 font-bold flex text-base leading-4 py-6 px-7.5  border-2 border-srblack
-  hover:bg-srblack hover:text-srwhite;
+  hover:bg-srblack hover:text-srwhite transition duration-500 ease-in-out;
   font-family: 'Kumbh Sans', sans-serif;
 }
 .home_indoor_farming .main-button:hover:after{
-  @apply pl-4;
+  @apply pl-4 ;
   content: url("~/assets/images/white-right.svg");
 }
 .home_indoor_farming .main-button:after{
-  @apply pl-4;
+  @apply pl-4 transition duration-500 ease-in-out;
   content: url("~/assets/images/black-right.svg");
 }
 
@@ -306,11 +306,11 @@ content:  url("~/assets/images/temprature.svg");
 
 .home_mission .main-button{
   @apply  font-bold flex text-base leading-4 py-6 px-7.5 mt-11 border-2 border-srwhite w-65 m-auto
-  lg:ml-0 hover:text-srblue hover:bg-srwhite;
+  lg:ml-0 hover:text-srblue hover:bg-srwhite transition duration-500 ease-in-out;
   font-family: 'Kumbh Sans', sans-serif;
 }
 .home_mission .main-button:hover:after{
-  @apply pl-4;
+  @apply pl-4 transition duration-500 ease-in-out;
   content: url("~/assets/images/right-blue.svg");
 }
 .home_mission .main-button:after{

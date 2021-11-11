@@ -53,6 +53,7 @@ export default {
 }
 .indoor_farming_hero>div .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
 }
 .indoor_farming_hero>div .main-button:after{
   @apply pl-4;
@@ -158,7 +159,7 @@ export default {
 }
 .indoor_maximize>div .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
-  lg:mb-32
+  lg:mb-32  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
 }
 
 

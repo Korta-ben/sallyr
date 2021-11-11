@@ -46,7 +46,8 @@ export default {
   lg:text-xl;
 }
 .product_header .main-button {
-  @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14;
+  @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;
 }
 .product_header .main-button:after{
   @apply pl-4;
@@ -156,7 +157,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 
 }
 .product_low_maintenance>div h2:before {
-  @apply hidden lg:block lg:absolute lg:ml-0 lg:mr-0;
+  @apply hidden lg:block lg:absolute lg:ml-0 lg:mr-0 z-0;
   content:url("~/assets/images/blue-blur-2.webp");
   margin-left: 130px;
   margin-top: -360px;
@@ -164,8 +165,9 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 .product_low_maintenance .body-text p{
   @apply text-center font-semibold leading-5 pt-px pb-9 m-auto md:max-w-sm
 }
-.product_low_maintenance div .main-button{
-  @apply py-6 pl-6 pr-4 border-2 flex  border-srblue font-bold  text-base leading-4  m-auto text-srblue mb-17.5;
+.product_low_maintenance>div .main-button{
+  @apply py-6 pl-6 pr-4 border-2 flex  border-srblue font-bold  text-base leading-4  m-auto text-srblue mb-17.5
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out z-10;
 }
 .product_low_maintenance>div .main-button:after{
   @apply pl-4;
@@ -218,7 +220,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 }
 .product_feature:last-child>div .main-button{
   @apply py-6 pl-6 pr-4 border-2 flex  border-srblue font-bold  text-base leading-4  m-auto text-srblue mb-17.5
-  lg:ml-0;
+  lg:ml-0  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;
 }
 
 /*product feature first*/
