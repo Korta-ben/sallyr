@@ -294,7 +294,7 @@ content:  url("~/assets/images/temprature.svg");
 
     @apply justify-self-end absolute mt-64 animate-bounce-astro;
     grid-area: 2 / 2 / 3 / 3;
-    -webkit-grid-area: 2 / 2 / 3 / 3;
+    padding-left: 63%;
 
   }
 
