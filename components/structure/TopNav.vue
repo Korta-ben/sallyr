@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-srwhite  fixed w-full z-50">
+  <nav class="bg-srwhite  fixed w-full z-40">
     <div class="py-8 md:py-5 px-5  flex justify-between max-w-screen-1.5lg  m-auto">
       <ul
         class="w-2/5

@@ -25,6 +25,7 @@
 <!--        story ends-->
       </div>
     </section>
+    <
 
     <section class=" px-5 grid grid-cols-1 gap-x-4 " >
       <TeamsBox v-for="team in teams" :key="team.index" :member="team"></TeamsBox>
@@ -36,8 +37,8 @@
 
 <script>
 import axios from "axios";
-export default {
 
+export default {
 
   computed: {
 

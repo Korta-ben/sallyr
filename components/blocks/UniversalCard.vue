@@ -23,9 +23,7 @@
 
 <script>
 
-import TheGreenHouse from "~/components/animations/TheGreenHouse";
 export default {
-  components: {TheGreenHouse},
   props: {
     card: {
       type: [Object, Array]

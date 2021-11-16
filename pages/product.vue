@@ -1,14 +1,123 @@
 <template>
-  <div>
+  <div class="flex flex-col">
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
+    <section class="m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-50 lg:pl-50 pt-11.5">
+      <VueSlickCarousel v-bind="sliderSettings" >
+        <div v-for="item in items" :key="item.id"
+             class="flex flex-row px-5">
+          <div class="slide flex flex-wrap justify-between py-14 px-8">
+            <div class=" bg-contain bg-no-repeat bg-center"
+            >
+              <img class="h-36" :src="item.acf.image">
+            </div>
+            <div class="w-5/12">
+              <h3 v-html="item.title.rendered" ></h3>
+              <div v-html="item.excerpt.rendered" ></div>
+            </div>
+          </div>
+
+        </div>
+
+      </VueSlickCarousel>
+    </section>
   </div>
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 export default {
+  components: {VueSlickCarousel},
   data () {
     return {
+      sliderSettings: [
+        {
+
+          "dots": false,
+          "infinite": true,
+          "centerMode": false,
+          "speed": 500,
+          "slidesToShow": 2,
+          "slidesToScroll": 1,
+          "initialSlide": 0,
+          "arrows":true,
+          "responsive": [
+
+            {
+              "breakpoint": 375,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 1,
+                "slidesToScroll": 1
+              }
+            },
+            {
+              "breakpoint": 480,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 1,
+                "slidesToScroll": 1
+              }
+            },
+            {
+              "breakpoint": 640,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 1,
+                "slidesToScroll": 1
+              }
+            },
+            {
+              "breakpoint": 768,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 1,
+                "slidesToScroll": 1
+              }
+            },
+            {
+              "breakpoint": 855,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 2,
+                "slidesToScroll": 1
+              }
+            },
+            {
+              "breakpoint": 1024,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 2,
+                "slidesToScroll": 1
+              }
+            },
+            {
+              "breakpoint": 1280,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 2,
+                "slidesToScroll": 1
+              }
+            },
+            {
+              "breakpoint": 1536,
+              "settings": {
+                "centerMode": false,
+                "slidesToShow": 2,
+                "slidesToScroll": 1
+
+              }
+            },
+          ]
+        }
+
+      ]
     }
+  },
+  async asyncData ({ $axios }) {
+    const items = await
+      $axios.$get('https://apisr.kortaben.work/wp-json/wp/v2/slider')
+    return { items }
   },
   computed: {
     cards() { return  this.$store.getters.getTheProduct.acf.universal_text_box }
@@ -276,4 +385,45 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 .product_feature.third .body-text{
   @apply lg:max-w-lg lg:w-full lg:-mt-25 md:m-auto lg:mr-0
 }
+.slide{
+
+  background: #FFFFFF;
+  /* Drop shadow */
+
+  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
+  /*width:436px*/
+}
+.slide h3{
+  @apply text-srblue  text-xl  leading-7 font-bold
+}
+.slide p{
+  @apply leading-5 text-sm font-bold
+}
+.slick-arrow.slick-prev:before{
+  content: url("~/assets/images/left-arrow.svg");
+  font-size: 0;
+}
+.slick-prev{
+  order:2;
+  font-size: 0;
+  padding-right:23px
+}
+.slick-arrow.slick-next:before{
+  content: url("~/assets/images/right-blue.svg");
+
+}
+.slick-next{
+  order:2;
+  font-size: 0;
+  padding-left:23px
+}
+.slick-list{
+  padding-bottom:56px !important;
+}
+.slick-slider{
+  @apply   flex-wrap;
+  display:flex !important;
+  justify-content: center;
+  }
 </style>
+

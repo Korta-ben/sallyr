@@ -1,5 +1,8 @@
 <template>
   <div>
+    <transition name="readytotalk"  v-if=showOverlayForm>
+      <OverlayForm />
+    </transition>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
 
   </div>
@@ -10,6 +13,7 @@
 export default {
   data () {
     return {
+      showOverlayForm:false
     }
   },
 
@@ -19,7 +23,35 @@ export default {
 }
 </script>
 <style>
+/*slide ins*/
+/* {*/
+/*  transition: all .3s  cubic-bezier(1.0, 0.5, 0.8, 1.0);*/
+/*}*/
+.readytotalk-enter-active, .readytotalk-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
 
+/*.readytotalk-enter-to, .readytotalk-leave {*/
+/*  transform: translateY(-50%);*/
+/*  opacity: 0;*/
+/*}*/
+
+.readytotalk-enter, .readytotalk-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+/*@keyframes slidefromtop {*/
+/*  from {*/
+/*    transform: translateY(-50%);*/
+/*    opacity: 0;*/
+/*  }*/
+/*  to {*/
+/*    transform: translateY(50%);*/
+/*    opacity: 1;*/
+/*  }*/
+/*}*/
 /*home page components*/
 /*
   1.header
@@ -317,4 +349,7 @@ content:  url("~/assets/images/temprature.svg");
   @apply pl-4;
   content: url("~/assets/images/white-right.svg");
 }
+
+
+
 </style>
