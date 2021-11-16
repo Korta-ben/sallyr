@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
-    <section class="m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-50 lg:pl-50 pt-11.5">
+    <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-50 lg:pl-50 pt-11.5">
       <VueSlickCarousel v-bind="sliderSettings" >
         <div v-for="item in items" :key="item.id"
              class="flex flex-row px-5">
@@ -397,7 +397,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply text-srblue  text-xl  leading-7 font-bold
 }
 .slide p{
-  @apply leading-5 text-sm font-bold
+  @apply leading-5 text-sm font-bold truncate ;
 }
 .slick-arrow.slick-prev:before{
   content: url("~/assets/images/left-arrow.svg");
@@ -425,5 +425,6 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   display:flex !important;
   justify-content: center;
   }
+
 </style>
 

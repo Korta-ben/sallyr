@@ -29,7 +29,7 @@ export default {
   1.header
 */
 .home_header{
-  @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl  content-center m-auto;
+  @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/blue-blur-2.webp"),
   url("~/assets/images/blue-blur-1.webp"),
 url("~/assets/images/hero-bg.webp");
@@ -86,7 +86,7 @@ url("~/assets/images/hero-bg.webp");
 .home_hvac_system{
 
   background: #F1F2F8;
-  @apply flex flex-col;
+  @apply flex flex-col w-full ;
 
 }
 .home_hvac_system>div{
@@ -194,7 +194,7 @@ content:  url("~/assets/images/temprature.svg");
 
 /* 4. home_indoor_farming */
 .home_indoor_farming{
-  @apply bg-no-repeat bg-center pb-52 max-w-screen-1.5xl  m-auto;
+  @apply bg-no-repeat bg-center pt-40 pb-52 max-w-screen-1.5xl w-full   m-auto;
   background-image: url("~/assets/images/indoor-farming-bg.webp"), url("~/assets/images/wave-home-greenwebp.webp");
 }
 .home_indoor_farming>div{
@@ -244,7 +244,7 @@ content:  url("~/assets/images/temprature.svg");
   background: url("~/assets/images/arch.svg"),linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(22,76,214,1) 10%);
 
 
-  @apply  1.5xl:bg-cover text-sm text-xl font-semibold text-srwhite pt-12 lg:pt-40 bg-no-repeat bg-top ;
+  @apply  w-full  1.5xl:bg-cover text-sm text-xl font-semibold text-srwhite pt-12 lg:pt-40 bg-no-repeat bg-top ;
 }
 .home_mission:before{
 
