@@ -1,5 +1,6 @@
 <template>
   <section :class="card.box_layout +' '+ card.additional_css_class" >
+
     <div >
       <TheEcosystem v-if="card.has_animation && card.animations == 'ecosystem'"/>
       <TheGreenHouse v-if="card.has_animation && card.animations == 'greenhouse1'" />

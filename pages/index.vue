@@ -1,61 +1,29 @@
 <template>
-  <div>
+  <div class="flex flex-col">
     <transition name="readytotalk" appear v-if=showOverlayForm>
-      <div class="form-overlay fixed bg-srwhite bg-opacity-70  w-full z-50 h-full  -mt-24">
-        <div class="w-1/2  h-60 bg-srwhite    mx-auto border-2 border-srblue">
-          Hello.
-        </div>
-      </div>
+      <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
-
+    <TheReadyToTalkSlideIn  @popupToggle="showOverlayForm = !showOverlayForm"/>
   </div>
 </template>
 
 <script>
 
+
 export default {
+
   data () {
     return {
       showOverlayForm:false
     }
   },
-
   computed: {
     cards() { return  this.$store.getters.getHomePage.acf.universal_text_box }
   }
 }
 </script>
 <style>
-/*slide ins*/
-/* {*/
-/*  transition: all .3s  cubic-bezier(1.0, 0.5, 0.8, 1.0);*/
-/*}*/
-.readytotalk-enter-active, .readytotalk-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-
-/*.readytotalk-enter-to, .readytotalk-leave {*/
-/*  transform: translateY(-50%);*/
-/*  opacity: 0;*/
-/*}*/
-
-.readytotalk-enter, .readytotalk-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateY(-50%);
-  opacity: 0;
-}
-
-/*@keyframes slidefromtop {*/
-/*  from {*/
-/*    transform: translateY(-50%);*/
-/*    opacity: 0;*/
-/*  }*/
-/*  to {*/
-/*    transform: translateY(50%);*/
-/*    opacity: 1;*/
-/*  }*/
-/*}*/
 /*home page components*/
 /*
   1.header
@@ -175,54 +143,54 @@ content:  url("~/assets/images/temprature.svg");
 }
 
 
-/*
-3. home_ready_to_talk
-*/
-.home_ready_to_talk{
- @apply lg:px-28 xl:max-w-screen-1.5lg m-auto
-}
-/*.home_ready_to_talk:before{*/
-/*  @apply hidden mt-11 lg:ml-32*/
-/*  lg:block lg:absolute 1.5xl:left-1/4;*/
-/*  content:  url("~/assets/images/co2.svg");*/
+/*!**/
+/*3. home_ready_to_talk*/
+/**!*/
+/*.home_ready_to_talk{*/
+/* @apply lg:px-28 xl:max-w-screen-1.5lg m-auto*/
 /*}*/
-.home_ready_to_talk>div:before{
-  @apply self-end	pr-16 -mt-5  mr-0;
-  content: url("~/assets/images/line-below-hvac-system.webp");
-}
-.home_ready_to_talk>div{
-  @apply flex flex-col  px-5 text-srblue;
-}
-.home_ready_to_talk  h2{
-  @apply font-bold pb-11  text-6.5xl leading-11
-}
-.home_ready_to_talk  h2:before{
-  @apply absolute -mt-60 lg:hidden animate-bounce-slow1;
-  content: url("~/assets/images/kwh.svg");
-}
-.home_ready_to_talk:before{
-  @apply absolute  lg:hidden pl-25 -mt-6 animate-bounce-slow2;
-  content: url("~/assets/images/rtt-h2-after.svg");
-}
-.home_ready_to_talk  h3{
-  @apply text-base flex flex-col md:flex-row
-}
-.home_ready_to_talk span{
-  @apply pb-7 md:pr-15
-}
-.home_ready_to_talk input{
-  @apply p-3 border-2 border-srblue
-}
-.home_ready_to_talk label {
-  @apply pl-3.5
-}
-.home_ready_to_talk .sub-button {
-  @apply  flex justify-end text-srskyblue text-right font-bold  text-base md:ml-auto
-}
-.home_ready_to_talk .sub-button:before {
-  @apply  place-self-center pr-6 animate-bounce;
-  content: url("~/assets/images/lb-down.png");
-}
+/*!*.home_ready_to_talk:before{*!*/
+/*!*  @apply hidden mt-11 lg:ml-32*!*/
+/*!*  lg:block lg:absolute 1.5xl:left-1/4;*!*/
+/*!*  content:  url("~/assets/images/co2.svg");*!*/
+/*!*}*!*/
+/*.home_ready_to_talk>div:before{*/
+/*  @apply self-end	pr-16 -mt-5  mr-0;*/
+/*  content: url("~/assets/images/line-below-hvac-system.webp");*/
+/*}*/
+/*.home_ready_to_talk>div{*/
+/*  @apply flex flex-col  px-5 text-srblue;*/
+/*}*/
+/*.home_ready_to_talk  h2{*/
+/*  @apply font-bold pb-11  text-6.5xl leading-11*/
+/*}*/
+/*.home_ready_to_talk  h2:before{*/
+/*  @apply absolute -mt-60 lg:hidden animate-bounce-slow1;*/
+/*  content: url("~/assets/images/kwh.svg");*/
+/*}*/
+/*.home_ready_to_talk:before{*/
+/*  @apply absolute  lg:hidden pl-25 -mt-6 animate-bounce-slow2;*/
+/*  content: url("~/assets/images/rtt-h2-after.svg");*/
+/*}*/
+/*.home_ready_to_talk  h3{*/
+/*  @apply text-base flex flex-col md:flex-row*/
+/*}*/
+/*.home_ready_to_talk span{*/
+/*  @apply pb-7 md:pr-15*/
+/*}*/
+/*.home_ready_to_talk input{*/
+/*  @apply p-3 border-2 border-srblue*/
+/*}*/
+/*.home_ready_to_talk label {*/
+/*  @apply pl-3.5*/
+/*}*/
+/*.home_ready_to_talk .sub-button {*/
+/*  @apply  flex justify-end text-srskyblue text-right font-bold  text-base md:ml-auto*/
+/*}*/
+/*.home_ready_to_talk .sub-button:before {*/
+/*  @apply  place-self-center pr-6 animate-bounce;*/
+/*  content: url("~/assets/images/lb-down.png");*/
+/*}*/
 
 /* 4. home_indoor_farming */
 .home_indoor_farming{
@@ -354,7 +322,15 @@ content:  url("~/assets/images/temprature.svg");
   content: url("~/assets/images/white-right.svg");
 }
 
-
+/*transation*/
+.readytotalk-enter-active, .readytotalk-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.readytotalk-enter, .readytotalk-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-50%);
+  opacity: 0;
+}
 .form-overlay{
   padding-top: 15% ;
 }
