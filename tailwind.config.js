@@ -11,7 +11,8 @@ module.exports = {
       srgreen: '#94C800',
       srwhite: '#ffffff',
       srlightestblue:'#F1F2F8',
-      srblack: '#000000'
+      srblack: '#000000',
+      srback:'#F9F9F9'
     },
 
     extend: {
@@ -127,6 +128,7 @@ module.exports = {
         75: '300px',
         91.5: '366px',
         111:'444px',
+        138.5:'554px',
         'lgx2':'1200px',
         '1.5xl': '1440px',
 

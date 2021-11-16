@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col flex-wrap">
     <transition name="readytotalk" appear v-if=showOverlayForm>
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
@@ -24,14 +24,14 @@ export default {
 }
 </script>
 <style>
-/*home page components*/
+/*home page components home-header.webp ~/assets/images/blue-blur-1.webp*/
 /*
   1.header
 */
 .home_header{
   @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/blue-blur-2.webp"),
-  url("~/assets/images/blue-blur-1.webp"),
+  url("~/assets/images/home-header.webp"),
 url("~/assets/images/hero-bg.webp");
   background-position:right 90% , left 0%, center top;
 
@@ -40,7 +40,8 @@ url("~/assets/images/hero-bg.webp");
 /*  @apply flex flex-col lg:flex-row px-5 lg:px-10 xg:px-28 lg:flex-wrap xg:justify-between lg:justify-around;*/
 /*}*/
 .home_header>div {
-  @apply flex m-auto flex-col lg:grid  px-5 lg:px-10 xg:pr-28 grid-cols-1 lg:grid-cols-5 max-w-screen-1.5lg;
+  @apply flex m-auto flex-col lg:grid  px-5
+  lg:px-10 xg:pr-28 grid-cols-1 lg:grid-cols-5 max-w-screen-1.5lg;
 }
 .home_header  h2{
   @apply font-bold pb-12 text-6.5xl leading-11 w-full  md:text-22.5 md:leading-25  xl:max-w-139.25
