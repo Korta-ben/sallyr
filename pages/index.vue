@@ -332,9 +332,6 @@ content:  url("~/assets/images/temprature.svg");
   transform: translateY(-50%);
   opacity: 0;
 }
-.form-overlay{
-  padding-top: 15% ;
-}
 
 
 </style>

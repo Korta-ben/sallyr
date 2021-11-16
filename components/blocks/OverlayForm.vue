@@ -1,10 +1,10 @@
 <template>
-  <div class="form-overlay fixed bg-srwhite bg-opacity-90  w-full z-50 h-full  -mt-24">
-    <div class=" w-138.5 rounded-tl-2xl  bg-srwhite py-11 px-8.5  mx-auto  ">
+  <div class="form-overlay fixed bg-srwhite bg-opacity-90 px-5  w-full z-50 h-full  -mt-24">
+    <div class=" m-auto w-full sm:w-138.5 rounded-tl-2xl  bg-srwhite py-11 px-8.5 ">
 
         <img @click="clickHandler" src="~/assets/images/close.svg" class="ml-auto">
 
-      <h3 class="text-center font-bold text-xl leading-6 px-30.25">
+      <h3 class="text-center font-bold text-xl leading-6 sm:px-30.25">
         Glad to hear you want to know
         more about Sally R!
       </h3>
@@ -19,7 +19,9 @@
         <textarea name="message"  placeholder="Message..."
                   class="col-span-2 w-full border px-2.5 text-sm border-srblue"></textarea>
         <button
-          class="border-2 flex flex-row justify-center  text-srblue text-base font-bold py-6 px-7.5 border-srblue col-span-2 w-36 justify-self-end">
+          class="border-2 flex flex-row justify-center
+          text-srblue text-base font-bold py-6 px-7.5 border-srblue
+          col-span-2 w-36 justify-self-end mt-6">
           Send
         </button>
       </form>
@@ -43,6 +45,7 @@ export default {
 <style>
 .form-overlay{
   padding-top: 15% ;
+
 
 }
 .form-overlay>div{
