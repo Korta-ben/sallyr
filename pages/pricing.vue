@@ -2,13 +2,14 @@
   <div>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <ThePriceComponents />
+    <TheConfigurator/>
   </div>
 </template>
 
 <script>
-import ThePriceComponents from "~/components/blocks/ThePriceComponents";
+
 export default {
-  components: {ThePriceComponents},
+
   data () {
     return {
     }
