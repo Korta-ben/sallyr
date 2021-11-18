@@ -1,7 +1,7 @@
 <template>
   <section class="configurator pb-45.5">
       <div class="px-5 m-auto  lg:max-w-screen-1.5lg" >
-        <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40">How much
+        <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40 md:w-1/2">How much
           would you save?</h2>
         <form class="grid grid-cols-1 md:grid-cols-2 gap-4" v-if="!theResultBox">
           <div class="building-type">
@@ -129,32 +129,48 @@
 
 
         <!--result stuff-->
-        <div class="results" v-if="theResultBox">
-          <div>
-            Building Type: {{ building_type }}
-          </div>
-          <div>
-            Zone: {{ zone }}
-          </div>
-          <div>
-            Area Type: {{ area_type }}
-          </div>
-          <div>
-            Area: {{ area }}
-          </div>
-          <div>
-            Currency: {{ currency }}
-          </div>
-          <div>
-            <ul>
-              <li>KWh/year in savings : {{ theCalculations().TotalKWhPerYear }}</li>
-              <li>KWh/month in savings : {{ theCalculations().TotalKWhPerMonth }}</li>
-              <li>Price/Month : {{ theCalculations().TotalCostPerMonth}}</li>
-            </ul>
-          </div>
+        <transition name="result" appear v-if="theResultBox">
+          <div class="results-wrapper flex flex-wrap" >
+            <div class="results w-1/2">
+              <div class="grid grid-cols-2 capitalize">
+                <div class="pb-7.5">
+                  <span class="font-bold text-xl leading-7">Building Type:</span> <br> {{ building_type }}
+                </div>
+                <div class="pb-7.5">
+                  <span class="font-bold text-xl leading-7"> Zone: </span> <br> {{ zone }}
+                </div>
+                <div class="pb-7.5">
+                  <span class="font-bold text-xl leading-7">Area Type:</span> <br> {{ area_type }}
+                </div>
+                <div class="pb-7.5">
+                  <span class="font-bold text-xl leading-7">  Area:</span> <br> {{ area }}
+                </div>
+              </div>
+              <div class="font-bold text-lg leading-6">
+                <ul>
+                  <li>KWh/year in savings : {{ theCalculations().TotalKWhPerYear }}</li>
+                  <li>KWh/month in savings : {{ theCalculations().TotalKWhPerMonth }}</li>
+                  <li class="pt-3.5 text-srblue text-xl">Price/Month : {{ theCalculations().TotalCostPerMonth}}</li>
+                </ul>
+              </div>
+
+            </div>
 
 
-        </div>
+            <div class="contact w-1/2 flex flex-col">
+              <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
+              <input name="email" placeholder="Email*" class="border-b py-4 border-srblack"/>
+              <div class="pt-8">
+                <input type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about getting started
+              </label>
+              </div>
+
+            </div>
+
+
+          </div>
+        </transition>
+
       </div>
 
 

@@ -108,4 +108,16 @@ export default {
   @apply  self-center pl-4 pb-4;
 
 }
+
+
+/*transation*/
+.result-enter-active, .result-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.result-enter, .result-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
 </style>
