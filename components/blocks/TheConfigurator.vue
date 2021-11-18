@@ -87,28 +87,32 @@
                      class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
               hover:bg-srblue hover:text-srwhite hover:opacity-100
               checked:bg-srblue checked:text-srwhite checked:opacity-100" >SEK</label>
-              <input v-model="currency"  id="sek" type="radio"  class="hidden" name="zone" value="sek">
+              <input v-model="currency"  id="sek" type="radio"  class="hidden" name="currency" value="sek">
 
               <label for="usd"
                      class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
               hover:bg-srblue hover:text-srwhite hover:opacity-100
               checked:bg-srblue checked:text-srwhite checked:opacity-100" >USD</label>
-              <input v-model="currency"  id="usd" type="radio" class="hidden" name="zone" value="usd">
+              <input v-model="currency"  id="usd" type="radio" class="hidden" name="currency" value="usd">
 
               <label for="eur"
                      class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue  opacity-50
               hover:bg-srblue hover:text-srwhite hover:opacity-100
               checked:bg-srblue checked:text-srwhite checked:opacity-100" >EUR</label>
-              <input v-model="currency" id="eur"  type="radio" class="hidden" name="zone" value="eur">
+              <input v-model="currency" id="eur"  type="radio" class="hidden" name="currency" value="eur">
             </div>
           </div>
           <div class="flex flex-col">
             <p>Area*</p>
 <!--            <input v-model="area" type="text" name="area">-->
-            <div class="self-center pb-4 text-srblue text-base font-semibold ">{{ area }} m<sup>2</sup></div>
+            <div class="self-center pb-4 text-srblue text-base font-semibold ">{{ area_type === "feet" ?
+              (Math.round((area * 3.28084) * 100)) / 100 + ' ft' : area  + ' m'}}<sup>2</sup></div>
             <div class="flex gap-2">
 
-              <span class="text-srblue text-xs w-20">1000 m<sup>2</sup></span>
+              <span class="text-srblue text-xs w-20">
+                {{ area_type === "feet" ?
+              (Math.round((1000 * 3.28084) * 100)) / 100 + ' ft' : 1000  + ' m'}}<sup>2</sup>
+              </span>
               <AesthVueRangeInput v-model="area" :min="1000" :max="50000"
                                   :squaredThumb="true"
                                   v-model.number="area"
@@ -119,7 +123,10 @@
                                       color: '#164CD6',
                                     }"
               />
-              <span class="text-srblue text-xs w-20">50000 m<sup>2</sup></span>
+              <span class="text-srblue text-xs w-20">
+                {{ area_type === "feet" ?
+                (Math.round((50000 * 3.28084) * 100)) / 100 + ' ft' : 50000  + ' m'}}<sup>2</sup>
+              </span>
             </div>
 
           </div>
