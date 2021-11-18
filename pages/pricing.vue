@@ -85,14 +85,27 @@ export default {
   @apply flex flex-col gap-y-5
 }
 .price-component>div .card{
-@apply bg-srwhite px-9.5 py-12 rounded-tl-xl;
+@apply bg-srwhite px-9.5 py-12 rounded-tl-xl grid grid-cols-2;
   background: #FFFFFF;
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
 .price-component>div .card h3{
-  @apply pb-5
+  @apply pb-5 col-span-2
 }
 .price-component>div .card .cost{
-  @apply  pt-10 text-xl font-bold  text-srblue
+  @apply flex flex-wrap justify-end
+}
+.price-component>div .card .cost p{
+  @apply  pt-4 text-xl font-bold  text-srblue justify-self-end text-right
+}
+.price-component>div .card .cost:after{
+  content: url("~/assets/images/right-blue.svg");
+  @apply  self-end pl-4 pb-4;
+
+}
+.price-component>div .card:last-child .cost:after{
+  content: url("~/assets/images/right-blue.svg");
+  @apply  self-center pl-4 pb-4;
+
 }
 </style>

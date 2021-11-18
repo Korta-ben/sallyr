@@ -34,8 +34,11 @@
            </li>
          </ul>
          <div  class="cost">
-           from<br>
-           €169/month
+           <p>
+             from<br>
+             €169/month
+           </p>
+
          </div>
        </div>
        <div class="card" >
@@ -56,8 +59,10 @@
            </li>
          </ul>
          <div  class="cost">
+           <p>
            from<br>
            €8900 + €99/month
+           </p>
          </div>
        </div>
        <div class="card" >
@@ -78,7 +83,8 @@
            </li>
          </ul>
          <div class="cost">
-           € 0.06 per m²
+           <p>€ 0.06 per m²</p>
+
          </div>
        </div>
 
