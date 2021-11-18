@@ -1,9 +1,9 @@
 <template>
   <section class="configurator pb-45.5">
-      <div class="px-5 m-auto  lg:max-w-screen-1.5lg">
+      <div class="px-5 m-auto  lg:max-w-screen-1.5lg" >
         <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40">How much
           would you save?</h2>
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-4" v-if="!theResultBox">
           <div class="building-type">
             <p>Building type*</p>
             <div class="flex flex-wrap gap-2">
@@ -122,11 +122,42 @@
           </div>
           <div class="self-center">
             <a class="submit pl-7.5 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
-                    @click="theCalculations"
+                    @click="theCalculations(); theResultBox = true "
             >Show me the result</a>
           </div>
         </form>
+
+
+        <!--result stuff-->
+        <div class="results" v-if="theResultBox">
+          <div>
+            Building Type: {{ building_type }}
+          </div>
+          <div>
+            Zone: {{ zone }}
+          </div>
+          <div>
+            Area Type: {{ area_type }}
+          </div>
+          <div>
+            Area: {{ area }}
+          </div>
+          <div>
+            Currency: {{ currency }}
+          </div>
+          <div>
+            <ul>
+              <li>KWh/year in savings : {{ theCalculations().TotalKWhPerYear }}</li>
+              <li>KWh/month in savings : {{ theCalculations().TotalKWhPerMonth }}</li>
+              <li>Price/Month : {{ theCalculations().TotalCostPerMonth}}</li>
+            </ul>
+          </div>
+
+
+        </div>
       </div>
+
+
 
   </section>
 </template>
@@ -137,13 +168,15 @@ export default {
 components:{AesthVueRangeInput},
   data(){
     return {
+      // the inputs
       building_type:'',
       zone:'',
       area_type:'',
       currency:'',
       area:1000,
-      colour:"#ffffff",
 
+
+      // the yearly rates
       theBuildingZone:[
         {
           type:"office",
@@ -166,18 +199,18 @@ components:{AesthVueRangeInput},
         {
           type:"retail",
           zone:{
-            polar:10,
-            temperate:15,
-            tropical:20
+            polar:30,
+            temperate:35,
+            tropical:40
           }
 
         },
         {
           type:"educational",
           zone:{
-            polar:30,
-            temperate:35,
-            tropical:40
+            polar:10,
+            temperate:15,
+            tropical:20
           }
 
         },
@@ -190,21 +223,52 @@ components:{AesthVueRangeInput},
           }
 
         }
-      ]
+      ],
+
+      theResultBox: false
 
 
     }
   },
+  computed:{
+
+  },
   methods:{
-        theRates(){
+        theRatePerYear(){
           // console.log(this.theBuildingZone.filter( o => o.type === this.building_type)[0].zone[this.zone])
           return this.theBuildingZone.filter( o => o.type === this.building_type)[0].zone[this.zone]
         },
         theCalculations(){
-              let theZone = this.theRates()
-              let result = this.area * theZone
-              console.log( result );
-        }
+          //the calculation variables
+            let KWhPerMonthPerMeter = this.theRatePerYear()/12
+            let KWhPerYearPerFeet = this.theRatePerYear()*0.0929
+            let  KWhPerMonthPerFeet = KWhPerYearPerFeet/12
+            //default in Sek
+            let PPMonthPerMeter = (KWhPerMonthPerMeter*0.8)*0.45
+            let PPMUSDPerMeter = PPMonthPerMeter/8.5
+            let PPMEuroPerMeter = PPMonthPerMeter/10.15
+            let TotalKWhPerYear = this.area*this.theRatePerYear()
+            let TotalKWhPerMonth = this.area*KWhPerMonthPerMeter
+            let TotalCostPerMonth = this.area*PPMonthPerMeter
+
+          let result = {
+            KWhPerMonthPerMeter: KWhPerMonthPerMeter,
+            KWhPerYearPerFeet:KWhPerYearPerFeet,
+            KWhPerMonthPerFeet:KWhPerMonthPerFeet,
+            PPMonthPerMeter:PPMonthPerMeter,
+            PPMUSDPerMeter:PPMUSDPerMeter,
+            PPMEuroPerMeter:PPMEuroPerMeter,
+            TotalKWhPerYear:TotalKWhPerYear,
+            TotalKWhPerMonth:TotalKWhPerMonth,
+            TotalCostPerMonth:TotalCostPerMonth
+            }
+
+
+          console.log(result)
+          return result;
+
+        },
+
   }
 }
 </script>
