@@ -3,106 +3,96 @@
       <div class="px-5 m-auto  lg:max-w-screen-1.5lg">
         <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40">How much
           would you save?</h2>
-        <form class="grid grid-cols-2 gap-4">
-          <div >
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="building-type">
             <p>Building type*</p>
             <div class="flex flex-wrap gap-2">
-              <label for="office"
-               class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-            hover:bg-srblue hover:text-srwhite hover:opacity-100
-            checked:bg-srblue checked:text-srwhite checked:opacity-100" >Office</label>
               <input  v-model="building_type"  id="office" type="radio"  class="hidden" name="building_type" value="office">
+              <label for="office"
+               class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+            " >Office</label>
 
-              <label for="logistics"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-            hover:bg-srblue hover:text-srwhite hover:opacity-100
-            checked:bg-srblue checked:text-srwhite checked:opacity-100" >Logistics</label>
               <input  v-model="building_type"  id="logistics" type="radio" class="hidden" name="building_type" value="logistics">
+              <label for="logistics"
+                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+            " >Logistics</label>
 
-              <label for="educational"
-                     class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue  opacity-50
-            hover:bg-srblue hover:text-srwhite hover:opacity-100
-            checked:bg-srblue checked:text-srwhite checked:opacity-100" >Educationl</label>
               <input  v-model="building_type" id="educational"  type="radio" class="hidden" name="building_type"
                       value="educational">
+              <label for="educational"
+                     class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue
+            " >Educationl</label>
 
-              <label for="retail"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-            hover:bg-srblue hover:text-srwhite hover:opacity-100
-            checked:bg-srblue checked:text-srwhite checked:opacity-100" >Retail</label>
+
               <input  v-model="building_type"  id="retail" type="radio" class="hidden" name="building_type" value="retail">
+              <label for="retail"
+                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+            " >Retail</label>
 
-              <label for="other"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-            hover:bg-srblue hover:text-srwhite hover:opacity-100
-            checked:bg-srblue checked:text-srwhite checked:opacity-100" >Other</label>
+
               <input v-model="building_type"   id="other" type="radio" class="hidden" name="building-type" value="other">
+              <label for="other"
+                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+            " >Other</label>
             </div>
 
           </div>
-          <div>
+          <div class="zones">
             <p>Zone*</p>
               <div class="flex flex-wrap gap-2">
-                <label for="polar"
-                       class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-              hover:bg-srblue hover:text-srwhite hover:opacity-100
-              checked:bg-srblue checked:text-srwhite checked:opacity-100" >Polar</label>
                 <input v-model="zone"  id="polar" type="radio"  class="hidden" name="zone" value="polar">
+                <label for="polar"
+                       class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+              " >Polar</label>
 
-                <label for="temperate"
-                       class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-              hover:bg-srblue hover:text-srwhite hover:opacity-100
-              checked:bg-srblue checked:text-srwhite checked:opacity-100" >Temperate</label>
+
                 <input v-model="zone"  id="temperate" type="radio" class="hidden" name="zone" value="temperate">
+                <label for="temperate"
+                       class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >Temperate</label>
 
-                <label for="tropical"
-                       class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue  opacity-50
-              hover:bg-srblue hover:text-srwhite hover:opacity-100
-              checked:bg-srblue checked:text-srwhite checked:opacity-100" >Tropical</label>
+
                 <input v-model="zone" id="tropical"  type="radio" class="hidden" name="zone" value="tropical">
+                <label for="tropical"
+                       class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue " >Tropical</label>
+
               </div>
           </div>
-          <div>
+          <div class="area-types">
             <p>Area type*</p>
             <div class="flex flex-wrap gap-2">
-              <label for="meters"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-            hover:bg-srblue hover:text-srwhite hover:opacity-100
-            checked:bg-srblue checked:text-srwhite checked:opacity-100" >Meters</label>
               <input v-model="area_type"  id="meters" type="radio"  class="hidden" name="area_type" value="meters">
+              <label for="meters"
+                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >Meters</label>
 
-              <label for="feet"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-            hover:bg-srblue hover:text-srwhite hover:opacity-100
-            checked:bg-srblue checked:text-srwhite checked:opacity-100" >Feet</label>
+
               <input v-model="area_type"  id="feet" type="radio" class="hidden" name="area_type" value="feet">
+              <label for="feet"
+                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >Feet</label>
+
 
 
             </div>
           </div>
-          <div>
+          <div class="currency">
             <p>Currency*</p>
             <div class="flex flex-wrap gap-2">
-              <label for="sek"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-              hover:bg-srblue hover:text-srwhite hover:opacity-100
-              checked:bg-srblue checked:text-srwhite checked:opacity-100" >SEK</label>
               <input v-model="currency"  id="sek" type="radio"  class="hidden" name="currency" value="sek">
+              <label for="sek"
+                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >SEK</label>
 
-              <label for="usd"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  opacity-50
-              hover:bg-srblue hover:text-srwhite hover:opacity-100
-              checked:bg-srblue checked:text-srwhite checked:opacity-100" >USD</label>
+
               <input v-model="currency"  id="usd" type="radio" class="hidden" name="currency" value="usd">
+              <label for="usd"
+                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >USD</label>
 
-              <label for="eur"
-                     class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue  opacity-50
-              hover:bg-srblue hover:text-srwhite hover:opacity-100
-              checked:bg-srblue checked:text-srwhite checked:opacity-100" >EUR</label>
+
               <input v-model="currency" id="eur"  type="radio" class="hidden" name="currency" value="eur">
+              <label for="eur"
+                     class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue  " >EUR</label>
+
             </div>
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col pb-8">
             <p>Area*</p>
 <!--            <input v-model="area" type="text" name="area">-->
             <div class="self-center pb-4 text-srblue text-base font-semibold ">{{ area_type === "feet" ?
@@ -137,6 +127,7 @@
           </div>
         </form>
       </div>
+
   </section>
 </template>
 
@@ -226,7 +217,9 @@ components:{AesthVueRangeInput},
   @apply pl-4 pr-10;
   content: url("~/assets/images/right-blue.svg");
 }
-/*.configurator input[type=radio]:checked ~ label{*/
-/*  @apply bg-srblue text-srwhite opacity-100;*/
-/*}*/
+
+.configurator input[type=radio]:checked + label{
+  @apply bg-srblue text-srwhite opacity-100;
+}
+
 </style>
