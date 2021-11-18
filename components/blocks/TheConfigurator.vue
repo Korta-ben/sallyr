@@ -143,7 +143,7 @@ components:{AesthVueRangeInput},
       zone:'',
       area_type:'',
       currency:'',
-      area:'1000',
+      area:1000,
       colour:"#ffffff",
 
       theBuildingZone:[
