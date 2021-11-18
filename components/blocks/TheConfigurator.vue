@@ -1,5 +1,5 @@
 <template>
-  <section class="configurator">
+  <section class="configurator pb-45.5">
       <div class="px-5 m-auto  lg:max-w-screen-1.5lg">
         <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40">How much
           would you save?</h2>
@@ -102,15 +102,31 @@
               <input v-model="currency" id="eur"  type="radio" class="hidden" name="zone" value="eur">
             </div>
           </div>
-          <div>
+          <div class="flex flex-col">
             <p>Area*</p>
-            <input v-model="area" type="text" name="area">
+<!--            <input v-model="area" type="text" name="area">-->
+            <div class="self-center pb-4 text-srblue text-base font-semibold ">{{ area }} m<sup>2</sup></div>
+            <div class="flex gap-2">
+
+              <span class="text-srblue text-xs w-20">1000 m<sup>2</sup></span>
+              <AesthVueRangeInput v-model="area" :min="1000" :max="50000"
+                                  :squaredThumb="true"
+                                  v-model.number="area"
+                                  progressColor="#ffffff0"
+                                  thumbBorderColor="#FF981F"
+                                  :buffered="{
+                                      width: '100%',
+                                      color: '#164CD6',
+                                    }"
+              />
+              <span class="text-srblue text-xs w-20">50000 m<sup>2</sup></span>
+            </div>
+
           </div>
           <div class="self-center">
             <a class="submit pl-7.5 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
                     @click="theCalculations"
-            >
-              Show me the result</a>
+            >Show me the result</a>
           </div>
         </form>
       </div>
@@ -118,14 +134,17 @@
 </template>
 
 <script>
+import AesthVueRangeInput from "aesth-vue-range-input";
 export default {
+components:{AesthVueRangeInput},
   data(){
     return {
       building_type:'',
       zone:'',
       area_type:'',
       currency:'',
-      area:'',
+      area:'1000',
+      colour:"#ffffff",
 
       theBuildingZone:[
         {
