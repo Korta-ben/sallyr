@@ -107,6 +107,7 @@ export const getters = {
     return state.theSlider
   },
   getTheCalculationResults(state){
+
     return state.theCalculationResults
   }
 }

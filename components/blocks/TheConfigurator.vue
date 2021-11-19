@@ -166,9 +166,7 @@
                   </li>
                 </ul>
               </div>
-              <div>
-                {{ showResults() }}
-              </div>
+
 
 
             </div>
