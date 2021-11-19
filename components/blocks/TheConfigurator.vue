@@ -3,7 +3,7 @@
       <div class="px-5 m-auto  lg:max-w-screen-1.5lg" >
         <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40 md:w-1/2 md:max-w-102 md:pl-4">How much
           would you save?</h2>
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-4" v-if="!theResultBox">
+        <form class="grid  grid-cols-1 md:grid-cols-2 gap-4" v-if="!theResultBox">
           <div class="building-type">
             <p>Building type*</p>
             <div class="flex flex-wrap gap-2">
@@ -40,7 +40,9 @@
           <div class="zones">
             <p>Zone*</p>
               <div class="flex flex-wrap gap-2">
-                <input v-model="zone"  id="polar" type="radio"  class="hidden" name="zone" value="polar">
+                <input v-model="zone"
+                                id="polar" type="radio"  class="hidden" name="zone" value="polar" />
+
                 <label for="polar"
                        class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
               " >Polar</label>
@@ -150,20 +152,24 @@
               </div>
               <div class="font-bold text-lg leading-6">
                 <ul>
-                  <li>KWh/year in savings : {{ theCalculations().TotalKWhPerYear }}</li>
-                  <li>KWh/month in savings : {{ theCalculations().TotalKWhPerMonth }}</li>
+                  <li>KWh/year in savings : {{ showResults().TotalKWhPerYear }}</li>
+                  <li>KWh/month in savings : {{ showResults().TotalKWhPerMonth }}</li>
                   <li class="pt-3.5 text-srblue text-xl">Price/Month :
                     <span v-if="currency == 'sek'">
-                      {{ Math.round(theCalculations().TotalCostPerMonth / 1000 ) * 1000}} SEK</span>
+                      {{ Math.round(showResults().TotalCostPerMonth / 1000 ) * 1000}} SEK</span>
                     <span v-if="currency == 'usd'"> USD
-                      {{ Math.round((theCalculations().TotalCostPerMonth / 8.5) / 100 ) * 100}}
+                      {{ Math.round((showResults().TotalCostPerMonth / 8.5) / 100 ) * 100}}
                     </span>
                     <span v-if="currency == 'eur'">
-                      {{ Math.round((theCalculations().TotalCostPerMonth / 10.15) / 100 ) * 100}} EURO
+                      {{ Math.round((showResults().TotalCostPerMonth / 10.15) / 100 ) * 100}} EURO
                     </span>
                   </li>
                 </ul>
               </div>
+              <div>
+                {{ showResults() }}
+              </div>
+
 
             </div>
 
@@ -191,15 +197,16 @@
 
 <script>
 import AesthVueRangeInput from "aesth-vue-range-input";
+import VueFormulate from '@braid/vue-formulate'
 export default {
-components:{AesthVueRangeInput},
+components:{AesthVueRangeInput, VueFormulate},
   data(){
     return {
       // the inputs
-      building_type:'',
-      zone:'',
-      area_type:'',
-      currency:'',
+      building_type:'office',
+      zone:'polar',
+      area_type:'meters',
+      currency:'sek',
       area:1000,
 
 
@@ -269,36 +276,42 @@ components:{AesthVueRangeInput},
           return this.theBuildingZone.filter( o => o.type === this.building_type)[0].zone[this.zone]
         },
         theCalculations(){
-          //the calculation variables
-            let KWhPerMonthPerMeter = this.theRatePerYear()/12
-            let KWhPerYearPerFeet = this.theRatePerYear()*0.0929
-            let  KWhPerMonthPerFeet = KWhPerYearPerFeet/12
-            //default in Sek
-            let PPMonthPerMeter = (KWhPerMonthPerMeter*0.8)*0.45
-            let PPMUSDPerMeter = PPMonthPerMeter/8.5
-            let PPMEuroPerMeter = PPMonthPerMeter/10.15
-            let TotalKWhPerYear = this.area*this.theRatePerYear()
-            let TotalKWhPerMonth = this.area*KWhPerMonthPerMeter
-            let TotalCostPerMonth = this.area*PPMonthPerMeter
+            //the calculation variables
+              let KWhPerMonthPerMeter = this.theRatePerYear()/12
+              let KWhPerYearPerFeet = this.theRatePerYear()*0.0929
+              let  KWhPerMonthPerFeet = KWhPerYearPerFeet/12
+              //default in Sek
+              let PPMonthPerMeter = (KWhPerMonthPerMeter*0.8)*0.45
+              let PPMUSDPerMeter = PPMonthPerMeter/8.5
+              let PPMEuroPerMeter = PPMonthPerMeter/10.15
+              let TotalKWhPerYear = this.area*this.theRatePerYear()
+              let TotalKWhPerMonth = this.area*KWhPerMonthPerMeter
+              let TotalCostPerMonth = this.area*PPMonthPerMeter
 
-          let result = {
-            KWhPerMonthPerMeter: KWhPerMonthPerMeter,
-            KWhPerYearPerFeet:KWhPerYearPerFeet,
-            KWhPerMonthPerFeet:KWhPerMonthPerFeet,
-            PPMonthPerMeter:PPMonthPerMeter,
-            PPMUSDPerMeter:PPMUSDPerMeter,
-            PPMEuroPerMeter:PPMEuroPerMeter,
-            TotalKWhPerYear:TotalKWhPerYear,
-            TotalKWhPerMonth:TotalKWhPerMonth,
-            TotalCostPerMonth:TotalCostPerMonth
-            }
+              let result = {
+                KWhPerMonthPerMeter: KWhPerMonthPerMeter,
+                KWhPerYearPerFeet:KWhPerYearPerFeet,
+                KWhPerMonthPerFeet:KWhPerMonthPerFeet,
+                PPMonthPerMeter:PPMonthPerMeter,
+                PPMUSDPerMeter:PPMUSDPerMeter,
+                PPMEuroPerMeter:PPMEuroPerMeter,
+                TotalKWhPerYear:TotalKWhPerYear,
+                TotalKWhPerMonth:TotalKWhPerMonth,
+                TotalCostPerMonth:TotalCostPerMonth
+              }
 
+                this.$store.dispatch('addTheCalculationResults', result)
 
-          console.log(result)
-          return result;
 
         },
+      showResults(){
+          console.log(this.$store.getters.getTheCalculationResults);
+          return this.$store.getters.getTheCalculationResults;
+        },
 
+        sendItToWP(result) {
+
+        }
   }
 }
 </script>

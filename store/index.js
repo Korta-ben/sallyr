@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const state = () => {
+  theCalculationResults:{}
   topMenu: []
   homePage:[]
   theProduct:[]
@@ -8,6 +9,7 @@ export const state = () => {
   theTeam:[]
   thePricing:[]
   theSlider:[]
+
 }
 
 export const mutations = {
@@ -32,7 +34,12 @@ export const mutations = {
   },
   setTheSlider(state, theSlider){
     state.theSlider = theSlider
+  },
+  setTheCalculationResults(state, theCalculationResults){
+    // console.log(theCalculationResults)
+    state.theCalculationResults = theCalculationResults
   }
+
 
 
 }
@@ -70,6 +77,10 @@ export const actions = {
     }catch (e) {
       console.error(e);
     }
+  },
+
+  addTheCalculationResults({commit}, result){
+      commit('setTheCalculationResults', result);
   }
 }
 
@@ -94,5 +105,8 @@ export const getters = {
   },
   getTheSlider(state){
     return state.theSlider
+  },
+  getTheCalculationResults(state){
+    return state.theCalculationResults
   }
 }
