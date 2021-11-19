@@ -1,7 +1,7 @@
 <template>
   <section class="configurator pb-45.5">
       <div class="px-5 m-auto  lg:max-w-screen-1.5lg" >
-        <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40 md:w-1/2">How much
+        <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40 md:w-1/2 md:max-w-102 md:pl-4">How much
           would you save?</h2>
         <form class="grid grid-cols-1 md:grid-cols-2 gap-4" v-if="!theResultBox">
           <div class="building-type">
@@ -96,14 +96,14 @@
             <p>Area*</p>
 <!--            <input v-model="area" type="text" name="area">-->
             <div class="self-center pb-4 text-srblue text-base font-semibold ">{{ area_type === "feet" ?
-              (Math.round((area * 3.28084) * 100)) / 100 + ' ft' : area  + ' m'}}<sup>2</sup></div>
+              (Math.round((area * 10.7639) / 1000)) * 1000 + ' ft' : roundArea  + ' m'}}<sup>2</sup></div>
             <div class="flex gap-2">
 
-              <span class="text-srblue text-xs w-20">
+              <span class="text-srblue text-xs w-24">
                 {{ area_type === "feet" ?
-              (Math.round((1000 * 3.28084) * 100)) / 100 + ' ft' : 1000  + ' m'}}<sup>2</sup>
+              (Math.round((1000 * 10.7639) / 1000)) * 1000 + ' ft' : 1000  + ' m'}}<sup>2</sup>
               </span>
-              <AesthVueRangeInput v-model="area" :min="1000" :max="50000"
+              <AesthVueRangeInput v-model="area" :min="1000" :max="100000"
                                   :squaredThumb="true"
                                   v-model.number="area"
                                   progressColor="#ffffff0"
@@ -113,9 +113,9 @@
                                       color: '#164CD6',
                                     }"
               />
-              <span class="text-srblue text-xs w-20">
+              <span class="text-srblue text-xs w-24">
                 {{ area_type === "feet" ?
-                (Math.round((50000 * 3.28084) * 100)) / 100 + ' ft' : 50000  + ' m'}}<sup>2</sup>
+                (Math.round((100000 * 10.7639) / 1000)) * 1000 + ' ft' : 100000  + ' m'}}<sup>2</sup>
               </span>
             </div>
 
@@ -143,14 +143,25 @@
                   <span class="font-bold text-xl leading-7">Area Type:</span> <br> {{ area_type }}
                 </div>
                 <div class="pb-7.5">
-                  <span class="font-bold text-xl leading-7">  Area:</span> <br> {{ area }}
+                  <span class="font-bold text-xl leading-7">  Area:</span> <br>
+                  {{ area_type === "feet" ?
+                  (Math.round((area *  10.7639) / 1000)) * 1000 + ' ft' : roundArea  + ' m'}}<sup>2</sup>
                 </div>
               </div>
               <div class="font-bold text-lg leading-6">
                 <ul>
                   <li>KWh/year in savings : {{ theCalculations().TotalKWhPerYear }}</li>
                   <li>KWh/month in savings : {{ theCalculations().TotalKWhPerMonth }}</li>
-                  <li class="pt-3.5 text-srblue text-xl">Price/Month : {{ theCalculations().TotalCostPerMonth}}</li>
+                  <li class="pt-3.5 text-srblue text-xl">Price/Month :
+                    <span v-if="currency == 'sek'">
+                      {{ Math.round(theCalculations().TotalCostPerMonth / 1000 ) * 1000}} SEK</span>
+                    <span v-if="currency == 'usd'"> USD
+                      {{ Math.round((theCalculations().TotalCostPerMonth / 8.5) / 100 ) * 100}}
+                    </span>
+                    <span v-if="currency == 'eur'">
+                      {{ Math.round((theCalculations().TotalCostPerMonth / 10.15) / 100 ) * 100}} EURO
+                    </span>
+                  </li>
                 </ul>
               </div>
 
@@ -159,7 +170,7 @@
 
             <div class="contact w-1/2 flex flex-col">
               <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
-              <input name="email" placeholder="Email*" class="border-b py-4 border-srblack"/>
+              <input name="email" placeholder="Email*" class="border-b py-4 border-srblack max-w-xs"/>
               <div class="pt-8">
                 <input type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about getting started
               </label>
@@ -247,7 +258,10 @@ components:{AesthVueRangeInput},
     }
   },
   computed:{
-
+        roundArea(){
+          this.area = Math.round(this.area/1000)*1000
+          return this.area
+        }
   },
   methods:{
         theRatePerYear(){
