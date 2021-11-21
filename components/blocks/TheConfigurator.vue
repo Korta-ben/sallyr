@@ -310,20 +310,21 @@ components:{AesthVueRangeInput, VueFormulate},
         },
 
         sendItToWP() {
-          const calData = {
-            "fields": {
-            "building_type": this.building_type,
-            "zone": this.zone,
-            "area_type": this.area_type,
-            "area": this.area,
-            "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
-            "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
-            "calculated_cost": this.showResults().TotalCostPerMonth,
-            "currency": this.currency
-            }
-          }
-          console.log(calData)
+
+          // console.log(calData)
           try{
+            const calData = {
+              "fields": {
+                "building_type": this.building_type,
+                "zone": this.zone,
+                "area_type": this.area_type,
+                "area": this.area,
+                "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
+                "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
+                "calculated_cost": this.showResults().TotalCostPerMonth,
+                "currency": this.currency
+              }
+            }
             axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
               withCredentials: true,
               headers: {
@@ -335,7 +336,7 @@ components:{AesthVueRangeInput, VueFormulate},
                 username: "api-admin",
                 password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
               }}, calData).then(function(response) {
-              console.log(response);
+              console.log(response.data);
             }).catch(function(error) {
               console.log('Error on Authentication');
             });
