@@ -341,11 +341,19 @@ components:{AesthVueRangeInput, VueFormulate},
               method: 'post',
               url: 'https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
               data: {
-                title: "sometitle",
+                title: "sometitle2",
                 content: "blah",
-                fields:{
-                  calData
-                }
+                fields: JSON.stringify({
+                  "area": "62000000",
+                  "area_type": "meters",
+                  "building_type": "retail",
+                  "calculated_cost": "55800",
+                  "currency": "sek",
+                  "email": null,
+                  "kwhmonth_in_savings": "155000",
+                  "kwhyear_in_savings": "1860000",
+                  "zone": "polar"
+                })
               },
               headers: {
                 "Authorization" : `Bearer ${this.$store.state.token}`
