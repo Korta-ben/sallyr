@@ -314,7 +314,6 @@ components:{AesthVueRangeInput, VueFormulate},
 
           try{
             const calData = {
-              "fields": {
                 "area": this.area,
                 "area_type": this.area_type,
                 "building_type": this.building_type,
@@ -324,16 +323,21 @@ components:{AesthVueRangeInput, VueFormulate},
                 "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
                 "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
                 "zone": this.zone,
-              }
             }
             console.log(calData)
             axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
+              data: {
+                title:"from website",
+                fields:{
+                  calData
+                }
+              },
               withCredentials: true,
               headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
               },
-              data:calData
+
 
             },{
               auth: {
