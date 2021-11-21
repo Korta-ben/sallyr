@@ -335,7 +335,7 @@ components:{AesthVueRangeInput, VueFormulate},
                 username: "api-admin",
                 password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
               }}, calData).then(function(response) {
-              console.log('Authenticated');
+              console.log(response);
             }).catch(function(error) {
               console.log('Error on Authentication');
             });
