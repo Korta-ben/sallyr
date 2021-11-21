@@ -314,16 +314,29 @@ components:{AesthVueRangeInput, VueFormulate},
 
           try{
             const calData = {
-                "area": this.area,
-                "area_type": this.area_type,
-                "building_type": this.building_type,
-                "calculated_cost": this.showResults().TotalCostPerMonth,
-                "currency": this.currency,
+              "fields": {
+                "area": "62000",
+                "area_type": "meters",
+                "building_type": "retail",
+                "calculated_cost": "55800",
+                "currency": "sek",
                 "email": null,
-                "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
-                "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
-                "zone": this.zone,
+                "kwhmonth_in_savings": "155000",
+                "kwhyear_in_savings": "1860000",
+                "zone": "polar"
+              }
             }
+            // {
+            //     "area": this.area,
+            //     "area_type": this.area_type,
+            //     "building_type": this.building_type,
+            //     "calculated_cost": this.showResults().TotalCostPerMonth,
+            //     "currency": this.currency,
+            //     "email": null,
+            //     "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
+            //     "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
+            //     "zone": this.zone,
+            // }
             console.log(calData)
             axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
               data: {
