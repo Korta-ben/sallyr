@@ -340,9 +340,9 @@ components:{AesthVueRangeInput, VueFormulate},
             //     password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
             //   }}).then(function(response) {
             //   console.log(response.data);
-            }).catch(function(error) {
-              console.log('Error on Authentication');
-            });
+            // }).catch(function(error) {
+            //   console.log('Error on Authentication');
+            // });
 
           }catch(e){console.log(e)}
 
