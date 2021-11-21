@@ -327,22 +327,23 @@ components:{AesthVueRangeInput, VueFormulate},
               }
             }
             console.log(calData)
-            // axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
-            //   withCredentials: true,
-            //   headers: {
-            //     "Accept": "application/json",
-            //     "Content-Type": "application/json"
-            //   },
-            //   calData
-            // },{
-            //   auth: {
-            //     username: "api-admin",
-            //     password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-            //   }}).then(function(response) {
-            //   console.log(response.data);
-            // }).catch(function(error) {
-            //   console.log('Error on Authentication');
-            // });
+            axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
+              withCredentials: true,
+              headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+              },
+              data:calData
+
+            },{
+              auth: {
+                username: "api-admin",
+                password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+              }}).then(function(response) {
+              console.log(response.data);
+            }).catch(function(error) {
+              console.log('Error on Authentication');
+            });
 
           }catch(e){console.log(e)}
 
