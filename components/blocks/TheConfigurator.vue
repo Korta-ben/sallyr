@@ -336,36 +336,50 @@ components:{AesthVueRangeInput, VueFormulate},
             //     "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
             //     "zone": this.zone,
             // }
-            console.log(calData)
-            axios({
-              method: 'post',
-              url: 'https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
-              data: {
-                title: "sometitle2",
-                content: "blah",
-                fields: JSON.stringify({
-                  "area": "62000000",
-                  "area_type": "meters",
-                  "building_type": "retail",
-                  "calculated_cost": "55800",
-                  "currency": "sek",
-                  "email": null,
-                  "kwhmonth_in_savings": "155000",
-                  "kwhyear_in_savings": "1860000",
-                  "zone": "polar"
-                })
-              },
-              headers: {
-                "Authorization" : `Bearer ${this.$store.state.token}`
-              },
+            console.log(JSON.stringify(calData))
+            axios.post('https://apisr.kortaben.work/wp-json/wp/v2/calculations/', JSON.stringify(calData),{
               auth: {
-                    username: "api-admin",
-                    password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-                  }}).then(function(response) {
-                  console.log(response.data);
-                }).catch(function(error) {
-                  console.log('Error on Authentication');
-                });
+                        username: "api-admin",
+                        password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+                      },
+                withCredentials: true,
+                headers: {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json"
+                }
+            })
+              .then(function(response){
+              console.log(response.data);
+            })
+            // axios({
+            //   method: 'post',
+            //   url: 'https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
+            //   data: {
+            //     title: "sometitle2",
+            //     content: "blah",
+            //     fields: JSON.stringify({
+            //       "area": "62000000",
+            //       "area_type": "meters",
+            //       "building_type": "retail",
+            //       "calculated_cost": "55800",
+            //       "currency": "sek",
+            //       "email": null,
+            //       "kwhmonth_in_savings": "155000",
+            //       "kwhyear_in_savings": "1860000",
+            //       "zone": "polar"
+            //     })
+            //   },
+            //   headers: {
+            //     "Authorization" : `Bearer ${this.$store.state.token}`
+            //   },
+            //   auth: {
+            //         username: "api-admin",
+            //         password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+            //       }}).then(function(response) {
+            //       console.log(response.data);
+            //     }).catch(function(error) {
+            //       console.log('Error on Authentication');
+            //     });
             // axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
             //   data: {
             //     title:"from website",
