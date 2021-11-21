@@ -339,7 +339,7 @@ components:{AesthVueRangeInput, VueFormulate},
             console.log(calData)
             axios({
               method: 'post',
-              url: 'https://webisonstage.cloud/vuedeal/wp-json/wp/v2/prodotti',
+              url: 'https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
               data: {
                 title: "sometitle",
                 content: "blah",
