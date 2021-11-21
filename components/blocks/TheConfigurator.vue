@@ -315,30 +315,31 @@ components:{AesthVueRangeInput, VueFormulate},
           try{
             const calData = {
               "fields": {
-                "building_type": this.building_type,
-                "zone": this.zone,
-                "area_type": this.area_type,
                 "area": this.area,
-                "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
-                "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
+                "area_type": this.area_type,
+                "building_type": this.building_type,
                 "calculated_cost": this.showResults().TotalCostPerMonth,
-                "currency": this.currency
+                "currency": this.currency,
+                "email": null,
+                "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
+                "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
+                "zone": this.zone,
               }
             }
-            // console.log(calData)
-            axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
-              withCredentials: true,
-              headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-              },
-              calData
-            },{
-              auth: {
-                username: "api-admin",
-                password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-              }}).then(function(response) {
-              console.log(response.data);
+            console.log(calData)
+            // axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
+            //   withCredentials: true,
+            //   headers: {
+            //     "Accept": "application/json",
+            //     "Content-Type": "application/json"
+            //   },
+            //   calData
+            // },{
+            //   auth: {
+            //     username: "api-admin",
+            //     password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+            //   }}).then(function(response) {
+            //   console.log(response.data);
             }).catch(function(error) {
               console.log('Error on Authentication');
             });
