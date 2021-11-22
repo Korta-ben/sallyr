@@ -259,7 +259,8 @@ components:{AesthVueRangeInput, VueFormulate},
         }
       ],
 
-      theResultBox: false
+      theResultBox: false,
+
 
 
     }
@@ -345,16 +346,22 @@ components:{AesthVueRangeInput, VueFormulate},
                 }
               }).then(function(response)
             {
-              console.log(response.data)
+              console.log(response.data._links.self[0].href)
+              let UpdateUrl = response.data._links.self[0].href
+              // this.$store.dispatch('addTheUpdateUrl', UpdateUrl)
+              // this.$store.dispatch('addTheCalculationResults', result)
+              this.$store.dispatch('addTheUpdateUrl', UpdateUrl)
 
             }).catch(function(error){
               console.log(error)
             })
-
           }catch(e){console.log(e)}
+        },
 
-
-        }
+      sendEmailToUser(){
+        let theUpdateUrl;
+        console.log(theUpdateUrl)
+      }
   }
 }
 </script>

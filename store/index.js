@@ -9,6 +9,7 @@ export const state = () => {
   theTeam:[]
   thePricing:[]
   theSlider:[]
+  theUpdateUrl:""
 
 }
 
@@ -38,6 +39,9 @@ export const mutations = {
   setTheCalculationResults(state, theCalculationResults){
     // console.log(theCalculationResults)
     state.theCalculationResults = theCalculationResults
+  },
+  setTheUpdateUrl(state, theUpdateUrl){
+    state.theUpdateUrl = theUpdateUrl
   }
 
 
@@ -81,6 +85,9 @@ export const actions = {
 
   addTheCalculationResults({commit}, result){
       commit('setTheCalculationResults', result);
+  },
+  addTheUpdateUrl({commit}, UpdateUrl){
+    commit('setTheUpdateUrl', UpdateUrl);
   }
 }
 
@@ -109,5 +116,8 @@ export const getters = {
   getTheCalculationResults(state){
 
     return state.theCalculationResults
-  }
+  },
+  getTheUpdateUrl(state){
+    return state.theUpdateUrl
+  },
 }
