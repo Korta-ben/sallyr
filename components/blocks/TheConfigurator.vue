@@ -314,7 +314,7 @@ components:{AesthVueRangeInput, VueFormulate},
 
           try{
             const calData = {
-              "title": this.building_type + " - " + this.area,
+              "title": "some title that should work",
               "acf": {
                     "area": this.area,
                     "area_type": this.area_type,
@@ -357,6 +357,40 @@ components:{AesthVueRangeInput, VueFormulate},
             //   .then(function(response){
             //   console.log(response.data);
             // })
+
+            axios.post("https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
+              {
+                "title": "some title that should work",
+                "acf": {
+                  "area": this.area,
+                  "area_type": this.area_type,
+                  "building_type": this.building_type,
+                  "calculated_cost": this.showResults().TotalCostPerMonth,
+                  "currency": this.currency,
+                  "email": null,
+                  "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
+                  "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
+                  "zone": this.zone,
+                }
+            },
+              {
+                auth: {
+                  "username": "api-admin",
+                  "password": "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+                },
+                    withCredentials: true,
+                    headers: {
+                      "Accept": "application/json",
+                      "Content-Type": "application/json"
+                    }
+
+            }).then(function(response)
+            {
+              console.log(response.data)
+            }).catch(function(error){
+              console.log(error)
+            })
+
             // axios.post('https://apisr.kortaben.work/wp-json/wp/v2/calculations/',JSON.stringify(calData), {
             //   withCredentials: true,
             //   headers: {
@@ -373,25 +407,27 @@ components:{AesthVueRangeInput, VueFormulate},
             //   console.log(error);
             // });
 
-            axios.post(
-              'https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
-              JSON.stringify(calData),
-              {
-                withCredentials:true,
-                headers: {
-                  "Accept": "application/json",
-                  "Content-Type": "application/json"
-                },
-                auth: {
-                  username: "api-admin",
-                  password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-                }
-              }).then(function(response)
-            {
-              console.log(response.data)
-            }).catch(function(error){
-              console.log(error)
-            })
+
+            // By AA
+            // axios.post(
+            //   "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
+            //   JSON.stringify(calData),
+            //   {
+            //     withCredentials:true,
+            //     headers: {
+            //       "Accept": "*/*",
+            //       "Content-Type": "application/json"
+            //     },
+            //     auth: {
+            //       username: "api-admin",
+            //       password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+            //     }
+            //   }).then(function(response)
+            // {
+            //   console.log(response.data)
+            // }).catch(function(error){
+            //   console.log(error)
+            // })
 
           }catch(e){console.log(e)}
 
