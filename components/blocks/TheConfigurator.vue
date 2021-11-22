@@ -340,7 +340,9 @@ components:{AesthVueRangeInput, VueFormulate},
             //     "zone": this.zone,
             // }
             console.log(JSON.stringify(calData))
-            axios.post('https://apisr.kortaben.work/wp-json/wp/v2/calculations/', JSON.stringify(calData),{
+            axios.post('https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
+              JSON.stringify(calData),
+              {
               auth: {
                         username: "api-admin",
                         password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
@@ -354,58 +356,6 @@ components:{AesthVueRangeInput, VueFormulate},
               .then(function(response){
               console.log(response.data);
             })
-            // axios({
-            //   method: 'post',
-            //   url: 'https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
-            //   data: {
-            //     title: "sometitle2",
-            //     content: "blah",
-            //     fields: JSON.stringify({
-            //       "area": "62000000",
-            //       "area_type": "meters",
-            //       "building_type": "retail",
-            //       "calculated_cost": "55800",
-            //       "currency": "sek",
-            //       "email": null,
-            //       "kwhmonth_in_savings": "155000",
-            //       "kwhyear_in_savings": "1860000",
-            //       "zone": "polar"
-            //     })
-            //   },
-            //   headers: {
-            //     "Authorization" : `Bearer ${this.$store.state.token}`
-            //   },
-            //   auth: {
-            //         username: "api-admin",
-            //         password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-            //       }}).then(function(response) {
-            //       console.log(response.data);
-            //     }).catch(function(error) {
-            //       console.log('Error on Authentication');
-            //     });
-            // axios.post(`https://apisr.kortaben.work/wp-json/wp/v2/calculations/`, {
-            //   data: {
-            //     title:"from website",
-            //     fields:{
-            //       calData
-            //     }
-            //   },
-            //   withCredentials: true,
-            //   headers: {
-            //     "Accept": "application/json",
-            //     "Content-Type": "application/json"
-            //   },
-            //
-            //
-            // },{
-            //   auth: {
-            //     username: "api-admin",
-            //     password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-            //   }}).then(function(response) {
-            //   console.log(response.data);
-            // }).catch(function(error) {
-            //   console.log('Error on Authentication');
-            // });
 
           }catch(e){console.log(e)}
 
