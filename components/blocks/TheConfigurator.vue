@@ -314,6 +314,7 @@ components:{AesthVueRangeInput, VueFormulate},
 
           try{
             const calData = {
+              "acf": {
                 "area": "62000",
                 "area_type": "meters",
                 "building_type": "retail",
@@ -323,6 +324,8 @@ components:{AesthVueRangeInput, VueFormulate},
                 "kwhmonth_in_savings": "155000",
                 "kwhyear_in_savings": "1860000",
                 "zone": "polar"
+              }
+
 
             }
             // {

@@ -54,12 +54,12 @@ export const actions = {
     try{
 
       const  topMenu  = await axios.get('https://apisr.kortaben.work/wp-json/menus/v1/menus/main')
-      const  homePage  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/45')
-      const  theProduct  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/47')
-      const  theIndoorFarming  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/51')
-      const  theTeam  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/53')
-      const  thePricing  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/49')
-      const  theSlider  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/slider')
+      const  homePage  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/45?acf_format=standard')
+      const  theProduct  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/47?acf_format=standard')
+      const  theIndoorFarming  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/51?acf_format=standard')
+      const  theTeam  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/53?acf_format=standard')
+      const  thePricing  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/49?acf_format=standard')
+      const  theSlider  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/slider?acf_format=standard')
 
 
 
