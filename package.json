@@ -17,6 +17,7 @@
     "aesth-vue-range-input": "^1.0.0",
     "core-js": "^3.15.1",
     "gsap": "^3.8.0",
+    "mailgun.js": "^4.0.0",
     "nuxt": "^2.15.7",
     "vue-slick-carousel": "^1.0.6"
   },

@@ -197,6 +197,7 @@
 import AesthVueRangeInput from "aesth-vue-range-input";
 import VueFormulate from '@braid/vue-formulate'
 import axios from "axios";
+// import Mailgun from "mailgun.js"
 export default {
 components:{AesthVueRangeInput, VueFormulate},
   data(){
@@ -327,74 +328,7 @@ components:{AesthVueRangeInput, VueFormulate},
                     "zone": JSON.stringify(this.zone),
               }
             }
-            // {
-            //     "area": this.area,
-            //     "area_type": this.area_type,
-            //     "building_type": this.building_type,
-            //     "calculated_cost": this.showResults().TotalCostPerMonth,
-            //     "currency": this.currency,
-            //     "email": null,
-            //     "kwhmonth_in_savings": this.showResults().TotalKWhPerMonth,
-            //     "kwhyear_in_savings": this.showResults().TotalKWhPerYear ,
-            //     "zone": this.zone,
-            // }
             console.log(calData)
-            // axios.post('https://apisr.kortaben.work/wp-json/wp/v2/calculations/',
-            //   JSON.stringify(calData),
-            //   {
-            //   auth: {
-            //             username: "api-admin",
-            //             password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-            //           },
-            //     withCredentials: true,
-            //     headers: {
-            //       "Accept": "application/json",
-            //       "Content-Type": "application/json"
-            //     }
-            // })
-            //   .then(function(response){
-            //   console.log(response.data);
-            // })
-
-            //Working here
-
-            // axios.post("https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
-            //   JSON.stringify(calData),
-            //   {
-            //     auth: {
-            //       "username": "api-admin",
-            //       "password": "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-            //     },
-            //         withCredentials: true,
-            //         headers: {
-            //           "Accept": "application/json",
-            //           "Content-Type": "application/json"
-            //         }
-            //
-            // }).then(function(response)
-            // {
-            //   console.log(response.data)
-            // }).catch(function(error){
-            //   console.log(error)
-            // })
-
-            // axios.post('https://apisr.kortaben.work/wp-json/wp/v2/calculations/',JSON.stringify(calData), {
-            //   withCredentials: true,
-            //   headers: {
-            //     "Accept": "application/json",
-            //     "Content-Type": "application/json"
-            //   }
-            // },{
-            //   auth: {
-            //     username: "api-admin",
-            //     password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-            //   }}).then(function(response) {
-            //   console.log('Authenticated');
-            // }).catch(function(error) {
-            //   console.log(error);
-            // });
-
-
             // By AA
             axios.post(
               "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
@@ -412,6 +346,7 @@ components:{AesthVueRangeInput, VueFormulate},
               }).then(function(response)
             {
               console.log(response.data)
+
             }).catch(function(error){
               console.log(error)
             })
