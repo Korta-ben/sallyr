@@ -405,13 +405,13 @@ components:{AesthVueRangeInput, VueFormulate},
         //   console.log(body);
         // });
 
-          let message = {
-            "from": "mailgun@sandbox-123.mailgun.org",
-            "to": ["ashisharyal64@gmail.com"],
-            "subject": "Hello",
-            "text": "Testing some Mailgun awesomness!",
-            "html": "Testing some Mailgun awesomness!"
-          }
+          // let message = {
+          //   "from": "mailgun@sandbox-123.mailgun.org",
+          //   "to": ["ashisharyal64@gmail.com"],
+          //   "subject": "Hello",
+          //   "text": "Testing some Mailgun awesomness!",
+          //   "html": "Testing some Mailgun awesomness!"
+          // }
 
           const formData = require('form-data');
           const mailgun = new Mailgun(formData);
@@ -423,9 +423,20 @@ components:{AesthVueRangeInput, VueFormulate},
               "url": 'https://api.eu.mailgun.net/v3/sr-stage.kortaben.work'
             });
 
-          mg.messages.create('sr-stage.kortaben.work', message)
+          mg.messages.create('sr-stage.kortaben.work', JSON.stringify({
+              from: 'Excited User <me@samples.mailgun.org>',
+              to: 'ashisharyal64@gmail.com',
+              cc: 'baz@example.com',
+              bcc: 'bar@example.com',
+              subject: 'Complex',
+              text: 'Testing some Mailgun awesomness!',
+              html: "<html>HTML version of the body</html>"
+          })
+          )
             .then(msg => console.log(msg)) // logs response data
-            .catch(err => console.log(err)); // logs any error
+            // .catch(err => console.log(err)); // logs any error
+
+
 
       }
 
