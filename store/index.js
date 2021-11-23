@@ -104,16 +104,15 @@ export const actions = {
               username: "api-admin",
               password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
             }
-          }).then((res)=> {
-            return res.data
-      })
+          }).then((response)=> {
 
-      console.log(postResponse.data)
+        commit('setTheCalculationResponse', response.data)
+      })
 
     }catch(e){
       console.error(e)
     }
-    commit('setTheCalculationResponse', theCalculationResponse)
+
   }
 
 }

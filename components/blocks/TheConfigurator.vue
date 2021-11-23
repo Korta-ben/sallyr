@@ -174,10 +174,14 @@
 
             <div class="contact w-1/2 flex flex-col">
               <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
-              <input name="email" placeholder="Email*" class="border-b py-4 border-srblack max-w-xs"/>
+              <input v-model="contactEmail" name="email" placeholder="Email*" class="border-b py-4 border-srblack max-w-xs"/>
               <div class="pt-8">
                 <input type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about getting started
               </label>
+                <a class="submit pl-7.5 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
+                   @click="sendEmailToUser()"
+                >Show me the result</a>
+
               </div>
 
             </div>
@@ -208,8 +212,6 @@ components:{AesthVueRangeInput, VueFormulate},
       area_type:'meters',
       currency:'sek',
       area:1000,
-
-
       // the yearly rates
       theBuildingZone:[
         {
@@ -258,9 +260,8 @@ components:{AesthVueRangeInput, VueFormulate},
 
         }
       ],
-
       theResultBox: false,
-      // theUpdateUrl: null
+      contactEmail: " "
 
 
 
@@ -337,32 +338,11 @@ components:{AesthVueRangeInput, VueFormulate},
 
             // console.log(theCalculationResponse)
             await  this.$store.dispatch('addTheCalculationResponse', theCalculationResponse)
-            // By AA
-            // axios.post(
-            //   "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
-            //  calData,
-            //   {
-            //     withCredentials:true,
-            //     headers: {
-            //       "Accept": "*/*",
-            //       "Content-Type": "application/json"
-            //     },
-            //     auth: {
-            //       username: "api-admin",
-            //       password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-            //     }
-            //   }).then(function(response)
-            // {
-            //   console.log(response.data._links.self[0].href)
-            // }).catch(function(error){
-            //   console.log(error)
-            // })
           }catch(e){console.log(e)}
         },
 
       sendEmailToUser(){
-        let theUpdateUrl;
-        console.log(theUpdateUrl)
+        console.log("now you will send email to user")
       }
   }
 }
