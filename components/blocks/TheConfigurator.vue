@@ -335,7 +335,7 @@ components:{AesthVueRangeInput, VueFormulate},
                     "zone": JSON.stringify(this.zone),
               }
             }
-            console.log(calData)
+            // console.log(calData)
             // By AA
             axios.post(
               "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
