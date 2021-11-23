@@ -116,7 +116,7 @@ export default {
   },
   async asyncData ({ $axios }) {
     const items = await
-      $axios.$get('https://apisr.kortaben.work/wp-json/wp/v2/slider')
+      $axios.$get('https://apisr.kortaben.work/wp-json/wp/v2/slider?acf_format=standard')
     return { items }
   },
   computed: {

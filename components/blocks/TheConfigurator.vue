@@ -175,10 +175,12 @@
             <div class="contact w-1/2 flex flex-col">
               <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
               <input v-model="contactEmail" name="email" placeholder="Email*" class="border-b py-4 border-srblack max-w-xs"/>
-              <div class="pt-8">
-                <input type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about getting started
+              <div class="pt-8 flex flex-col">
+                <input v-model="contactMe" type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about
+                getting
+                started
               </label>
-                <a class="submit pl-7.5 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
+                <a class="submit pl-7 w-1/2 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
                    @click="sendEmailToUser()"
                 >Show me the result</a>
 
@@ -201,6 +203,8 @@
 import AesthVueRangeInput from "aesth-vue-range-input";
 import VueFormulate from '@braid/vue-formulate'
 import axios from "axios";
+// import formData from "form-data"
+import Mailgun from "mailgun.js"
 // import Mailgun from "mailgun.js"
 export default {
 components:{AesthVueRangeInput, VueFormulate},
@@ -261,7 +265,8 @@ components:{AesthVueRangeInput, VueFormulate},
         }
       ],
       theResultBox: false,
-      contactEmail: " "
+      contactEmail: "ashish@kortaben.se",
+      contactMe:false
 
 
 
@@ -318,32 +323,112 @@ components:{AesthVueRangeInput, VueFormulate},
         },
 
         async sendItToWP() {
-
-
           try{
             const theCalculationResponse = {
               "title": JSON.stringify(this.building_type + " - " + this.area),
               "acf": {
-                    "area": JSON.stringify(this.area),
-                    "area_type": JSON.stringify(this.area_type),
-                    "building_type": JSON.stringify(this.building_type),
-                    "calculated_cost": JSON.stringify(this.showResults().TotalCostPerMonth),
-                    "currency": JSON.stringify(this.currency),
-                    "email": null,
-                    "kwhmonth_in_savings": JSON.stringify(this.showResults().TotalKWhPerMonth),
-                    "kwhyear_in_savings": JSON.stringify(this.showResults().TotalKWhPerYear) ,
-                    "zone": JSON.stringify(this.zone),
+                "area": JSON.stringify(this.area),
+                "area_type": JSON.stringify(this.area_type),
+                "building_type": JSON.stringify(this.building_type),
+                "calculated_cost": JSON.stringify(this.showResults().TotalCostPerMonth),
+                "currency": JSON.stringify(this.currency),
+                "email": null,
+                "kwhmonth_in_savings": JSON.stringify(this.showResults().TotalKWhPerMonth),
+                "kwhyear_in_savings": JSON.stringify(this.showResults().TotalKWhPerYear) ,
+                "zone": JSON.stringify(this.zone),
               }
             }
 
             // console.log(theCalculationResponse)
-            await  this.$store.dispatch('addTheCalculationResponse', theCalculationResponse)
+            await  this.$store.dispatch('addTheCalculationResponse', JSON.stringify(theCalculationResponse))
           }catch(e){console.log(e)}
         },
 
-      sendEmailToUser(){
-        console.log("now you will send email to user")
+      async sendEmailToUser(){
+        // console.log(updateURL._links.self[0].href)
+        try{
+          // console.log("now you will send email to " + this.contactEmail)
+          let currentData = this.$store.getters.getTheCalculationResponse
+
+          let updateURL = currentData._links.self[0].href
+
+          let data = {
+            "title": currentData.acf.building_type + " - "  + currentData.acf.area + " - " + this.contactEmail,
+            "acf": {
+              "area": currentData.acf.area,
+              "area_type": currentData.acf.area_type,
+              "building_type": currentData.acf.building_type,
+              "calculated_cost": currentData.acf.calculated_cost,
+              "currency": currentData.acf.currency,
+              "email": this.contactEmail,
+              "kwhmonth_in_savings": currentData.acf.kwhmonth_in_savings,
+              "kwhyear_in_savings": currentData.acf.kwhyear_in_savings ,
+              "zone": currentData.acf.zone,
+            }
+          }
+          console.log(currentData._links.self[0].href)
+          await axios.post(
+            updateURL,
+            data,
+            {
+              withCredentials:true,
+              headers: {
+                "Accept": "*/*",
+                "Content-Type": "application/json"
+              },
+              auth: {
+                username: "api-admin",
+                password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+              }
+            }).then((response)=> {
+            //    this is where you send email
+            this.sendEmail()
+          })
+
+        }catch (e)
+        {
+          console.log(e)
+        }
+      },
+      async sendEmail() {
+
+        // const mailgun = new Mailgun;
+        // const DOMAIN = 'https://api.eu.mailgun.net/v3/sr-stage.kortaben.work';
+        // const mg = mailgun({apiKey: 'key-d0357a8fecaa13a43cdbda1bad30b84d', domain: DOMAIN});
+        // const data = {
+        //   from: 'Excited User <me@samples.mailgun.org>',
+        //   to: 'bar@example.com, YOU@YOUR_DOMAIN_NAME',
+        //   subject: 'Hello',
+        //   text: 'Testing some Mailgun awesomness!'
+        // };
+        // mg.messages().send(data, function (error, body) {
+        //   console.log(body);
+        // });
+
+          let message = {
+            "from": "mailgun@sandbox-123.mailgun.org",
+            "to": ["ashisharyal64@gmail.com"],
+            "subject": "Hello",
+            "text": "Testing some Mailgun awesomness!",
+            "html": "Testing some Mailgun awesomness!"
+          }
+
+          const formData = require('form-data');
+          const mailgun = new Mailgun(formData);
+          const mg = await mailgun.client(
+            {
+              "username": 'api',
+              "key": 'key-d0357a8fecaa13a43cdbda1bad30b84d',
+              "public_key": 'pubkey-c6389c0968c0ae2b9575039db1882793',
+              "url": 'https://api.eu.mailgun.net/v3/sr-stage.kortaben.work'
+            });
+
+          mg.messages.create('sr-stage.kortaben.work', message)
+            .then(msg => console.log(msg)) // logs response data
+            .catch(err => console.log(err)); // logs any error
+
       }
+
   }
 }
 </script>
