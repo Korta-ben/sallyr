@@ -307,12 +307,13 @@ components:{AesthVueRangeInput, VueFormulate},
               }
 
           this.$store.dispatch('addTheCalculationResults', result)
-          this.sendItToWP();
+          // this.sendItToWP();
+          console.log(this.sendItToWP())
 
 
         },
       showResults(){
-          console.log(this.$store.getters.getTheCalculationResults);
+          // console.log(this.$store.getters.getTheCalculationResults);
           return this.$store.getters.getTheCalculationResults;
         },
 
@@ -352,10 +353,12 @@ components:{AesthVueRangeInput, VueFormulate},
               }).then(function(response)
             {
               // console.log(response.data._links.self[0].href)
+              return response.data._links.self[0].href
+              // this.$store.dispatch('addTheUpdateUrl', response.data._links.self[0].href)
 
-              this.$store.commit('setTheUpdateUrl', response.data._links.self[0].href)
+              // this.$store.commit('setTheUpdateUrl', response.data._links.self[0].href)
 
-              console.log(this.$store.getters.getTheUpdateUrl)
+              // console.log(this.$store.getters.getTheUpdateUrl)
 
             }).catch(function(error){
               console.log(error)

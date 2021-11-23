@@ -38,6 +38,7 @@ export const mutations = {
   },
   setTheCalculationResults(state, theCalculationResults){
     // console.log(theCalculationResults)
+    // console.log("hi im action for calculation and the result is "  + theCalculationResults)
     state.theCalculationResults = theCalculationResults
   },
   setTheUpdateUrl(state, theUpdateUrl){
