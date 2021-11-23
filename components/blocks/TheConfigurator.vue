@@ -124,7 +124,7 @@
           </div>
           <div class="self-center">
             <a class="submit pl-7.5 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
-                    @click="theCalculations(); theResultBox = true "
+                    @click="theCalculations(); theResultBox = true ;"
             >Show me the result</a>
           </div>
         </form>
@@ -260,6 +260,7 @@ components:{AesthVueRangeInput, VueFormulate},
       ],
 
       theResultBox: false,
+      // theUpdateUrl: null
 
 
 
@@ -269,7 +270,11 @@ components:{AesthVueRangeInput, VueFormulate},
         roundArea(){
           this.area = Math.round(this.area/1000)*1000
           return this.area
-        }
+        },
+        // updateUri(hehe){
+        //   this.theUpdateUrl = hehe
+        //   return this.theUpdateUrl
+        // }
   },
   methods:{
         theRatePerYear(){
@@ -346,11 +351,11 @@ components:{AesthVueRangeInput, VueFormulate},
                 }
               }).then(function(response)
             {
-              console.log(response.data._links.self[0].href)
-              let UpdateUrl = response.data._links.self[0].href
-              // this.$store.dispatch('addTheUpdateUrl', UpdateUrl)
-              // this.$store.dispatch('addTheCalculationResults', result)
-              this.$store.dispatch('addTheUpdateUrl', UpdateUrl)
+              // console.log(response.data._links.self[0].href)
+
+              this.$store.commit('setTheUpdateUrl', response.data._links.self[0].href)
+
+              console.log(this.$store.getters.getTheUpdateUrl)
 
             }).catch(function(error){
               console.log(error)

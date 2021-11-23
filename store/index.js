@@ -9,7 +9,7 @@ export const state = () => {
   theTeam:[]
   thePricing:[]
   theSlider:[]
-  theUpdateUrl:""
+  // theUpdateUrl:""
 
 }
 
