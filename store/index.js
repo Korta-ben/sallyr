@@ -9,7 +9,7 @@ export const state = () => {
   theTeam:[]
   thePricing:[]
   theSlider:[]
-  // theUpdateUrl:""
+  theCalculationResponse:[]
 
 }
 
@@ -41,8 +41,8 @@ export const mutations = {
     // console.log("hi im action for calculation and the result is "  + theCalculationResults)
     state.theCalculationResults = theCalculationResults
   },
-  setTheUpdateUrl(state, theUpdateUrl){
-    state.theUpdateUrl = theUpdateUrl
+  setTheCalculationResponse(state, theCalculationResponse){
+    state.theCalculationResponse = theCalculationResponse
   }
 
 
@@ -87,9 +87,35 @@ export const actions = {
   addTheCalculationResults({commit}, result){
       commit('setTheCalculationResults', result);
   },
-  addTheUpdateUrl({commit}, UpdateUrl){
-    commit('setTheUpdateUrl', UpdateUrl);
+
+  addTheCalculationResponse({commit}, theCalculationResponse){
+    try{
+
+      const postResponse =  axios.post(
+          "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
+          theCalculationResponse,
+          {
+            withCredentials:true,
+            headers: {
+              "Accept": "*/*",
+              "Content-Type": "application/json"
+            },
+            auth: {
+              username: "api-admin",
+              password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+            }
+          }).then(function(response){
+            return response.data
+      })
+
+      console.log(postResponse.data)
+
+    }catch(e){
+      console.error(e)
+    }
+    commit('setTheCalculationResponse', theCalculationResponse)
   }
+
 }
 
 export const getters = {
@@ -118,7 +144,7 @@ export const getters = {
 
     return state.theCalculationResults
   },
-  getTheUpdateUrl(state){
-    return state.theUpdateUrl
+  getTheCalculationResponse(state){
+    return state.theCalculationResponse
   },
 }

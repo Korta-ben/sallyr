@@ -307,8 +307,7 @@ components:{AesthVueRangeInput, VueFormulate},
               }
 
           this.$store.dispatch('addTheCalculationResults', result)
-          // this.sendItToWP();
-          console.log(this.sendItToWP())
+          this.sendItToWP();
 
 
         },
@@ -317,11 +316,11 @@ components:{AesthVueRangeInput, VueFormulate},
           return this.$store.getters.getTheCalculationResults;
         },
 
-        sendItToWP() {
+        async sendItToWP() {
 
 
           try{
-            const calData = {
+            const theCalculationResponse = {
               "title": JSON.stringify(this.building_type + " - " + this.area),
               "acf": {
                     "area": JSON.stringify(this.area),
@@ -335,34 +334,29 @@ components:{AesthVueRangeInput, VueFormulate},
                     "zone": JSON.stringify(this.zone),
               }
             }
-            // console.log(calData)
+
+            // console.log(theCalculationResponse)
+            await  this.$store.dispatch('addTheCalculationResponse', theCalculationResponse)
             // By AA
-            axios.post(
-              "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
-             calData,
-              {
-                withCredentials:true,
-                headers: {
-                  "Accept": "*/*",
-                  "Content-Type": "application/json"
-                },
-                auth: {
-                  username: "api-admin",
-                  password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-                }
-              }).then(function(response)
-            {
-              // console.log(response.data._links.self[0].href)
-              return response.data._links.self[0].href
-              // this.$store.dispatch('addTheUpdateUrl', response.data._links.self[0].href)
-
-              // this.$store.commit('setTheUpdateUrl', response.data._links.self[0].href)
-
-              // console.log(this.$store.getters.getTheUpdateUrl)
-
-            }).catch(function(error){
-              console.log(error)
-            })
+            // axios.post(
+            //   "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
+            //  calData,
+            //   {
+            //     withCredentials:true,
+            //     headers: {
+            //       "Accept": "*/*",
+            //       "Content-Type": "application/json"
+            //     },
+            //     auth: {
+            //       username: "api-admin",
+            //       password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+            //     }
+            //   }).then(function(response)
+            // {
+            //   console.log(response.data._links.self[0].href)
+            // }).catch(function(error){
+            //   console.log(error)
+            // })
           }catch(e){console.log(e)}
         },
 
