@@ -104,8 +104,8 @@ export const actions = {
               username: "api-admin",
               password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
             }
-          }).then(function(response){
-            return response.data
+          }).then((res)=> {
+            return res.data
       })
 
       console.log(postResponse.data)
