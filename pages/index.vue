@@ -61,7 +61,8 @@ url("~/assets/images/hero-bg.webp");
 }
 .home_header  .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
-  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;
+  width: fit-content;
 }
 .home_header .main-button:hover:after{
   @apply pl-4 transition duration-500 ease-in-out;
@@ -75,7 +76,7 @@ url("~/assets/images/hero-bg.webp");
 }
 
 .home_header  .sub-button {
-  @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44
+  @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44 text-center
 }
 .home_header  .sub-button:after {
   @apply  place-self-center pt-3 animate-bounce;
@@ -131,8 +132,8 @@ content:  url("~/assets/images/temprature.svg");
   md:max-w-120 md:px-5 md:pb-10
 }
 .home_hvac_system  .main-button{
-  @apply hidden m-auto border-srblue font-bold py-6 px-7 border-2 text-base leading-4 block text-srblue
-  md:flex md:mb-35.25 hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
+  @apply hidden m-auto border-srblue font-bold py-6 pl-7 border-2 text-base leading-4 block text-srblue
+  md:flex md:mb-35.25 max-w-102  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
 }
 .home_hvac_system  .main-button:hover:after{
   @apply pl-4 transition duration-500 ease-in-out;

@@ -12,10 +12,15 @@
       <h3 v-if="card.has_sub_header_text" v-html="card.sub_heading"></h3>
       <div  v-if="card.has_body_text" class="body-text" v-html="card.body_text"></div>
       <div class="main-button-wrapper" v-if="card.has_button_text" >
-        <button v-html="card.button_text" class="main-button"></button>
+        <NuxtLink :to="card.buttom_link" class="main-button">
+          {{ card.button_text }}
+        </NuxtLink>
       </div>
       <div class="sub-button-wrapper" v-if="card.has_sub_button_text">
-        <button  v-html="card.sub_button_text" class="sub-button"></button>
+        <NuxtLink :to="card.sub_button_link" class="sub-button">
+          {{ card.sub_button_text }}
+        </NuxtLink>
+
       </div>
       <img v-if="card.has_bottom_icon" class="bottom-image" />
     </div>

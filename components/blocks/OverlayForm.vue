@@ -1,23 +1,18 @@
 <template>
-  <div class="form-overlay fixed bg-srwhite bg-opacity-90 px-5  w-full z-50 h-full  -mt-24">
-    <div class=" m-auto w-full sm:w-138.5 rounded-tl-2xl  bg-srwhite py-11 px-8.5 ">
-
-        <img @click="clickHandler" src="~/assets/images/close.svg" class="ml-auto">
-
-      <h3 class="text-center font-bold text-xl leading-6 sm:px-30.25">
-        Glad to hear you want to know
-        more about Sally R!
-      </h3>
-      <p class="text-center pb-8">
-        Fill this form out and we will get back to you.
-      </p>
+  <div class="form-overlay fixed bg-srwhite  px-5  w-full z-50 h-full  -mt-24">
+    <img @click="clickHandler" src="~/assets/images/close.svg" class="ml-auto mt-4">
+    <h3 class="text-center text-2xl xl:mr-48 font-bold text-xl pb-4 leading-7 pt-14 lg:pt-56  text-srblue
+md:text-22.5 md:leading-25">
+      Let’s get in touch!
+    </h3>
+    <div class=" m-auto w-full sm:w-138.5   bg-srwhite py-4 md:py-11 px-8.5 ">
       <form class="grid grid-cols-2	gap-2">
-        <input name="fullname" placeholder="Full Name*" class="border text-sm px-2.5 border-srblue h-8 ">
-        <input name="business" placeholder="Business" class="border text-sm px-2.5 border-srblue h-8 ">
-        <input name="phone" placeholder="Phone*" class="border text-sm px-2.5 border-srblue h-8 col-span-2">
-        <input name="email" placeholder="Email*" class="border text-sm  px-2.5 border-srblue h-8 col-span-2">
+        <input name="fullname" placeholder="Full Name*" class="border-b text-sm pr-2.5 mb-4 border-srskyblue h-8 ">
+        <input name="business" placeholder="Business" class="border-b  text-sm pr-2.5 mb-4  border-srskyblue h-8 ">
+        <input name="phone" placeholder="Phone*" class="border-b  text-sm pr-2.5 mb-4  border-srskyblue h-8 ">
+        <input name="email" placeholder="Email*" class="border-b  text-sm  pr-2.5 mb-4  border-srskyblue h-8 ">
         <textarea name="message"  placeholder="Message..."
-                  class="col-span-2 w-full border px-2.5 text-sm border-srblue"></textarea>
+                  class="col-span-2 w-full border-0 border-b pr-2.5 mb-14 text-sm border-srskyblue"></textarea>
         <button
           class="border-2 flex flex-row justify-center
           text-srblue text-base font-bold py-6 px-7.5 border-srblue
@@ -44,13 +39,13 @@ export default {
 
 <style>
 .form-overlay{
-  padding-top: 15% ;
+  /*padding-top: 15% ;*/
 
 
 }
-.form-overlay>div{
-  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
-}
+/*.form-overlay>div{*/
+/*  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);*/
+/*}*/
 .form-overlay>div button:after{
   @apply pl-4 pt-0.5;
   content: url("~/assets/images/right-blue.svg");

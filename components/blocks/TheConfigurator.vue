@@ -203,9 +203,7 @@
 import AesthVueRangeInput from "aesth-vue-range-input";
 import VueFormulate from '@braid/vue-formulate'
 import axios from "axios";
-// import formData from "form-data"
-import Mailgun from "mailgun.js"
-// import Mailgun from "mailgun.js"
+
 export default {
 components:{AesthVueRangeInput, VueFormulate},
   data(){
@@ -390,54 +388,8 @@ components:{AesthVueRangeInput, VueFormulate},
           console.log(e)
         }
       },
-      async sendEmail() {
-
-        // const mailgun = new Mailgun;
-        // const DOMAIN = 'https://api.eu.mailgun.net/v3/sr-stage.kortaben.work';
-        // const mg = mailgun({apiKey: 'key-d0357a8fecaa13a43cdbda1bad30b84d', domain: DOMAIN});
-        // const data = {
-        //   from: 'Excited User <me@samples.mailgun.org>',
-        //   to: 'bar@example.com, YOU@YOUR_DOMAIN_NAME',
-        //   subject: 'Hello',
-        //   text: 'Testing some Mailgun awesomness!'
-        // };
-        // mg.messages().send(data, function (error, body) {
-        //   console.log(body);
-        // });
-
-          // let message = {
-          //   "from": "mailgun@sandbox-123.mailgun.org",
-          //   "to": ["ashisharyal64@gmail.com"],
-          //   "subject": "Hello",
-          //   "text": "Testing some Mailgun awesomness!",
-          //   "html": "Testing some Mailgun awesomness!"
-          // }
-
-          const formData = require('form-data');
-          const mailgun = new Mailgun(formData);
-          const mg = await mailgun.client(
-            {
-              "username": 'api',
-              "key": 'key-d0357a8fecaa13a43cdbda1bad30b84d',
-              "public_key": 'pubkey-c6389c0968c0ae2b9575039db1882793',
-              "url": 'https://api.eu.mailgun.net/v3/sr-stage.kortaben.work'
-            });
-
-          mg.messages.create('sr-stage.kortaben.work', JSON.stringify({
-              from: 'Excited User <me@samples.mailgun.org>',
-              to: 'ashisharyal64@gmail.com',
-              cc: 'baz@example.com',
-              bcc: 'bar@example.com',
-              subject: 'Complex',
-              text: 'Testing some Mailgun awesomness!',
-              html: "<html>HTML version of the body</html>"
-          })
-          )
-            .then(msg => console.log(msg)) // logs response data
-            // .catch(err => console.log(err)); // logs any error
-
-
-
+       sendEmail() {
+         console.log("here, you will send message")
       }
 
   }
