@@ -147,7 +147,7 @@ export default {
 }
 .indoor_maximize>div h2{
   @apply text-center font-bold text-3xl leading-8 pt-28 pb-4 m-auto
-  lg:pt-1 lg:text-12.5 lg:leading-13.75 lg:w-full lg:px-4 lg:pb-10;
+  pt-1 lg:text-12.5 lg:leading-13.75 lg:w-full lg:px-4 lg:pb-10;
 }
 .indoor_maximize>div h3{
   @apply font-bold text-lg leading-6 pb-6

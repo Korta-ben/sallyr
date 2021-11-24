@@ -12,8 +12,8 @@
         </ul>
       </div>
 
-      <div class="pb-12 w-52 flex flex-col items-center">
-        <h3 class="pl-7.5">
+      <div class="pb-12 w-52 flex flex-col items-start md:items-center">
+        <h3 class="md:pl-7.5">
           Sally R
         </h3>
         <ul class="font-normal">

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col flex-wrap">
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
-    <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-50 lg:pl-50 pt-11.5">
+    <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25 lg:pl-50 pt-11.5">
       <VueSlickCarousel v-bind="sliderSettings" >
         <div v-for="item in items" :key="item.id"
              class="flex flex-row px-5">
@@ -137,7 +137,7 @@ export default {
   top center;
 }
 .product_header>div {
-  @apply flex flex-col pt-12 text-center px-5 m-auto max-w-screen-1.5lg
+  @apply flex flex-col pt-6 text-center px-5 m-auto max-w-screen-1.5lg
   lg:max-w-2.5xl lg:text-12.5 lg:leading-13.75;
 }
 
@@ -157,7 +157,7 @@ export default {
 }
 .product_header .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
-  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out items-center;
   width: fit-content;
 }
 .product_header .main-button:after{
@@ -224,11 +224,11 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   lg:order-none lg:w-91.5 lg:-mt-16;
 }
 .product_optimize_bottom>div h2{
-  @apply order-first font-bold text-3xl leading-8 text-right pr-5 pl-12 pb-27.25 -mt-4
-  lg:order-none lg:max-w-139.25 lg:text-12.5 lg:leading-13.75 lg:-ml-65 ;
+  @apply order-first font-bold text-3xl leading-8 text-right md:text-left pr-5 pl-12 pb-27.25 -mt-4
+  lg:order-none lg:max-w-139.25 lg:text-12.5 lg:leading-13.75 lg:-ml-20 ;
 }
 .product_optimize_bottom>div .body-text{
-  @apply md:pl-10 lg:pl-24 -mt-24 pb-27.25 pt-8;
+  @apply pb-10 md:pl-10 lg:pl-24 -mt-24 lg:pb-27.25 pt-8;
 
 }
 .product_optimize_bottom>div .body-text p{
@@ -270,7 +270,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 
 }
 .product_low_maintenance>div h2:before {
-  @apply hidden lg:block lg:absolute  z-0;
+  @apply hidden  lg:block lg:absolute  z-0;
   content:url("~/assets/images/blue-blur-2.webp");
   margin-left: 16%;
   /*margin-right:20%;*/
@@ -390,6 +390,13 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 .product_feature.third .body-text{
   @apply lg:max-w-lg lg:w-full lg:-mt-25 md:m-auto lg:mr-0
 }
+.product_feature.third .main-button-wrapper{
+  @apply w-full
+}
+.product_feature.third .main-button{
+  @apply py-6 pl-6 pr-4 border-2 flex  border-srblue font-bold  text-base leading-4  m-auto text-srblue mb-17.5
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out z-10  max-w-sm text-center justify-center;
+}
 .slide{
 
   background: #FFFFFF;
@@ -402,7 +409,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply text-srblue  text-xl  leading-7 font-bold
 }
 .slide p{
-  @apply leading-5 text-sm font-bold truncate ;
+  @apply leading-5 text-sm font-bold  ;
 }
 .slick-arrow.slick-prev:before{
   content: url("~/assets/images/left-arrow.svg");

@@ -22,4 +22,10 @@ export default {
 .case{
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
+
+.cases {
+  background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/hero-bg.webp");
+  @apply bg-no-repeat ;
+  background-position: left 0%, center top;
+}
 </style>

@@ -87,7 +87,7 @@ export default {
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
 .price-component>div .card h3{
-  @apply pb-5 col-span-2
+  @apply pb-5 col-span-2 md:text-3xl md:leading-8
 }
 .price-component>div .card .cost{
   @apply flex flex-wrap justify-end

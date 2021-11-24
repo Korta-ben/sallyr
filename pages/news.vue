@@ -4,7 +4,8 @@
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
     <section class="news px-5 pb-25">
-      <h2 class="font-bold text-5xl leading-13.75 text-center pt-25 pb-16">What’s new at Sally R?</h2>
+      <h2 class="font-bold text-5xl leading-13.75 text-center pt-25 pb-16">What’s new at
+        <span class="whitespace-nowrap">Sally R??</span></h2>
       <div class="story-wrapper grid grid-cols-1 gap-6 lg:grid-cols-2  xl:max-w-screen-1.5lg m-auto">
 <!--        story start-->
         <div v-for="story in stories.items" :key="story.id"
@@ -21,7 +22,7 @@
             </h3>
 
             <div class="read-more font-bold text-base leading-4 text-srblue">
-              <a :href="story.url" >Read more</a>
+              <a :href="story.url" target="_blank">Read more</a>
             </div>
           </div>
         </div>
@@ -88,8 +89,9 @@ export default {
 }
 
 .news {
-  background-image: url("~/assets/images/hero-bg.webp");
-  @apply bg-no-repeat bg-top
+  background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/hero-bg.webp");
+  @apply bg-no-repeat ;
+  background-position: left 0%, center top;
 }
 .team-wwu>div{
   @apply px-5 pt-4
