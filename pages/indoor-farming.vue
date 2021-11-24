@@ -53,11 +53,16 @@ export default {
 }
 .indoor_farming_hero>div .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
-  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out w-60
 }
 .indoor_farming_hero>div .main-button:after{
   @apply pl-4;
   content: url("~/assets/images/right-blue.svg");
+}
+.indoor_farming_hero>div .main-button:hover:after{
+  @apply pl-4 transition duration-500 ease-in-out;
+  content: url("~/assets/images/white-right.svg");
+  /*-webkit-mask-image: url("~/assets/images/right-blue.svg");*/
 }
 .indoor_farming_hero>div .sub-button-wrapper{
   @apply col-span-5 lg:col-span-2 lg:col-end-6 lg:ml-auto lg:-mt-7.5
@@ -159,7 +164,8 @@ export default {
 }
 .indoor_maximize>div .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
-  lg:mb-32  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out
+  lg:mb-32  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out w-56;
+  /*max-width: 214px;*/
 }
 
 

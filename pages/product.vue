@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col flex-wrap">
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-50 lg:pl-50 pt-11.5">
       <VueSlickCarousel v-bind="sliderSettings" >
@@ -128,7 +128,8 @@ export default {
 /*the product page*/
 /*1. product header*/
 .product_header {
-  @apply bg-no-repeat max-w-screen-1.5xl  m-auto;
+  /*@apply bg-no-repeat max-w-screen-1.5xl  m-auto;*/
+  @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/blue-blur-2.webp"),
   url("~/assets/images/product-hero-bg.webp");
   background-position: right 50%,
@@ -157,6 +158,7 @@ export default {
 .product_header .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
   hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;
+  width: fit-content;
 }
 .product_header .main-button:after{
   @apply pl-4;

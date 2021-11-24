@@ -17,8 +17,8 @@
             <h3 class="font-bold  text-xl leading-6 text-srblue pb-9" v-html="story.header">
             </h3>
 
-            <div class="font-bold text-base leading-4 text-srblue">
-              <a :href="story.url" >Read more -> </a>
+            <div class="read-more font-bold text-base leading-4 text-srblue">
+              <a :href="story.url" >Read more</a>
             </div>
           </div>
         </div>
@@ -75,4 +75,11 @@ export default {
 }.story{
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
+.read-more{
+  @apply flex
+}
+ .read-more:after{
+   @apply pl-4;
+   content: url("~/assets/images/right-blue.svg");
+ }
 </style>
