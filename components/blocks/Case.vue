@@ -8,7 +8,7 @@
 <!--           class="object-cover rounded-tl-2xl 	w-full md:rounded-0  md:w-45.5">-->
     </div>
     <div class="p-11.5 lg:w-2/3">
-      <h3 class="font-bold pb-8 text-xl leading-6 text-srblue ">
+      <h3 class="font-bold pb-4 text-xl leading-6 text-srblue ">
         Sally R signs framework agreement with Unibail-Rodamco-Westfield Nordic
       </h3>
       <p class="pb-9">

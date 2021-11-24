@@ -26,22 +26,19 @@ export default {
 /*1 pricing_hero */
 .pricing_hero>div{
   @apply flex flex-col items-center px-5
-  lg:pt-25
+  lg:pb-25
 }
-/*.pricing_hero>div:before{*/
-/*  content: ' ';*/
-/*  width: 453px;*/
-/*  height: 454px;*/
-/*  left: 50%;*/
-/*  top: 50%;*/
-/*  margin-top: -300px;*/
-/*  margin-left: -300px;*/
-/*  background: radial-gradient(50% 50% at 50% 50%, #918EFF 0%, #AEB9F4 100%);*/
-/*  position: absolute;*/
-/*  opacity: 0.3;*/
-/*  filter: blur(126px);*/
-/*  z-index: 0;*/
-/*}*/
+
+.pricing_hero{
+  @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
+  background-image:url("~/assets/images/pricing-small-blur-header.png"),
+  url("~/assets/images/price-page-big-blur.png"),
+  url("~/assets/images/hero-bg.webp");
+  background-position:right 90% , left 60%, center top;
+
+
+}
+
 .pricing_hero>div .header-image{
   @apply  w-40 -mt-4
   md:w-80 lg:-mt-6
@@ -73,10 +70,10 @@ export default {
   lg:max-w-screen-1.5lg lg:grid lg:grid-cols-2;
 }
 .price-component>div h2{
-  @apply text-3xl text-srblue
+  @apply text-3xl text-srblue lg:text-12.5 lg:leading-13.75  lg:font-bold lg:pb-4
 }
 .price-component>div .highlighted{
-  @apply text-srblue  text-lg leading-6
+  @apply text-srblue  text-lg leading-6 lg:text-xl lg:leading-7
 }
 .price-component>div p{
   @apply pb-3
