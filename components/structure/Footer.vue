@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-srblue w-full px-5  ">
-    <div class="py-30.25 xl:max-w-screen-1.5lg  m-auto px-5 lg:px-10 xg:px-28 md:flex md:justify-between md:flex-wrap ">
+    <div class="py-20 xl:max-w-screen-1.5lg  m-auto px-5 lg:px-10 xg:px-28 md:flex md:justify-between md:flex-wrap ">
       <div class="pb-12 w-52">
         <h3>
           Products
@@ -27,11 +27,11 @@
         <h3>
           Contact
         </h3>
-        Contact us <span>-exit</span>
+        <div class="contact-footer text-srwhite flex flex-row justify-between content-center">Contact us</div>
 
-        <ul class="font-normal">
+        <ul class="font-normal pt-11">
           <li>
-            social media stuff
+            <img src="~/assets/images/social-1.png" >
           </li>
         </ul>
       </div>
@@ -61,6 +61,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style >
+.contact-footer:after{
+  @apply pl-4;
+  content: url("~/assets/images/white-right.svg");
+}
 </style>
