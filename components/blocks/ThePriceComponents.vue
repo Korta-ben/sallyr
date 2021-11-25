@@ -82,9 +82,15 @@
              - Continuous updates and support
            </li>
          </ul>
-         <div class="cost">
+         <div class="last cost">
            <p>€ 0.06 per m²</p>
 
+         </div>
+         <div class="col-span-2 flex flex-row justify-end gap-x-4">
+            <a href="#configurator"
+               class="calculate py-5 px-7.5 font-bold text-base  leading-4 border-srblue border-2 text-srblue  mt-6">Calculate your cost</a>
+           <a href=""
+              class="contact py-5 px-7.5 font-bold  text-base  leading-4 border-srblue border-2 text-srblue  mt-6">Contact</a>
          </div>
        </div>
      </div>

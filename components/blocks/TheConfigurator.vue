@@ -1,5 +1,5 @@
 <template>
-  <section class="configurator pb-45.5">
+  <section class="configurator pb-45.5" id="configurator">
       <div class="px-5 m-auto  lg:max-w-screen-1.5lg" >
         <h2 class="font-bold text-12.5 leading-13.75 text-srblue pb-12.75 pt-40 md:w-1/2 md:max-w-102 md:pl-4">How much
           would you save?</h2>
@@ -9,30 +9,30 @@
             <div class="flex flex-wrap gap-2">
               <input  v-model="building_type"  id="office" type="radio"  class="hidden" name="building_type" value="office">
               <label for="office"
-               class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+               class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
             " >Office</label>
 
               <input  v-model="building_type"  id="logistics" type="radio" class="hidden" name="building_type" value="logistics">
               <label for="logistics"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
             " >Logistics</label>
 
               <input  v-model="building_type" id="educational"  type="radio" class="hidden" name="building_type"
                       value="educational">
               <label for="educational"
-                     class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue
+                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
             " >Educationl</label>
 
 
               <input  v-model="building_type"  id="retail" type="radio" class="hidden" name="building_type" value="retail">
               <label for="retail"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
             " >Retail</label>
 
 
               <input v-model="building_type"   id="other" type="radio" class="hidden" name="building-type" value="other">
               <label for="other"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
             " >Other</label>
             </div>
 
@@ -44,18 +44,21 @@
                                 id="polar" type="radio"  class="hidden" name="zone" value="polar" />
 
                 <label for="polar"
-                       class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue
+                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
               " >Polar</label>
 
 
                 <input v-model="zone"  id="temperate" type="radio" class="hidden" name="zone" value="temperate">
                 <label for="temperate"
-                       class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >Temperate</label>
+                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  "
+                >Temperate
+                </label>
 
 
                 <input v-model="zone" id="tropical"  type="radio" class="hidden" name="zone" value="tropical">
                 <label for="tropical"
-                       class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue " >Tropical</label>
+                       class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue " >Tropical
+                </label>
 
               </div>
           </div>
@@ -64,12 +67,14 @@
             <div class="flex flex-wrap gap-2">
               <input v-model="area_type"  id="meters" type="radio"  class="hidden" name="area_type" value="meters">
               <label for="meters"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >Meters</label>
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >Meters
+              </label>
 
 
               <input v-model="area_type"  id="feet" type="radio" class="hidden" name="area_type" value="feet">
               <label for="feet"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >Feet</label>
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >Feet
+              </label>
 
 
 
@@ -80,17 +85,20 @@
             <div class="flex flex-wrap gap-2">
               <input v-model="currency"  id="sek" type="radio"  class="hidden" name="currency" value="sek">
               <label for="sek"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >SEK</label>
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >SEK
+              </label>
 
 
               <input v-model="currency"  id="usd" type="radio" class="hidden" name="currency" value="usd">
               <label for="usd"
-                     class="py-6 px-7.5  text-base font-semibold leading-4 border-srblue border-2 text-srblue  " >USD</label>
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >USD
+              </label>
 
 
               <input v-model="currency" id="eur"  type="radio" class="hidden" name="currency" value="eur">
               <label for="eur"
-                     class="py-6 px-7.5 text-base font-semibold leading-4  border-srblue border-2 text-srblue  " >EUR</label>
+                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue  " >EUR
+              </label>
 
             </div>
           </div>
@@ -122,8 +130,10 @@
             </div>
 
           </div>
-          <div class="self-center">
-            <a class="submit pl-7.5 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
+          <div class="self-center justify-self-center md:justify-self-end pt-8 lg:w-111">
+            <a class="submit pl-7.5 py-6 border-srblue border-2
+
+             text-srblue text-base font-semibold leading-4"
                     @click="theCalculations(); theResultBox = true ;"
             >Show me the result</a>
           </div>
@@ -172,19 +182,21 @@
             </div>
 
 
-            <div class="contact w-1/2 flex flex-col">
+            <div class="contact w-1/2 flex flex-col ">
               <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
               <input v-model="contactEmail" name="email" placeholder="Email*" class="border-b py-4 border-srblack max-w-xs"/>
-              <div class="pt-8 flex flex-col">
+              <div class="pt-4 flex">
                 <input v-model="contactMe" type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about
                 getting
                 started
               </label>
-                <a class="submit pl-7 w-1/2 py-6 border-srblue border-2 text-srblue text-base font-semibold leading-4"
-                   @click="sendEmailToUser()"
-                >Show me the result</a>
+
 
               </div>
+              <a
+                class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue  border-2 text-srblue text-base font-semibold leading-4"
+                 @click="sendEmailToUser()"
+              >Send</a>
 
             </div>
 
@@ -263,7 +275,7 @@ components:{AesthVueRangeInput, VueFormulate},
         }
       ],
       theResultBox: false,
-      contactEmail: "ashish@kortaben.se",
+      contactEmail: "",
       contactMe:false
 
 

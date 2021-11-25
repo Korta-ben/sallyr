@@ -28,7 +28,11 @@ export default {
   @apply flex flex-col items-center px-5
   lg:pb-25
 }
-
+.pricing_hero>div:after{
+  content: url("~/assets/images/pricing-line.svg");
+  margin-top: 282px;
+  @apply absolute hidden lg:block -ml-52;
+}
 .pricing_hero{
   @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/pricing-small-blur-header.png"),
@@ -69,6 +73,9 @@ export default {
   @apply px-5 m-auto
   lg:max-w-screen-1.5lg lg:grid lg:grid-cols-2;
 }
+.price-component>div .body-text{
+ @apply xg:ml-20 z-10 lg:w-96
+}
 .price-component>div h2{
   @apply text-3xl text-srblue lg:text-12.5 lg:leading-13.75  lg:font-bold lg:pb-4
 }
@@ -82,7 +89,7 @@ export default {
   @apply flex flex-col gap-y-5
 }
 .price-component>div .card{
-@apply bg-srwhite px-9.5 py-12 rounded-tl-xl grid grid-cols-2;
+@apply bg-srwhite px-9.5 py-12 rounded-tl-xl grid grid-cols-2 lg:max-w-pcards lg:-ml-45.5 lg:pl-30.25 xl:w-lgx2;
   background: #FFFFFF;
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
@@ -102,10 +109,22 @@ export default {
 }
 .price-component>div .card:last-child .cost:after{
   content: url("~/assets/images/right-blue.svg");
-  @apply  self-center pl-4 pb-4;
+  @apply hidden self-center pl-4 pb-4;
 
 }
 
+.price-component>div .card:last-child  .contact:after{
+  content: url("~/assets/images/right-blue.svg");
+  @apply  self-center pl-4 ;
+}
+.submit{
+  @apply self-center mr-17.5;
+  width: fit-content;
+}
+.submit:after{
+  content: url("~/assets/images/right-blue.svg");
+  @apply  self-center pl-4 ;
+}
 
 /*transation*/
 .result-enter-active, .result-leave-active {

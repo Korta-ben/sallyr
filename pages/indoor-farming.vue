@@ -1,5 +1,8 @@
 <template>
   <div>
+    <transition name="readytotalk" appear v-if=showOverlayForm>
+      <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
+    </transition>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <TheCCList />
   </div>
@@ -11,6 +14,7 @@ export default {
 
   data () {
     return {
+      showOverlayForm:false
     }
   },
   computed: {
@@ -38,7 +42,7 @@ export default {
 }
 .indoor_farming_hero>div h2{
   @apply font-bold text-6.5xl leading-11 pt-10 pb-5
-  lg:col-span-3 lg:text-22.5 lg:leading-25;
+  lg:col-span-3 lg:text-22.5 lg:leading-25 lg:pt-24;
 }
 
 .indoor_farming_hero h2>span{
@@ -46,10 +50,10 @@ export default {
 }
 .indoor_farming_hero>div h3{
   @apply font-bold text-lg leading-6 pb-9.5 lg:col-span-2
-  lg:pt-72 lg:text-xl lg:leading-7
+  lg:pt-64 lg:text-xl lg:leading-7
 }
 .indoor_farming_hero>div .main-button-wrapper{
-  @apply col-span-5 lg:col-span-2 lg:col-end-6 lg:ml-auto
+  @apply col-span-5 lg:col-span-2 lg:col-end-6 lg:ml-auto lg:pb-12
 }
 .indoor_farming_hero>div .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
@@ -68,7 +72,7 @@ export default {
   @apply col-span-5 lg:col-span-2 lg:col-end-6 lg:ml-auto lg:-mt-7.5
 }
 .indoor_farming_hero>div  .sub-button {
-  @apply font-bold flex flex-col justify-center text-base leading-4 text-srgreen m-auto block mb-11.5;
+  @apply font-bold cursor-default flex flex-col justify-center text-base leading-4 text-srgreen m-auto block mb-11.5;
 }
 .indoor_farming_hero>div .sub-button:after {
   @apply  place-self-center pt-3 animate-bounce cursor-default;
@@ -177,7 +181,7 @@ export default {
 .thelist>div{
   @apply flex flex-col px-5 bg-no-repeat rounded-tl-3xl
   md:flex-row md:flex-wrap md:justify-around;
-  background-image: linear-gradient(180deg, #F1F2F8 50%, #ffffff00 50%);
+  background-image: linear-gradient(180deg, #F1F2F8 50%, #ffffff00 60%);
 
 }
 .thelist>div .logo-image{
@@ -208,4 +212,15 @@ export default {
   @apply pb-20 lg:pb-44
   md:w-5/12 gap-x-8;
 }
+
+/*transation*/
+.readytotalk-enter-active, .readytotalk-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.readytotalk-enter, .readytotalk-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
 </style>

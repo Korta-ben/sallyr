@@ -370,9 +370,16 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 
 /*product feature second*/
 .product_feature.second{
-  background: url("~/assets/images/product-opt2-lines-bg.webp");
-  background-position: 0% 82%;
-  @apply  bg-no-repeat max-w-screen-1.5xl w-full   ;
+  background:url("~/assets/images/new-lines-resized.svg");
+  background-position: 2% 38%;
+  @apply  bg-no-repeat  w-full   ;
+  max-width: 1920px;
+}
+
+.product_feature.second>div:before{
+  content:url("~/assets/images/blue-blur-2.webp");
+  @apply hidden  lg:block lg:absolute  z-10 -mt-40;
+
 }
 .product_feature.second>div{
   /*@apply max-w-screen-1.5lg;*/

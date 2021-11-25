@@ -71,10 +71,11 @@
         class="hidden md:flex w-2/5 py-3 text-srblue
         font-bold text-base  flex-wrap content-center justify-end "
       >
-        <img src="~/assets/images/plant.svg" class="inline pr-1.5">
+
         <span>
            <NuxtLink
              to="/indoor-farming">
+             <img src="~/assets/images/plant.svg" class="inline pr-1.5">
             Indoor Farming
           </NuxtLink>
         </span>
