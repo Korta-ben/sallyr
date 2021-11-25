@@ -79,7 +79,7 @@ export default {
   @apply  flex justify-end text-srskyblue text-right font-bold  text-base md:ml-auto
 }
 .home_ready_to_talk .sub-button:before {
-  @apply  place-self-center pr-6 animate-bounce;
+  @apply  place-self-center pr-6 animate-bounce cursor-default;
   content: url("~/assets/images/lb-down.png");
 }
 </style>
