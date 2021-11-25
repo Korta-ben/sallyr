@@ -56,7 +56,7 @@ export default {
   @apply text-base font-bold text-srskyblue flex flex-col items-center
 }
 .pricing_hero>div .sub-button-wrapper .sub-button:after {
-  @apply  place-self-center pr-6 animate-bounce;
+  @apply  place-self-center pr-6 animate-bounce cursor-default;
   content: url("~/assets/images/lb-down.png");
 }
 

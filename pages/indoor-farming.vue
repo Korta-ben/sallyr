@@ -71,7 +71,7 @@ export default {
   @apply font-bold flex flex-col justify-center text-base leading-4 text-srgreen m-auto block mb-11.5;
 }
 .indoor_farming_hero>div .sub-button:after {
-  @apply  place-self-center pt-3 animate-bounce;
+  @apply  place-self-center pt-3 animate-bounce cursor-default;
   content: url("~/assets/images/green-down.png");
 }
 /*

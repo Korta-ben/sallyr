@@ -79,7 +79,7 @@ url("~/assets/images/hero-bg.webp");
   @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44 text-center
 }
 .home_header  .sub-button:after {
-  @apply  place-self-center pt-3 animate-bounce;
+  @apply  place-self-center pt-3 animate-bounce cursor-default;
   content: url("~/assets/images/lb-down.png");
 }
 /*

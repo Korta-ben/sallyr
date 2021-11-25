@@ -294,7 +294,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply font-bold text-srorange text-base text-center leading-4 flex flex-col m-auto pb-1.5;
 }
 .product_low_maintenance>div  .sub-button:after {
-  @apply  place-self-center pt-3 animate-bounce;
+  @apply  place-self-center pt-3 animate-bounce cursor-default;
   content: url("~/assets/images/orange-down-arrow.png");
 }
 
