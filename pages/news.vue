@@ -22,7 +22,8 @@
             </h3>
 
             <div class="read-more font-bold text-base leading-4 text-srblue">
-              <a :href="story.url" target="_blank">Read more</a>
+              <a :href="story.url" target="_blank
+">Read more</a>
             </div>
           </div>
         </div>

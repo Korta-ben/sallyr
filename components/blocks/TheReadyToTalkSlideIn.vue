@@ -9,7 +9,7 @@
           <label for="amazed" >I’m amazed! Call me!</label>
         </span>
         <span  class="flex flex-row items-center">
-          <input type="radio" name="talk" id="unsure">
+          <input type="radio" name="talk" id="unsure" @click="clickHandler">
           <label for="unsure">Not sure but call me anyway!</label>
         </span>
       </div>
