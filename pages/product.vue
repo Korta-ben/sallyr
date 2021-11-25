@@ -6,7 +6,7 @@
         <div v-for="item in items" :key="item.id"
              class="flex flex-row px-5">
           <div class="slide flex flex-wrap justify-between py-14 px-8 order-last sm:order-first ">
-            <div class=" bg-contain bg-no-repeat bg-center sm:w-1/2 sm:w-auto
+            <div class=" bg-contain bg-no-repeat bg-center sm:w-1/2
                       "
             >
               <img class="w-full sm:h-36 sm:w-auto" :src="item.acf.image">
