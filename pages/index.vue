@@ -206,7 +206,7 @@ content:  url("~/assets/images/temprature.svg");
 
 }
 .home_mission>div{
-  @apply flex flex-col px-5 bg-srblue flex-wrap
+  @apply flex flex-col px-5 lg:px-0 bg-srblue flex-wrap
     lg:flex-row lg:justify-between
 
 }

@@ -165,6 +165,12 @@ export default {
   content: url("~/assets/images/right-blue.svg");
 }
 
+.product_header .main-button:hover:after{
+  @apply pl-4 transition duration-500 ease-in-out;
+  content: url("~/assets/images/white-right.svg");
+  /*-webkit-mask-image: url("~/assets/images/right-blue.svg");*/
+}
+
 /*
 2. product_optimize_top
 */
@@ -244,7 +250,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   /*margin-top: -96px;*/
 }
 .product_scaleable div{
-  @apply flex flex-col pt-43.5 pb-16  px-5 m-auto
+  @apply flex flex-col pt-43.5 pb-32  px-5 m-auto
 
 }
 .product_scaleable h2{
@@ -260,10 +266,10 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 6. product_low_maintenance
 */
 .product_low_maintenance{
-  @apply -mt-11.5
+  @apply -mt-11.5  max-w-screen-1.5xl m-auto w-full
 }
 .product_low_maintenance>div{
-  @apply flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto;
+  @apply flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto  1.5lg:w-lgx2;
 }
 .product_low_maintenance>div h2{
   @apply pt-0.5 text-center font-bold  text-3xl leading-8 pb-4
@@ -272,7 +278,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 .product_low_maintenance>div h2:before {
   @apply hidden  lg:block lg:absolute  z-0;
   content:url("~/assets/images/blue-blur-2.webp");
-  margin-left: 16%;
+  margin-left: 17%;
   /*margin-right:20%;*/
   margin-top: -360px;
 }
@@ -287,11 +293,19 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply pl-4;
   content: url("~/assets/images/right-blue.svg");
 }
+
+
+.product_low_maintenance>div .main-button:hover:after{
+  @apply pl-4 transition duration-500 ease-in-out;
+  content: url("~/assets/images/white-right.svg");
+  /*-webkit-mask-image: url("~/assets/images/right-blue.svg");*/
+}
+
 .product_low_maintenance>div .sub-button-wrapper{
   @apply lg:self-end
 }
 .product_low_maintenance>div .sub-button{
-  @apply font-bold text-srorange text-base text-center leading-4 flex flex-col m-auto pb-1.5;
+  @apply font-bold text-srorange text-base text-center leading-4 flex flex-col m-auto pb-1.5 cursor-default;
 }
 .product_low_maintenance>div  .sub-button:after {
   @apply  place-self-center pt-3 animate-bounce cursor-default;
@@ -357,10 +371,10 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 .product_feature.second{
   background: url("~/assets/images/product-opt2-lines-bg.webp");
   background-position: 0% 82%;
-  @apply  bg-no-repeat max-w-screen-1.5lg;
+  @apply  bg-no-repeat max-w-screen-1.5xl w-full   ;
 }
 .product_feature.second>div{
-  /*@applymax-w-screen-1.5lg;*/
+  /*@apply max-w-screen-1.5lg;*/
 }
 .product_feature.second>div .header-image{
   @apply lg:max-w-xs lg:w-full
@@ -397,6 +411,19 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply py-6 pl-6 pr-4 border-2 flex  border-srblue font-bold  text-base leading-4  m-auto text-srblue mb-17.5
   hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out z-10  max-w-sm text-center justify-center;
 }
+.product_feature.third  .main-button:after{
+  @apply pl-4;
+  content: url("~/assets/images/right-blue.svg");
+}
+
+.product_feature.third   .main-button:hover:after{
+  @apply pl-4 transition duration-500 ease-in-out;
+  content: url("~/assets/images/white-right.svg");
+  /*-webkit-mask-image: url("~/assets/images/right-blue.svg");*/
+}
+
+
+
 .slide{
 
   background: #FFFFFF;
@@ -409,7 +436,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply text-srblue  text-xl  leading-7 font-bold
 }
 .slide p{
-  @apply leading-5 text-sm font-bold  ;
+  @apply leading-5 text-sm font-semibold ;
 }
 .slick-arrow.slick-prev:before{
   content: url("~/assets/images/left-arrow.svg");
