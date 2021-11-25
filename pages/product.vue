@@ -333,7 +333,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 }
 
 .product_feature>div h2{
-  @apply  text-center font-bold text-srblue text-lg leading-4.5 pb-3 m-auto
+  @apply py-4  text-center font-bold text-srblue text-lg leading-4.5 pb-3 m-auto
   lg:w-1/2 lg:text-3xl lg:leading-8;
 }
 .product_feature .body-text{
