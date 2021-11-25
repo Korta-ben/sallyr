@@ -5,12 +5,13 @@
       <VueSlickCarousel v-bind="sliderSettings" >
         <div v-for="item in items" :key="item.id"
              class="flex flex-row px-5">
-          <div class="slide flex flex-wrap justify-between py-14 px-8">
-            <div class=" bg-contain bg-no-repeat bg-center"
+          <div class="slide flex flex-wrap justify-between py-14 px-8 order-last sm:order-first ">
+            <div class=" bg-contain bg-no-repeat bg-center sm:w-1/2 sm:w-auto
+                      "
             >
-              <img class="h-36" :src="item.acf.image">
+              <img class="w-full sm:h-36 sm:w-auto" :src="item.acf.image">
             </div>
-            <div class="w-5/12">
+            <div class="w-full sm:w-1/2 sm:order-last order-first pb-4">
               <h3 v-html="item.title.rendered" ></h3>
               <div v-html="item.excerpt.rendered" ></div>
             </div>
@@ -276,7 +277,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 
 }
 .product_low_maintenance>div h2:before {
-  @apply hidden  lg:block lg:absolute  z-0;
+  @apply hidden  lg:block lg:absolute  z-10;
   content:url("~/assets/images/blue-blur-2.webp");
   margin-left: 17%;
   /*margin-right:20%;*/
@@ -287,7 +288,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 }
 .product_low_maintenance>div .main-button{
   @apply py-6 pl-6 pr-4 border-2 flex  border-srblue font-bold  text-base leading-4  m-auto text-srblue mb-17.5
-  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out z-10  max-w-sm text-center justify-center;
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out z-0  max-w-sm text-center justify-center;
 }
 .product_low_maintenance>div .main-button:after{
   @apply pl-4;
