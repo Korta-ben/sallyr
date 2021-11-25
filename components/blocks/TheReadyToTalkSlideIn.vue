@@ -3,18 +3,18 @@
 
     <div>
       <h2 >Ready to talk?</h2>
-      <div>
-        <span>
+      <div class="grid grid-cols-2 w-full md:w-2/3">
+        <span class="flex flex-row">
           <input type="radio" name="talk" id="amazed" @click="clickHandler">
           <label for="amazed" >I’m amazed! Call me!</label>
         </span>
-        <span>
+        <span  class="flex flex-row items-center">
           <input type="radio" name="talk" id="unsure">
           <label for="unsure">Not sure but call me anyway!</label>
         </span>
       </div>
       <div class="sub-button-wrapper pt-5" >
-        <button  class="sub-button">Or keep scrolling.</button>
+        <a  class="sub-button">Or keep scrolling.</a>
       </div>
     </div>
   </section>
@@ -53,7 +53,7 @@ export default {
   @apply flex flex-col  px-5 text-srblue;
 }
 .home_ready_to_talk  h2{
-  @apply font-bold pb-11  text-6.5xl leading-11
+  @apply font-bold pb-11  text-6.5xl leading-11 lg:pt-28
 }
 .home_ready_to_talk  h2:before{
   @apply absolute -mt-60 lg:hidden animate-bounce-slow1;

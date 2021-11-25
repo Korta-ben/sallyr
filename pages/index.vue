@@ -29,7 +29,7 @@ export default {
   1.header
 */
 .home_header{
-  @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
+  @apply bg-no-repeat pt-11 md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/blue-blur-2.webp"),
   url("~/assets/images/home-header.webp"),
 url("~/assets/images/hero-bg.webp");
@@ -76,7 +76,7 @@ url("~/assets/images/hero-bg.webp");
 }
 
 .home_header  .sub-button {
-  @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44 text-center
+  @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44 text-center cursor-default
 }
 .home_header  .sub-button:after {
   @apply  place-self-center pt-3 animate-bounce cursor-default;
@@ -145,58 +145,10 @@ content:  url("~/assets/images/temprature.svg");
 }
 
 
-/*!**/
-/*3. home_ready_to_talk*/
-/**!*/
-/*.home_ready_to_talk{*/
-/* @apply lg:px-28 xl:max-w-screen-1.5lg m-auto*/
-/*}*/
-/*!*.home_ready_to_talk:before{*!*/
-/*!*  @apply hidden mt-11 lg:ml-32*!*/
-/*!*  lg:block lg:absolute 1.5xl:left-1/4;*!*/
-/*!*  content:  url("~/assets/images/co2.svg");*!*/
-/*!*}*!*/
-/*.home_ready_to_talk>div:before{*/
-/*  @apply self-end	pr-16 -mt-5  mr-0;*/
-/*  content: url("~/assets/images/line-below-hvac-system.webp");*/
-/*}*/
-/*.home_ready_to_talk>div{*/
-/*  @apply flex flex-col  px-5 text-srblue;*/
-/*}*/
-/*.home_ready_to_talk  h2{*/
-/*  @apply font-bold pb-11  text-6.5xl leading-11*/
-/*}*/
-/*.home_ready_to_talk  h2:before{*/
-/*  @apply absolute -mt-60 lg:hidden animate-bounce-slow1;*/
-/*  content: url("~/assets/images/kwh.svg");*/
-/*}*/
-/*.home_ready_to_talk:before{*/
-/*  @apply absolute  lg:hidden pl-25 -mt-6 animate-bounce-slow2;*/
-/*  content: url("~/assets/images/rtt-h2-after.svg");*/
-/*}*/
-/*.home_ready_to_talk  h3{*/
-/*  @apply text-base flex flex-col md:flex-row*/
-/*}*/
-/*.home_ready_to_talk span{*/
-/*  @apply pb-7 md:pr-15*/
-/*}*/
-/*.home_ready_to_talk input{*/
-/*  @apply p-3 border-2 border-srblue*/
-/*}*/
-/*.home_ready_to_talk label {*/
-/*  @apply pl-3.5*/
-/*}*/
-/*.home_ready_to_talk .sub-button {*/
-/*  @apply  flex justify-end text-srskyblue text-right font-bold  text-base md:ml-auto*/
-/*}*/
-/*.home_ready_to_talk .sub-button:before {*/
-/*  @apply  place-self-center pr-6 animate-bounce;*/
-/*  content: url("~/assets/images/lb-down.png");*/
-/*}*/
 
 /* 4. home_indoor_farming */
 .home_indoor_farming{
-  @apply bg-no-repeat bg-center pt-40 pb-52 max-w-screen-1.5xl w-full   m-auto;
+  @apply bg-no-repeat bg-center pt-20 pb-52 max-w-screen-1.5xl w-full   m-auto;
   background-image: url("~/assets/images/indoor-farming-bg.webp"), url("~/assets/images/wave-home-greenwebp.webp");
 }
 .home_indoor_farming>div{
@@ -220,6 +172,7 @@ content:  url("~/assets/images/temprature.svg");
 /*    content: url("~/assets/images/green-plant.png");*/
 /*  }*/
 /*}*/
+
 .home_indoor_farming .body-text{
   @apply px-12.75 pb-9
   md:max-w-120 md:px-3.5
@@ -253,7 +206,7 @@ content:  url("~/assets/images/temprature.svg");
 
 }
 .home_mission>div{
-  @apply flex flex-col pl-5 bg-srblue flex-wrap
+  @apply flex flex-col px-5 bg-srblue flex-wrap
     lg:flex-row lg:justify-between
 
 }
