@@ -21,7 +21,7 @@
                       value="educational">
               <label for="educational"
                      class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
-            " >Educationl</label>
+            " >Educational</label>
 
 
               <input  v-model="building_type"  id="retail" type="radio" class="hidden" name="building_type" value="retail">
@@ -164,7 +164,7 @@
               <div class="font-bold text-lg leading-6">
                 <ul>
                   <li>KWh/year in savings : {{ showResults().TotalKWhPerYear }}</li>
-                  <li>KWh/month in savings : {{ showResults().TotalKWhPerMonth }}</li>
+                  <li>KWh/month in savings : {{Math.round(showResults().TotalKWhPerMonth/1000)*1000  }}</li>
                   <li class="pt-3.5 text-srblue text-xl">Price/Month :
                     <span v-if="currency == 'sek'">
                       {{ Math.round(showResults().TotalCostPerMonth / 1000 ) * 1000}} SEK</span>
