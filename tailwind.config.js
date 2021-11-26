@@ -4,6 +4,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
 
+
     colors: {
       srblue: '#164CD6',
       srorange: '#FF981F',
@@ -124,8 +125,10 @@ module.exports = {
         45.5:'182px',
         49.25:'179px',
         50: '200px',
+        58:'232px',
         65: '260px',
         67.5: '270px',
+        73.75:'295px',
         75: '300px',
         91.5: '366px',
         111:'444px',

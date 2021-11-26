@@ -93,6 +93,12 @@ export default {
   background: #FFFFFF;
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
+.price-component>div .cardForm{
+  @apply bg-srwhite px-9.5 py-12 rounded-tl-xl  lg:max-w-pcards lg:-ml-45.5 lg:pl-30.25 xl:w-lgx2;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
+}
+
 .price-component>div .card h3{
   @apply pb-5 col-span-2 md:text-3xl md:leading-8
 }
