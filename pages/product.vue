@@ -276,13 +276,13 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply pt-0.5 text-center font-bold  text-3xl leading-8 pb-4
 
 }
-.product_low_maintenance>div:before {
-  @apply hidden  lg:block lg:absolute  z-0;
-  content:url("~/assets/images/blue-blur-2.webp");
-  margin-left: 17%;
-  /*margin-right:20%;*/
-  margin-top: -360px;
-}
+/*.product_low_maintenance>div:before {*/
+/*  @apply hidden  lg:block lg:absolute  z-0;*/
+/*  content:url("~/assets/images/blue-blur-2.webp");*/
+/*  margin-left: 17%;*/
+/*  !*margin-right:20%;*!*/
+/*  margin-top: -360px;*/
+/*}*/
 .product_low_maintenance .body-text p{
   @apply text-center font-semibold leading-5 pt-px pb-9 m-auto md:max-w-sm
 }
