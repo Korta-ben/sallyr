@@ -9,30 +9,30 @@
             <div class="flex flex-wrap gap-2">
               <input  v-model="building_type"  id="office" type="radio"  class="hidden" name="building_type" value="office">
               <label for="office"
-               class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+               class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
             " >Office</label>
 
               <input  v-model="building_type"  id="logistics" type="radio" class="hidden" name="building_type" value="logistics">
               <label for="logistics"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
             " >Logistics</label>
 
               <input  v-model="building_type" id="educational"  type="radio" class="hidden" name="building_type"
                       value="educational">
               <label for="educational"
-                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
+                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
             " >Educationl</label>
 
 
               <input  v-model="building_type"  id="retail" type="radio" class="hidden" name="building_type" value="retail">
               <label for="retail"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
             " >Retail</label>
 
 
               <input v-model="building_type"   id="other" type="radio" class="hidden" name="building-type" value="other">
               <label for="other"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
             " >Other</label>
             </div>
 
@@ -44,20 +44,20 @@
                                 id="polar" type="radio"  class="hidden" name="zone" value="polar" />
 
                 <label for="polar"
-                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
               " >Polar</label>
 
 
                 <input v-model="zone"  id="temperate" type="radio" class="hidden" name="zone" value="temperate">
                 <label for="temperate"
-                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  "
+                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite  "
                 >Temperate
                 </label>
 
 
                 <input v-model="zone" id="tropical"  type="radio" class="hidden" name="zone" value="tropical">
                 <label for="tropical"
-                       class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue " >Tropical
+                       class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite " >Tropical
                 </label>
 
               </div>
@@ -67,13 +67,13 @@
             <div class="flex flex-wrap gap-2">
               <input v-model="area_type"  id="meters" type="radio"  class="hidden" name="area_type" value="meters">
               <label for="meters"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >Meters
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  hover:bg-srblue hover:text-srwhite " >Meters
               </label>
 
 
               <input v-model="area_type"  id="feet" type="radio" class="hidden" name="area_type" value="feet">
               <label for="feet"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >Feet
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite  " >Feet
               </label>
 
 
@@ -85,19 +85,20 @@
             <div class="flex flex-wrap gap-2">
               <input v-model="currency"  id="sek" type="radio"  class="hidden" name="currency" value="sek">
               <label for="sek"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >SEK
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                         hover:bg-srblue hover:text-srwhite  " >SEK
               </label>
 
 
               <input v-model="currency"  id="usd" type="radio" class="hidden" name="currency" value="usd">
               <label for="usd"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  " >USD
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  hover:bg-srblue hover:text-srwhite " >USD
               </label>
 
 
               <input v-model="currency" id="eur"  type="radio" class="hidden" name="currency" value="eur">
               <label for="eur"
-                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue  " >EUR
+                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue  hover:bg-srblue hover:text-srwhite " >EUR
               </label>
 
             </div>
@@ -132,7 +133,7 @@
           </div>
           <div class="self-center justify-self-center md:justify-self-end pt-8 lg:w-111">
             <a class="submit pl-7.5 py-6 border-srblue border-2
-
+            hover:bg-srblue hover:text-srwhite
              text-srblue text-base font-semibold leading-4"
                     @click="theCalculations(); theResultBox = true ;"
             >Show me the result</a>
@@ -194,7 +195,8 @@
 
               </div>
               <a
-                class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue  border-2 text-srblue text-base font-semibold leading-4"
+                class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue  border-2 text-srblue text-base font-semibold
+                 leading-4 transition duration-500 ease-in-out"
                  @click="sendEmailToUser()"
               >Send</a>
 
@@ -415,6 +417,10 @@ components:{AesthVueRangeInput, VueFormulate},
 .configurator a:after {
   @apply pl-4 pr-10;
   content: url("~/assets/images/right-blue.svg");
+}
+.configurator a:hover:after {
+  @apply pl-4 pr-10 transition duration-500 ease-in-out;;
+  content: url("~/assets/images/white-right.svg");
 }
 
 .configurator input[type=radio]:checked + label{
