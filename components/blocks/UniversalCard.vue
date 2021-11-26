@@ -12,7 +12,7 @@
       <h3 v-if="card.has_sub_header_text" v-html="card.sub_heading"></h3>
       <div  v-if="card.has_body_text" class="body-text" v-html="card.body_text"></div>
       <div class="main-button-wrapper" v-if="card.has_button_text" >
-        <NuxtLink :to="card.buttom_link" class="main-button">
+        <NuxtLink :to="card.buttom_link"  class="main-button" :ref="card.box_layout" :id="card.box_layout">
           {{ card.button_text }}
         </NuxtLink>
       </div>
@@ -35,6 +35,8 @@ export default {
       type: [Object, Array]
     },
   },
+
+
 }
 </script>
 

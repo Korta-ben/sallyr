@@ -16,7 +16,7 @@
 
      <div class="price-cards">
 
-       <ThePricingContact v-if="started" class="h-58 flex flex-col justify-center"/>
+       <ThePricingContact v-if="started" @click="started = !started" class="h-58 flex flex-col justify-center"/>
        <div class="card" v-if="!started">
          <h3>Get started today</h3>
          <ul>
@@ -35,14 +35,14 @@
            </li>
          </ul>
          <div  class="cost">
-           <p @click="started = !started">
+           <p >
              from<br>
              €169/month
            </p>
 
          </div>
        </div>
-       <ThePricingContact v-if="invest" class="h-58 flex flex-col justify-center"/>
+       <ThePricingContact v-if="invest" @click="invest = !invest" class="h-58 flex flex-col justify-center"/>
        <div class="card" v-if="!invest">
          <h3>Invest in your Air Quality</h3>
          <ul>
@@ -61,7 +61,7 @@
            </li>
          </ul>
          <div  class="cost">
-           <p @click="invest = !invest">
+           <p >
            from<br>
            €8900 + €99/month
            </p>

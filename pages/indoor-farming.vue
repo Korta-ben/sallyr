@@ -18,7 +18,26 @@ export default {
     }
   },
   computed: {
-    cards() { return  this.$store.getters.getTheIndoorFarming.acf.universal_text_box }
+    cards() { return  this.$store.getters.getTheIndoorFarming.acf.universal_text_box },
+
+  },
+  mounted() {
+    // var contactButton = this.$refs.indoor_maximize
+    var contactMaxi = document.getElementById("indoor_maximize")
+      contactMaxi.addEventListener('click', this.showContact);
+    //
+    var keepMeUpdated = document.getElementById("indoor_farming_hero")
+    keepMeUpdated.addEventListener('click', this.showContact);
+    //
+
+  },
+
+  methods:{
+    showContact(stuff){
+
+      this.showOverlayForm = true
+
+    }
   }
 }
 </script>
