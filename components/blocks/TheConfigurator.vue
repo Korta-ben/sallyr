@@ -196,6 +196,7 @@
               </div>
               <a
                 class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue  border-2 text-srblue text-base font-semibold
+                 hover:bg-srblue hover:text-srwhite
                  leading-4 transition duration-500 ease-in-out"
                  @click="sendEmailToUser()"
               >Send</a>
