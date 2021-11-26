@@ -131,6 +131,10 @@ export default {
   content: url("~/assets/images/right-blue.svg");
   @apply  self-center pl-4 ;
 }
+a.contact:hover:after {
+  @apply pl-4 transition duration-500 ease-in-out;
+  content: url("~/assets/images/white-right.svg");
+}
 
 /*transation*/
 .result-enter-active, .result-leave-active {
