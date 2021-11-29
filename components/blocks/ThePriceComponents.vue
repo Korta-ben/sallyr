@@ -14,9 +14,10 @@
        </p>
      </div>
 
-     <div class="price-cards">
-
-       <ThePricingContact v-if="started"  class="h-58 flex flex-col justify-center"/>
+     <div class="price-cards" appear>
+        <transition name="started" >
+          <ThePricingContact v-if="started"  class="h-58 flex flex-col justify-center"/>
+        </transition>
        <div class="card" v-if="!started" @click="started = !started">
          <h3>Get started today</h3>
          <ul>
@@ -42,7 +43,9 @@
 
          </div>
        </div>
-       <ThePricingContact v-if="invest"  class="h-58 flex flex-col justify-center"/>
+       <transition name="invest" appear>
+        <ThePricingContact v-if="invest"  class="h-58 flex flex-col justify-center"/>
+       </transition>
        <div class="card" v-if="!invest" @click="invest = !invest">
          <h3>Invest in your Air Quality</h3>
          <ul>
@@ -67,7 +70,9 @@
            </p>
          </div>
        </div>
-       <ThePricingContact v-if="enterprize" class="h-73.75 flex flex-col justify-center"/>
+       <transition name="enterprize" appear>
+        <ThePricingContact v-if="enterprize" class="h-73.75 flex flex-col justify-center"/>
+       </transition>
        <div class="card" v-if="!enterprize">
          <h3>Enterprise Plan</h3>
          <ul>
@@ -120,5 +125,14 @@ export default {
 </script>
 
 <style >
+/*transation*/
+.started-enter-active, .started-leave-active , .invest-enter-active, .invest-leave-active, .enterprize-enter-active,
+.enterprize-leave-active{
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.started-enter, .started-leave-to, .invest-enter, .invest-leave-to, .enterprize-enter, .enterprize-leave-to{
+  transform: translateX(150%);
+  opacity: 0;
+}
 
 </style>
