@@ -148,7 +148,7 @@
             hover:bg-srblue hover:text-srwhite
              text-srblue text-base font-semibold leading-4  transition duration-500 ease-in-out"
                     @click="theCalculations(); theResultBox = true ;"
-            >Show me the result</a>
+            href="#configurator">Show me the result</a>
           </div>
         </form>
 
@@ -217,7 +217,8 @@
             <div class="contact w-1/2 flex flex-col " v-if="resultSent">
                 <h2
                   class="text-srgreen text-base  leading-4 font-bold flex flex-col pb-4 items-center"><img
-                  src="~/assets/images/checkmark-outline.svg" class="pr-4"/> Results Sent to your email!</h2>
+                  src="~/assets/images/checkmark-outline.svg" class="pr-4"/> The Result has been sent to your
+                  email!</h2>
             </div>
 
 

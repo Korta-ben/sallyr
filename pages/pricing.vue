@@ -39,6 +39,7 @@ export default {
   url("~/assets/images/price-page-big-blur.png"),
   url("~/assets/images/hero-bg.webp");
   background-position:right 90% , left 60%, center top;
+  background-size: auto, 39% auto, auto;
 
 
 }
