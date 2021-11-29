@@ -9,31 +9,36 @@
             <div class="flex flex-wrap gap-2">
               <input  v-model="building_type"  id="office" type="radio"  class="hidden" name="building_type" value="office">
               <label for="office"
-               class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
+               class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+               hover:bg-srblue hover:text-srwhite
             " >Office</label>
 
               <input  v-model="building_type"  id="logistics" type="radio" class="hidden" name="building_type" value="logistics">
               <label for="logistics"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
-            " >Logistics</label>
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     hover:bg-srblue hover:text-srwhite
+            transition duration-500 ease-in-out " >Logistics</label>
 
               <input  v-model="building_type" id="educational"  type="radio" class="hidden" name="building_type"
                       value="educational">
               <label for="educational"
-                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
-            " >Educational</label>
+                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
+                     hover:bg-srblue hover:text-srwhite
+              transition duration-500 ease-in-out" >Educational</label>
 
 
               <input  v-model="building_type"  id="retail" type="radio" class="hidden" name="building_type" value="retail">
               <label for="retail"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
-            " >Retail</label>
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     hover:bg-srblue hover:text-srwhite
+              transition duration-500 ease-in-out" >Retail</label>
 
 
               <input v-model="building_type"   id="other" type="radio" class="hidden" name="building-type" value="other">
               <label for="other"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
-            " >Other</label>
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     hover:bg-srblue hover:text-srwhite
+              transition duration-500 ease-in-out" >Other</label>
             </div>
 
           </div>
@@ -44,20 +49,23 @@
                                 id="polar" type="radio"  class="hidden" name="zone" value="polar" />
 
                 <label for="polar"
-                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite
-              " >Polar</label>
+                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                       hover:bg-srblue hover:text-srwhite
+                transition duration-500 ease-in-out" >Polar</label>
 
 
                 <input v-model="zone"  id="temperate" type="radio" class="hidden" name="zone" value="temperate">
                 <label for="temperate"
-                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite  "
+                       class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                       hover:bg-srblue hover:text-srwhite    transition duration-500 ease-in-out"
                 >Temperate
                 </label>
 
 
                 <input v-model="zone" id="tropical"  type="radio" class="hidden" name="zone" value="tropical">
                 <label for="tropical"
-                       class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite " >Tropical
+                       class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
+                       hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >Tropical
                 </label>
 
               </div>
@@ -67,13 +75,15 @@
             <div class="flex flex-wrap gap-2">
               <input v-model="area_type"  id="meters" type="radio"  class="hidden" name="area_type" value="meters">
               <label for="meters"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  hover:bg-srblue hover:text-srwhite " >Meters
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >Meters
               </label>
 
 
               <input v-model="area_type"  id="feet" type="radio" class="hidden" name="area_type" value="feet">
               <label for="feet"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue hover:bg-srblue hover:text-srwhite  " >Feet
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     hover:bg-srblue hover:text-srwhite    transition duration-500 ease-in-out" >Feet
               </label>
 
 
@@ -86,19 +96,21 @@
               <input v-model="currency"  id="sek" type="radio"  class="hidden" name="currency" value="sek">
               <label for="sek"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                         hover:bg-srblue hover:text-srwhite  " >SEK
+                         hover:bg-srblue hover:text-srwhite    transition duration-500 ease-in-out" >SEK
               </label>
 
 
               <input v-model="currency"  id="usd" type="radio" class="hidden" name="currency" value="usd">
               <label for="usd"
-                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue  hover:bg-srblue hover:text-srwhite " >USD
+                     class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
+                     hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >USD
               </label>
 
 
               <input v-model="currency" id="eur"  type="radio" class="hidden" name="currency" value="eur">
               <label for="eur"
-                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue  hover:bg-srblue hover:text-srwhite " >EUR
+                     class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
+                      hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >EUR
               </label>
 
             </div>
@@ -134,7 +146,7 @@
           <div class="self-center justify-self-center md:justify-self-end pt-8 lg:w-111">
             <a class="submit pl-7.5 py-6 border-srblue border-2
             hover:bg-srblue hover:text-srwhite
-             text-srblue text-base font-semibold leading-4"
+             text-srblue text-base font-semibold leading-4  transition duration-500 ease-in-out"
                     @click="theCalculations(); theResultBox = true ;"
             >Show me the result</a>
           </div>
@@ -183,7 +195,7 @@
             </div>
 
 
-            <div class="contact w-1/2 flex flex-col ">
+            <div class="contact w-1/2 flex flex-col " v-if="!resultSent">
               <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
               <input v-model="contactEmail" name="email" placeholder="Email*" class="border-b py-4 border-srblack max-w-xs"/>
               <div class="pt-4 flex">
@@ -197,10 +209,15 @@
               <a
                 class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue  border-2 text-srblue text-base font-semibold
                  hover:bg-srblue hover:text-srwhite
-                 leading-4 transition duration-500 ease-in-out"
-                 @click="sendEmailToUser()"
+                 leading-4 transition duration-500 ease-in-out flex"
+                 @click="resultSent =  !resultSent"
               >Send</a>
 
+            </div>
+            <div class="contact w-1/2 flex flex-col " v-if="resultSent">
+                <h2
+                  class="text-srgreen text-base  leading-4 font-bold flex flex-col pb-4 items-center"><img
+                  src="~/assets/images/checkmark-outline.svg" class="pr-4"/> Results Sent to your email!</h2>
             </div>
 
 
@@ -279,7 +296,8 @@ components:{AesthVueRangeInput, VueFormulate},
       ],
       theResultBox: false,
       contactEmail: "",
-      contactMe:false
+      contactMe:false,
+      resultSent:false
 
 
 
@@ -358,50 +376,51 @@ components:{AesthVueRangeInput, VueFormulate},
         },
 
       async sendEmailToUser(){
+
         // console.log(updateURL._links.self[0].href)
-        try{
-          // console.log("now you will send email to " + this.contactEmail)
-          let currentData = this.$store.getters.getTheCalculationResponse
-
-          let updateURL = currentData._links.self[0].href
-
-          let data = {
-            "title": currentData.acf.building_type + " - "  + currentData.acf.area + " - " + this.contactEmail,
-            "acf": {
-              "area": currentData.acf.area,
-              "area_type": currentData.acf.area_type,
-              "building_type": currentData.acf.building_type,
-              "calculated_cost": currentData.acf.calculated_cost,
-              "currency": currentData.acf.currency,
-              "email": this.contactEmail,
-              "kwhmonth_in_savings": currentData.acf.kwhmonth_in_savings,
-              "kwhyear_in_savings": currentData.acf.kwhyear_in_savings ,
-              "zone": currentData.acf.zone,
-            }
-          }
-          console.log(currentData._links.self[0].href)
-          await axios.post(
-            updateURL,
-            data,
-            {
-              withCredentials:true,
-              headers: {
-                "Accept": "*/*",
-                "Content-Type": "application/json"
-              },
-              auth: {
-                username: "api-admin",
-                password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-              }
-            }).then((response)=> {
-            //    this is where you send email
-            this.sendEmail()
-          })
-
-        }catch (e)
-        {
-          console.log(e)
-        }
+        // try{
+        //   // console.log("now you will send email to " + this.contactEmail)
+        //   let currentData = this.$store.getters.getTheCalculationResponse
+        //
+        //   let updateURL = currentData._links.self[0].href
+        //
+        //   let data = {
+        //     "title": currentData.acf.building_type + " - "  + currentData.acf.area + " - " + this.contactEmail,
+        //     "acf": {
+        //       "area": currentData.acf.area,
+        //       "area_type": currentData.acf.area_type,
+        //       "building_type": currentData.acf.building_type,
+        //       "calculated_cost": currentData.acf.calculated_cost,
+        //       "currency": currentData.acf.currency,
+        //       "email": this.contactEmail,
+        //       "kwhmonth_in_savings": currentData.acf.kwhmonth_in_savings,
+        //       "kwhyear_in_savings": currentData.acf.kwhyear_in_savings ,
+        //       "zone": currentData.acf.zone,
+        //     }
+        //   }
+        //   console.log(currentData._links.self[0].href)
+        //   await axios.post(
+        //     updateURL,
+        //     data,
+        //     {
+        //       withCredentials:true,
+        //       headers: {
+        //         "Accept": "*/*",
+        //         "Content-Type": "application/json"
+        //       },
+        //       auth: {
+        //         username: "api-admin",
+        //         password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+        //       }
+        //     }).then((response)=> {
+        //     //    this is where you send email
+        //     this.sendEmail()
+        //   })
+        //
+        // }catch (e)
+        // {
+        //   console.log(e)
+        // }
       },
        sendEmail() {
          console.log("here, you will send message")
@@ -412,20 +431,7 @@ components:{AesthVueRangeInput, VueFormulate},
 </script>
 
 <style>
-.configurator p{
-  @apply font-bold text-xl leading-7 py-8
-}
-.configurator a:after {
-  @apply pl-4 pr-10;
-  content: url("~/assets/images/right-blue.svg");
-}
-.configurator a:hover:after {
-  @apply pl-4 pr-10 transition duration-500 ease-in-out;;
-  content: url("~/assets/images/white-right.svg");
-}
 
-.configurator input[type=radio]:checked + label{
-  @apply bg-srblue text-srwhite opacity-100;
-}
+
 
 </style>

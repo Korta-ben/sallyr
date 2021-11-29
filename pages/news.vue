@@ -5,7 +5,7 @@
     </transition>
     <section class="news px-5 pb-25">
       <h2 class="font-bold text-5xl leading-13.75 text-center pt-25 pb-16">What’s new at
-        <span class="whitespace-nowrap">Sally R??</span></h2>
+        <span class="whitespace-nowrap">Sally R?</span></h2>
       <div class="story-wrapper grid grid-cols-1 gap-6 lg:grid-cols-2  xl:max-w-screen-1.5lg m-auto">
 <!--        story start-->
         <div v-for="story in stories.items" :key="story.id"
@@ -21,7 +21,7 @@
             <h3 class="font-bold  text-xl leading-6 text-srblue pb-9" v-html="story.header">
             </h3>
 
-            <div class="read-more font-bold text-base leading-4 text-srblue">
+            <div class="read-mores font-bold text-base leading-4 text-srblue">
               <a :href="story.url" target="_blank
 ">Read more</a>
             </div>
@@ -37,7 +37,7 @@
     </section>
 
 <!--    <UniversalCard class="team-wwu md:max-w-md w-full m-auto" v-for="card in cards" :key="card.index" :card="card"></UniversalCard>-->
-    <section class="team-wwu md:max-w-md w-full m-auto  " >
+    <section class="team-wwu md:max-w-md w-full m-auto  pt-16 " >
       <div >
         <h3  v-html="cards[0].sub_heading"></h3>
         <div class="main-button-wrapper" >
@@ -106,13 +106,11 @@ export default {
 }
 .story{
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
-}.story{
-  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
-.read-more{
+.read-mores a{
   @apply flex
 }
- .read-more:after{
+ .read-mores a:after{
    @apply pl-4;
    content: url("~/assets/images/right-blue.svg");
  }

@@ -11,7 +11,8 @@ md:text-22.5 md:leading-25">
         <input name="business" placeholder="Business" class="border-b  text-sm pr-2.5 pb-4  mb-4  border-srskyblue h-8 ">
         <input name="phone" placeholder="Phone*" class="border-b  text-sm pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
         <input name="email" placeholder="Email*" class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
-        <textarea name="message"  placeholder="Message..."
+        <span v-if="currentRouteName === 'indoor-farming'"></span>
+        <textarea v-else  name="message"  placeholder="Message..."
                   class="col-span-2 w-full border-0 border-b pr-2.5 mb-8 text-sm border-srskyblue"></textarea>
         <button
           class="border-2 flex flex-row justify-center
@@ -32,6 +33,11 @@ export default {
   methods: {
     clickHandler(e) {
       this.$emit("popupToggle");
+    }
+  },
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
     }
   }
 }

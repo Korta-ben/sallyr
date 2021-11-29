@@ -4,7 +4,7 @@
     <div>
       <h2 >Ready to talk?</h2>
       <div class="grid grid-cols-2 w-full md:w-2/3">
-        <span class="flex flex-row">
+        <span class="flex flex-row items-center">
           <input type="radio" name="talk" id="amazed" @click="clickHandler">
           <label for="amazed" >I’m amazed! Call me!</label>
         </span>

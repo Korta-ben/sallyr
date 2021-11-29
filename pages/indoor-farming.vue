@@ -30,6 +30,8 @@ export default {
     keepMeUpdated.addEventListener('click', this.showContact);
     //
 
+
+
   },
 
   methods:{

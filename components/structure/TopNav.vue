@@ -26,24 +26,24 @@
 
             <li
               v-for="child in item.child_items"
-              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">
-              <NuxtLink
+              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
+              <NuxtLink class="w-full"
                 :to="{name:child.slug}">
 
               {{ child.title }}</NuxtLink>
             </li>
             <li
 
-              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">
-              <NuxtLink
+              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
+              <NuxtLink class="w-full"
                 to="/news">
 
                 News</NuxtLink>
             </li>
             <li
 
-              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue">
-              <NuxtLink
+              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
+              <NuxtLink class="w-full"
                 to="/cases">
 
                 Cases</NuxtLink>
@@ -188,7 +188,7 @@ export default {
   transform: translateX(10px);
   opacity: 0;
 }
-.haschilditem:after{
+.haschilditem a:after{
   content: url("~/assets/images/plus-menu.svg");
   margin-top: -2px;
   padding-left: 5px;

@@ -6,9 +6,17 @@
           Products
         </h3>
         <ul class="font-normal">
-          <li>Sally R - for Indoor farming</li>
-          <li>Sally R - for Real estate</li>
-          <li>Pricing</li>
+          <li>
+            <a href="/indoor-farming" >Sally R - for Indoor farming</a>
+            </li>
+          <li>
+            <a href="/product" >
+            Sally R - for Real estate
+          </a></li>
+          <li>
+            <a href="/pricing" >
+            Pricing
+          </a></li>
         </ul>
       </div>
 
@@ -17,9 +25,12 @@
           Sally R
         </h3>
         <ul class="font-normal">
-          <li>About </li>
-          <li>News </li>
-          <li>team</li>
+          <li>
+            <a href="/who-are-we">
+            About </a></li>
+          <li>
+            <a href="/news">
+            News </a></li>
         </ul>
       </div>
 
@@ -27,7 +38,8 @@
         <h3>
           Contact
         </h3>
-        <div class="contact-footer text-srwhite flex flex-row justify-between content-center">Contact us</div>
+        <div class="contact-footer font-normal text-srwhite text-base flex flex-row justify-between content-center">Contact
+          us</div>
 
         <ul class="font-normal pt-11">
           <li>

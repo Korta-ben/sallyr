@@ -123,6 +123,11 @@ export default {
   content: url("~/assets/images/right-blue.svg");
   @apply  self-center pl-4 ;
 }
+.price-component>div .card:last-child  .contact:hover:after{
+  @apply pl-4 transition duration-500 ease-in-out;
+  content: url("~/assets/images/white-right.svg");
+  @apply  self-center pl-4 ;
+}
 .submit{
   @apply self-center mr-17.5;
   width: fit-content;
@@ -131,10 +136,28 @@ export default {
   content: url("~/assets/images/right-blue.svg");
   @apply  self-center pl-4 ;
 }
-a.contact:hover:after {
-  @apply pl-4 transition duration-500 ease-in-out;
+/*a.contact:hover:after {*/
+/*  @apply pl-4 transition duration-500 ease-in-out;*/
+/*  content: url("~/assets/images/white-right.svg");*/
+/*}*/
+
+
+.configurator p{
+  @apply font-bold text-xl leading-7 py-8
+}
+.configurator a:after {
+  @apply pl-4 pr-10;
+  content: url("~/assets/images/right-blue.svg");
+}
+.configurator a:hover:after {
+  @apply pl-4 pr-10 transition duration-500 ease-in-out;;
   content: url("~/assets/images/white-right.svg");
 }
+
+.configurator input[type=radio]:checked + label{
+  @apply bg-srblue text-srwhite opacity-100;
+}
+
 
 /*transation*/
 .result-enter-active, .result-leave-active {
@@ -146,4 +169,8 @@ a.contact:hover:after {
   opacity: 0;
 }
 
+.calculate{
+  @apply pb-5;
+padding-top: 22.5px;
+}
 </style>

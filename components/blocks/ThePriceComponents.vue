@@ -91,7 +91,7 @@
          </div>
          <div class="col-span-2 flex flex-row justify-end gap-x-4">
             <a href="#configurator"
-               class="calculate py-5 px-7.5 font-bold text-base  leading-4 border-srblue border-2 text-srblue  mt-6
+               class="calculate  px-7.5 font-bold text-base  leading-4 border-srblue border-2 text-srblue  mt-6
 hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out">Calculate your cost</a>
            <a  @click="enterprize = !enterprize"
               class="contact py-5 px-7.5 font-bold  text-base  leading-4 border-srblue border-2 text-srblue  mt-6

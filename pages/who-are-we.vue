@@ -10,7 +10,7 @@
         Who are we?
       </h2>
       <div class="grid grid-cols-2 gap-x-4 gap-y-10
-        sm:grid-cols-3 lg:grid-cols-4 max-w-4xl m-auto ">
+        sm:grid-cols-3 lg:grid-cols-4 max-w-5xl m-auto ">
         <TeamsBox v-for="team in teams" :key="team.index" :member="team"></TeamsBox>
       </div>
 
