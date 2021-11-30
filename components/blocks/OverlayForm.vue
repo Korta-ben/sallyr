@@ -6,15 +6,21 @@ md:text-22.5 md:leading-25">
       Let’s get in touch!
     </h3>
     <div class=" m-auto w-full sm:w-138.5   bg-srwhite py-4 md:py-11 px-8.5 ">
-      <form class="grid grid-cols-2	gap-x-16">
-        <input name="fullname" placeholder="Full Name*" class="border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 ">
-        <input name="business" placeholder="Business" class="border-b  text-sm pr-2.5 pb-4  mb-4  border-srskyblue h-8 ">
-        <input name="phone" placeholder="Phone*" class="border-b  text-sm pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
-        <input name="email" placeholder="Email*" class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
+      <form class="grid grid-cols-2	gap-x-16" method="POST" @submit.prevent="sendEmail">
+        <input name="fullname" placeholder="Full Name*" required
+              v-model="fullname" class="border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 ">
+        <input name="business" placeholder="Business"
+             v-model="business"  class="border-b  text-sm pr-2.5 pb-4  mb-4  border-srskyblue h-8 ">
+        <input name="phone" placeholder="Phone*" required
+            v-model="phone"   class="border-b  text-sm pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
+        <input name="email" placeholder="Email*"  required
+             v-model="email"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
         <span v-if="currentRouteName === 'indoor-farming'"></span>
         <textarea v-else  name="message"  placeholder="Message..."
+               v-model="message"
                   class="col-span-2 w-full border-0 border-b pr-2.5 mb-8 text-sm border-srskyblue"></textarea>
         <button
+
           class="border-2 flex flex-row justify-center
           text-srblue text-base font-bold py-4 px-7.5 border-srblue
           col-span-2 w-36 justify-self-end mt-1 hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;">
@@ -29,10 +35,40 @@ md:text-22.5 md:leading-25">
 </template>
 
 <script>
+// import postmark from "postmark"
 export default {
+  data(){
+    return {
+      fullname:"",
+      business:"",
+      phone:"",
+      email:"",
+      message:""
+    }
+  },
   methods: {
     clickHandler(e) {
       this.$emit("popupToggle");
+    },
+
+    sendEmail(){
+        try{
+          // let client = new postmark.Client("d1f5cb47-3071-41be-a8d2-887be1b0f663");
+          let postmark = require("postmark")
+          let client = new postmark.ServerClient("d1f5cb47-3071-41be-a8d2-887be1b0f663")
+
+          client.sendEmail({
+            "From": "hello@kortaben.se",
+            "To": "ashish@kortaben.se",
+            "Subject": "Hello from Postmark",
+            "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
+            "TextBody": "Hello from Postmark!",
+            "MessageStream": "stage-test-kb"
+          });
+          console.log("email was sent")
+        }catch (e) {
+          console.log(e)
+        }
     }
   },
   computed: {

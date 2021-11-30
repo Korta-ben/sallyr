@@ -41,9 +41,18 @@
         <div class="contact-footer font-normal text-srwhite text-base flex flex-row justify-between content-center">Contact
           us</div>
 
-        <ul class="font-normal pt-11">
+        <ul class="font-normal social-icons pt-11 flex flex-row gap-x-4">
           <li>
-            <img src="~/assets/images/social-1.png" >
+            <img src="~/assets/images/Group 81.png" >
+          </li>
+          <li>
+            <img src="~/assets/images/Group 82.png" >
+          </li>
+          <li>
+            <img src="~/assets/images/Group 83.png" >
+          </li>
+          <li>
+            <img src="~/assets/images/Group 84.png" >
           </li>
         </ul>
       </div>
@@ -58,7 +67,7 @@
         <div
           class="w-56 m-auto bg-srwhite pt-0.5 rounded-sm"
         />
-        <img src="~/assets/images/footer-dooted.webp" class="the-footer-bg">
+<!--        <img src="~/assets/images/footer-dooted.webp" class="the-footer-bg">-->
       </div>
 
 
@@ -77,5 +86,8 @@ export default {
 .contact-footer:after{
   @apply pl-4;
   content: url("~/assets/images/white-right.svg");
+}
+.social-icons li img:hover{
+  @apply opacity-75
 }
 </style>

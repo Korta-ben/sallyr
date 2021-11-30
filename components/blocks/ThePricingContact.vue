@@ -3,14 +3,14 @@
     <form class="grid  grid-cols-1	sm:grid-cols-4 sm:gap-x-16">
       <div class="grid grid-cols-2 gap-x-16 sm:col-span-3">
         <input type="text" placeholder="Full Name*" name="name"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0">
+               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
         <input type="text" placeholder="Business" name="business"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0">
+               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
 
         <input type="text" placeholder="Phone Number*" name="phone"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0">
+               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
         <input type="text" placeholder="E-mail*" name="email"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0">
+               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
       </div>
 
 
