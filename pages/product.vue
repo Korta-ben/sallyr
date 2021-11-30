@@ -134,8 +134,9 @@ export default {
   background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/blue-blur-2.webp"),
   url("~/assets/images/product-hero-bg.webp");
   background-position: right 50%,
-  0% -20%,
+  left 0%,
   top center;
+  background-size: auto, 39% auto, auto;
 }
 .product_header>div {
   @apply flex flex-col pt-6 text-center px-5 m-auto max-w-screen-1.5lg
