@@ -4,6 +4,9 @@ export default {
   server: {
     port: 8000 // default: 3000
   },
+  publicRuntimeConfig: {
+    PostMarkKey: process.env.PM_KEY
+  },
   head: {
     title: 'sallyr',
     htmlAttrs: {

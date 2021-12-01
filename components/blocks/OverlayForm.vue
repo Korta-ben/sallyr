@@ -55,7 +55,7 @@ export default {
         try{
           // let client = new postmark.Client("d1f5cb47-3071-41be-a8d2-887be1b0f663");
           let postmark = require("postmark")
-          let client = new postmark.ServerClient("")
+          let client = new postmark.ServerClient(this.$config.PostMarkKey)
 
           client.sendEmail({
             "From": "hello@kortaben.se",
