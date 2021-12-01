@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col flex-wrap">
+    <TheLinesBackground />
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25 lg:pl-50 pt-11.5">
       <VueSlickCarousel v-bind="sliderSettings" >
@@ -131,11 +132,9 @@ export default {
 .product_header {
   /*@apply bg-no-repeat max-w-screen-1.5xl  m-auto;*/
   @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
-  background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/blue-blur-2.webp"),
-  url("~/assets/images/product-hero-bg.webp");
+  background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/blue-blur-2.webp");
   background-position: right 50%,
-  left 0%,
-  top center;
+  left 0%;
   background-size: auto, 39% auto, auto;
 }
 .product_header>div {

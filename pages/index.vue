@@ -3,6 +3,7 @@
     <transition name="readytotalk" appear v-if=showOverlayForm>
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
+    <TheLinesBackground />
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <TheReadyToTalkSlideIn  @popupToggle="showOverlayForm = !showOverlayForm"/>
   </div>
@@ -10,9 +11,14 @@
 
 <script>
 
-
+// import lottie from "lottie-web/build/player/lottie"
+// import * as lines from "~/assets/lottie/lines.json"
+// import TheLinesBackground from "~/components/animations/TheLinesBackground";
 export default {
-
+  components:{
+    // TheLinesBackground
+    // lottie
+  },
   data () {
     return {
       showOverlayForm:false
@@ -25,68 +31,19 @@ export default {
 </script>
 <style>
 /*home page components home-header.webp ~/assets/images/blue-blur-1.webp*/
+
+
 /*
   1.header
 */
 .home_header{
   @apply bg-no-repeat pt-11 md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/blue-blur-2.webp"),
-  url("~/assets/images/home-header.webp"),
-url("~/assets/images/hero-bg.webp");
-  background-position:right 90% , left 0%, center top;
+  url("~/assets/images/home-header.webp");
+  background-position:right 90% , left 0% ;
 
 }
-/*.home_header>div {*/
-/*  @apply flex flex-col lg:flex-row px-5 lg:px-10 xg:px-28 lg:flex-wrap xg:justify-between lg:justify-around;*/
-/*}*/
-/*.home_header>div {*/
-/*  !*@apply flex m-auto flex-col lg:grid  px-5*!*/
-/*  !*lg:px-10 xg:pr-28 grid-cols-1 lg:grid-cols-5 max-w-screen-1.5lg;*!*/
 
-/*  @apply flex m-auto flex-col  px-5*/
-/*  lg:px-10 xg:pr-28  max-w-screen-1.5lg*/
-/*  lg:grid lg:grid-cols-2*/
-/*  ;*/
-/*}*/
-/*.home_header  h2{*/
-/*  @apply font-bold pb-12 text-6.5xl leading-11 w-full  md:text-22.5 md:leading-25  xl:max-w-139.25*/
-/*  lg:col-span-3;*/
-/*}*/
-/*.home_header  h2 span{*/
-/*  @apply text-srorange;*/
-/*}*/
-/*.home_header  h3{*/
-/*  @apply text-lg font-bold leading-6 pb-10 lg:max-w-102 lg:pt-15 lg:text-xl lg:col-span-2*/
-/*}*/
-/*.home_header .main-button-wrapper{*/
-/*@apply col-span-5 lg:col-span-2 lg:col-end-6 lg:mr-auto lg:-mt-15*/
-/*}*/
-/*.home_header .sub-button-wrapper{*/
-/*  @apply col-span-5 lg:col-span-2 lg:col-end-7  lg:-mt-7.5*/
-/*}*/
-/*.home_header  .main-button {*/
-/*  @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14*/
-/*  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;*/
-/*  width: fit-content;*/
-/*}*/
-/*.home_header .main-button:hover:after{*/
-/*  @apply pl-4 transition duration-500 ease-in-out;*/
-/*  content: url("~/assets/images/white-right.svg");*/
-/*  !*-webkit-mask-image: url("~/assets/images/right-blue.svg");*!*/
-/*}*/
-/*.home_header .main-button:after{*/
-/*  @apply pl-4;*/
-/*  content: url("~/assets/images/right-blue.svg");*/
-/*  !*-webkit-mask-image: url("~/assets/images/right-blue.svg");*!*/
-/*}*/
-
-/*.home_header  .sub-button {*/
-/*  @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44 text-center cursor-default*/
-/*}*/
-/*.home_header  .sub-button:after {*/
-/*  @apply  place-self-center pt-3 animate-bounce cursor-default;*/
-/*  content: url("~/assets/images/lb-down.png");*/
-/*}*/
 
 .home_header>div{
   @apply flex m-auto flex-col  px-5

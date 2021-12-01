@@ -58,7 +58,7 @@ export default {
           let client = new postmark.ServerClient(this.$config.PostMarkKey)
 
           client.sendEmail({
-            "From": "hello@kortaben.se",
+            "From": "hello@st-stage.kortaben.work",
             "To": "ashish@kortaben.se",
             "Subject": "Hello from Postmark",
             "HtmlBody": "<strong>Hello</strong> dear Postmark user.",

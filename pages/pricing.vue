@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TheLinesBackground  class="overflow-hidden"/>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <ThePriceComponents />
     <TheConfigurator/>
@@ -36,10 +37,9 @@ export default {
 .pricing_hero{
   @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/pricing-small-blur-header.png"),
-  url("~/assets/images/price-page-big-blur.png"),
-  url("~/assets/images/hero-bg.webp");
-  background-position:right 90% , left 60%, center top;
-  background-size: auto, 39% auto, auto;
+  url("~/assets/images/price-page-big-blur.png");
+  background-position:right 90% , left 60%;
+  background-size: auto, 39% auto;
 
 
 }

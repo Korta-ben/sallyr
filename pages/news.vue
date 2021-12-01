@@ -3,6 +3,7 @@
     <transition name="readytotalk" appear v-if=showOverlayForm>
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
+    <TheLinesBackground />
     <section class="news px-5 pb-25">
       <h2 class="font-bold text-5xl leading-13.75 text-center pt-25 pb-16">What’s new at
         <span class="whitespace-nowrap">Sally R?</span></h2>
@@ -90,9 +91,9 @@ export default {
 }
 
 .news {
-  background-image: url("~/assets/images/blue-blur-2.webp"), url("~/assets/images/hero-bg.webp");
+  background-image: url("~/assets/images/blue-blur-2.webp");
   @apply bg-no-repeat ;
-  background-position: left 0%, center top;
+  background-position: left 0%;
 }
 .team-wwu>div{
   @apply px-5 pt-4
