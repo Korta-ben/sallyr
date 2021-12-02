@@ -51,20 +51,38 @@ export default {
       this.$emit("popupToggle");
     },
 
-     sendEmail() {
+    async sendEmail() {
       try{
         // let client = new postmark.Client("d1f5cb47-3071-41be-a8d2-887be1b0f663");
         let postmark = require("postmark")
         let client = new postmark.ServerClient(this.$config.PostMarkKey)
-
-        client.sendEmail({
-          "From": "hello@st-stage.kortaben.work",
+       await client.sendEmail({
+          "From": "hello@sr-stage.kortaben.work",
           "To": "ashish@kortaben.se",
-          "Subject": "Hello from Postmark",
-          "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
-          "TextBody": "Hello from Postmark!",
-          "MessageStream": "outbound"
-        });
+          "Subject": "Test",
+          "HtmlBody": "<b>Hello</b>",
+          "TextBody": "Hello",
+          "MessageStream": "outbound",
+          "Headers": [
+            {
+              "Name": "CUSTOM-HEADER",
+              "Value": "value"
+            },
+            {
+              "Name":"Content-Type",
+              "Value": "application/json"
+            }
+          ]
+        })
+
+        // client.sendEmail({
+        //   "From": "hello@st-stage.kortaben.work",
+        //   "To": "ashish@kortaben.se",
+        //   "Subject": "Hello from Postmark",
+        //   "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
+        //   "TextBody": "Hello from Postmark!",
+        //   "MessageStream": "outbound"
+        // });
         console.log("email was sent")
       }catch (e) {
         console.log(e)
