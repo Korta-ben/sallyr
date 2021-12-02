@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="readytotalk" appear v-if=showOverlayForm>
-      <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
+      <OverlayForm class="-mt-24" @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
     <TheLinesBackground class="linesbg"/>
     <section class=" px-5 teams xl:max-w-screen-1.5lg m-auto">
@@ -74,7 +74,7 @@ export default {
 }
 .team-wwu>div .main-button {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-36
-  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out mt-11;
+  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out mt-11 cursor-pointer;
   width: fit-content;
 }
 

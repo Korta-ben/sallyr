@@ -38,21 +38,23 @@
         <h3 >
           Contact
         </h3>
-        <div class="contact-footer font-normal text-srwhite text-base flex flex-row justify-between content-center">Contact
-          us</div>
+        <div @click="clickHandler"
+             class="contact-footer cursor-pointer font-normal text-srwhite text-base flex flex-row justify-between content-center">
+        Contact us</div>
 
         <ul class="font-normal social-icons pt-11 flex flex-row gap-x-4">
           <li>
-            <img src="~/assets/images/Group 81.png" >
+            <a href="https://www.facebook.com/SallyRAir" target="_blank">
+              <img src="~/assets/images/Group 81.svg" >
+            </a>
+
           </li>
+
           <li>
-            <img src="~/assets/images/Group 82.png" >
-          </li>
-          <li>
-            <img src="~/assets/images/Group 83.png" >
-          </li>
-          <li>
-            <img src="~/assets/images/Group 84.png" >
+            <a href="https://www.linkedin.com/company/sally-r/" target="_blank">
+              <img src="~/assets/images/Group 84.svg" >
+            </a>
+
           </li>
         </ul>
       </div>
@@ -60,10 +62,12 @@
 <!--        -->
 <!--      </div>-->
       <div class="w-full flex flex-col">
+        <NuxtLink to="/">
         <img
           src="~/assets/images/logo-white-sally-r.svg"
           class="m-auto pb-10"
         >
+        </NuxtLink>
         <div
           class="w-56 m-auto bg-srwhite pt-0.5 rounded-sm"
         />
@@ -78,6 +82,12 @@
 
 <script>
 export default {
+
+  methods: {
+    clickHandler(e) {
+      this.$emit("popupToggle");
+    }
+  }
 
 }
 </script>

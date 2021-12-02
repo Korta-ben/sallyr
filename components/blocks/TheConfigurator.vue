@@ -10,34 +10,34 @@
               <input  v-model="building_type"  id="office" type="radio"  class="hidden" name="building_type" value="office">
               <label for="office"
                class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-               hover:bg-srblue hover:text-srwhite
+               hover:bg-srblue hover:text-srwhite cursor-pointer
             " >Office</label>
 
               <input  v-model="building_type"  id="logistics" type="radio" class="hidden" name="building_type" value="logistics">
               <label for="logistics"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                     hover:bg-srblue hover:text-srwhite
+                     hover:bg-srblue hover:text-srwhite cursor-pointer
             transition duration-500 ease-in-out " >Logistics</label>
 
               <input  v-model="building_type" id="educational"  type="radio" class="hidden" name="building_type"
                       value="educational">
               <label for="educational"
                      class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
-                     hover:bg-srblue hover:text-srwhite
+                     hover:bg-srblue hover:text-srwhite cursor-pointer
               transition duration-500 ease-in-out" >Educational</label>
 
 
               <input  v-model="building_type"  id="retail" type="radio" class="hidden" name="building_type" value="retail">
               <label for="retail"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                     hover:bg-srblue hover:text-srwhite
+                     hover:bg-srblue hover:text-srwhite cursor-pointer
               transition duration-500 ease-in-out" >Retail</label>
 
 
               <input v-model="building_type"   id="other" type="radio" class="hidden" name="building-type" value="other">
               <label for="other"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                     hover:bg-srblue hover:text-srwhite
+                     hover:bg-srblue hover:text-srwhite cursor-pointer
               transition duration-500 ease-in-out" >Other</label>
             </div>
 
@@ -50,14 +50,14 @@
 
                 <label for="polar"
                        class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                       hover:bg-srblue hover:text-srwhite
+                       hover:bg-srblue hover:text-srwhite cursor-pointer
                 transition duration-500 ease-in-out" >Polar</label>
 
 
                 <input v-model="zone"  id="temperate" type="radio" class="hidden" name="zone" value="temperate">
                 <label for="temperate"
                        class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                       hover:bg-srblue hover:text-srwhite    transition duration-500 ease-in-out"
+                       hover:bg-srblue hover:text-srwhite  cursor-pointer   transition duration-500 ease-in-out"
                 >Temperate
                 </label>
 
@@ -65,7 +65,7 @@
                 <input v-model="zone" id="tropical"  type="radio" class="hidden" name="zone" value="tropical">
                 <label for="tropical"
                        class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
-                       hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >Tropical
+                       hover:bg-srblue hover:text-srwhite cursor-pointer   transition duration-500 ease-in-out" >Tropical
                 </label>
 
               </div>
@@ -76,14 +76,14 @@
               <input v-model="area_type"  id="meters" type="radio"  class="hidden" name="area_type" value="meters">
               <label for="meters"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                     hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >Meters
+                     hover:bg-srblue hover:text-srwhite  cursor-pointer  transition duration-500 ease-in-out" >Meters
               </label>
 
 
               <input v-model="area_type"  id="feet" type="radio" class="hidden" name="area_type" value="feet">
               <label for="feet"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                     hover:bg-srblue hover:text-srwhite    transition duration-500 ease-in-out" >Feet
+                     hover:bg-srblue hover:text-srwhite  cursor-pointer   transition duration-500 ease-in-out" >Feet
               </label>
 
 
@@ -96,21 +96,21 @@
               <input v-model="currency"  id="sek" type="radio"  class="hidden" name="currency" value="sek">
               <label for="sek"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                         hover:bg-srblue hover:text-srwhite    transition duration-500 ease-in-out" >SEK
+                         hover:bg-srblue hover:text-srwhite  cursor-pointer   transition duration-500 ease-in-out" >SEK
               </label>
 
 
               <input v-model="currency"  id="usd" type="radio" class="hidden" name="currency" value="usd">
               <label for="usd"
                      class="py-6 px-7.5  text-base font-bold leading-4 border-srblue border-2 text-srblue
-                     hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >USD
+                     hover:bg-srblue hover:text-srwhite   cursor-pointer transition duration-500 ease-in-out" >USD
               </label>
 
 
               <input v-model="currency" id="eur"  type="radio" class="hidden" name="currency" value="eur">
               <label for="eur"
                      class="py-6 px-7.5 text-base font-bold leading-4  border-srblue border-2 text-srblue
-                      hover:bg-srblue hover:text-srwhite   transition duration-500 ease-in-out" >EUR
+                      hover:bg-srblue hover:text-srwhite  cursor-pointer  transition duration-500 ease-in-out" >EUR
               </label>
 
             </div>
@@ -197,17 +197,18 @@
 
             <div class="contact w-1/2 flex flex-col " v-if="!resultSent">
               <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
-              <input v-model="contactEmail" name="email" placeholder="Email*" class="border-b py-4 border-srblack max-w-xs"/>
+              <input v-model="contactEmail" required name="email" placeholder="Email*"
+                     class="border-b py-4 border-srblack max-w-xs"/>
               <div class="pt-4 flex">
-                <input v-model="contactMe" type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about
-                getting
-                started
-              </label>
+<!--                <input v-model="contactMe" type="checkbox" id="contacted"/><label class="pl-4">I want to be contacted about-->
+<!--                getting-->
+<!--                started-->
+<!--              </label>-->
 
 
               </div>
               <a
-                class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue  border-2 text-srblue text-base font-semibold
+                class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue cursor-pointer border-2 text-srblue text-base font-semibold
                  hover:bg-srblue hover:text-srwhite
                  leading-4 transition duration-500 ease-in-out flex"
                  @click="resultSent =  !resultSent"

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col flex-wrap">
     <transition name="readytotalk" appear v-if=showOverlayForm>
-      <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
+      <OverlayForm class="-mt-24" @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
     <TheLinesBackground class="linesbg"/>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>

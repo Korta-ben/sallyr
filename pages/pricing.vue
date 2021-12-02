@@ -1,5 +1,8 @@
 <template>
   <div>
+    <transition name="readytotalk" appear v-if=showOverlayForm>
+      <OverlayForm class="-mt-24" @popupToggle="showOverlayForm = !showOverlayForm"/>
+    </transition>
     <TheLinesBackground class="linesbg"/>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <ThePriceComponents />
@@ -13,6 +16,7 @@ export default {
 
   data () {
     return {
+      showOverlayForm:false
     }
   },
 
@@ -23,6 +27,16 @@ export default {
 </script>
 
 <style>
+/*transation*/
+.readytotalk-enter-active, .readytotalk-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.readytotalk-enter, .readytotalk-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
 .linesbg{
   @apply absolute left-0 right-0 m-auto overflow-hidden;
   z-index: -1;

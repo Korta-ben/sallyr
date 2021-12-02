@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="readytotalk" appear v-if=showOverlayForm>
-      <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
+      <OverlayForm class="-mt-24" @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
     <TheLinesBackground class="linesbg"/>
     <section class="news px-5 pb-25">
@@ -24,7 +24,7 @@
 
             <div class="read-mores font-bold text-base leading-4 text-srblue">
               <a :href="story.url" target="_blank
-">Read more</a>
+">Go to press release</a>
             </div>
           </div>
         </div>
@@ -106,7 +106,8 @@ export default {
   @apply text-center font-bold text-lg leading-6 pb-8.5
 }
 .team-wwu>div .main-button {
-  @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-36;
+  @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base
+  leading-4 block m-auto text-srblue mb-36 cursor-pointer;
   width: fit-content;
 }
 .story{

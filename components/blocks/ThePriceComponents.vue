@@ -18,7 +18,7 @@
         <transition name="started" >
           <ThePricingContact v-if="started"  class="h-58 flex flex-col justify-center"/>
         </transition>
-       <div class="card" v-if="!started" @click="started = !started">
+       <div class="card cursor-pointer" v-if="!started" @click="started = !started">
          <h3>Get started today</h3>
          <ul>
            <li>
@@ -46,7 +46,7 @@
        <transition name="invest" appear>
         <ThePricingContact v-if="invest"  class="h-58 flex flex-col justify-center"/>
        </transition>
-       <div class="card" v-if="!invest" @click="invest = !invest">
+       <div class="card cursor-pointer" v-if="!invest" @click="invest = !invest">
          <h3>Invest in your Air Quality</h3>
          <ul>
            <li>
@@ -97,10 +97,10 @@
          <div class="col-span-2 flex flex-row justify-end gap-x-4">
             <a href="#configurator"
                class="calculate  px-7.5 font-bold text-base  leading-4 border-srblue border-2 text-srblue  mt-6
-hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out">Calculate your cost</a>
+hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out cursor-pointer">Calculate your cost</a>
            <a  @click="enterprize = !enterprize"
               class="contact py-5 px-7.5 font-bold  text-base  leading-4 border-srblue border-2 text-srblue  mt-6
-hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out">Contact</a>
+hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out cursor-pointer">Contact</a>
          </div>
        </div>
      </div>

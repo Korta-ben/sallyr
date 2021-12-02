@@ -1,5 +1,8 @@
 <template>
 <div class="pb-25">
+  <transition name="readytotalk" appear v-if=showOverlayForm>
+    <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
+  </transition>
   <TheLinesBackground class="linesbg"/>
   <section class="cases px-5 pb-25">
     <h2 class="font-bold text-5xl leading-13.75 text-center py-11.5">Our cases</h2>
@@ -15,11 +18,17 @@
 
 <script>
 export default {
-
+data(){
+    return {
+      showOverlayForm:false
+    }
+  }
 }
 </script>
 
 <style>
+
+
 .linesbg{
   @apply absolute left-0 right-0 m-auto overflow-hidden;
   z-index: -1;
