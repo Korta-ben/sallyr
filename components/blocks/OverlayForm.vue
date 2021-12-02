@@ -52,60 +52,23 @@ export default {
     },
 
      sendEmail() {
-      // try{
-      //   // let client = new postmark.Client("d1f5cb47-3071-41be-a8d2-887be1b0f663");
-      //   let postmark = require("postmark")
-      //   let client = new postmark.ServerClient(this.$config.PostMarkKey)
-      //
-      //   client.sendEmail({
-      //     "From": "hello@st-stage.kortaben.work",
-      //     "To": "ashish@kortaben.se",
-      //     "Subject": "Hello from Postmark",
-      //     "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
-      //     "TextBody": "Hello from Postmark!",
-      //     "MessageStream": "stage-test-kb"
-      //   });
-      //   console.log("email was sent")
-      // }catch (e) {
-      //   console.log(e)
-      // }
+      try{
+        // let client = new postmark.Client("d1f5cb47-3071-41be-a8d2-887be1b0f663");
+        let postmark = require("postmark")
+        let client = new postmark.ServerClient(this.$config.PostMarkKey)
 
-
-//       'use strict';
-//
-//       const nodemailer = require('nodemailer');
-//       const postmarkTransport = require('nodemailer-postmark-transport');
-//       const transport = nodemailer.createTransport(postmarkTransport({
-//         auth: {
-//           apiKey: this.$config.PostMarkKey
-//         }
-//       }));
-//       const mail = {
-//         from: 'hello@st-stage.kortaben.work',
-//         to: 'ashish@kortaben.se',
-//         subject: 'Hello',
-//         text: 'Hello',
-//         html: '<h1>Hello</h1>'
-//       };
-//
-// // callback style
-//       transport.sendMail(mail, function (err, info) {
-//         if (err) {
-//           console.error(err);
-//         } else {
-//           console.log(info);
-//         }
-//       });
-
-// async/await style
-//       try {
-//         const info = await transport.sendMail(mail);
-//         console.log(info);
-//       } catch (err) {
-//         console.error(err);
-//       }
-
-
+        client.sendEmail({
+          "From": "hello@st-stage.kortaben.work",
+          "To": "ashish@kortaben.se",
+          "Subject": "Hello from Postmark",
+          "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
+          "TextBody": "Hello from Postmark!",
+          "MessageStream": "outbound"
+        });
+        console.log("email was sent")
+      }catch (e) {
+        console.log(e)
+      }
     }
   },
   computed: {
