@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheLinesBackground  class="overflow-hidden"/>
+    <TheLinesBackground class="linesbg"/>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <ThePriceComponents />
     <TheConfigurator/>
@@ -23,7 +23,10 @@ export default {
 </script>
 
 <style>
-
+.linesbg{
+  @apply absolute left-0 right-0 m-auto overflow-hidden;
+  z-index: -1;
+}
 /*1 pricing_hero */
 .pricing_hero>div{
   @apply flex flex-col items-center px-5

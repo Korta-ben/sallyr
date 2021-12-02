@@ -3,7 +3,7 @@
     <transition name="readytotalk" appear v-if=showOverlayForm>
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
-    <TheLinesBackground />
+    <TheLinesBackground class="linesbg"/>
     <section class=" px-5 teams xl:max-w-screen-1.5lg m-auto">
       <h2 class="text-center font-bold text-3xl leading-8 pb-9.5
     md:pt-25 md:pb-16 md:text-12.5 md:leading-13.75">
@@ -58,6 +58,10 @@ export default {
   opacity: 0;
 }
 
+.linesbg{
+  @apply absolute left-0 right-0 m-auto overflow-hidden;
+  z-index: -1;
+}
 
 .teams>div div:last-child{
   @apply lg:col-span-4;

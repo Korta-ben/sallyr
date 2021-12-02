@@ -1,5 +1,5 @@
 <template>
-    <div class="linesbg">
+    <div>
       <lottie
         :width="1988"
         :height="554"
@@ -35,9 +35,5 @@ export default {
 
 <style >
 
-.linesbg{
-  @apply absolute left-0 right-0 m-auto overflow-hidden;
-  z-index: -1;
-}
 
 </style>

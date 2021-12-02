@@ -35,7 +35,7 @@
       </div>
 
       <div class="pb-12 w-52">
-        <h3>
+        <h3 >
           Contact
         </h3>
         <div class="contact-footer font-normal text-srwhite text-base flex flex-row justify-between content-center">Contact

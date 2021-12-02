@@ -3,7 +3,7 @@
     <transition name="readytotalk" appear v-if=showOverlayForm>
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
-    <TheLinesBackground />
+    <TheLinesBackground class="linesbg"/>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <TheReadyToTalkSlideIn  @popupToggle="showOverlayForm = !showOverlayForm"/>
   </div>
@@ -33,6 +33,10 @@ export default {
 /*home page components home-header.webp ~/assets/images/blue-blur-1.webp*/
 
 
+.linesbg{
+  @apply absolute left-0 right-0 m-auto overflow-hidden;
+  z-index: -1;
+}
 /*
   1.header
 */

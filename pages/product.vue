@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-col flex-wrap">
-    <TheLinesBackground />
+    <TheLinesBackground class="linesbg"/>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
+
     <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25 lg:pl-50 pt-11.5">
       <VueSlickCarousel v-bind="sliderSettings" >
         <div v-for="item in items" :key="item.id"
@@ -127,6 +128,16 @@ export default {
 }
 </script>
 <style>
+
+.linesbg{
+  @apply absolute left-0 right-0 m-auto overflow-hidden;
+  z-index: -1;
+}
+
+.product_feature.second  .lines-bg{
+@apply absolute left-0 right-0 m-auto overflow-hidden;
+  z-index: -1;
+}
 /*the product page*/
 /*1. product header*/
 .product_header {
@@ -207,8 +218,8 @@ export default {
 4. product optimization bottom
 */
 .product_optimize_bottom{
-background-image: url("~/assets/images/product-opt2-lines-bg.webp");
-  background-position: 68% 127%;
+/*background-image: url("~/assets/images/product-opt2-lines-bg.webp");*/
+/*  background-position: 68% 127%;*/
 @apply md:mr-0 pl-5 relative  xl:max-w-screen-1.5lg m-auto lg:m-auto
    lg:w-full bg-no-repeat ;
 }
@@ -219,6 +230,10 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 /*}*/
 .product_optimize_bottom{
   @apply max-w-screen-1.5xl
+}
+.product_optimize_bottom  .lines-bg {
+  @apply absolute left-0 right-0 m-auto overflow-hidden;
+  z-index: -1;
 }
 
 .product_optimize_bottom>div{
@@ -270,7 +285,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
   @apply -mt-11.5  max-w-screen-1.5xl m-auto w-full
 }
 .product_low_maintenance>div{
-  @apply flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto  1.5lg:w-lgx2;
+  @apply flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto  1.5lg:w-full;
 }
 .product_low_maintenance>div h2{
   @apply pt-0.5 text-center font-bold  text-3xl leading-8 pb-4
@@ -317,7 +332,7 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 7. product feature
 */
 .product_feature{
-  @apply max-w-screen-1.5xl  m-auto ;
+  @apply   m-auto ;
 }
 .product_feature>div{
   @apply flex flex-col px-5 pb-14
@@ -370,10 +385,10 @@ background-image: url("~/assets/images/product-opt2-lines-bg.webp");
 
 /*product feature second*/
 .product_feature.second{
-  background:url("~/assets/images/new-lines-resized.svg");
-  background-position: 2% 38%;
+  /*background:url("~/assets/images/new-lines-resized.svg");*/
+  /*background-position: 2% 38%;*/
   @apply  bg-no-repeat  w-full   ;
-  max-width: 1920px;
+  /*max-width: 1920px;*/
 }
 
 .product_feature.second>div:before{

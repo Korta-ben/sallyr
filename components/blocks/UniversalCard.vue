@@ -23,7 +23,9 @@
 
       </div>
       <img v-if="card.has_bottom_icon" class="bottom-image" />
+      <TheLinesBackground v-if="card.blue_line_background" class="lines-bg"/>
     </div>
+
   </section>
 </template>
 
