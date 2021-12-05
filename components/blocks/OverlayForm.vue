@@ -52,15 +52,22 @@ export default {
     },
 
     sendEmail() {
-      this.$mail.send({
-        from: "hello@sr-stage.kortaben.work",
-        to: 'ashish@kortaben.se',
-        subject: 'Message from' + this.fullname,
-        text: `Fullname:` + this.fullname +
-               `Business:` + this.business +
-                `Phone:` + this.phone +
-                `email:` + this.email +
-                `message:` + this.message
+      // this.$mail.send({
+      //   from: "hello@sr-stage.kortaben.work",
+      //   to: 'ashish@kortaben.se',
+      //   subject: 'Message from' + this.fullname,
+      //   text: `Fullname:` + this.fullname +
+      //          `Business:` + this.business +
+      //           `Phone:` + this.phone +
+      //           `email:` + this.email +
+      //           `message:` + this.message
+      // })
+
+      this.$axios.$post('/mail/send', {
+        config: { to: this.email },
+        from: 'John Doe',
+        subject: 'Incredible',
+        text: 'This is an incredible test message',
       })
     }
   },
