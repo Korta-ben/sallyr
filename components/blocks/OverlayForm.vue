@@ -53,7 +53,9 @@ export default {
 
     sendEmail() {
       this.$mail.send({
+        config: 'contact',
         from: "hello@sr-stage.kortaben.work",
+        to: 'ashish@kortaben.se',
         subject: 'Message from' + this.fullname,
         text: `Fullname:` + this.fullname +
                `Business:` + this.business +

@@ -70,7 +70,7 @@ export default {
     '@braid/vue-formulate/nuxt',
     ['nuxt-mail', {
       message: [
-        { name: 'contact', to: 'ashish@kortaben.se' },
+        { name: 'contact' },
         { name: 'calculate' }
       ],
       smtp: {
