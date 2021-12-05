@@ -74,7 +74,7 @@ export default {
       },
       smtp: {
         host: 'smtp.postmarkapp.com',
-        port: 587,
+        port: 2525,
         auth: {
           user: 'd1f5cb47-3071-41be-a8d2-887be1b0f663',
           pass: 'd1f5cb47-3071-41be-a8d2-887be1b0f663'
