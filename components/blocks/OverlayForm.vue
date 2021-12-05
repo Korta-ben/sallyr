@@ -52,41 +52,39 @@ export default {
     },
 
     async sendEmail() {
-      try{
-        // let client = new postmark.Client("d1f5cb47-3071-41be-a8d2-887be1b0f663");
-        let postmark = require("postmark")
-        let client = new postmark.ServerClient(this.$config.PostMarkKey)
-       await client.sendEmail({
-          "From": "hello@sr-stage.kortaben.work",
-          "To": "ashish@kortaben.se",
-          "Subject": "Test",
-          "HtmlBody": "<b>Hello</b>",
-          "TextBody": "Hello",
-          "MessageStream": "outbound",
-          "Headers": [
-            {
-              "Name": "CUSTOM-HEADER",
-              "Value": "value"
-            },
-            {
-              "Name":"Content-Type",
-              "Value": "application/json"
-            }
-          ]
-        })
+      const nodemailer = require("nodemailer");
 
-        // client.sendEmail({
-        //   "From": "hello@st-stage.kortaben.work",
-        //   "To": "ashish@kortaben.se",
-        //   "Subject": "Hello from Postmark",
-        //   "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
-        //   "TextBody": "Hello from Postmark!",
-        //   "MessageStream": "outbound"
-        // });
-        console.log("email was sent")
-      }catch (e) {
-        console.log(e)
-      }
+      // Generate test SMTP service account from ethereal.email
+      // Only needed if you don't have a real mail account for testing
+      // let testAccount = await nodemailer.createTestAccount();
+
+      // create reusable transporter object using the default SMTP transport
+      let transporter = nodemailer.createTransport({
+        host: "smtp.postmarkapp.com",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: "d1f5cb47-3071-41be-a8d2-887be1b0f663", // generated ethereal user
+          pass: "d1f5cb47-3071-41be-a8d2-887be1b0f663", // generated ethereal password
+        },
+        header:"X-PM-Message-Stream: outbound"
+      });
+
+      // send mail with defined transport object
+      let info = await transporter.sendMail({
+        from: '"Fred Foo " <hello@sr-stage.kortaben.work>', // sender address
+        to: "ashish@kortaben.se, ashish@kortaben.se", // list of receivers
+        subject: "Hello ✔", // Subject line
+        text: "Hello world?", // plain text body
+        html: "<b>Hello world?</b>", // html body
+      });
+
+      console.log("Message sent: %s", info.messageId);
+      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+      // Preview only available when sending through an Ethereal account
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     }
   },
   computed: {
