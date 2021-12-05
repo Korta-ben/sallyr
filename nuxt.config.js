@@ -101,7 +101,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://sallyr.local/wp-json/wp/v2/'
+    baseURL: 'https://sr-stage.kortaben.work/wp-json/wp/v2/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
