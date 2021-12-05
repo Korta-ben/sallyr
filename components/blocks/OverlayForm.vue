@@ -51,24 +51,30 @@ export default {
       this.$emit("popupToggle");
     },
 
-    async sendEmail() {
-      // this.$mail.send({
-      //   from: "hello@sr-stage.kortaben.work",
-      //   to: 'ashish@kortaben.se',
-      //   subject: 'Message from' + this.fullname,
-      //   text: `Fullname:` + this.fullname +
-      //          `Business:` + this.business +
-      //           `Phone:` + this.phone +
-      //           `email:` + this.email +
-      //           `message:` + this.message
-      // })
+     sendEmail() {
 
-      await this.$axios.$post('/mail/send', {
-        config: { to: this.email },
-        from: 'John Doe',
-        subject: 'Incredible',
-        text: 'This is an incredible test message',
-      })
+      try{
+          this.$mail.send({
+            from: this.email,
+            bcc: this.email,
+            subject: 'Message from' + this.fullname,
+            text: `Fullname:` + this.fullname +
+              `Business:` + this.business +
+              `Phone:` + this.phone +
+              `email:` + this.email +
+              `message:` + this.message
+          })
+      }catch(e){
+        console.log(e)
+      }
+
+
+      // await this.$axios.$post('/mail/send', {
+      //   config: { to: this.email },
+      //   from: 'John Doe',
+      //   subject: 'Incredible',
+      //   text: 'This is an incredible test message',
+      // })
     }
   },
   computed: {
