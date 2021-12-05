@@ -56,7 +56,7 @@ export default {
       try{
           this.$mail.send({
             from: 'hello@sr-stage.kortaben.work',
-            to: this.email,
+            bcc: this.email,
             subject: 'Message from ' + this.fullname,
             text: `Fullname: ` + this.fullname +
               `Business:`  + this.business +
