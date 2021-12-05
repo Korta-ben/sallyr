@@ -69,9 +69,10 @@ export default {
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
     ['nuxt-mail', {
-      message: {
-        to: 'ashish@kortaben.se',
-      },
+      message: [
+        { name: 'contact', to: 'ashish@kortaben.se' },
+        { name: 'calculate' }
+      ],
       smtp: {
         host: 'smtp.postmarkapp.com',
         port: 2525,
