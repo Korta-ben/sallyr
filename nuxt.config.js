@@ -69,10 +69,6 @@ export default {
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
     ['nuxt-mail', {
-      message: [
-        { name: 'contact' },
-        { name: 'calculate' }
-      ],
       smtp: {
         host: 'smtp.postmarkapp.com',
         port: 2525,
