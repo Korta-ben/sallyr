@@ -51,7 +51,7 @@ export default {
       this.$emit("popupToggle");
     },
 
-    sendEmail() {
+    async sendEmail() {
       // this.$mail.send({
       //   from: "hello@sr-stage.kortaben.work",
       //   to: 'ashish@kortaben.se',
@@ -63,7 +63,7 @@ export default {
       //           `message:` + this.message
       // })
 
-      this.$axios.$post('/mail/send', {
+      await this.$axios.$post('/mail/send', {
         config: { to: this.email },
         from: 'John Doe',
         subject: 'Incredible',
