@@ -55,14 +55,14 @@ export default {
 
       try{
           this.$mail.send({
-            from: this.email,
-            bcc: this.email,
-            subject: 'Message from' + this.fullname,
-            text: `Fullname:` + this.fullname +
-              `Business:` + this.business +
-              `Phone:` + this.phone +
-              `email:` + this.email +
-              `message:` + this.message
+            from: 'hello@sr-stage.kortaben.se',
+            to: this.email,
+            subject: 'Message from ' + this.fullname,
+            text: `Fullname: ` + this.fullname +
+              `Business:`  + this.business +
+              `Phone: ` + this.phone +
+              `email: ` + this.email +
+              `message: ` + this.message
           })
       }catch(e){
         console.log(e)
