@@ -67,17 +67,21 @@ export default {
           // })
 
         this.$mail.send({
-          message: { to : this.email  },
+          message: { bcc : this.email  },
           from: 'hello@sr-stage.kortaben.work',
           subject: 'message title',
           text: 'this is body text'
         })
+
+
        // await axios.post('/mail/send', {
        //    config: { to : this.email  },
        //    from: 'ashish aryal',
        //    subject: 'Incredible',
        //    text: 'This is an incredible test message',
        //  })
+
+
         console.log("email sent")
       }catch(e){
         console.log(e)

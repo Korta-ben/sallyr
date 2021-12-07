@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 
   server: {
-    port: 8000 // default: 3000
+       port: 8000 // default: 3000
   },
   publicRuntimeConfig: {
     PostMarkKey: process.env.PM_KEY,
@@ -70,19 +70,37 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
-    ['nuxt-mail', {
-      message:
-        { bcc: 'ashish@kortaben.se' }
-      ,
-      smtp: {
-        host: 'smtp.postmarkapp.com',
-        port: 2525,
-        auth: {
-          user: process.env.SMTPU,
-          pass: process.env.SMTPP
+    ['nuxt-mail',
+      {
+        message: {
+          to: 'foo@bar.de',
         },
-      },
-    }],
+        smtp: {
+          host: 'smtp.postmarkapp.com',
+          port: 2525,
+          auth: {
+            user: process.env.SMTPU,
+            pass: process.env.SMTPP
+          }
+        }
+      }
+    ]
+    // ['nuxt-mail', mail: {
+    //   // message:
+    //   //   { bcc: 'ashish@kortaben.se' }
+    //   // ,
+    //   smtp: {
+    //     host: 'smtp.postmarkapp.com',
+    //     port: 2525,
+    //     auth: {
+    //       user: process.env.SMTPU,
+    //       pass: process.env.SMTPP
+    //     },
+    //   },
+    // }],
+
+
+
   ],
   formulate:{
     options:{
