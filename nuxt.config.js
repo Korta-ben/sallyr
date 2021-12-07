@@ -78,8 +78,8 @@ export default {
         host: 'smtp.postmarkapp.com',
         port: 2525,
         auth: {
-          user: this.SmtpUser,
-          pass: this.SmtpPass
+          user: this.$config.SmtpUser,
+          pass: this.$config.SmtpPass
         },
       },
     }],
