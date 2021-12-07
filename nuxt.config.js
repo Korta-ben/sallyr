@@ -4,6 +4,7 @@ export default {
   server: {
        port: 8000 // default: 3000
   },
+  serverMiddleware: ['~/server-middleware/mailer'],
   publicRuntimeConfig: {
     PostMarkKey: process.env.PM_KEY,
     SmtpUser: process.env.SMTPU,
@@ -70,21 +71,23 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
-    ['nuxt-mail',
-      {
-        message: {
-          to: 'ashish@kortaben.se',
-        },
-        smtp: {
-          host: 'smtp.postmarkapp.com',
-          port: 2525,
-          auth: {
-            user: process.env.SMTPU,
-            pass: process.env.SMTPP
-          }
-        }
-      }
-    ]
+
+    // 'nuxt-mail'
+    // ['nuxt-mail',
+    //   {
+    //     message: {
+    //       // to: 'ashish@kortaben.se',
+    //     },
+    //     smtp: {
+    //       host: 'smtp.postmarkapp.com',
+    //       port: 2525,
+    //       auth: {
+    //         user: process.env.SMTPU,
+    //         pass: process.env.SMTPP
+    //       }
+    //     }
+    //   }
+    // ]
     // ['nuxt-mail', mail: {
     //   // message:
     //   //   { bcc: 'ashish@kortaben.se' }
@@ -102,6 +105,7 @@ export default {
 
 
   ],
+
   formulate:{
     options:{
       useInputDecorators: false

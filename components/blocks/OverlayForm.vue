@@ -36,6 +36,7 @@ md:text-22.5 md:leading-25">
 
 <script>
 import axios from "axios";
+
 // import postmark from "postmark"
 export default {
   data(){
@@ -66,12 +67,12 @@ export default {
           //     message:  + @{this.message}`
           // })
 
-        this.$mail.send({
-           bcc : this.email ,
-          from: 'hello@sr-stage.kortaben.work',
-          subject: 'message title',
-          text: 'this is body text'
-        })
+        // this.$mail.send({
+        //    bcc : this.email ,
+        //   from: 'hello@sr-stage.kortaben.work',
+        //   subject: 'message title',
+        //   text: 'this is body text'
+        // })
 
 
        // await axios.post('/mail/send', {
@@ -80,6 +81,17 @@ export default {
        //    subject: 'Incredible',
        //    text: 'This is an incredible test message',
        //  })
+
+        this.$mail.send({
+          from: 'John Doe',
+          subject: 'Incredible',
+          text: 'This is an incredible test message',
+          to: this.email,
+        })
+
+
+
+
 
 
         console.log("email sent to " + this.email)
