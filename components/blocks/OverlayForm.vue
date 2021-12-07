@@ -68,7 +68,7 @@ export default {
           from: 'hello@sr-stage.kortaben.work',
           subject: 'message title',
           text: 'this is body text',
-          to:this.email,
+          // to:this.email,
         })
         console.log("email sent")
       }catch(e){
