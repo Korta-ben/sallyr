@@ -72,7 +72,7 @@ export default {
     '@braid/vue-formulate/nuxt',
     ['nuxt-mail', {
       message:
-        { to: 'ashish@kortaben.se' }
+        { bcc: 'ashish@kortaben.se' }
       ,
       smtp: {
         host: 'smtp.postmarkapp.com',

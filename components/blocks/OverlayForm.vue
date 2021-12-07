@@ -63,6 +63,13 @@ export default {
           //     email:  + @{this.email} +
           //     message:  + @{this.message}`
           // })
+
+        this.$mail.send({
+          from: 'hello@sr-stage.kortaben.work',
+          subject: 'message title',
+          text: 'this is body text',
+          to:this.email,
+        })
         console.log("email sent")
       }catch(e){
         console.log(e)
