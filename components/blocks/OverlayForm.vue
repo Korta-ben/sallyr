@@ -17,7 +17,7 @@ md:text-22.5 md:leading-25">
              v-model="email"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
         <span v-if="currentRouteName === 'indoor-farming'"></span>
         <textarea v-else  name="message"  placeholder="Message..."
-               v-model="message"
+               v-model="body"
                   class="col-span-2 w-full border-0 border-b pr-2.5 mb-8 text-sm border-srskyblue"></textarea>
         <button
 
@@ -44,7 +44,7 @@ export default {
       business:"",
       phone:"",
       email:"",
-      message:""
+      body:""
     }
   },
   methods: {
@@ -67,7 +67,7 @@ export default {
           // })
 
         this.$mail.send({
-          config: { to : this.email  },
+          message: { to : this.email  },
           from: 'hello@sr-stage.kortaben.work',
           subject: 'message title',
           text: 'this is body text'
