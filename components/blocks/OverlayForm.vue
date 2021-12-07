@@ -35,6 +35,7 @@ md:text-22.5 md:leading-25">
 </template>
 
 <script>
+import axios from "axios";
 // import postmark from "postmark"
 export default {
   data(){
@@ -51,9 +52,10 @@ export default {
       this.$emit("popupToggle");
     },
 
-     sendEmail() {
+    async sendEmail() {
 
       try{
+        console.log('email prepared')
           // this.$mail.send({
           //   from: 'hello@sr-stage.kortaben.work',
           //   subject: 'Message from ' + this.fullname,
@@ -64,11 +66,17 @@ export default {
           //     message:  + @{this.message}`
           // })
 
-        this.$mail.send({
-          from: 'hello@sr-stage.kortaben.work',
-          subject: 'message title',
-          text: 'this is body text',
-          to:this.email,
+        // this.$mail.send({
+        //   from: 'hello@sr-stage.kortaben.work',
+        //   subject: 'message title',
+        //   text: 'this is body text',
+        //   to:this.email,
+        // })
+       await axios.post('/mail/send', {
+          config: { to : this.email  },
+          from: 'ashish aryal',
+          subject: 'Incredible',
+          text: 'This is an incredible test message',
         })
         console.log("email sent")
       }catch(e){
