@@ -66,18 +66,18 @@ export default {
           //     message:  + @{this.message}`
           // })
 
-        // this.$mail.send({
-        //   from: 'hello@sr-stage.kortaben.work',
-        //   subject: 'message title',
-        //   text: 'this is body text',
-        //   to:this.email,
-        // })
-       await axios.post('/mail/send', {
+        this.$mail.send({
           config: { to : this.email  },
-          from: 'ashish aryal',
-          subject: 'Incredible',
-          text: 'This is an incredible test message',
+          from: 'hello@sr-stage.kortaben.work',
+          subject: 'message title',
+          text: 'this is body text'
         })
+       // await axios.post('/mail/send', {
+       //    config: { to : this.email  },
+       //    from: 'ashish aryal',
+       //    subject: 'Incredible',
+       //    text: 'This is an incredible test message',
+       //  })
         console.log("email sent")
       }catch(e){
         console.log(e)
