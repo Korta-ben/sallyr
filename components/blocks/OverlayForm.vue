@@ -52,7 +52,7 @@ export default {
       this.$emit("popupToggle");
     },
 
-    async sendEmail() {
+     sendEmail() {
 
       try{
         console.log('email prepared')
@@ -82,7 +82,7 @@ export default {
        //  })
 
 
-        console.log("email sent")
+        console.log("email sent to " + this.email)
       }catch(e){
         console.log(e)
       }
