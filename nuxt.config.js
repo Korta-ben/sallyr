@@ -73,7 +73,7 @@ export default {
     ['nuxt-mail',
       {
         message: {
-          to: 'foo@bar.de',
+          to: 'ashish@kortaben.se',
         },
         smtp: {
           host: 'smtp.postmarkapp.com',

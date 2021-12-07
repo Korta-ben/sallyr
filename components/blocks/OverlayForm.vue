@@ -67,7 +67,7 @@ export default {
           // })
 
         this.$mail.send({
-          message: { bcc : this.email  },
+           bcc : this.email ,
           from: 'hello@sr-stage.kortaben.work',
           subject: 'message title',
           text: 'this is body text'
