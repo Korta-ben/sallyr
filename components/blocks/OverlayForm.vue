@@ -54,16 +54,15 @@ export default {
      sendEmail() {
 
       try{
-          this.$mail.send({
-            from: 'hello@sr-stage.kortaben.work',
-            bcc: this.email,
-            subject: 'Message from ' + this.fullname,
-            text: `Fullname:  + @{this.fullname} +
-              Business:  + @{}this.business +
-              Phone:  + @{this.phone} +
-              email:  + @{this.email} +
-              message:  + @{this.message}`
-          })
+          // this.$mail.send({
+          //   from: 'hello@sr-stage.kortaben.work',
+          //   subject: 'Message from ' + this.fullname,
+          //   text: `Fullname:  + @{this.fullname} +
+          //     Business:  + @{}this.business +
+          //     Phone:  + @{this.phone} +
+          //     email:  + @{this.email} +
+          //     message:  + @{this.message}`
+          // })
         console.log("email sent")
       }catch(e){
         console.log(e)
