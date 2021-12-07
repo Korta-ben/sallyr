@@ -5,7 +5,9 @@ export default {
     port: 8000 // default: 3000
   },
   publicRuntimeConfig: {
-    PostMarkKey: process.env.PM_KEY
+    PostMarkKey: process.env.PM_KEY,
+    SmtpUser: process.env.SMTPU,
+    SmtpPass: process.env.SMTPP
   },
   head: {
     title: 'sallyr',
@@ -76,8 +78,8 @@ export default {
         host: 'smtp.postmarkapp.com',
         port: 2525,
         auth: {
-          user: 'd1f5cb47-3071-41be-a8d2-887be1b0f663',
-          pass: 'd1f5cb47-3071-41be-a8d2-887be1b0f663'
+          user: this.SmtpUser,
+          pass: this.SmtpPass
         },
       },
     }],

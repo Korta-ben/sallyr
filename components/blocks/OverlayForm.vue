@@ -58,12 +58,13 @@ export default {
             from: 'hello@sr-stage.kortaben.work',
             bcc: this.email,
             subject: 'Message from ' + this.fullname,
-            text: `Fullname: ` + this.fullname +
-              `Business:`  + this.business +
-              `Phone: ` + this.phone +
-              `email: ` + this.email +
-              `message: ` + this.message
+            text: `Fullname:  + @{this.fullname} +
+              Business:  + @{}this.business +
+              Phone:  + @{this.phone} +
+              email:  + @{this.email} +
+              message:  + @{this.message}`
           })
+        console.log("email sent")
       }catch(e){
         console.log(e)
       }
