@@ -24,6 +24,7 @@
       </div>
       <img v-if="card.has_bottom_icon" class="bottom-image" />
       <TheLinesBackground v-if="card.blue_line_background" class="lines-bg"/>
+      <TheLinesGreenBackground  v-if="card.has_green_line_background" class="lines-bg" />
     </div>
 
   </section>
@@ -31,7 +32,9 @@
 
 <script>
 
+import TheLinesGreenBackground from "~/components/animations/TheLinesGreenBackground";
 export default {
+  components: {TheLinesGreenBackground},
   props: {
     card: {
       type: [Object, Array]
