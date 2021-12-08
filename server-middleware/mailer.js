@@ -17,11 +17,11 @@ console.log("this is mailer 2")
 app.post('/', function (req, res) {
   const attributes = ['fullname', 'business', 'to','from', 'body', 'phone']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
-  const someInvalid = sanitizedAttributes.some(r => !r)
-
-  if (someInvalid) {
-    return res.status(422).json({ 'error': 'Ugh.. That looks unprocessable!' })
-  }
+  // const someInvalid = sanitizedAttributes.some(r => !r)
+  //
+  // if (someInvalid) {
+  //   return res.status(422).json({ 'error': 'Ugh.. That looks unprocessable!' })
+  // }
 
   sendMail(...sanitizedAttributes)
   res.status(200).json({ 'message': 'OH YEAH' })
