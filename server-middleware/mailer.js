@@ -64,12 +64,13 @@ const sendMail = (fullname, business, to, from, body, phone) =>{
   let serverToken = process.env.SMTPU
   let client = new postmark.ServerClient(serverToken)
     let payload = {
-      "fullname":"ashish",
-      "business":"no business",
-      "phone":"9595959595",
-      "to":"ashisharyal64@gmail.com",
-      "from":"hello@sr-stage.kortaben.work",
-      "body":"this is my messages"
+      // "fullname":"ashish",
+      // "business":"no business",
+      // "phone":"9595959595",
+      "To":"ashisharyal64@gmail.com",
+      "From":"hello@sr-stage.kortaben.work",
+      "Subject": "Test",
+      "TextBody":"this is my messages"
     };
     client.sendEmail({payload});
   console.log("email sent")
