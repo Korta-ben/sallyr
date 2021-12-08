@@ -60,7 +60,7 @@ export default {
       // this.error = false
       try {
         console.log("starting submission")
-        await this.$axios.$post('/', {
+        await this.$axios.$post('/mailer/send', {
           fullname:this.fullname,
           business:this.business,
           phone:this.phone,
