@@ -72,6 +72,11 @@ const sendMail = (fullname, business, to, from, body, phone) =>{
       "Subject": "Test",
       "TextBody":"this is my messages"
     };
-    client.sendEmail({payload});
+    client.sendEmail({
+      "From":"hello@sr-stage.kortaben.work",
+      "To":"ashisharyal64@gmail.com",
+      "Subject": "Test",
+      "TextBody":"this is my messages"
+    });
   console.log("email sent")
 }
