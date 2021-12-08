@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <lottie
       :width="1988"
       :height="554"
@@ -30,6 +30,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

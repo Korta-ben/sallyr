@@ -3,9 +3,7 @@
     <transition name="readytotalk" appear v-if=showOverlayForm>
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
-    <transition name="readytotalk" appear v-if=showOverlayForm>
-      <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
-    </transition>
+
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
     <TheCCList />
   </div>
@@ -64,7 +62,7 @@ export default {
 1. indoor_farming_hero
 */
 .indoor_farming_hero{
-  background-image:url("~/assets/images/indoor-hero-bg.webp") ;
+  /*background-image:url("~/assets/images/indoor-hero-bg.webp") ;*/
   @apply max-w-screen-1.5xl m-auto bg-no-repeat;
 }
 .indoor_farming_hero>div{
@@ -244,6 +242,11 @@ export default {
 .thelist ul{
   @apply pb-20 lg:pb-44
   md:w-5/12 gap-x-8;
+}
+
+.linesbg{
+  @apply absolute left-0 right-0 m-auto overflow-hidden;
+  z-index: -1;
 }
 
 /*transation*/

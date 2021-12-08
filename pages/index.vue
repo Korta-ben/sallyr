@@ -166,7 +166,7 @@ content:  url("~/assets/images/temprature.svg");
 /* 4. home_indoor_farming */
 .home_indoor_farming{
   @apply bg-no-repeat bg-center pt-20 pb-52 max-w-screen-1.5xl w-full   m-auto;
-  background-image: url("~/assets/images/indoor-farming-bg.webp"), url("~/assets/images/wave-home-greenwebp.webp");
+  background-image: url("~/assets/images/indoor-farming-bg.webp");
 }
 .home_indoor_farming>div{
   @apply  flex flex-col pt-12 items-center text-center m-auto max-w-screen-1.5lg ;
