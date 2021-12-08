@@ -126,7 +126,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://sr-stage.kortaben.work/'
+    baseURL: 'https://sr-stage.kortaben.work/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
