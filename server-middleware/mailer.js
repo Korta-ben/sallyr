@@ -1,3 +1,4 @@
+console.log("this is mailer 1")
 const express = require('express')
 const postmark = require('postmark')
 const validator = require('validator')
@@ -12,7 +13,7 @@ app.get('/', function (req, res) {
 })
 
 
-
+console.log("this is mailer 2")
 app.post('/', function (req, res) {
   const attributes = ['fullname', 'business', 'to','from', 'body']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
@@ -25,12 +26,13 @@ app.post('/', function (req, res) {
   sendMail(...sanitizedAttributes)
   res.status(200).json({ 'message': 'OH YEAH' })
 })
+console.log("this is mailer 3")
 module.exports = {
   path: '/mailer/send',
   handler: app
 }
 
-
+console.log("this is mailer 4")
 const validateAndSanitize = (key, value) => {
   const rejectFunctions = {
     fullname: v => v.length < 4,
@@ -57,7 +59,7 @@ const validateAndSanitize = (key, value) => {
 
 const sendMail = (fullname, business, to, from, body) =>{
 
-  console.info("you have send an email via express")
+  console.log("you have send an email via express")
 
   let serverToken = process.env.SMTPU
   let client = new postmark.ServerClient(serverToken)
