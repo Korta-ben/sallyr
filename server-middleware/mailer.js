@@ -47,36 +47,18 @@ const validateAndSanitize = (key, value) => {
 }
 
 
-// var serverToken = "xxxx-xxxxx-xxxx-xxxxx-xxxxxx";
-// var client = new postmark.ServerClient(serverToken);
-//
-// client.sendEmail({
-//   "From": "sender@example.com",
-//   "To": "receiver@example.com",
-//   "Subject": "Test",
-//   "TextBody": "Hello from Postmark!"
-// });
-
 const sendMail = (fullname, business, to, from, body, phone) =>{
 
   console.log("you have send an email via express")
 
   let serverToken = process.env.SMTPU
   let client = new postmark.ServerClient(serverToken)
-    let payload = {
-      // "fullname":"ashish",
-      // "business":"no business",
-      // "phone":"9595959595",
-      "To":"ashisharyal64@gmail.com",
-      "From":"hello@sr-stage.kortaben.work",
-      "Subject": "Test",
-      "TextBody":"this is my messages"
-    };
+
     client.sendEmail({
-      "From":"hello@sr-stage.kortaben.work",
-      "To":"ashisharyal64@gmail.com",
-      "Subject": "Test",
-      "TextBody":"this is my messages"
+      "From":from,
+      "To":to,
+      "Subject": "Message from contact form",
+      "TextBody":body
     });
   console.log("email sent")
 }
