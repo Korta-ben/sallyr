@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 
 
 app.post('/', function (req, res) {
-  const attributes = ['name', 'business', 'to','from', 'body']
+  const attributes = ['fullname', 'business', 'to','from', 'body']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   const someInvalid = sanitizedAttributes.some(r => !r)
 
@@ -33,11 +33,11 @@ module.exports = {
 
 const validateAndSanitize = (key, value) => {
   const rejectFunctions = {
-    name: v => v.length < 4,
-    business: v => v.length <= 0,
+    fullname: v => v.length < 4,
+    // business: v => v.length <= 0,
     from: v => !validator.isEmail(v),
     to: v => !validator.isEmail(v),
-    body: v => v.length <= 0
+    // body: v => v.length <= 0
   }
 
   // If object has key and function returns false, return sanitized input. Else, return false
@@ -55,7 +55,9 @@ const validateAndSanitize = (key, value) => {
 //   "TextBody": "Hello from Postmark!"
 // });
 
-const sendMail = (name, business, to, from, body) =>{
+const sendMail = (fullname, business, to, from, body) =>{
+
+  console.info("you have send an email via express")
 
   let serverToken = process.env.SMTPU
   let client = new postmark.ServerClient(serverToken)
@@ -66,4 +68,5 @@ const sendMail = (name, business, to, from, body) =>{
       "Subject": "Test from overlay",
       "TextBody": body
   });
+  console.log("email sent")
 }

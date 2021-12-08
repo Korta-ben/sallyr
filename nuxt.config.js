@@ -2,9 +2,10 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 
   server: {
-       port: 8000 // default: 3000
+       port: 8000, // default: 3000
+       host: '0.0.0.0'
   },
-  serverMiddleware: ['~/server-middleware/mailer'],
+  serverMiddleware: ["~/server-middleware/mailer.js"],
   publicRuntimeConfig: {
     PostMarkKey: process.env.PM_KEY,
     SmtpUser: process.env.SMTPU,
@@ -125,7 +126,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://sr-stage.kortaben.work/'
+    baseURL: 'http://sr-stage.kortaben.work/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

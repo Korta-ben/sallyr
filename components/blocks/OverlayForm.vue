@@ -53,60 +53,85 @@ export default {
       this.$emit("popupToggle");
     },
 
-     sendEmail() {
-
-      try{
-        console.log('email prepared')
-          // this.$mail.send({
-          //   from: 'hello@sr-stage.kortaben.work',
-          //   subject: 'Message from ' + this.fullname,
-          //   text: `Fullname:  + @{this.fullname} +
-          //     Business:  + @{}this.business +
-          //     Phone:  + @{this.phone} +
-          //     email:  + @{this.email} +
-          //     message:  + @{this.message}`
-          // })
-
-        // this.$mail.send({
-        //    bcc : this.email ,
-        //   from: 'hello@sr-stage.kortaben.work',
-        //   subject: 'message title',
-        //   text: 'this is body text'
-        // })
-
-
-       // await axios.post('/mail/send', {
-       //    config: { to : this.email  },
-       //    from: 'ashish aryal',
-       //    subject: 'Incredible',
-       //    text: 'This is an incredible test message',
-       //  })
-
-        this.$mail.send({
-          from: 'John Doe',
-          subject: 'Incredible',
-          text: 'This is an incredible test message',
-          to: this.email,
+    async sendEmail() {
+      // this.submitting = true
+      // this.$ga.event('submit', 'form', this.$i18n.locale)
+      // this.error = false
+      try {
+        console.log("starting submission")
+        await this.$axios.$post('/mailer/send', {
+          fullname:this.fullname,
+          business:this.business,
+          phone:this.phonee,
+          email:this.email,
+          body:this.body
         })
 
-
-
-
-
-
-        console.log("email sent to " + this.email)
-      }catch(e){
-        console.log(e)
+        // this.submitting = false
+        // this.isSubmitted = true
+        await new Promise(resolve => setTimeout(resolve, 2500))
+        console.log("sent to middleware")
+        // this.$emit('close')
+      } catch (e) {
+        // this.submitting = false
+        // this.error = true
+        console.error(e)
       }
-
-
-      // await this.$axios.$post('/mail/send', {
-      //   config: { to: this.email },
-      //   from: 'John Doe',
-      //   subject: 'Incredible',
-      //   text: 'This is an incredible test message',
-      // })
     }
+    /* sendEmail() {*/
+
+    /*  try{*/
+    /*    console.log('email prepared')*/
+    /*      // this.$mail.send({*/
+    /*      //   from: 'hello@sr-stage.kortaben.work',*/
+    /*      //   subject: 'Message from ' + this.fullname,*/
+    /*      //   text: `Fullname:  + @{this.fullname} +*/
+    /*      //     Business:  + @{}this.business +*/
+    /*      //     Phone:  + @{this.phone} +*/
+    /*      //     email:  + @{this.email} +*/
+    /*      //     message:  + @{this.message}`*/
+    /*      // })*/
+
+    /*    // this.$mail.send({*/
+    /*    //    bcc : this.email ,*/
+    /*    //   from: 'hello@sr-stage.kortaben.work',*/
+    /*    //   subject: 'message title',*/
+    /*    //   text: 'this is body text'*/
+    /*    // })*/
+
+
+    /*   // await axios.post('/mail/send', {*/
+    /*   //    config: { to : this.email  },*/
+    /*   //    from: 'ashish aryal',*/
+    /*   //    subject: 'Incredible',*/
+    /*   //    text: 'This is an incredible test message',*/
+    //    //  })
+    //
+    //     // this.$mail.send({
+    //     //   from: 'John Doe',
+    //     //   subject: 'Incredible',
+    //     //   text: 'This is an incredible test message',
+    //     //   to: this.email,
+    //     // })
+    //
+    //
+    //
+    //
+    //
+    //
+    //     console.log("email sent to " + this.email)
+    //   }catch(e){
+    //     console.log(e)
+    //   }
+    //
+    //
+    //   // await this.$axios.$post('/mail/send', {
+    //   //   config: { to: this.email },
+    //   //   from: 'John Doe',
+    //   //   subject: 'Incredible',
+    //   //   text: 'This is an incredible test message',
+    //   // })
+    // }
   },
   computed: {
     currentRouteName() {
