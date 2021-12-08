@@ -71,6 +71,6 @@ const sendMail = (fullname, business, to, from, body, phone) =>{
       "from":"hello@sr-stage.kortaben.work",
       "body":"this is my messages"
     };
-    client.sendEmail(payload);
+    client.sendEmail({payload});
   console.log("email sent")
 }
