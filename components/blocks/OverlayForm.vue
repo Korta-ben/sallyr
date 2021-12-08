@@ -69,7 +69,6 @@ export default {
           from:this.from,
           body:this.body
         })
-
         // this.submitting = false
         // this.isSubmitted = true
         await new Promise(resolve => setTimeout(resolve, 2500))
@@ -81,60 +80,7 @@ export default {
         console.error(e)
       }
     }
-    /* sendEmail() {*/
 
-    /*  try{*/
-    /*    console.log('email prepared')*/
-    /*      // this.$mail.send({*/
-    /*      //   from: 'hello@sr-stage.kortaben.work',*/
-    /*      //   subject: 'Message from ' + this.fullname,*/
-    /*      //   text: `Fullname:  + @{this.fullname} +*/
-    /*      //     Business:  + @{}this.business +*/
-    /*      //     Phone:  + @{this.phone} +*/
-    /*      //     email:  + @{this.email} +*/
-    /*      //     message:  + @{this.message}`*/
-    /*      // })*/
-
-    /*    // this.$mail.send({*/
-    /*    //    bcc : this.email ,*/
-    /*    //   from: 'hello@sr-stage.kortaben.work',*/
-    /*    //   subject: 'message title',*/
-    /*    //   text: 'this is body text'*/
-    /*    // })*/
-
-
-    /*   // await axios.post('/mail/send', {*/
-    /*   //    config: { to : this.email  },*/
-    /*   //    from: 'ashish aryal',*/
-    /*   //    subject: 'Incredible',*/
-    /*   //    text: 'This is an incredible test message',*/
-    //    //  })
-    //
-    //     // this.$mail.send({
-    //     //   from: 'John Doe',
-    //     //   subject: 'Incredible',
-    //     //   text: 'This is an incredible test message',
-    //     //   to: this.email,
-    //     // })
-    //
-    //
-    //
-    //
-    //
-    //
-    //     console.log("email sent to " + this.email)
-    //   }catch(e){
-    //     console.log(e)
-    //   }
-    //
-    //
-    //   // await this.$axios.$post('/mail/send', {
-    //   //   config: { to: this.email },
-    //   //   from: 'John Doe',
-    //   //   subject: 'Incredible',
-    //   //   text: 'This is an incredible test message',
-    //   // })
-    // }
   },
   computed: {
     currentRouteName() {
