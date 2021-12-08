@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import  lottie from "vue-lottie/src/lottie"
+import  lottie from "vue-lottie/src/lottie.vue"
 import * as animationData from "~/assets/lottie/greenlines.json"
 export default {
   components:{
