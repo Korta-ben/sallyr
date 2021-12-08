@@ -39,6 +39,7 @@ import axios from "axios";
 
 // import postmark from "postmark"
 export default {
+
   data(){
     return {
       fullname:"",

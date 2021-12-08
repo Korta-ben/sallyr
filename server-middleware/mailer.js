@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 console.log("this is mailer 2")
 app.post('/', function (req, res) {
-  const attributes = ['fullname', 'business', 'to','from', 'body']
+  const attributes = ['fullname', 'business', 'to','from', 'body', 'phone']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   const someInvalid = sanitizedAttributes.some(r => !r)
 
@@ -57,7 +57,7 @@ const validateAndSanitize = (key, value) => {
 //   "TextBody": "Hello from Postmark!"
 // });
 
-const sendMail = (fullname, business, to, from, body) =>{
+const sendMail = (fullname, business, to, from, body, phone) =>{
 
   console.log("you have send an email via express")
 
