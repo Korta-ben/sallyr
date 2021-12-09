@@ -60,7 +60,13 @@ export default {
       // this.$ga.event('submit', 'form', this.$i18n.locale)
       // this.error = false
       try {
-        console.log("starting submission")
+        console.log(
+          "fullname: " + this.fullname,
+          "business: " + this.business,
+          "phone: " + this.phone,
+          "to: " + this.to,
+          "from: " + this.from,
+          "body: " + this.body)
         await this.$axios.$post('/mailer/send', {
           fullname:this.fullname,
           business:this.business,
