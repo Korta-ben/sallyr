@@ -36,10 +36,10 @@ console.log("this is mailer 4")
 const validateAndSanitize = (key, value) => {
   const rejectFunctions = {
     fullname: v => v.length < 4,
-    // business: v => v.length <= 0,
+    business: v => validator.isLength(v,{min:0}),
     from: v => !validator.isEmail(v),
     to: v => !validator.isEmail(v),
-    // body: v => v.length <= 0
+    body: v => validator.isLength(v,{min:0}),
   }
 
   // If object has key and function returns false, return sanitized input. Else, return false
