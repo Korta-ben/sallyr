@@ -5,7 +5,10 @@ export default {
        port: 8000, // default: 3000
        host: '0.0.0.0'
   },
-  serverMiddleware: ["~/server-middleware/mailer.js", "~/server-middleware/calculatorMailer.js"],
+  serverMiddleware: ["~/server-middleware/mailer.js", "~/server-middleware/calculatorMailer.js",
+    // { path: '/server-middleware', handler: '~/server-middleware/calculatorMailer.js' },
+    // { path: '/server-middleware', handler: '~/server-middleware/calculatorMailer.js' }
+  ],
   publicRuntimeConfig: {
     PostMarkKey: process.env.PM_KEY,
     SmtpUser: process.env.SMTPU,
