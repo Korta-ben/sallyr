@@ -2,14 +2,14 @@
   <div class="cardForm">
     <form class="grid  grid-cols-1	sm:grid-cols-4 sm:gap-x-16" method="POST" @submit.prevent="sendEmail">
       <div class="grid grid-cols-2 gap-x-16 sm:col-span-3">
-        <input type="text" placeholder="Full Name*" name="name"
+        <input type="text" v-model="fullname" placeholder="Full Name*" name="fullname"
                class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
-        <input type="text" placeholder="Business" name="business"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
+        <input type="text" v-model="business" placeholder="Business" name="business"
+               class="border-0 border-b  text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
 
-        <input type="text" placeholder="Phone Number*" name="phone"
+        <input type="text" v-model="phone" placeholder="Phone Number*" name="phone"
                class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
-        <input type="text" placeholder="E-mail*" name="email"
+        <input type="text" v-model="email" placeholder="E-mail*" name="email"
                class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
       </div>
 
@@ -39,7 +39,8 @@ export default {
       fullname:"",
       business:"",
       phone:"",
-      from:""
+      from:"hello@sr-stage.kortaben.work",
+      email:""
     }
   },
 
@@ -59,6 +60,7 @@ export default {
           business:this.business,
           phone:this.phone,
           from:this.from,
+          email:this.email,
           subject: "Enquiry from pricing page",
         })
         // this.submitting = false

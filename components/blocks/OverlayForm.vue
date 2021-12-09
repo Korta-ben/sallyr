@@ -13,8 +13,8 @@ md:text-22.5 md:leading-25">
              v-model="business"  class="border-b  text-sm pr-2.5 pb-4  mb-4  border-srskyblue h-8 ">
         <input name="phone" placeholder="Phone*" required
             v-model="phone"   class="border-b  text-sm pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
-        <input name="to" placeholder="Email*"  required
-             v-model="to"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
+        <input name="email" placeholder="Email*"  required
+             v-model="email"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
         <span v-if="currentRouteName === 'indoor-farming'"></span>
         <textarea v-else  name="message"  placeholder="Message..."
                v-model="body"
@@ -46,7 +46,8 @@ export default {
       business:"",
       phone:"",
       from:"hello@sr-stage.kortaben.work",
-      body:""
+      body:"",
+      email:""
     }
   },
   methods: {
@@ -72,6 +73,7 @@ export default {
           phone:this.phone,
           from:this.from,
           body:this.body,
+          email:this.email,
           subject: "Message from contact form"
         })
         // this.submitting = false
