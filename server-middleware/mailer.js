@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 console.log("this is mailer 2")
 app.post('/', function (req, res) {
-  const attributes = ['fullname', 'business', 'to','from', 'body', 'phone']
+  const attributes = ['fullname', 'business', 'phone','to', 'from', 'body']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   // const someInvalid = sanitizedAttributes.some(r => !r)
   //
@@ -47,31 +47,26 @@ const validateAndSanitize = (key, value) => {
 }
 
 
-const sendMail = (fullname, business, to, from, body, phone) =>{
+const sendMail = (fullname, business, phone,to, from, body) =>{
 
-  console.log("sending message prepared"
-    // ` Name: ${fullname}
-    //   Email: ${from}
-    //   Phone: ${phone}
-    //   Business: ${business}
-    //   Body: ${body}
-    //   `
-  )
+console.log(
+  business
+)
 
-  // let serverToken = process.env.SMTPU
-  // let client = new postmark.ServerClient(serverToken)
-  //
-  //   client.sendEmail({
-  //     "From":"ashish@kortaben.se",
-  //     "To":"ashish@kortaben.se",
-  //     "Subject": "Message from contact form",
-  //     "TextBody":`
-  //     Name: ${fullname}
-  //     Email: ${from}
-  //     Phone: ${phone}
-  //     Business: ${business}
-  //     Body: ${body}
-  //     `
-  //   });
+  let serverToken = process.env.SMTPU
+  let client = new postmark.ServerClient(serverToken)
+
+    client.sendEmail({
+      "From":from,
+      "To":"ashish@kortaben.se",
+      "Subject": "Message from contact form",
+      "TextBody":`
+            Name: ${fullname}
+            Email: ${from}
+            Phone: ${phone}
+            Business: ${business}
+            Body: ${body}
+            `
+    });
   console.log("email sent")
 }
