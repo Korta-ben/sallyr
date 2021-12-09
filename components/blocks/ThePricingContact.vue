@@ -61,6 +61,7 @@ export default {
           business:this.business,
           phone:this.phone,
           sender:this.sender,
+          body:this.body,
           subject: "Enquiry from pricing page"
         })
         // this.submitting = false
