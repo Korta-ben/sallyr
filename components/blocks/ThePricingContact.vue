@@ -9,13 +9,13 @@
 
         <input type="text" v-model="phone" placeholder="Phone Number*" name="phone"
                class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
-        <input type="text" v-model="email" placeholder="E-mail*" name="email"
+        <input type="text" v-model="sender" placeholder="E-mail*" name="email"
                class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
       </div>
 
 
       <div class="  flex flex-col self-center pt-2 items-center">
-        <button 
+        <button
            class="sendMessage w-33.75 my-auto  justify-center  py-4  border-srblue  border-2 text-srblue text-base
         font-semibold leading-4 flex flex-row text-center hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out">send </button>
         <div v-if="messageSend" class="messageStatus">
@@ -39,8 +39,8 @@ export default {
       fullname:"",
       business:"",
       phone:"",
+      sender:"",
       from:"hello@sr-stage.kortaben.work",
-      email:""
     }
   },
 
