@@ -433,7 +433,7 @@ components:{AesthVueRangeInput, VueFormulate},
             buildingType:this.building_type,
             zone:this.zone,
             areaType:this.area_type,
-            area:this.area,
+            area:JSON.stringify(this.area),
             savings:JSON.stringify(this.showResults().TotalKWhPerYear),
             cost:JSON.stringify(this.showResults().TotalCostPerMonth)
           })
