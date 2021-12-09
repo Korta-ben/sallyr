@@ -102,7 +102,8 @@ export const actions = {
             },
             auth: {
               username: "api-admin",
-              password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
+              password: "I8e6 CLQH zSBB Bgfh GMAH 7Cjn"
+              // password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
             }
           }).then((response)=> {
 
