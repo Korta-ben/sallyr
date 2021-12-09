@@ -49,13 +49,13 @@ const validateAndSanitize = (key, value) => {
 
 const sendMail = (fullname, business, to, from, body, phone) =>{
 
-  console.log(
-    ` Name: ${fullname}
-      Email: ${from}
-      Phone: ${phone}
-      Business: ${business}
-      Body: ${body}
-      `
+  console.log("sending message prepared"
+    // ` Name: ${fullname}
+    //   Email: ${from}
+    //   Phone: ${phone}
+    //   Business: ${business}
+    //   Body: ${body}
+    //   `
   )
 
   // let serverToken = process.env.SMTPU
