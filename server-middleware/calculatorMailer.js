@@ -15,7 +15,8 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   // const attributes = ['fullname', 'business', 'phone','sender', 'body', 'subject']
-  const attributes = ['sender']
+
+  const attributes = ['sender', 'buildingType', 'zone', 'areaType', 'area', 'savings', 'cost']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   // const someInvalid = sanitizedAttributes.some(r => !r)
   //
@@ -40,7 +41,12 @@ const validateAndSanitize = (key, value) => {
     // subject: v => !validator.isLength(v,{min:0}),
     // business: v => !validator.isLength(v,{min:0}),
     sender: v => !validator.isEmail(v),
-    // body: v => !validator.isLength(v,{min:0}),
+    buildingType: v => !validator.isLength(v,{min:0}),
+    zone: v => !validator.isLength(v,{min:0}),
+    areaType: v => !validator.isLength(v,{min:0}),
+    area: v => !validator.isLength(v,{min:0}),
+    savings: v => !validator.isLength(v,{min:0}),
+    cost: v => !validator.isLength(v,{min:0}),
 
   }
 
@@ -49,7 +55,7 @@ const validateAndSanitize = (key, value) => {
 }
 
 
-const sendMail = (sender) =>{
+const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
 
   // console.log(sender)
 
@@ -59,12 +65,15 @@ const sendMail = (sender) =>{
   client.sendEmail({
     "From":"hello@sr-stage.kortaben.work",
     "To":sender,
-    "Subject": "this is the calculator result",
-    "TextBody":'<div class="content">' +
-                '<h1>This is a heading</h1>' +
-                '<p>This is a paragraph of text.</p>' +
-                '<p><strong>Note:</strong> If you don\'t escape "quotes" properly, it will not work.</p>' +
-                '</div>'
+    "Subject": "Sally-R calculation results",
+    "TextBody":`
+    Building type: ${buildingType},
+    Zone: ${zone},
+    Area Type: ${areaType},
+    Area: ${area},
+    Savings: ${savings},
+    Cost: ${cost}
+    `
   });
   console.log("email sent")
 }

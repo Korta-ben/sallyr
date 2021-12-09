@@ -429,7 +429,13 @@ components:{AesthVueRangeInput, VueFormulate},
 
         try{
           await this.$axios.$post('/calculator/send', {
-            sender:this.contactEmail
+            sender:this.contactEmail,
+            buildingType:this.building_type,
+            zone:this.zone,
+            areaType:this.area_type,
+            area:this.area,
+            savings:JSON.stringify(this.showResults().TotalKWhPerYear),
+            cost:JSON.stringify(this.showResults().TotalCostPerMonth)
           })
           // this.submitting = false
           // this.isSubmitted = true
