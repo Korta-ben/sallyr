@@ -54,14 +54,13 @@ export default {
           "fullname: " + this.fullname,
           "business: " + this.business,
           "phone: " + this.phone,
-          "from: " + this.from)
+          "sender: " + this.sender)
         await this.$axios.$post('/mailer/send', {
           fullname:this.fullname,
           business:this.business,
           phone:this.phone,
-          from:this.from,
-          email:this.email,
-          subject: "Enquiry from pricing page",
+          sender:this.sender,
+          subject: "Enquiry from pricing page"
         })
         // this.submitting = false
         // this.isSubmitted = true
@@ -73,7 +72,7 @@ export default {
         // this.error = true
         console.error(e)
       }
-  }
+    }
 
 
   }

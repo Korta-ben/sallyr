@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 console.log("this is mailer 2")
 app.post('/', function (req, res) {
-  const attributes = ['fullname', 'business', 'phone', 'from','sender', 'body', 'subject']
+  const attributes = ['fullname', 'business', 'phone','sender', 'body', 'subject']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   // const someInvalid = sanitizedAttributes.some(r => !r)
   //
@@ -39,7 +39,6 @@ const validateAndSanitize = (key, value) => {
     phone: v => !validator.isLength(v,{min:0}),
     subject: v => !validator.isLength(v,{min:0}),
     business: v => !validator.isLength(v,{min:0}),
-    from: v => !validator.isEmail(v),
     sender: v => !validator.isEmail(v),
     body: v => !validator.isLength(v,{min:0}),
 
