@@ -13,8 +13,8 @@ md:text-22.5 md:leading-25">
              v-model="business"  class="border-b  text-sm pr-2.5 pb-4  mb-4  border-srskyblue h-8 ">
         <input name="phone" placeholder="Phone*" required
             v-model="phone"   class="border-b  text-sm pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
-        <input name="email" placeholder="Email*"  required
-             v-model="email"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
+        <input name="sender" placeholder="sender*"  required
+             v-model="sender"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
         <span v-if="currentRouteName === 'indoor-farming'"></span>
         <textarea v-else  name="message"  placeholder="Message..."
                v-model="body"
@@ -47,7 +47,7 @@ export default {
       phone:"",
       from:"hello@sr-stage.kortaben.work",
       body:"",
-      email:""
+      sender:""
     }
   },
   methods: {
@@ -64,7 +64,7 @@ export default {
           "fullname: " + this.fullname,
           "business: " + this.business,
           "phone: " + this.phone,
-          "email: " + this.email,
+          "sender: " + this.sender,
           "from: " + this.from,
           "body: " + this.body)
         await this.$axios.$post('/mailer/send', {
@@ -73,7 +73,7 @@ export default {
           phone:this.phone,
           from:this.from,
           body:this.body,
-          email:this.email,
+          sender:this.sender,
           subject: "Message from contact form"
         })
         // this.submitting = false
