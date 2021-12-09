@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 console.log("this is mailer 2")
 app.post('/', function (req, res) {
-  const attributes = ['fullname', 'business', 'phone','to', 'from', 'body']
+  const attributes = ['fullname', 'business', 'phone', 'from', 'body', 'subject']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   // const someInvalid = sanitizedAttributes.some(r => !r)
   //
@@ -36,10 +36,12 @@ console.log("this is mailer 4")
 const validateAndSanitize = (key, value) => {
   const rejectFunctions = {
     fullname: v => v.length < 4,
+    phone: v => !validator.isLength(v,{min:0}),
+    subject: v => !validator.isLength(v,{min:0}),
     business: v => !validator.isLength(v,{min:0}),
     from: v => !validator.isEmail(v),
-    to: v => !validator.isEmail(v),
     body: v => !validator.isLength(v,{min:0}),
+
   }
 
   // If object has key and function returns false, return sanitized input. Else, return false
@@ -47,11 +49,8 @@ const validateAndSanitize = (key, value) => {
 }
 
 
-const sendMail = (fullname, business, phone,to, from, body) =>{
+const sendMail = (fullname, business, phone, from, body, subject) =>{
 
-console.log(
-  business
-)
 
   let serverToken = process.env.SMTPU
   let client = new postmark.ServerClient(serverToken)
@@ -59,7 +58,7 @@ console.log(
     client.sendEmail({
       "From":from,
       "To":"ashish@kortaben.se",
-      "Subject": "Message from contact form",
+      "Subject": subject,
       "TextBody":`
             Name: ${fullname}
             Email: ${from}

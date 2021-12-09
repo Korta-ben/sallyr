@@ -46,7 +46,6 @@ export default {
       business:"",
       phone:"",
       from:"hello@sr-stage.kortaben.work",
-      to:"",
       body:""
     }
   },
@@ -71,9 +70,9 @@ export default {
           fullname:this.fullname,
           business:this.business,
           phone:this.phone,
-          to:this.to,
           from:this.from,
-          body:this.body
+          body:this.body,
+          subject: "Message from contact form"
         })
         // this.submitting = false
         // this.isSubmitted = true

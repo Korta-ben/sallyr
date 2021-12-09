@@ -1,6 +1,6 @@
 <template>
   <div class="cardForm">
-    <form class="grid  grid-cols-1	sm:grid-cols-4 sm:gap-x-16">
+    <form class="grid  grid-cols-1	sm:grid-cols-4 sm:gap-x-16" method="POST" @submit.prevent="sendEmail">
       <div class="grid grid-cols-2 gap-x-16 sm:col-span-3">
         <input type="text" placeholder="Full Name*" name="name"
                class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
@@ -30,11 +30,50 @@
 </template>
 
 <script>
+
+
 export default {
   data(){
     return {
-      messageSend:false
+      messageSend:false,
+      fullname:"",
+      business:"",
+      phone:"",
+      from:""
     }
+  },
+
+  methods:{
+    async sendEmail() {
+      // this.submitting = true
+      // this.$ga.event('submit', 'form', this.$i18n.locale)
+      // this.error = false
+      try {
+        console.log(
+          "fullname: " + this.fullname,
+          "business: " + this.business,
+          "phone: " + this.phone,
+          "from: " + this.from)
+        await this.$axios.$post('/mailer/send', {
+          fullname:this.fullname,
+          business:this.business,
+          phone:this.phone,
+          from:this.from,
+          subject: "Enquiry from pricing page",
+        })
+        // this.submitting = false
+        // this.isSubmitted = true
+        await new Promise(resolve => setTimeout(resolve, 2500))
+        console.log("sent to middleware")
+        // this.$emit('close')
+      } catch (e) {
+        // this.submitting = false
+        // this.error = true
+        console.error(e)
+      }
+  }
+
+
   }
 
 }
