@@ -46,7 +46,7 @@ export default {
       business:"",
       phone:"",
       from:"hello@sr-stage.kortaben.work",
-      body:"",
+      body:" ",
       sender:""
     }
   },

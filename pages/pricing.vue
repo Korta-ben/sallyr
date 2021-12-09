@@ -152,7 +152,7 @@ export default {
 }
 .submit:after{
   content: url("~/assets/images/right-blue.svg");
-  @apply  self-center pl-4 ;
+  @apply  self-center px-4 ;
 }
 /*a.contact:hover:after {*/
 /*  @apply pl-4 transition duration-500 ease-in-out;*/

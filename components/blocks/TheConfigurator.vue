@@ -211,7 +211,7 @@
                 class="submit pl-7 w-1/2 py-6 mt-17.5 border-srblue cursor-pointer border-2 text-srblue text-base font-semibold
                  hover:bg-srblue hover:text-srwhite
                  leading-4 transition duration-500 ease-in-out flex"
-                 @click="resultSent =  !resultSent"
+                 @click="sendEmail"
               >Send</a>
 
             </div>
@@ -424,8 +424,19 @@ components:{AesthVueRangeInput, VueFormulate},
         //   console.log(e)
         // }
       },
-       sendEmail() {
-         console.log("here, you will send message")
+      async sendEmail() {
+         // console.log("email goes to :" +this.contactEmail)
+
+        try{
+          await this.$axios.$post('/calculator/send', {
+            sender:this.contactEmail
+          })
+          // this.submitting = false
+          // this.isSubmitted = true
+          await new Promise(resolve => setTimeout(resolve, 2500))
+        }catch (e) {
+          console.log(e)
+        }
       }
 
   }
