@@ -40,6 +40,7 @@ export default {
       business:"",
       phone:"",
       sender:"",
+      body:"",
       from:"hello@sr-stage.kortaben.work",
     }
   },
