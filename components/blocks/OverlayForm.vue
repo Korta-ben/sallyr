@@ -64,7 +64,7 @@ export default {
           "fullname: " + this.fullname,
           "business: " + this.business,
           "phone: " + this.phone,
-          "to: " + this.to,
+          "email: " + this.email,
           "from: " + this.from,
           "body: " + this.body)
         await this.$axios.$post('/mailer/send', {
