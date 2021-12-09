@@ -57,7 +57,7 @@ const sendMail = (fullname, business, phone,email, from, body, subject) =>{
   let client = new postmark.ServerClient(serverToken)
 
     client.sendEmail({
-      "From":from,
+      "From":"hello@sr-stage.kortaben.work",
       "To":"ashish@kortaben.se",
       "Subject": subject,
       "TextBody":`
