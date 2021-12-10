@@ -68,16 +68,29 @@ const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
     "Subject": "Sally-R calculation results",
     "HtmlBody":`
     <div style="max-width: 834px; width: 100%; background:#F9F9F9; text-align: center; padding-left: 30px; padding-right: 30px; padding-top: 75px ">
-    <h2 style="font-size: 22px; font-weight: 700; ">SALLY R</h2>
-    <div style="max-width: 68px; width:100%; margin:0 auto; background:#FFFFFF; padding-top: 39px; padding-bottom:54px">
-        <h2 style="font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6 ">...and the results are in!</h2>
+    <h2 style="font-size: 22px; font-weight: 700; ">
+        <img src="https://apisr.kortaben.work/wp-content/uploads/2021/12/Group-1.png" >
+    </h2>
+    <div style="max-width: 680px; width:100%; margin:0 auto; background:#FFFFFF; padding-top: 39px; padding-bottom:54px">
+        <h2 style="max-width:397px; font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6 ">...and the results are in!</h2>
+       <p style="text-align: center; font-size: 20px; font-weight: bold;">
+        <span style="color: #164CD6">Building type:</span> ${buildingType}, <br>
+        <span style="color: #164CD6">Zone:</span> ${zone},<br>
+        <span style="color: #164CD6">Area type:</span>  ${areaType},<br>
+        <span style="color: #164CD6">Area:</span> ${area},<br>
+        <span style="color: #164CD6">Cost:</span> ${cost}
+       </p>
+       <div style="font-weight: bold; font-size: 15px; background: #FF981F; text-align: center">
+       *drumroll*
+       </div>
+       <p style="line-height: 33px; font-size: 30px; text-align: center">
+            <span style="color: #164CD6">You could be saving</span> <br> ${savings} KWh/year
+       </p>
+       <p>
+            Starting at ${cost} SEK/month
+        </p>
     </div>
-        Building type: ${buildingType},
-        Zone: ${zone},
-        Area Type: ${areaType},
-        Area: ${area},
-        Savings: ${savings},
-        Cost: ${cost}
+
     </div>
     `
   });
