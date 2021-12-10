@@ -310,10 +310,7 @@ components:{AesthVueRangeInput, VueFormulate},
           this.area = Math.round(this.area/1000)*1000
           return this.area
         },
-        // updateUri(hehe){
-        //   this.theUpdateUrl = hehe
-        //   return this.theUpdateUrl
-        // }
+
   },
   methods:{
         theRatePerYear(){
@@ -379,50 +376,6 @@ components:{AesthVueRangeInput, VueFormulate},
 
       async sendEmailToUser(){
 
-        // console.log(updateURL._links.self[0].href)
-        // try{
-        //   // console.log("now you will send email to " + this.contactEmail)
-        //   let currentData = this.$store.getters.getTheCalculationResponse
-        //
-        //   let updateURL = currentData._links.self[0].href
-        //
-        //   let data = {
-        //     "title": currentData.acf.building_type + " - "  + currentData.acf.area + " - " + this.contactEmail,
-        //     "acf": {
-        //       "area": currentData.acf.area,
-        //       "area_type": currentData.acf.area_type,
-        //       "building_type": currentData.acf.building_type,
-        //       "calculated_cost": currentData.acf.calculated_cost,
-        //       "currency": currentData.acf.currency,
-        //       "email": this.contactEmail,
-        //       "kwhmonth_in_savings": currentData.acf.kwhmonth_in_savings,
-        //       "kwhyear_in_savings": currentData.acf.kwhyear_in_savings ,
-        //       "zone": currentData.acf.zone,
-        //     }
-        //   }
-        //   console.log(currentData._links.self[0].href)
-        //   await axios.post(
-        //     updateURL,
-        //     data,
-        //     {
-        //       withCredentials:true,
-        //       headers: {
-        //         "Accept": "*/*",
-        //         "Content-Type": "application/json"
-        //       },
-        //       auth: {
-        //         username: "api-admin",
-        //         password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
-        //       }
-        //     }).then((response)=> {
-        //     //    this is where you send email
-        //     this.sendEmail()
-        //   })
-        //
-        // }catch (e)
-        // {
-        //   console.log(e)
-        // }
       },
       async sendEmail() {
          // console.log("email goes to :" +this.contactEmail)

@@ -68,7 +68,7 @@ const sendMail = (sender, buildingType, zone, areaType, area, currency, savings,
     "To":sender,
     "Subject": "Sally-R calculation results",
     "HtmlBody":`
-    <div style="max-width: 834px; width: 100%; background:#F9F9F9; text-align: center; padding-left: 30px; padding-right: 30px; padding-top: 75px ">
+    <div style="max-width: 834px;  background:#F9F9F9; text-align: center; padding-left: 30px; padding-right: 30px; padding-top: 75px ">
     <h2 style="font-size: 22px; font-weight: 700; ">
         <img src="https://apisr.kortaben.work/wp-content/uploads/2021/12/Group-1.png" >
     </h2>
