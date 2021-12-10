@@ -73,7 +73,7 @@ const sendMail = (sender, buildingType, zone, areaType, area, currency, savings,
         <img src="https://apisr.kortaben.work/wp-content/uploads/2021/12/Group-1.png" >
     </h2>
     <div style="max-width: 680px; width:100%; margin:0 auto; background:#FFFFFF; padding-top: 39px; padding-bottom:54px">
-        <h2 style="max-width:397px; margin:auto; padding-bottom: 30px; font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6; color: #000000; ">...and the<br> results are in!</h2>
+        <h2 style="max-width:397px; width:100%; margin:auto; padding-bottom: 30px; font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6; color: #000000; ">...and the<br> results are in!</h2>
        <p style="text-align: center; font-size: 20px; font-weight: bold; padding-top:30px">
         <span style="color: #164CD6">Building type:</span> ${buildingType}, <br>
         <span style="color: #164CD6">Zone:</span> ${zone},<br>
