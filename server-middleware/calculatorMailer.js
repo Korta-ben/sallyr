@@ -72,25 +72,33 @@ const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
         <img src="https://apisr.kortaben.work/wp-content/uploads/2021/12/Group-1.png" >
     </h2>
     <div style="max-width: 680px; width:100%; margin:0 auto; background:#FFFFFF; padding-top: 39px; padding-bottom:54px">
-        <h2 style="max-width:397px; font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6 ">...and the results are in!</h2>
-       <p style="text-align: center; font-size: 20px; font-weight: bold;">
+        <h2 style="max-width:397px; margin:auto; padding-bottom: 30px; font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6; color: #000000; ">...and the<br> results are in!</h2>
+       <p style="text-align: center; font-size: 20px; font-weight: bold; padding-top:30px">
         <span style="color: #164CD6">Building type:</span> ${buildingType}, <br>
         <span style="color: #164CD6">Zone:</span> ${zone},<br>
         <span style="color: #164CD6">Area type:</span>  ${areaType},<br>
         <span style="color: #164CD6">Area:</span> ${area},<br>
         <span style="color: #164CD6">Cost:</span> ${cost}
        </p>
-       <div style="font-weight: bold; font-size: 15px; background: #FF981F; text-align: center">
+       <div style="font-weight: bold; font-size: 15px; color: #FF981F; text-align: center">
        *drumroll*
        </div>
-       <p style="line-height: 33px; font-size: 30px; text-align: center">
+       <p style="line-height: 33px; font-size: 30px; text-align: center;font-weight: bold">
             <span style="color: #164CD6">You could be saving</span> <br> ${savings} KWh/year
        </p>
-       <p>
+       <p style="font-weight: bold; font-size: 20px;">
             Starting at ${cost} SEK/month
-        </p>
+       </p>
     </div>
+         <p style="text-align: center; font-weight: 600;
+                    font-size: 14px;
+                    line-height: 20px;">  Excited to get started?<br>
+            Reply to this email and we’ll get back to you in a bit.</p>
 
+            <p style="font-weight: 600;
+                      font-size: 14px;
+                      line-height: 20px;
+                      color: #164CD6;">Sally-R</p>
     </div>
     `
   });
