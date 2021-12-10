@@ -67,12 +67,18 @@ const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
     "To":sender,
     "Subject": "Sally-R calculation results",
     "HtmlBody":`
-    <h2 style="color:red">Building type</h2>: ${buildingType},
-    Zone: ${zone},
-    Area Type: ${areaType},
-    Area: ${area},
-    Savings: ${savings},
-    Cost: ${cost}
+    <div style="max-width: 834px; width: 100%; background:#F9F9F9; text-align: center; padding-left: 30px; padding-right: 30px; padding-top: 75px ">
+    <h2 style="font-size: 22px; font-weight: 700; ">SALLY R</h2>
+    <div style="max-width: 68px; width:100%; margin:0 auto; background:#FFFFFF; padding-top: 39px; padding-bottom:54px">
+        <h2 style="font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6 ">...and the results are in!</h2>
+    </div>
+        Building type: ${buildingType},
+        Zone: ${zone},
+        Area Type: ${areaType},
+        Area: ${area},
+        Savings: ${savings},
+        Cost: ${cost}
+    </div>
     `
   });
   console.log("email sent")
