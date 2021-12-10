@@ -67,7 +67,7 @@ const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
     "To":sender,
     "Subject": "Sally-R calculation results",
     "TextBody":`
-    Building type: ${buildingType},
+    <h2>Building type</h2>: ${buildingType},
     Zone: ${zone},
     Area Type: ${areaType},
     Area: ${area},
