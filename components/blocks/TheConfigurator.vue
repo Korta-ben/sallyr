@@ -434,6 +434,7 @@ components:{AesthVueRangeInput, VueFormulate},
             zone:this.zone,
             areaType:this.area_type,
             area:JSON.stringify(this.area),
+            currency: JSON.stringify(this.currency),
             savings:JSON.stringify(this.showResults().TotalKWhPerYear),
             cost:JSON.stringify(this.showResults().TotalCostPerMonth)
           })

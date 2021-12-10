@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   // const attributes = ['fullname', 'business', 'phone','sender', 'body', 'subject']
 
-  const attributes = ['sender', 'buildingType', 'zone', 'areaType', 'area', 'savings', 'cost']
+  const attributes = ['sender', 'buildingType', 'zone', 'areaType', 'area', 'currency', 'savings', 'cost']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   // const someInvalid = sanitizedAttributes.some(r => !r)
   //
@@ -45,6 +45,7 @@ const validateAndSanitize = (key, value) => {
     zone: v => !validator.isLength(v,{min:0}),
     areaType: v => !validator.isLength(v,{min:0}),
     area: v => !validator.isLength(v,{min:0}),
+    currency: v => !validator.isLength(v,{min:0}),
     savings: v => !validator.isLength(v,{min:0}),
     cost: v => !validator.isLength(v,{min:0}),
 
@@ -55,7 +56,7 @@ const validateAndSanitize = (key, value) => {
 }
 
 
-const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
+const sendMail = (sender, buildingType, zone, areaType, area, currency, savings, cost) =>{
 
   // console.log(sender)
 
@@ -87,15 +88,17 @@ const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
             <span style="color: #164CD6">You could be saving</span> <br> ${savings} KWh/year
        </p>
        <p style="font-weight: bold; font-size: 20px;">
-            Starting at ${cost} SEK/month
+            Starting at ${cost} ${currency}/month
        </p>
     </div>
          <p style="text-align: center; font-weight: 600;
                     font-size: 14px;
-                    line-height: 20px;">  Excited to get started?<br>
+                    line-height: 20px;
+                    padding-top:58px;">  Excited to get started?<br>
             Reply to this email and we’ll get back to you in a bit.</p>
 
             <p style="font-weight: 600;
+                        padding-bottom:58px;
                       font-size: 14px;
                       line-height: 20px;
                       color: #164CD6;">Sally-R</p>
