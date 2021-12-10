@@ -66,7 +66,7 @@ const sendMail = (sender, buildingType, zone, areaType, area, savings, cost) =>{
     "From":"hello@sr-stage.kortaben.work",
     "To":sender,
     "Subject": "Sally-R calculation results",
-    "TextBody":`
+    "HtmlBody":`
     <h2>Building type</h2>: ${buildingType},
     Zone: ${zone},
     Area Type: ${areaType},
