@@ -75,9 +75,9 @@ const sendMail = (sender, buildingType, zone, areaType, area, currency, savings,
     <div style="max-width: 680px; width:100%; margin:0 auto; background:#FFFFFF; padding-top: 39px; padding-bottom:54px">
         <h2 style="max-width:397px; width:100%; margin:auto; padding-bottom: 30px; font-size: 50px; line-height: 55px; text-align: center; border-bottom:  8px solid #164CD6; color: #000000; ">...and the<br> results are in!</h2>
        <p style="text-align: center; font-size: 20px; font-weight: bold; padding-top:30px">
-        <span style="color: #164CD6">Building type:</span> ${buildingType}, <br>
-        <span style="color: #164CD6">Zone:</span> ${zone},<br>
-        <span style="color: #164CD6">Area type:</span>  ${areaType},<br>
+        <span style="color: #164CD6">Building type:</span> <span style="text-transform:uppercase">${buildingType}</span>, <br>
+        <span style="color: #164CD6">Zone:</span> <span style="text-transform:uppercase">${zone}</span>,<br>
+        <span style="color: #164CD6">Area type:</span>  <span style="text-transform:uppercase">${areaType}</span>,<br>
         <span style="color: #164CD6">Area:</span> ${area},<br>
         <span style="color: #164CD6">Cost:</span> ${cost}
        </p>
