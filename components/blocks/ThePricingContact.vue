@@ -15,7 +15,7 @@
 
 
       <div class="  flex flex-col self-center pt-2 items-center">
-        <button
+        <button v-if="messageSend === false"
            class="sendMessage w-33.75 my-auto  justify-center  py-4  border-srblue  border-2 text-srblue text-base
         font-semibold leading-4 flex flex-row text-center hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out">send </button>
         <div v-if="messageSend" class="messageStatus">
