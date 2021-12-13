@@ -67,7 +67,7 @@ export default {
         // this.submitting = false
         // this.isSubmitted = true
         await new Promise(resolve => setTimeout(resolve, 2500))
-        console.log("sent to middleware")
+        this.messageSend = true
         // this.$emit('close')
       } catch (e) {
         // this.submitting = false
