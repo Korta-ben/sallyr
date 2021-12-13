@@ -394,6 +394,7 @@ components:{AesthVueRangeInput, VueFormulate},
           // this.submitting = false
           // this.isSubmitted = true
           await new Promise(resolve => setTimeout(resolve, 2500))
+
         }catch (e) {
           console.log(e)
         }
