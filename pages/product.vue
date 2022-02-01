@@ -6,17 +6,18 @@
     <TheLinesBackground class="linesbg"/>
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
 
-    <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25 lg:pl-50 pt-11.5">
+    <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25  pt-11.5">
+      <h2 class="text-srorange text-12.5  font-bold leading-13.75 text-center pb-17.5">How it works?</h2>
       <VueSlickCarousel v-bind="sliderSettings" >
         <div v-for="item in items" :key="item.id"
              class="flex flex-row px-5">
           <div class="slide flex flex-wrap justify-between py-14 px-8 order-last sm:order-first ">
-            <div class=" bg-contain bg-no-repeat bg-center sm:w-1/2
+            <div class=" bg-contain bg-no-repeat bg-center
                       "
             >
               <img class="w-full sm:h-36 sm:w-auto" :src="item.acf.image">
             </div>
-            <div class="w-full sm:w-1/2 sm:order-last order-first pb-4">
+            <div class="w-full  sm:order-last order-first pb-4">
               <h3 v-html="item.title.rendered" ></h3>
               <div v-html="item.excerpt.rendered" ></div>
             </div>
@@ -46,7 +47,7 @@ export default {
           "infinite": true,
           "centerMode": false,
           "speed": 500,
-          "slidesToShow": 2,
+          "slidesToShow": 3,
           "slidesToScroll": 1,
           "initialSlide": 0,
           "arrows":true,
@@ -262,8 +263,9 @@ export default {
   lg:order-none lg:w-91.5 lg:-mt-16;
 }
 .product_optimize_bottom>div h2{
-  @apply order-first font-bold text-3xl leading-8 text-right md:text-left pr-5 pl-12 pb-27.25 -mt-4
-  lg:order-none lg:max-w-139.25 lg:text-12.5 lg:leading-13.75 lg:-ml-20 ;
+  @apply order-first font-bold text-3xl leading-8 text-right  pr-5 pl-27.25 pb-27.25
+  md:text-left
+  lg:order-none lg:max-w-139.25 lg:text-12.5 lg:leading-13.75  ;
 }
 .product_optimize_bottom>div .body-text{
   @apply pb-10 md:pl-10 lg:pl-24 -mt-24 lg:pb-27.25 pt-8;
@@ -363,7 +365,7 @@ export default {
   lg:max-w-102;
 }
 
-.product_feature>div h2{
+.product_feature>div h3{
   @apply py-4  text-center font-bold text-srblue text-lg leading-4.5 pb-3 m-auto
   lg:w-1/2 lg:text-3xl lg:leading-8;
 }
@@ -387,8 +389,15 @@ export default {
 
 .product_feature.first>div{
   /*@apply max-w-screen-1.5lg*/
+  @apply pt-40
 }
 .product_feature.first>div h2{
+  /*@apply lg:-ml-36*/
+  /*@apply lg:my-0 lg:-ml-36 text-srorange text-22.5 leading-25 lg:w-2/3 ;*/
+  @apply text-srorange text-22.5 leading-25 order-first text-center;
+}
+
+.product_feature.first>div h3{
   @apply lg:-ml-36
 }
 
@@ -396,7 +405,7 @@ export default {
   @apply lg:max-w-2xs lg:w-full
 }
 .product_feature.first .body-text{
-  @apply lg:-mt-29 md:m-auto lg:mr-0
+  @apply lg:-mt-29 md:m-auto
 }
 
 /*product feature second*/
@@ -418,7 +427,7 @@ export default {
 .product_feature.second>div .header-image{
   @apply lg:max-w-xs lg:w-full
 }
-.product_feature.second>div h2{
+.product_feature.second>div h3{
   @apply lg:w-91.5
 }
 
@@ -437,11 +446,11 @@ export default {
 .product_feature.third>div{
   /*@apply max-w-screen-1.5lg*/
 }
-.product_feature.third>div h2{
-  @apply lg:text-left lg:mt-0
+.product_feature.third>div h3{
+  @apply lg:text-center lg:mt-0
 }
 .product_feature.third .body-text{
-  @apply lg:max-w-lg lg:w-full lg:-mt-25 md:m-auto lg:mr-0
+  @apply lg:max-w-lg lg:w-full lg:-mt-20 md:m-auto lg:mr-0
 }
 .product_feature.third .main-button-wrapper{
   @apply w-full

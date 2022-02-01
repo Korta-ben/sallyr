@@ -50,9 +50,9 @@ export default {
 
 
 .home_header>div{
-  @apply flex m-auto flex-col  px-5
-    lg:px-10 xg:pr-28  max-w-screen-1.5lg
-    lg:grid lg:grid-cols-5 ;
+  @apply flex m-auto flex-col  px-5  pb-44
+    lg:px-10 xg:pr-28  max-w-screen-1.5lg lg:pb-56
+    lg:grid lg:grid-cols-5;
 }
 
 .home_header>div h2{
@@ -90,7 +90,7 @@ export default {
 }
 
 .home_header .sub-button-wrapper{
-  @apply  lg:-mt-7.5 lg:col-span-2 justify-self-end
+  @apply  lg:-mt-7.5 lg:col-span-2 justify-self-end hidden
 }
 .home_header  .sub-button {
   @apply font-bold flex flex-col justify-center text-base leading-4 text-srskyblue m-auto block pb-44 text-center cursor-default
@@ -118,6 +118,9 @@ export default {
   lg:block lg:absolute lg:-ml-36;
 content:  url("~/assets/images/temprature.svg");
 
+}
+.home_hvac_system>div .body-text p:nth-child(2){
+  @apply py-4;
 }
 .home_hvac_system>div .main-button:before{
   @apply hidden  lg:-ml-80 lg:mt-12 animate-bounce-slow1
