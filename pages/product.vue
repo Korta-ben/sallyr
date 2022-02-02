@@ -184,7 +184,7 @@ export default {
   lg:order-none lg:w-91.5 lg:-mt-16;
 }
 .product_optimize_bottom>div h2{
-  @apply order-first font-bold text-3xl leading-8 text-right  pr-5 md:pl-17.5  pl-6 lg:pl-27.25 pb-27.25
+  @apply order-first font-bold text-3xl leading-8 pt-6 lg:pt-0  pr-5 md:pl-17.5  pl-6 lg:pl-27.25 pb-27.25
   md:text-left
   lg:order-none lg:max-w-120 lg:text-12.5 lg:leading-13.75  ;
 }
