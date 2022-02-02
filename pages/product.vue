@@ -7,7 +7,7 @@
     <UniversalCard v-for="card in cards" :key="card.index" :card="card"></UniversalCard>
 
     <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25  pt-11.5">
-      <h2 class="text-srorange text-12.5  font-bold leading-13.75 text-center pb-17.5">How it works?</h2>
+      <h2 class="text-srorange  text-12.5  font-bold leading-13.75 text-center pb-10">How it works?</h2>
       <div class="grid md:grid-cols-3 md:gap-2 gap-3 justify-center">
 
 
@@ -33,97 +33,16 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 export default {
-  components: {VueSlickCarousel},
+
   data () {
     return {
 
         showOverlayForm:false,
 
-      sliderSettings: [
-        {
 
-          "dots": false,
-          "infinite": true,
-          "centerMode": false,
-          "speed": 500,
-          "slidesToShow": 3,
-          "slidesToScroll": 1,
-          "initialSlide": 0,
-          "arrows":true,
-          "responsive": [
-
-            {
-              "breakpoint": 375,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 1,
-                "slidesToScroll": 1
-              }
-            },
-            {
-              "breakpoint": 480,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 1,
-                "slidesToScroll": 1
-              }
-            },
-            {
-              "breakpoint": 640,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 1,
-                "slidesToScroll": 1
-              }
-            },
-            {
-              "breakpoint": 768,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 1,
-                "slidesToScroll": 1
-              }
-            },
-            {
-              "breakpoint": 855,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 2,
-                "slidesToScroll": 1
-              }
-            },
-            {
-              "breakpoint": 1024,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 2,
-                "slidesToScroll": 1
-              }
-            },
-            {
-              "breakpoint": 1280,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 2,
-                "slidesToScroll": 1
-              }
-            },
-            {
-              "breakpoint": 1536,
-              "settings": {
-                "centerMode": false,
-                "slidesToShow": 2,
-                "slidesToScroll": 1
-
-              }
-            },
-          ]
-        }
-
-      ]
     }
   },
   async asyncData ({ $axios }) {
@@ -267,7 +186,7 @@ export default {
 .product_optimize_bottom>div h2{
   @apply order-first font-bold text-3xl leading-8 text-right  pr-5 pl-27.25 pb-27.25
   md:text-left
-  lg:order-none lg:max-w-139.25 lg:text-12.5 lg:leading-13.75  ;
+  lg:order-none lg:max-w-120 lg:text-12.5 lg:leading-13.75  ;
 }
 .product_optimize_bottom>div .body-text{
   @apply pb-10 md:pl-10 lg:pl-24 -mt-24 lg:pb-27.25 pt-8;
@@ -396,7 +315,8 @@ export default {
 .product_feature.first>div h2{
   /*@apply lg:-ml-36*/
   /*@apply lg:my-0 lg:-ml-36 text-srorange text-22.5 leading-25 lg:w-2/3 ;*/
-  @apply text-srorange text-22.5 leading-25 order-first text-center;
+  @apply text-srorange text-6.5xl  leading-11
+  lg:text-22.5 lg:leading-25 order-first text-center;
 }
 
 .product_feature.first>div h3{
