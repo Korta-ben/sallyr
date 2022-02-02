@@ -14,7 +14,7 @@
         <div v-for="item in items" :key="item.id"
              class="flex flex-row px-5 max-w-102">
           <div class="slide flex flex-wrap justify-between py-14 px-8">
-            <div class=" bg-contain bg-no-repeat bg-center
+            <div class=" bg-contain bg-no-repeat bg-center flex w-full justify-center
                       "
             >
               <img class="w-full sm:h-36 sm:w-auto" :src="item.acf.image">
