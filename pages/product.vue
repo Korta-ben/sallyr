@@ -193,7 +193,7 @@ export default {
 
 }
 .product_optimize_bottom>div .body-text p{
-  @apply px-5   font-semibold leading-3 leading-5
+  @apply pr-6 pl-6 lg:pl-4 md:pl-8  font-semibold leading-3 leading-5
   lg:max-w-102;
 
 }
