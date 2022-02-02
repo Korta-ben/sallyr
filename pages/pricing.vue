@@ -46,11 +46,11 @@ export default {
   @apply flex flex-col items-center px-5
   lg:pb-25
 }
-.pricing_hero>div:after{
-  content: url("~/assets/images/pricing-line.svg");
-  margin-top: 282px;
-  @apply absolute hidden lg:block -ml-52;
-}
+/*.pricing_hero>div:after{*/
+/*  content: url("~/assets/images/pricing-line.svg");*/
+/*  margin-top: 282px;*/
+/*  @apply absolute hidden lg:block -ml-52;*/
+/*}*/
 .pricing_hero{
   @apply bg-no-repeat md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/pricing-small-blur-header.png"),
@@ -66,9 +66,18 @@ export default {
   md:w-80 lg:-mt-6
 }
 .pricing_hero>div h2{
-  @apply order-first text-6.5xl leading-11 font-bold text-center z-10
-  lg:w-full lg:max-w-3xl lg:px-36
+  @apply order-first text-22.5 leading-25 font-bold  z-10 text-srblue
+  lg:max-w-5xl lg:pr-36
 
+}
+
+.pricing_hero>div h3{
+  @apply text-srblack font-bold text-12.5
+  lg:leading-13.75 lg:pl-50 lg:-mt-12
+}
+.pricing_hero>div > div.body-text{
+  @apply px-5 w-full pt-4
+  lg:max-w-2xl lg:pl-64;
 }
 .pricing_hero>div .sub-button-wrapper{
   @apply self-end pt-12.75

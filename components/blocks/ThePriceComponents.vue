@@ -4,14 +4,7 @@
    <div>
 
      <div class="body-text">
-       <h2>Our price plans</h2>
-       <p class="highlighted">
-         Invest in your building’s performance
-       </p>
-       <p>
-         Choose between signing up for a monthly plan or make an investment in your building and hook it up to our
-         all-inclusive support plan. All prices are listed per Air Handling Unit, excluding any taxes or other charges.
-       </p>
+
      </div>
 
      <div class="price-cards" appear>
