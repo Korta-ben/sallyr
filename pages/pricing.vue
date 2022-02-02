@@ -66,14 +66,14 @@ export default {
   md:w-80 lg:-mt-6
 }
 .pricing_hero>div h2{
-  @apply order-first text-22.5 leading-25 font-bold  z-10 text-srblue
-  lg:max-w-5xl lg:pr-36
+  @apply order-first  font-bold  z-10 text-srblue text-6.5xl leading-11 text-center pt-16 pb-21.75
+  lg:max-w-5xl lg:pr-36  lg:text-22.5 lg:leading-25 lg:text-left lg:py-0
 
 }
 
 .pricing_hero>div h3{
-  @apply text-srblack font-bold text-12.5
-  lg:leading-13.75 lg:pl-50 lg:-mt-12
+  @apply text-srblack font-bold text-3xl leading-8
+  lg:text-12.5  lg:leading-13.75 lg:pl-50 lg:-mt-12
 }
 .pricing_hero>div > div.body-text{
   @apply px-5 w-full pt-4

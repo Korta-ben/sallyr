@@ -8,7 +8,9 @@
 
     <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25  pt-11.5">
       <h2 class="text-srorange text-12.5  font-bold leading-13.75 text-center pb-17.5">How it works?</h2>
-      <VueSlickCarousel v-bind="sliderSettings" >
+      <div class="grid md:grid-cols-3 gap-2 ">
+
+
         <div v-for="item in items" :key="item.id"
              class="flex flex-row px-5">
           <div class="slide flex flex-wrap justify-between py-14 px-8 order-last sm:order-first ">
@@ -24,8 +26,8 @@
           </div>
 
         </div>
+      </div>
 
-      </VueSlickCarousel>
     </section>
   </div>
 </template>
