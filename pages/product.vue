@@ -8,18 +8,18 @@
 
     <section class="slider-kb m-auto w-full order-first xl:max-w-screen-1.5lg  bg-no-repeat  pb-25  pt-11.5">
       <h2 class="text-srorange text-12.5  font-bold leading-13.75 text-center pb-17.5">How it works?</h2>
-      <div class="grid md:grid-cols-3 gap-2 ">
+      <div class="grid md:grid-cols-3 md:gap-2 gap-3 justify-center">
 
 
         <div v-for="item in items" :key="item.id"
-             class="flex flex-row px-5">
-          <div class="slide flex flex-wrap justify-between py-14 px-8 order-last sm:order-first ">
+             class="flex flex-row px-5 max-w-102">
+          <div class="slide flex flex-wrap justify-between py-14 px-8">
             <div class=" bg-contain bg-no-repeat bg-center
                       "
             >
               <img class="w-full sm:h-36 sm:w-auto" :src="item.acf.image">
             </div>
-            <div class="w-full  sm:order-last order-first pb-4">
+            <div class="w-full   pb-4">
               <h3 v-html="item.title.rendered" ></h3>
               <div v-html="item.excerpt.rendered" ></div>
             </div>

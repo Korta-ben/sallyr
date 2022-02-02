@@ -62,9 +62,11 @@ export default {
   @apply absolute left-0 right-0 m-auto overflow-hidden;
   z-index: -1;
 }
-
+.teams>div div:nth-last-child(2){
+  @apply lg:col-span-2 lg:justify-self-end;
+}
 .teams>div div:last-child{
-  @apply lg:col-span-4;
+  @apply lg:col-span-2 lg:justify-self-start;
 }
 .team-wwu>div{
   @apply px-5 pt-23.25
