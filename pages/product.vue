@@ -201,8 +201,10 @@ export default {
 5. product_scaleable
 */
 .product_scaleable {
-  @apply bg-srlightestblue -mt-9.5;
-  /*margin-top: -96px;*/
+  @apply bg-srlightestblue -mt-9.5 bg-no-repeat bg-center bg-contain;
+
+
+
 }
 .product_scaleable div{
   @apply flex flex-col pt-43.5 pb-32  px-5 m-auto
@@ -221,7 +223,11 @@ export default {
 6. product_low_maintenance
 */
 .product_low_maintenance{
-  @apply -mt-11.5  max-w-screen-1.5xl m-auto w-full
+  @apply -mt-11.5   m-auto w-full
+
+
+
+
 }
 .product_low_maintenance>div{
   @apply flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto  1.5lg:w-full;
