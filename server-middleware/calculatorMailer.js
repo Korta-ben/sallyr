@@ -64,8 +64,8 @@ const sendMail = (sender, buildingType, zone, areaType, area, currency, savings,
   let client = new postmark.ServerClient(serverToken)
 
   client.sendEmail({
-    "From":"hello@sr-stage.kortaben.work",
-    "Bcc":"ashish@kortaben.se",
+    "From":"leads@sally-r.com",
+    "Bcc":"leads@sally-r.com",
     "To":sender,
     "Subject": "Sally-R calculation results",
     "HtmlBody":`

@@ -58,13 +58,13 @@ export const actions = {
   async storeDispatchFunc({ commit }) {
     try{
 
-      const  topMenu  = await axios.get('https://apisr.kortaben.work/wp-json/menus/v1/menus/main')
-      const  homePage  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/45?acf_format=standard')
-      const  theProduct  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/47?acf_format=standard')
-      const  theIndoorFarming  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/51?acf_format=standard')
-      const  theTeam  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/53?acf_format=standard')
-      const  thePricing  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/pages/49?acf_format=standard')
-      const  theSlider  = await axios.get('https://apisr.kortaben.work/wp-json/wp/v2/slider?acf_format=standard')
+      const  topMenu  = await axios.get('https://api.sally-r.com/wp-json/menus/v1/menus/main')
+      const  homePage  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/45?acf_format=standard')
+      const  theProduct  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/47?acf_format=standard')
+      const  theIndoorFarming  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/51?acf_format=standard')
+      const  theTeam  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/53?acf_format=standard')
+      const  thePricing  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/49?acf_format=standard')
+      const  theSlider  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/slider?acf_format=standard')
 
 
 

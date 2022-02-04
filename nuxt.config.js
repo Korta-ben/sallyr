@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 
   server: {
-       port: 8000, // default: 3000
+         port: 8100, // default: 3000
        host: '0.0.0.0'
   },
   serverMiddleware: ["~/server-middleware/mailer.js", "~/server-middleware/calculatorMailer.js",
@@ -129,7 +129,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://sr-stage.kortaben.work/'
+    baseURL: 'https://sally-r.com/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
