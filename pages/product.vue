@@ -91,7 +91,7 @@ export default {
   lg:max-w-2.5xl lg:text-12.5 lg:leading-13.75;
 }
 
-.product_header .main_animation_conteiner{
+.product_header .main_animation_container{
   @apply order-last pb-25;
 }
 .product_header h2{
@@ -223,14 +223,13 @@ export default {
 6. product_low_maintenance
 */
 .product_low_maintenance{
-  @apply -mt-11.5   m-auto w-full
-
-
+@apply  m-auto w-full bg-no-repeat bg-center bg-top bg-contain;
+background-image:url("~/assets/images/new-curve.svg");
 
 
 }
 .product_low_maintenance>div{
-  @apply flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto  1.5lg:w-full;
+  @apply -mt-11.5   flex flex-col px-5 pt-6 xl:max-w-screen-1.5lg m-auto  1.5lg:w-full;
 }
 .product_low_maintenance>div h2{
   @apply pt-0.5 text-center font-bold  text-3xl leading-8 pb-4

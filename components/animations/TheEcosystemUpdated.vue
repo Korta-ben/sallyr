@@ -3016,18 +3016,15 @@ export default {
 
 <style >
 .main_animation_container {
- /*display: block;*/
- display: flex;
- /*align-items: center;*/
- justify-content: center;
+  display: flex;
 
 }
 
-.main_animation_container svg{
+.main_animation_conteiner svg{
   @apply w-full m-auto;
   max-width: 694px;
   width: 100%;
   height: auto;
-  /*opacity: 0;*/
+  opacity: 0;
 }
 </style>

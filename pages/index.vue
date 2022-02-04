@@ -132,7 +132,7 @@ content:  url("~/assets/images/temprature.svg");
   lg:block lg:absolute;
   content:  url("~/assets/images/co2.svg");
 }
-.home_hvac_system .main_animation_conteiner{
+.home_hvac_system .main_animation_container{
   @apply -mt-24  pb-24
   lg:-mt-60  lg:pb-24 lg:ml-0 lg:pr-48;
 }

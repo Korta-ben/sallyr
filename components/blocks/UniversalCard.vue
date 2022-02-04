@@ -33,8 +33,9 @@
 <script>
 
 import TheLinesGreenBackground from "~/components/animations/TheLinesGreenBackground";
+import TheEcosystemUpdated from "~/components/animations/TheEcosystemUpdated";
 export default {
-  components: {TheLinesGreenBackground},
+  components: {TheEcosystemUpdated, TheLinesGreenBackground},
   props: {
     card: {
       type: [Object, Array]
@@ -45,6 +46,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
 </style>

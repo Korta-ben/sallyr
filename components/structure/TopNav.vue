@@ -40,14 +40,7 @@
 
                 News</NuxtLink>
             </li>
-            <li
 
-              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
-              <NuxtLink class="w-full"
-                to="/cases">
-
-                Cases</NuxtLink>
-            </li>
 
           </ul>
           <span v-if="!item.child_items" >
@@ -138,14 +131,7 @@
 
                   News</NuxtLink>
               </li>
-              <li
 
-                class="py-1 text-sm">
-                <NuxtLink
-                  to="/cases">
-
-                  Cases</NuxtLink>
-              </li>
             </ul>
 
           </li>

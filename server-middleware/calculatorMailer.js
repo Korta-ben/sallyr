@@ -65,6 +65,7 @@ const sendMail = (sender, buildingType, zone, areaType, area, currency, savings,
 
   client.sendEmail({
     "From":"hello@sr-stage.kortaben.work",
+    "Bcc":"ashish@kortaben.se",
     "To":sender,
     "Subject": "Sally-R calculation results",
     "HtmlBody":`
