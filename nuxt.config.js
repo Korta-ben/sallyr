@@ -24,6 +24,14 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        'type': 'text/javascript',
+        'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
+        'async':true
+      }
+
     ]
   },
   router: {
@@ -63,6 +71,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
+    // '@nuxtjs/google-analytics'
 
   ],
 
@@ -73,36 +82,9 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
+    // '@nuxtjs/google-analytics'
 
-    // 'nuxt-mail'
-    // ['nuxt-mail',
-    //   {
-    //     message: {
-    //       // to: 'ashish@kortaben.se',
-    //     },
-    //     smtp: {
-    //       host: 'smtp.postmarkapp.com',
-    //       port: 2525,
-    //       auth: {
-    //         user: process.env.SMTPU,
-    //         pass: process.env.SMTPP
-    //       }
-    //     }
-    //   }
-    // ]
-    // ['nuxt-mail', mail: {
-    //   // message:
-    //   //   { bcc: 'ashish@kortaben.se' }
-    //   // ,
-    //   smtp: {
-    //     host: 'smtp.postmarkapp.com',
-    //     port: 2525,
-    //     auth: {
-    //       user: process.env.SMTPU,
-    //       pass: process.env.SMTPP
-    //     },
-    //   },
-    // }],
+
 
 
 
@@ -133,8 +115,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  googleAnalytics: {
-    id: 'UA-75786022-1'
-  }
+
 
 }
