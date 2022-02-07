@@ -51,7 +51,8 @@ export default {
     return { items }
   },
   computed: {
-    cards() { return  this.$store.getters.getTheProduct.acf.universal_text_box }
+    cards() { return  this.$store.getters.getTheProduct.acf.universal_text_box },
+    page() { return  this.$store.getters.getTheProduct }
   }
 }
 </script>

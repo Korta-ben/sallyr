@@ -42,7 +42,8 @@ export default {
   },
   computed: {
     teams() {  return this.$store.getters.getTheTeam.acf.member },
-    cards() { return  this.$store.getters.getTheTeam.acf.universal_text_box }
+    cards() { return  this.$store.getters.getTheTeam.acf.universal_text_box },
+    page() { return  this.$store.getters.getTheTeam }
   }
 }
 </script>

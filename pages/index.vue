@@ -38,11 +38,13 @@ export default {
   },
   data () {
     return {
-      showOverlayForm:false
+      showOverlayForm:false,
+
     }
   },
   computed: {
-    cards() { return  this.$store.getters.getHomePage.acf.universal_text_box }
+    cards() { return  this.$store.getters.getHomePage.acf.universal_text_box },
+     page() { return  this.$store.getters.getHomePage }
   }
 }
 </script>
