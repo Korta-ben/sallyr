@@ -66,9 +66,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-75786022-1'
-    }]
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -137,5 +135,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  googleAnalytics: {
+    id: 'UA-75786022-1'
   }
+
 }
