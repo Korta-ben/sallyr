@@ -15,6 +15,23 @@
 // import * as lines from "~/assets/lottie/lines.json"
 // import TheLinesBackground from "~/components/animations/TheLinesBackground";
 export default {
+  head() {
+    if(this.page) {
+      const metaArray = [];
+      this.page.yoast_meta.map(ele => {
+        metaArray.push({
+          hid: ele.name ? ele.name : ele.property,
+          name: ele.name ? ele.name : ele.property,
+          content: ele.content,
+        });
+      });
+      return {
+        title: this.page.yoast_title,
+        meta: metaArray,
+      }
+    }
+  },
+
   components:{
     // TheLinesBackground
     // lottie
@@ -198,7 +215,7 @@ content:  url("~/assets/images/temprature.svg");
   md:max-w-120 md:px-3.5
 }
 .home_indoor_farming .main-button{
-  @apply px-16 font-bold flex text-base leading-4 py-6 px-7.5  border-2 border-srblack
+  @apply px-16 font-bold flex text-base leading-4 py-6 px-7.5  border-2 border-srblack bg-srwhite lg:bg-opacity-0
   hover:bg-srblack hover:text-srwhite transition duration-500 ease-in-out;
   font-family: 'Kumbh Sans', sans-serif;
 }

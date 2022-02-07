@@ -120,24 +120,24 @@ export default {
   background: #FFFFFF;
   box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
-.price-component>div .cardForm{
-  @apply bg-srwhite px-9.5 py-12 rounded-tl-xl  lg:max-w-pcards lg:-ml-45.5 lg:pl-30.25 xl:w-lgx2;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
-}
+
 
 .price-component>div .card h3{
-  @apply pb-5 col-span-2 md:text-3xl md:leading-8
+  @apply text-2xl  pb-5 col-span-2  md:text-3xl md:leading-8
+}
+
+.price-component>div .card ul{
+  @apply col-span-2 sm:col-span-1
 }
 .price-component>div .card .cost{
-  @apply flex flex-wrap justify-end
+  @apply flex flex-row  sm:justify-end w-full col-span-2 sm:col-span-1 justify-between
 }
 .price-component>div .card .cost p{
-  @apply  pt-4 text-xl font-bold  text-srblue justify-self-end text-right
+  @apply  pt-4 text-xl font-bold  text-srblue justify-self-start sm:justify-self-end text-right
 }
 .price-component>div .card .cost:after{
   content: url("~/assets/images/right-blue.svg");
-  @apply  self-end pl-4 pb-4;
+  @apply  self-end sm:pl-4 pb-4;
 
 }
 .price-component>div .card:last-child .cost:after{
@@ -154,6 +154,12 @@ export default {
   @apply pl-4 transition duration-500 ease-in-out;
   content: url("~/assets/images/white-right.svg");
   @apply  self-center pl-4 ;
+}
+
+.price-component>div .cardForm{
+  @apply bg-srwhite px-9.5 py-12 rounded-tl-xl  lg:max-w-pcards lg:-ml-45.5 lg:pl-30.25 xl:w-lgx2;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.05);
 }
 .submit{
   @apply self-center mr-17.5;

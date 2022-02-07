@@ -1,23 +1,23 @@
 <template>
   <div class="cardForm">
     <form class="grid  grid-cols-1	sm:grid-cols-4 sm:gap-x-16" method="POST" @submit.prevent="sendEmail">
-      <div class="grid grid-cols-2 gap-x-16 sm:col-span-3">
+      <div class="grid grid-cols-2 gap-x-16 col-span-1 sm:col-span-3">
         <input type="text" v-model="fullname" placeholder="Full Name*" name="fullname"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
+               class="col-span-2 sm:col-span-1 border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
         <input type="text" v-model="business" placeholder="Business" name="business"
-               class="border-0 border-b  text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
+               class="col-span-2 sm:col-span-1 border-0 border-b  text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
 
         <input type="text" v-model="phone" placeholder="Phone Number*" name="phone"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
+               class="col-span-2 sm:col-span-1 border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
         <input type="text" v-model="sender" placeholder="E-mail*" name="email"
-               class="border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
+               class="col-span-2 sm:col-span-1 border-0 border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 pl-0 focus:ring-0">
       </div>
 
 
       <div class="  flex flex-col self-center pt-2 items-center">
         <button v-if="messageSend === false"
-           class="sendMessage w-33.75 my-auto  justify-center  py-4  border-srblue  border-2 text-srblue text-base
-        font-semibold leading-4 flex flex-row text-center hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out">send </button>
+           class="sendMessage w-33.75 my-auto self-end justify-center  py-4  border-srblue  border-2 text-srblue text-base
+        font-semibold leading-4 flex flex-row text-center hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out">Send </button>
         <div v-if="messageSend" class="messageStatus">
           Your message
           has been sent!

@@ -65,7 +65,10 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@braid/vue-formulate/nuxt'
+    '@braid/vue-formulate/nuxt',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-75786022-1'
+    }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

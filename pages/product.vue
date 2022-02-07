@@ -106,8 +106,8 @@ export default {
   lg:text-xl;
 }
 .product_header .main-button {
-  @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14
-  hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out items-center;
+  @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block m-auto text-srblue mb-14 bg-srwhite
+   hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out items-center lg:bg-opacity-0;
   width: fit-content;
 }
 .product_header .main-button:after{

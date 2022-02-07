@@ -119,7 +119,8 @@
             <p>Area*</p>
 <!--            <input v-model="area" type="text" name="area">-->
             <div class="self-center pb-4 text-srblue text-base font-semibold ">{{ area_type === "feet" ?
-              (Math.round((area * 10.7639) / 1000)) * 1000 + ' ft' : roundArea  + ' m'}}<sup>2</sup></div>
+              (Math.round((area * 10.7639) / 1000)) * 1000 + ' ft' : roundArea  + ' m'}}
+              <sup >2</sup></div>
             <div class="flex gap-2">
 
               <span class="text-srblue text-xs w-24">
@@ -155,22 +156,23 @@
 
         <!--result stuff-->
         <transition name="result" appear v-if="theResultBox">
-          <div class="results-wrapper flex flex-wrap" >
-            <div class="results w-1/2">
+          <div class="results-wrapper flex flex-col md:flex-row md:flex-nowrap	md:gap-x-16	" >
+            <div class="results w-full md:w-1/2">
               <div class="grid grid-cols-2 capitalize">
-                <div class="pb-7.5">
-                  <span class="font-bold text-xl leading-7">Building Type:</span> <br> {{ building_type }}
+                <div class="pb-7.5 flex flex-col">
+                  <span class="font-bold text-xl leading-7">Building Type:</span> {{ building_type }}
                 </div>
-                <div class="pb-7.5">
-                  <span class="font-bold text-xl leading-7"> Zone: </span> <br> {{ zone }}
+                <div class="pb-7.5 flex flex-col items-end ">
+                  <span class="font-bold text-xl leading-7 self-end"> Zone: </span>  {{ zone }}
                 </div>
-                <div class="pb-7.5">
-                  <span class="font-bold text-xl leading-7">Area Type:</span> <br> {{ area_type }}
+                <div class="pb-7.5 flex flex-col">
+                  <span class="font-bold text-xl leading-7">Area Type:</span> {{ area_type }}
                 </div>
-                <div class="pb-7.5">
-                  <span class="font-bold text-xl leading-7">  Area:</span> <br>
-                  {{ area_type === "feet" ?
-                  (Math.round((area *  10.7639) / 1000)) * 1000 + ' ft' : roundArea  + ' m'}}<sup>2</sup>
+                <div class="pb-7.5  flex flex-col items-end">
+                  <span class="font-bold text-xl leading-7 self-end">  Area:</span>
+                  <span class="pr-1.5">{{ area_type === "feet" ?
+                  (Math.round((area *  10.7639) / 1000)) * 1000 + ' ft' : roundArea  + ' m'}}</span>
+                  <span class="text-xs -mt-5 ml-4">2</span>
                 </div>
               </div>
               <div class="font-bold text-lg leading-6">
@@ -195,8 +197,8 @@
             </div>
 
 
-            <div class="contact w-1/2 flex flex-col " v-if="!resultSent">
-              <h3 class="font-bold text-xl leading-7 ">Send the result to:</h3>
+            <div class="contact w-full md:w-1/2 flex flex-col " v-if="!resultSent">
+              <h3 class="font-bold text-xl leading-7 pt-4 md:pt-0">Send the result to:</h3>
               <input v-model="contactEmail" required name="email" placeholder="Email*"
                      class="border-b py-4 border-srblack max-w-xs"/>
               <div class="pt-4 flex">
