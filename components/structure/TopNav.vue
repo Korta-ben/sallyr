@@ -105,14 +105,16 @@
         text-srblue
         font-bold"
         >
-          <li v-for="item in menuItems" :key="item.id" class="px-5 py-1 text-base">
-            <span ><NuxtLink
-              :to="{name:item.slug}">
-            {{ item.title }}
-          </NuxtLink></span>
+          <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base">
+            <span v-if="item.child_items"   class="haschilditem">
+              <NuxtLink
+                :to="{name:item.slug}">
+                {{ item.title }}
+              </NuxtLink>
+            </span>
 
 
-            <ul
+            <ul class="hidden"
               v-if="item.child_items "
             >
               <li
@@ -129,10 +131,17 @@
                 <NuxtLink
                   to="/news">
 
-                  News</NuxtLink>
+                  Newss</NuxtLink>
               </li>
 
             </ul>
+
+            <span v-if="!item.child_items" >
+            <NuxtLink
+              :to="{name:item.slug}">
+            {{ item.title }}
+          </NuxtLink>
+          </span>
 
           </li>
 
