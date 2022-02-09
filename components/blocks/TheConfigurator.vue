@@ -181,12 +181,12 @@
                   <li>KWh/month in savings : {{Math.round(showResults().TotalKWhPerMonth/1000)*1000  }}</li>
                   <li class="pt-3.5 text-srblue text-xl">Price/Month :
                     <span v-if="currency == 'sek'">
-                      {{ Math.round(showResults().TotalCostPerMonth / 1000 ) * 1000}} SEK</span>
+                      {{ Math.round(showResults().TotalCostPerMonth / 100 ) * 100}} SEK</span>
                     <span v-if="currency == 'usd'"> USD
-                      {{ Math.round((showResults().TotalCostPerMonth / 8.5) / 100 ) * 100}}
+                      {{ Math.round((showResults().TotalCostPerMonth / 8.5) / 10 ) * 10}}
                     </span>
                     <span v-if="currency == 'eur'">
-                      {{ Math.round((showResults().TotalCostPerMonth / 10.15) / 100 ) * 100}} EURO
+                      {{ Math.round((showResults().TotalCostPerMonth / 10.15) / 10 ) * 10}} EURO
                     </span>
                   </li>
                 </ul>
@@ -327,7 +327,7 @@ components:{AesthVueRangeInput, VueFormulate},
               //default in Sek
               let PPMonthPerMeter = (KWhPerMonthPerMeter*0.8)*0.45
               let PPMUSDPerMeter = PPMonthPerMeter/8.5
-              let PPMEuroPerMeter = PPMonthPerMeter/10.15
+              let PPMEuroPerMeter = PPMonthPerMeter/10.14
               let TotalKWhPerYear = this.area*this.theRatePerYear()
               let TotalKWhPerMonth = this.area*KWhPerMonthPerMeter
               let TotalCostPerMonth = this.area*PPMonthPerMeter
@@ -350,7 +350,9 @@ components:{AesthVueRangeInput, VueFormulate},
 
         },
       showResults(){
-          // console.log(this.$store.getters.getTheCalculationResults);
+
+          // console.log( Math.round(this.$store.getters.getTheCalculationResults.TotalCostPerMonth*5000);
+        // console.log(this.$store.getters.getTheCalculationResults.TotalCostPerMonth);
           return this.$store.getters.getTheCalculationResults;
         },
 
