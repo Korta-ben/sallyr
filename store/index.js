@@ -102,7 +102,7 @@ export const actions = {
             },
             auth: {
               username: "api-admin",
-              password: "I8e6 CLQH zSBB Bgfh GMAH 7Cjn"
+              password: "clAF lGQl 7qZw ztHM wyZ5 47Yw"
               // password: "VeB5 eeRW lWl6 Wjag o8x2 jzC6"
             }
           }).then((response)=> {
