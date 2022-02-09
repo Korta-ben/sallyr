@@ -378,9 +378,7 @@ components:{AesthVueRangeInput, VueFormulate},
           }catch(e){console.log(e)}
         },
 
-      async sendEmailToUser(){
 
-      },
       async sendEmail() {
          // console.log("email goes to :" +this.contactEmail)
 

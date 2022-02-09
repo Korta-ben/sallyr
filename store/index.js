@@ -92,7 +92,7 @@ export const actions = {
     try{
 
       const postResponse =  axios.post(
-          "https://apisr.kortaben.work/wp-json/wp/v2/calculations/",
+          "https://api.sally-r.com/wp-json/wp/v2/calculations/",
           theCalculationResponse,
           {
             withCredentials:true,
