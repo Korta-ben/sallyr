@@ -131,7 +131,7 @@
                 <NuxtLink
                   to="/news">
 
-                  Newss</NuxtLink>
+                  News</NuxtLink>
               </li>
 
             </ul>

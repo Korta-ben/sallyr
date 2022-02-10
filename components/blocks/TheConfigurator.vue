@@ -171,7 +171,7 @@
                 <div class="pb-7.5  flex flex-col items-end">
                   <span class="font-bold text-xl leading-7 self-end">  Area:</span>
                   <span class="pr-1.5">{{ area_type === "feet" ?
-                  (Math.round((area *  10.7639) / 1000)) * 1000 + ' ft' : roundArea  + ' m'}}</span>
+                  (Math.round((area *  10.7639) / 100)) * 100 + ' ft' : roundArea  + ' m'}}</span>
                   <span class="text-xs -mt-5 ml-4">2</span>
                 </div>
               </div>
