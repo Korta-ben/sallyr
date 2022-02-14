@@ -364,7 +364,7 @@ components:{AesthVueRangeInput, VueFormulate},
                 "area": JSON.stringify(this.area),
                 "area_type": JSON.stringify(this.area_type),
                 "building_type": JSON.stringify(this.building_type),
-                "calculated_cost": JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 10.15) / 10 ) * 10),
+                "calculated_cost": JSON.stringify(this.showResults().TotalCostPerMonth),
                 "currency": JSON.stringify(this.currency),
                 "email": null,
                 "kwhmonth_in_savings": JSON.stringify(this.showResults().TotalKWhPerMonth),
@@ -390,7 +390,7 @@ components:{AesthVueRangeInput, VueFormulate},
             areaType:this.area_type,
             area:JSON.stringify(this.area),
             currency: this.currency,
-            savings:JSON.stringify(this.showResults().TotalKWhPerYear),
+            savings: this.currency === 'sek' ? JSON.stringify(Math.round((this.showResults().TotalCostPerMonth ) / 100 ) * 100) : this.currency === 'usd' ?  JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 8.5) / 100 ) * 100) : JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 10.15) / 100 ) * 100),
             cost:JSON.stringify(this.showResults().TotalCostPerMonth)
           })
           // this.submitting = false
