@@ -390,8 +390,9 @@ components:{AesthVueRangeInput, VueFormulate},
             areaType:this.area_type,
             area:JSON.stringify(this.area),
             currency: this.currency,
-            savings: this.currency === 'sek' ? JSON.stringify(Math.round((this.showResults().TotalCostPerMonth ) / 100 ) * 100) : this.currency === 'usd' ?  JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 8.5) / 100 ) * 100) : JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 10.15) / 100 ) * 100),
-            cost:JSON.stringify(this.showResults().TotalCostPerMonth)
+            // savings: this.currency === 'sek' ? JSON.stringify(Math.round((this.showResults().TotalCostPerMonth ) / 100 ) * 100) : this.currency === 'usd' ?  JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 8.5) / 100 ) * 100) : JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 10.15) / 100 ) * 100),
+            savings:JSON.stringify(Math.round(this.showResults().TotalKWhPerMonth/1000)*1000),
+            cost:this.currency === 'sek' ? JSON.stringify(Math.round((this.showResults().TotalCostPerMonth ) / 100 ) * 100) : this.currency === 'usd' ?  JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 8.5) / 100 ) * 100) : JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 10.15) / 100 ) * 100)
           })
           // this.submitting = false
           // this.isSubmitted = true
