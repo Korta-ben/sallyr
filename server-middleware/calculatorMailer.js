@@ -58,14 +58,14 @@ const validateAndSanitize = (key, value) => {
 
 const sendMail = (sender, buildingType, zone, areaType, area, currency, savings, cost) =>{
 
-  console.log(savings)
+  // console.log(savings)
 
   let serverToken = process.env.SMTPU
   let client = new postmark.ServerClient(serverToken)
 
   client.sendEmail({
-    "From":"leads@sally-r.com",
-    "Bcc":"leads@sally-r.com",
+    "From":"results@sally-r.com",
+    "Bcc":"results@sally-r.com",
     "To":sender,
     "Subject": "Sally-R calculation results",
     "HtmlBody":`
