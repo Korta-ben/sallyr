@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 
 console.log("this is mailer 2")
 app.post('/', function (req, res) {
-  const attributes = ['fullname', 'business', 'phone','sender', 'body', 'subject']
+  const attributes = ['fullname', 'business', 'phone', 'body' ,'sender', 'subject']
   const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
   // const someInvalid = sanitizedAttributes.some(r => !r)
   //
@@ -49,7 +49,7 @@ const validateAndSanitize = (key, value) => {
 }
 
 
-const sendMail = (fullname, business, phone,sender, from, body, subject) =>{
+const sendMail = (fullname, business, phone, body, sender, subject) =>{
 
 
   let serverToken = process.env.SMTPU

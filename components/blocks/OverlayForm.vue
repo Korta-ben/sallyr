@@ -65,13 +65,11 @@ export default {
           "business: " + this.business,
           "phone: " + this.phone,
           "sender: " + this.sender,
-          "from: " + this.from,
           "body: " + this.body)
         await this.$axios.$post('/mailer/send', {
           fullname:this.fullname,
           business:this.business,
           phone:this.phone,
-          from:this.from,
           body:this.body,
           sender:this.sender,
           subject: "Message from contact form"
