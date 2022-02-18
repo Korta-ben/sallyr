@@ -58,7 +58,7 @@ const sendMail = (fullname, business, phone,sender, from, body, subject) =>{
     client.sendEmail({
       "From":"contact@sally-r.com",
       "To":"contact@sally-r.com",
-      "Subject": subject,
+      "Subject": `${subject}`,
       "TextBody":`
             Name: ${fullname}
             Email: ${sender}
