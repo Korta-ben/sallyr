@@ -165,6 +165,11 @@ export default {
       showChild: false,
     }
   },
+  watch: {
+    '$route' () {
+      this.showMenu = false
+    }
+  },
   computed: {
     menuItems(){ return this.$store.getters.getTopMenu }
   }
