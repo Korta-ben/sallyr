@@ -9,12 +9,21 @@
     <Footer @popupToggle="showOverlayForm = !showOverlayForm"/>
 
     <CookieControl>
-      <template v-slot:modal  v-slot:cookie="{config}">
-        <h3>Modal title</h3>
-        <p>Modal description</p>
-        <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
+      <template v-slot:bar>
+        <h3>Cookie</h3>
+        <p>We use our own cookies and third-party cookies so that we can show you this website
+          and better understand how you use it, with a view to improving the services we offer.
+          If you continue browsing, we consider that you have accepted the cookies. </p>
+        <NuxtLink class="text-srwhite underline"
+          to="/integritetspolicy">
+          Read here for more
+        </NuxtLink>
       </template>
 
+      <template  v-slot:cookie="{config}">
+
+        <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
+      </template>
     </CookieControl>
   </div>
 </template>
