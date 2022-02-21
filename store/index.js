@@ -7,6 +7,7 @@ export const state = () => {
   theProduct:[]
   theIndoorFarming:[]
   theTeam:[]
+  theIntegritetspolicy:[]
   thePricing:[]
   theSlider:[]
   theCalculationResponse:[]
@@ -29,6 +30,9 @@ export const mutations = {
   },
   setTheTeam(state, theTeam){
     state.theTeam = theTeam;
+  },
+  setTheIntegritetspolicy(state, theIntegritetspolicy){
+    state.theIntegritetspolicy = theIntegritetspolicy;
   },
   setThePricing(state, thePricing){
     state.thePricing = thePricing
@@ -63,6 +67,7 @@ export const actions = {
       const  theProduct  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/47?acf_format=standard')
       const  theIndoorFarming  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/51?acf_format=standard')
       const  theTeam  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/53?acf_format=standard')
+      const  theIntegritetspolicy  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/561?acf_format=standard')
       const  thePricing  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/49?acf_format=standard')
       const  theSlider  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/slider?acf_format=standard')
 
@@ -75,6 +80,7 @@ export const actions = {
       commit('setTheProduct', theProduct.data);
       commit('setTheIndoorFarming', theIndoorFarming.data);
       commit('setTheTeam', theTeam.data);
+      commit('setTheIntegritetspolicy', theIntegritetspolicy.data);
       commit('setThePricing', thePricing.data);
       commit('setTheSlider', thePricing.data);
 
@@ -134,6 +140,9 @@ export const getters = {
   },
   getTheTeam(state){
     return state.theTeam
+  },
+  getTheIntegritetspolicy(state){
+    return state.theIntegritetspolicy
   },
   getThePricing(state){
     return state.thePricing

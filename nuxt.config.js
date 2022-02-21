@@ -82,7 +82,11 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
-    ['nuxt-cookie-control'],
+    ['nuxt-cookie-control',{
+      domain: 'sally-r.com',
+      controlButton: false,
+      blockIframe: true,
+    }],
     // '@nuxtjs/google-analytics'
   ],
   cookies: {
