@@ -1,6 +1,12 @@
 module.exports = {
   mode: 'jit',
-  purge: [],
+  purge: {
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue'
+      ]
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
 
