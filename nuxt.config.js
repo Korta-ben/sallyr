@@ -25,14 +25,14 @@ export default {
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ],
-    script: [
-      {
-        'type': 'text/javascript',
-        'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
-        'async':true
-      }
-
-    ]
+    // script: [
+    //   {
+    //     'type': 'text/javascript',
+    //     'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
+    //     'async':true
+    //   }
+    //
+    // ]
   },
   router: {
     linkActiveClass: 'current-page'
@@ -82,8 +82,43 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
+    ['nuxt-cookie-control'],
     // '@nuxtjs/google-analytics'
   ],
+  cookies: {
+    necessary: [
+      {
+
+        name:"Default Cookies",
+        description: "Used for cookie control.",
+        cookies: ["cookie_control_consent", "cookie_control_enabled_cookies"]
+      }
+    ],
+    optional: [
+      {
+        name:  'Google Analitycs',
+        //if you don't set identifier, slugified name will be used
+        identifier: 'ga',
+        //else
+        description:  'Google GTM',
+        initialState: true,
+        src:  'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
+        async:  true,
+        cookies: ['_ga', '_gat', '_gid'],
+        accepted: () =>{
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+          });
+        },
+        declined: () =>{
+        }
+      }
+
+    ]
+
+  },
 
   formulate:{
     options:{

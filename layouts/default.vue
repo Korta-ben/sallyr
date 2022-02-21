@@ -7,11 +7,22 @@
     <Nuxt class="pt-24 "/>
 
     <Footer @popupToggle="showOverlayForm = !showOverlayForm"/>
+
+    <CookieControl>
+      <template v-slot:modal  v-slot:cookie="{config}">
+        <h3>Modal title</h3>
+        <p>Modal description</p>
+        <span v-for="c in config" :key="c.id" v-text="c.cookies"/>
+      </template>
+
+    </CookieControl>
   </div>
 </template>
 
 <script>
+
 export default {
+
   data () {
     return {
       showOverlayForm:false
@@ -19,10 +30,10 @@ export default {
   },
 
   mounted(){
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-75786022-1');
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'UA-75786022-1');
   }
 }
 </script>
