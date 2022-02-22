@@ -10,7 +10,7 @@
         font-bold
          justify-between"
       >
-        <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base inline-block"  tabindex="0">
+        <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base inline-block focus-within:ring-0"  tabindex="0">
           <span v-if="item.child_items"   class="haschilditem">
             <NuxtLink
               :to="{name:item.slug  }">
@@ -105,7 +105,7 @@
         text-srblue
         font-bold"
         >
-          <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base" tabindex="0">
+          <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base focus-within:ring-0" tabindex="0">
             <span v-if="item.child_items"   class="haschilditem" >
               <NuxtLink
                 :to="{name:item.slug}">
@@ -196,6 +196,9 @@ export default {
 }
 .parent-item:focus-within>ul{
   display: block;
+}
+.parent-item:focus-within{
+  outline: none !important;
 }
 /*nav ul a{*/
 /*  @apply flex flex-col items-center*/
