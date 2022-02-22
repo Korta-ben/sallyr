@@ -10,7 +10,7 @@
         font-bold
          justify-between"
       >
-        <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base inline-block" >
+        <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base inline-block"  tabindex="0">
           <span v-if="item.child_items"   class="haschilditem">
             <NuxtLink
               :to="{name:item.slug  }">
@@ -105,8 +105,8 @@
         text-srblue
         font-bold"
         >
-          <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base">
-            <span v-if="item.child_items"   class="haschilditem" tabindex="0">
+          <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base" tabindex="0">
+            <span v-if="item.child_items"   class="haschilditem" >
               <NuxtLink
                 :to="{name:item.slug}">
                 {{ item.title }}
