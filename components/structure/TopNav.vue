@@ -197,7 +197,7 @@ export default {
 .parent-item:focus-within>ul{
   display: block;
 }
-.parent-item:focus-within{
+.parent-item{
   outline: none !important;
 }
 /*nav ul a{*/
