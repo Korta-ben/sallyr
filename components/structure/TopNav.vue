@@ -179,7 +179,8 @@ export default {
   computed: {
     menuItems(){ return this.$store.getters.getTopMenu }
 
-  }
+  },
+  
 }
 </script>
 
