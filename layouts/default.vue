@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <TopNav />
     <transition  name="readytotalk" appear v-if=showOverlayForm>
       <OverlayForm class="" @popupToggle="showOverlayForm = !showOverlayForm"/>

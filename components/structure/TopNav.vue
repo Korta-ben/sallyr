@@ -10,17 +10,17 @@
         font-bold
          justify-between"
       >
-        <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base inline-block focus-within:ring-0"  tabindex="0">
+        <li v-for="item in menuItems"  :key="item.id" :ref="'item'+item.ID" :id="'item'+item.ID" class="parent-item px-5 py-1 text-base inline-block focus-within:ring-0"  tabindex="0">
           <span v-if="item.child_items"   class="haschilditem">
             <NuxtLink
-              :to="{name:item.slug  }">
-            {{ item.title }}
+              :to="{name:item.slug  }" >
+            <span   @click="showChild =! showChild" @blur="showChild = false">{{ item.title }}</span>
           </NuxtLink>
           </span>
 
           <ul
-            v-if="item.child_items"
-            class="hidden absolute bg-srwhite transition-opacity w-56  duration-300 ease-in-out"
+            v-if="item.child_items && showChild"
+            class=" absolute bg-srwhite transition-opacity w-56  duration-300 ease-in-out"
           >
 <!--            :class="{'opacity-0' : !showChild}"-->
 
@@ -159,6 +159,9 @@
 
 <script>
 export default {
+  props:{
+
+  },
   data () {
     return {
       showMenu: false,
@@ -168,10 +171,14 @@ export default {
   watch: {
     '$route' () {
       this.showMenu = false
+      this.showChild = false
+      // this.$refs['item59'][0].blur()
+      this.$el.querySelector("#item59").blur()
     }
   },
   computed: {
     menuItems(){ return this.$store.getters.getTopMenu }
+
   }
 }
 </script>
@@ -194,9 +201,9 @@ export default {
   padding-left: 5px;
   @apply absolute
 }
-.parent-item:focus-within>ul{
-  display: block;
-}
+/*.parent-item:not(:focus-within)>ul{*/
+/*  display: none;*/
+/*}*/
 .parent-item{
   outline: none !important;
 }

@@ -33,9 +33,7 @@
     </section>
 
 
-    <section class=" px-5 grid grid-cols-1 gap-x-4 " >
-      <TeamsBox v-for="team in teams" :key="team.index" :member="team"></TeamsBox>
-    </section>
+
 
 <!--    <UniversalCard class="team-wwu md:max-w-md w-full m-auto" v-for="card in cards" :key="card.index" :card="card"></UniversalCard>-->
     <section class="team-wwu md:max-w-md w-full m-auto  pt-16 " >
@@ -64,7 +62,7 @@ export default {
 
   computed: {
 
-    teams() {  return this.$store.getters.getTheTeam.acf.member.filter(o => o.name == "Fredrik Tunberg") },
+    // teams() {  return this.$store.getters.getTheTeam.acf.member.filter(o => o.name == "Fredrik Tunberg") },
     cards() { return  this.$store.getters.getTheTeam.acf.universal_text_box }
   },
 
