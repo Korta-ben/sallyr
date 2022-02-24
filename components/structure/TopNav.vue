@@ -22,21 +22,21 @@
             v-if="item.child_items && showChild"
             class=" absolute bg-srwhite transition-opacity w-56  duration-300 ease-in-out"
           >
-<!--            :class="{'opacity-0' : !showChild}"-->
+            <!--            :class="{'opacity-0' : !showChild}"-->
 
             <li
               v-for="child in item.child_items"
               class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
               <NuxtLink class="w-full"
-                :to="{name:child.slug}">
+                        :to="{name:child.slug}">
 
-              {{ child.title }}</NuxtLink>
+                {{ child.title }}</NuxtLink>
             </li>
             <li
 
               class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
               <NuxtLink class="w-full"
-                to="/news">
+                        to="/news">
 
                 News</NuxtLink>
             </li>
@@ -53,7 +53,7 @@
         </li>
       </ul>
       <NuxtLink class="self-center"
-        to="/">
+                to="/">
         <img
           src="~/assets/images/sally-r-logo.svg"
           alt="Take control of your air quality."
@@ -115,7 +115,7 @@
 
 
             <ul class="hidden"
-              v-if="item.child_items "
+                v-if="item.child_items "
             >
               <li
                 v-for="child in item.child_items"
@@ -180,7 +180,7 @@ export default {
     menuItems(){ return this.$store.getters.getTopMenu }
 
   },
-  
+
 }
 </script>
 

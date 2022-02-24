@@ -36,17 +36,17 @@
 
 
 <!--    <UniversalCard class="team-wwu md:max-w-md w-full m-auto" v-for="card in cards" :key="card.index" :card="card"></UniversalCard>-->
-    <section class="team-wwu md:max-w-md w-full m-auto  pt-16 " >
-      <div >
-        <h3  v-html="cards[0].sub_heading"></h3>
-        <div class="main-button-wrapper" >
-          <a class="main-button nuxt-link-exact-active current-page"
-             @click="showOverlayForm = !showOverlayForm" v-html="cards[0].button_text">
-          </a>
-        </div>
-        <!----> <!---->
-      </div>
-    </section>
+<!--    <section class="team-wwu md:max-w-md w-full m-auto  pt-16 " >-->
+<!--      <div >-->
+<!--        <h3  v-html="cards[0].sub_heading"></h3>-->
+<!--        <div class="main-button-wrapper" >-->
+<!--          <a class="main-button nuxt-link-exact-active current-page"-->
+<!--             @click="showOverlayForm = !showOverlayForm" v-html="cards[0].button_text">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;&ndash;&gt; &lt;!&ndash;&ndash;&gt;-->
+<!--      </div>-->
+<!--    </section>-->
   </div>
 </template>
 
@@ -63,7 +63,7 @@ export default {
   computed: {
 
     // teams() {  return this.$store.getters.getTheTeam.acf.member.filter(o => o.name == "Fredrik Tunberg") },
-    cards() { return  this.$store.getters.getTheTeam.acf.universal_text_box }
+    // cards() { return  this.$store.getters.getTheTeam.acf.universal_text_box }
   },
 
   async asyncData ({ $axios }) {
