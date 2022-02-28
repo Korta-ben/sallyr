@@ -179,7 +179,7 @@
                 <ul>
                   <li>KWh/year in savings : {{ showResults().TotalKWhPerYear }}</li>
                   <li>KWh/month in savings : {{Math.round(showResults().TotalKWhPerMonth/1000)*1000  }}</li>
-                  <li class="pt-3.5 text-srblue text-xl">Price/Month :
+                  <li class="pt-3.5 text-srblue text-xl">Price/Month : From
                     <span v-if="currency == 'sek'">
                       {{ Math.round(showResults().TotalCostPerMonth / 100 ) * 100}} SEK</span>
                     <span v-if="currency == 'usd'"> USD
