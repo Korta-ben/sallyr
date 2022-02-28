@@ -325,8 +325,10 @@ components:{AesthVueRangeInput, VueFormulate},
               let KWhPerYearPerFeet = this.theRatePerYear()*0.0929
               let  KWhPerMonthPerFeet = KWhPerYearPerFeet/12
               //default in Sek
-              let PPMonthPerMeter = (KWhPerMonthPerMeter*0.8)*0.45
-              let PPMUSDPerMeter = PPMonthPerMeter/8.5
+              // let PPMonthPerMeter = (KWhPerMonthPerMeter*0.8)*0.45
+              let PPMonthPerMeter = 0.6
+              // let PPMUSDPerMeter = PPMonthPerMeter/8.5
+              let PPMUSDPerMeter = PPMonthPerMeter/9
               let PPMEuroPerMeter = PPMonthPerMeter/10.14
               let TotalKWhPerYear = this.area*this.theRatePerYear()
               let TotalKWhPerMonth = this.area*KWhPerMonthPerMeter
