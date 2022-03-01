@@ -86,7 +86,7 @@ const sendMail = (sender, buildingType, zone, areaType, area, currency, savings,
        *drumroll*
        </div>
        <p style="line-height: 33px; font-size: 30px; text-align: center;font-weight: bold">
-            <span style="color: #164CD6">You could be saving</span> <br> ${savings} KWh/year
+            <span style="color: #164CD6">You could be saving</span> <br> ${savings * 12} KWh/year
        </p>
        <p style="font-weight: bold; font-size: 20px;">
             Starting at ${cost} ${currency}/month
