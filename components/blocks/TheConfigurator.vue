@@ -177,7 +177,7 @@
               </div>
               <div class="font-bold text-lg leading-6">
                 <ul>
-                  <li>KWh/year in savings : {{ showResults().TotalKWhPerYear }}</li>
+                  <li>KWh/year in savings : {{ (Math.round(showResults().TotalKWhPerMonth/1000)*1000) * 12  }}</li>
                   <li>KWh/month in savings : {{Math.round(showResults().TotalKWhPerMonth/1000)*1000  }}</li>
                   <li class="pt-3.5 text-srblue text-xl">Price/Month : From
                     <span v-if="currency == 'sek'">
