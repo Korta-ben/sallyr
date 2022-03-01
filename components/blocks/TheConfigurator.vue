@@ -179,7 +179,7 @@
                 <ul>
                   <li>KWh/year in savings : {{ (Math.round(showResults().TotalKWhPerMonth/1000)*1000) * 12  }}</li>
                   <li>KWh/month in savings : {{Math.round(showResults().TotalKWhPerMonth/1000)*1000  }}</li>
-                  <li class="pt-3.5 text-srblue text-xl">Price/Month : From
+                  <li class="pt-3.5 text-srblue text-xl">Price/Month : Starting at
                     <span v-if="currency == 'sek'">
                       {{ Math.round(showResults().TotalCostPerMonth / 100 ) * 100}} SEK</span>
                     <span v-if="currency == 'usd'"> USD
@@ -393,7 +393,7 @@ components:{AesthVueRangeInput, VueFormulate},
             area:JSON.stringify(this.area),
             currency: this.currency,
             // savings: this.currency === 'sek' ? JSON.stringify(Math.round((this.showResults().TotalCostPerMonth ) / 100 ) * 100) : this.currency === 'usd' ?  JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 8.5) / 100 ) * 100) : JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 10.15) / 100 ) * 100),
-            savings:JSON.stringify(Math.round(this.showResults().TotalKWhPerMonth/1000)*1000),
+            savings:JSON.stringify((Math.round(this.showResults().TotalKWhPerMonth/1000)*1000) * 12 ),
             cost:this.currency === 'sek' ? JSON.stringify(Math.round((this.showResults().TotalCostPerMonth ) / 100 ) * 100) : this.currency === 'usd' ?  JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 8.5) / 100 ) * 100) : JSON.stringify(Math.round((this.showResults().TotalCostPerMonth / 10.15) / 100 ) * 100)
           })
           // this.submitting = false
