@@ -25,14 +25,14 @@ export default {
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ],
-    script: [
-      {
-        'type': 'text/javascript',
-        'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
-        'async':true
-      }
-
-    ]
+    // script: [
+    //   {
+    //     'type': 'text/javascript',
+    //     'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
+    //     'async':true
+    //   }
+    //
+    // ]
   },
   router: {
     linkActiveClass: 'current-page'
@@ -129,21 +129,12 @@ export default {
         cookies:["ga", "gat_gtag_UA-75786022-1", "gid"],
         accepted: () =>{
           window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js',
-            'config': 'UA-75786022-1'
-          });
-          window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
           }
           gtag("js", new Date());
           gtag("config", "UA-75786022-1");
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-75786022-1');
+
         },
         declined: () =>{
         }
