@@ -71,7 +71,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
-    // '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics'
 
   ],
 
@@ -105,7 +105,7 @@ export default {
       }
 
     }],
-    '@nuxtjs/google-analytics'
+    // '@nuxtjs/google-analytics'
   ],
   cookies: {
     necessary: [
