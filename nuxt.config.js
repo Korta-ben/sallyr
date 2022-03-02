@@ -156,7 +156,7 @@ export default {
     id: 'UA-75786022-1', //Your ID here
     debug: { sendHitTask: true },
     beforeFirstHit (){
-      if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === '_gat_gtag_UA-75786022-1'){
+      if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === 'ga'){
         $nuxt.$ga.enable();
       } else {
         $nuxt.$ga.disable();
