@@ -105,7 +105,7 @@ export default {
       }
 
     }],
-    // '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics'
   ],
   cookies: {
     necessary: [
@@ -126,31 +126,42 @@ export default {
         src:  'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
         async:  true,
         cookies:["_ga", "_gat_gtag_UA-75786022-1", "_gid"],
-        accepted: () =>{
-          // window.dataLayer = window.dataLayer || [];
-          // window.dataLayer.push({
-          //   'gtm.start': new Date().getTime(),
-          //   event: 'gtm.js',
-          //   'config': 'UA-75786022-1'
-          // });
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", "UA-75786022-1");
-          // window.dataLayer = window.dataLayer || [];
-          // function gtag(){dataLayer.push(arguments);}
-          // gtag('js', new Date());
-          // gtag('config', 'UA-75786022-1');
-        },
-        declined: () =>{
-        }
+        // accepted: () =>{
+        //   // window.dataLayer = window.dataLayer || [];
+        //   // window.dataLayer.push({
+        //   //   'gtm.start': new Date().getTime(),
+        //   //   event: 'gtm.js',
+        //   //   'config': 'UA-75786022-1'
+        //   // });
+        //   window.dataLayer = window.dataLayer || [];
+        //   function gtag() {
+        //     dataLayer.push(arguments);
+        //   }
+        //   gtag("js", new Date());
+        //   gtag("config", "UA-75786022-1");
+        //   // window.dataLayer = window.dataLayer || [];
+        //   // function gtag(){dataLayer.push(arguments);}
+        //   // gtag('js', new Date());
+        //   // gtag('config', 'UA-75786022-1');
+        // },
+        // declined: () =>{
+        // }
       }
 
     ]
 
   },
+  googleAnalytics: {
+    id: 'UA-75786022-1', //Your ID here
+    beforeFirstHit (){
+      if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === '_gat_gtag_UA-75786022-1'){
+        $nuxt.$ga.enable();
+      } else {
+        $nuxt.$ga.disable();
+      }
+    }
+  },
+
 
   formulate:{
     options:{
