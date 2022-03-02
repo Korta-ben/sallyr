@@ -105,7 +105,7 @@ export default {
       }
 
     }],
-    '@nuxtjs/google-analytics'
+    // '@nuxtjs/google-analytics'
   ],
   cookies: {
     necessary: [
@@ -127,16 +127,16 @@ export default {
         async:  true,
         cookies: ['_ga', '_gat', '_gid'],
         accepted: () =>{
-          // window.dataLayer = window.dataLayer || [];
-          // window.dataLayer.push({
-          //   'gtm.start': new Date().getTime(),
-          //   event: 'gtm.js',
-          //   'config': 'UA-75786022-1'
-          // });
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-75786022-1');
+          window.dataLayer.push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js',
+            'config': 'UA-75786022-1'
+          });
+          // window.dataLayer = window.dataLayer || [];
+          // function gtag(){dataLayer.push(arguments);}
+          // gtag('js', new Date());
+          // gtag('config', 'UA-75786022-1');
         },
         declined: () =>{
         }
