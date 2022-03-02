@@ -105,7 +105,7 @@ export default {
       }
 
     }],
-    '@nuxtjs/google-analytics'
+    // '@nuxtjs/google-analytics'
   ],
   cookies: {
     necessary: [
