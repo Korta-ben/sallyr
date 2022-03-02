@@ -25,14 +25,14 @@ export default {
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ],
-    // script: [
-    //   {
-    //     'type': 'text/javascript',
-    //     'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
-    //     'async':true
-    //   }
-    //
-    // ]
+    script: [
+      {
+        'type': 'text/javascript',
+        'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
+        'async':true
+      }
+
+    ]
   },
   router: {
     linkActiveClass: 'current-page'
@@ -134,12 +134,12 @@ export default {
           //   event: 'gtm.js',
           //   'config': 'UA-75786022-1'
           // });
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", "UA-75786022-1");
+          // window.dataLayer = window.dataLayer || [];
+          // function gtag() {
+          //   dataLayer.push(arguments);
+          // }
+          // gtag("js", new Date());
+          // gtag("config", "UA-75786022-1");
           // window.dataLayer = window.dataLayer || [];
           // function gtag(){dataLayer.push(arguments);}
           // gtag('js', new Date());
@@ -157,7 +157,13 @@ export default {
     debug: { sendHitTask: true },
     beforeFirstHit (){
       if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === 'ga'){
-        $nuxt.$ga.enable();
+        // $nuxt.$ga.enable();
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-75786022-1");
       } else {
         $nuxt.$ga.disable();
       }
