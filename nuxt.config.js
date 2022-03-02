@@ -121,18 +121,24 @@ export default {
         //if you don't set identifier, slugified name will be used
         identifier: 'ga',
         //else
-        description:  'Google GTM',
+        description:  'Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.',
         initialState: true,
         src:  'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
         async:  true,
-        cookies: ['_ga', '_gat', '_gid'],
+        cookies:["_ga", "_gat_gtag_UA-75786022-1", "_gid"],
         accepted: () =>{
+          // window.dataLayer = window.dataLayer || [];
+          // window.dataLayer.push({
+          //   'gtm.start': new Date().getTime(),
+          //   event: 'gtm.js',
+          //   'config': 'UA-75786022-1'
+          // });
           window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js',
-            'config': 'UA-75786022-1'
-          });
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "UA-75786022-1");
           // window.dataLayer = window.dataLayer || [];
           // function gtag(){dataLayer.push(arguments);}
           // gtag('js', new Date());
