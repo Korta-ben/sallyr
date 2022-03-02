@@ -82,6 +82,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
+    ['cookie-universal-nuxt', {alias: 'cookieUniversal'}],
     ['nuxt-cookie-control',{
       domain: 'sally-r.com',
       controlButton: false,
@@ -105,7 +106,7 @@ export default {
       }
 
     }],
-    // '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics'
   ],
   cookies: {
     necessary: [
@@ -151,16 +152,16 @@ export default {
     ]
 
   },
-  // googleAnalytics: {
-  //   id: 'UA-75786022-1', //Your ID here
-  //   beforeFirstHit (){
-  //     if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === '_gat_gtag_UA-75786022-1'){
-  //       $nuxt.$ga.enable();
-  //     } else {
-  //       $nuxt.$ga.disable();
-  //     }
-  //   }
-  // },
+  googleAnalytics: {
+    id: 'UA-75786022-1', //Your ID here
+    beforeFirstHit (){
+      if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === '_gat_gtag_UA-75786022-1'){
+        $nuxt.$ga.enable();
+      } else {
+        $nuxt.$ga.disable();
+      }
+    }
+  },
 
   formulate:{
     options:{
