@@ -125,19 +125,29 @@ export default {
         description:  'Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.',
         initialState: true,
         src:  'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
-        async:  true,
-        cookies:["ga", "gat_gtag_UA-75786022-1", "gid"],
-        accepted: () =>{
+        async: true,
+        cookies: ["_ga", "_gat_gtag_UA_75786022_1", "_gid"],
+        accepted: () => {
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
           }
           gtag("js", new Date());
           gtag("config", "UA-75786022-1");
-
-        },
-        declined: () =>{
         }
+        // async:  true,
+        // cookies:["ga", "gat_gtag_UA-75786022-1", "gid"],
+        // accepted: () =>{
+        //   window.dataLayer = window.dataLayer || [];
+        //   function gtag() {
+        //     dataLayer.push(arguments);
+        //   }
+        //   gtag("js", new Date());
+        //   gtag("config", "UA-75786022-1");
+        //
+        // },
+        // declined: () =>{
+        // }
       }
 
     ]
