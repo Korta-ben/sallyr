@@ -126,7 +126,7 @@ export default {
         initialState: true,
         src:  'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
         async:  true,
-        cookies:["_ga", "_gat_gtag_UA-75786022-1", "_gid"],
+        cookies:["ga", "gat_gtag_UA-75786022-1", "gid"],
         // accepted: () =>{
         //   // window.dataLayer = window.dataLayer || [];
         //   // window.dataLayer.push({
