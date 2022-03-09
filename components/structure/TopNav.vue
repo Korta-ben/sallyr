@@ -106,7 +106,7 @@
         font-bold"
         >
           <li v-for="item in menuItems" :key="item.id" class="parent-item px-5 py-1 text-base focus-within:ring-0" tabindex="0">
-            <span v-if="item.child_items"   class="haschilditem" >
+            <span v-if="item.child_items" @click="showChild =! showChild"  class="haschilditem" >
               <NuxtLink
                 :to="{name:item.slug}">
                 {{ item.title }}
@@ -114,8 +114,8 @@
             </span>
 
 
-            <ul class="hidden"
-                v-if="item.child_items "
+            <ul
+                v-if="item.child_items && showChild"
             >
               <li
                 v-for="child in item.child_items"
