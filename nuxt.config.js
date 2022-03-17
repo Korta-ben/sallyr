@@ -25,14 +25,14 @@ export default {
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ],
-    // script: [
-    //   {
-    //     'type': 'text/javascript',
-    //     'src': 'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
-    //     'async':true
-    //   }
-    //
-    // ]
+    script: [
+      {
+        'type': 'text/javascript',
+        'src': '//js-eu1.hsforms.net/forms/v2.js',
+        'async':true
+      }
+
+    ]
   },
   router: {
     linkActiveClass: 'current-page'
@@ -53,7 +53,8 @@ export default {
       '~/components',
       '~/components/blocks',
       '~/components/structure',
-      '~/components/animations'
+      '~/components/animations',
+      '~/components/articles',
     ]
   },
 

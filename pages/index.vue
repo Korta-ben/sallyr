@@ -46,6 +46,7 @@ export default {
     cards() { return  this.$store.getters.getHomePage.acf.universal_text_box },
      page() { return  this.$store.getters.getHomePage }
   }
+
 }
 </script>
 <style>
