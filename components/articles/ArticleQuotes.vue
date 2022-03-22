@@ -8,9 +8,9 @@
         <p v-html="quote.reference" class="font-normal text-lg lg:col-span-4"></p>
       </div>
     </div>
-    <NuxtLink :to="block.quote_cta_url" class="boxeslink mx-auto my-17.5">
+    <div  class="boxeslink mx-auto my-17.5" @click="clickHandler">
       {{ block.quotes_cta_label }}
-    </NuxtLink>
+    </div>
   </section>
 </template>
 
@@ -21,7 +21,11 @@ export default {
       type: [Object, Array]
     },
   },
-
+  methods: {
+    clickHandler(e) {
+      this.$emit("popupToggle");
+    }
+  }
 }
 </script>
 

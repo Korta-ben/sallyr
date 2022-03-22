@@ -8,9 +8,9 @@
 
           <p v-html="block.header_text" class="text-xl font-bold py-6 lg:py-12"></p>
 
-        <NuxtLink :to="block.header_cta_link" class="cta-button">
+        <div class="cta-button" @click="clickHandler">
           {{ block.header_cta_label }}
-        </NuxtLink>
+        </div>
 
       </div>
       <div class="lg:pt-36">
@@ -30,6 +30,13 @@ export default {
       type: [Object, Array]
     },
   },
+
+  methods: {
+    clickHandler(e) {
+      this.$emit("popupToggle");
+    }
+  }
+
 
 
 }
@@ -57,6 +64,8 @@ export default {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block  text-srblue mb-14
   hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;
   width: fit-content;
+  cursor: pointer;
+
 }
 
 .cta-button:hover:after{

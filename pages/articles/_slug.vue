@@ -4,7 +4,8 @@
       <OverlayForm @popupToggle="showOverlayForm = !showOverlayForm"/>
     </transition>
     <TheLinesBackground class="linesbg "/>
-    <component  v-for="block in blocks" :key="block.index"  :is="block.block_type" :block="block"/>
+    <component  v-for="block in blocks" :key="block.index"  :is="block.block_type" :block="block"
+                @popupToggle="showOverlayForm = !showOverlayForm"/>
   </div>
 </template>
 
@@ -51,7 +52,8 @@ export default {
           blocks(){
             return this.article.acf.article_block
           }
-  }
+  },
+
 
 
 }
@@ -94,4 +96,5 @@ export default {
   background-image: url("~/assets/images/blue-blur-2.webp");
   @apply bg-no-repeat ;
   background-position: left 0%}
+
 </style>

@@ -12,9 +12,10 @@
         <p class="text-lg font-normal lg:w-2/3" v-html="box.box_sub_text">
         </p>
       </div>
-      <NuxtLink :to="block.boxes_cta_url" class="boxeslink mx-auto mt-3.5">
+      <div class="boxeslink mx-auto mt-3.5"
+           @click="clickHandler">
         {{ block.boxes_cta_label }}
-      </NuxtLink>
+      </div>
     </div>
   </section>
 </template>
@@ -27,6 +28,12 @@ export default {
     },
   },
 
+  methods: {
+    clickHandler(e) {
+      this.$emit("popupToggle");
+    }
+  }
+
 }
 </script>
 
@@ -35,6 +42,7 @@ export default {
   @apply py-6 px-7 border-2 flex border-srblue font-bold  text-base leading-4 block  text-srblue
   hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;
   width: fit-content;
+  cursor: pointer;
 }
 
 .boxeslink:hover:after{
