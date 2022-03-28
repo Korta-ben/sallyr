@@ -12,10 +12,9 @@
         <p class="text-lg font-normal lg:w-2/3" v-html="box.box_sub_text">
         </p>
       </div>
-      <div class="boxeslink mx-auto mt-3.5"
-           @click="clickHandler">
+      <a href="#newsletter" class="boxeslink mx-auto mt-3.5">
         {{ block.boxes_cta_label }}
-      </div>
+      </a>
     </div>
   </section>
 </template>
