@@ -5,38 +5,38 @@
 md:text-22.5 md:leading-25">
       Let’s get in touch!
     </h3>
-<!--    <div class=" m-auto w-full sm:w-138.5   bg-srwhite py-4 md:py-11 px-8.5 ">-->
-<!--      <form class="grid grid-cols-2	gap-x-16" method="POST" @submit.prevent="sendEmail">-->
-<!--        <input name="fullname" placeholder="Full Name*" required-->
-<!--              v-model="fullname" class="border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 ">-->
-<!--        <input name="business" placeholder="Business"-->
-<!--             v-model="business"  class="border-b  text-sm pr-2.5 pb-4  mb-4  border-srskyblue h-8 ">-->
-<!--        <input name="phone" placeholder="Phone*" required-->
-<!--            v-model="phone"   class="border-b  text-sm pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">-->
-<!--        <input name="sender" placeholder="sender*"  required-->
-<!--             v-model="sender"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">-->
-<!--        <span v-if="currentRouteName === 'indoor-farming'"></span>-->
-<!--        <textarea v-else  name="message"  placeholder="Message..."-->
-<!--               v-model="body"-->
-<!--                  class="col-span-2 w-full border-0 border-b pr-2.5 mb-8 text-sm border-srskyblue"></textarea>-->
-<!--        <button-->
+    <div class=" m-auto w-full sm:w-138.5   bg-srwhite py-4 md:py-11 px-8.5 " v-if="this.$route.name !== 'articles-slug'">
+      <form class="grid grid-cols-2	gap-x-16" method="POST" @submit.prevent="sendEmail">
+        <input name="fullname" placeholder="Full Name*" required
+              v-model="fullname" class="border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 ">
+        <input name="business" placeholder="Business"
+             v-model="business"  class="border-b  text-sm pr-2.5 pb-4  mb-4  border-srskyblue h-8 ">
+        <input name="phone" placeholder="Phone*" required
+            v-model="phone"   class="border-b  text-sm pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
+        <input name="sender" placeholder="sender*"  required
+             v-model="sender"  class="border-b  text-sm  pr-2.5 mb-4 pb-4  border-srskyblue h-8 ">
+        <span v-if="currentRouteName === 'indoor-farming'"></span>
+        <textarea v-else  name="message"  placeholder="Message..."
+               v-model="body"
+                  class="col-span-2 w-full border-0 border-b pr-2.5 mb-8 text-sm border-srskyblue"></textarea>
+        <button
 
-<!--          class="border-2 flex flex-row justify-center-->
-<!--          text-srblue text-base font-bold py-4 px-7.5 border-srblue-->
-<!--          col-span-2 w-36 justify-self-end mt-1 hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;">-->
-<!--          Send-->
-<!--        </button>-->
-<!--      </form>-->
+          class="border-2 flex flex-row justify-center
+          text-srblue text-base font-bold py-4 px-7.5 border-srblue
+          col-span-2 w-36 justify-self-end mt-1 hover:bg-srblue hover:text-srwhite transition duration-500 ease-in-out;">
+          Send
+        </button>
+      </form>
 
-<!--    </div>-->
+    </div>
 
 <!--    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/v2.js"></script>-->
-    <div class="max-w-4xl m-auto">
+    <div class="max-w-4xl m-auto" v-if="this.$route.name === 'articles-slug'">
       <script>
         hbspt.forms.create({
           region: "eu1",
           portalId: "25028945",
-          formId: "4c813ada-7b94-47f6-997c-135d44cb77b9"
+          formId: "ba72938e-1259-4322-ace9-3db028331e78"
         });
       </script>
     </div>

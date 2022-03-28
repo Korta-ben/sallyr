@@ -8,9 +8,9 @@
 
           <p v-html="block.header_text" class="text-xl font-bold py-6 lg:py-12"></p>
 
-        <div class="cta-button" @click="clickHandler">
+        <a class="cta-button" href="#newsletter">
           {{ block.header_cta_label }}
-        </div>
+        </a>
 
       </div>
       <div class="lg:pt-36">
@@ -47,7 +47,7 @@ export default {
   @apply bg-no-repeat pt-11 md:pt-25 max-w-screen-1.5xl w-full   content-center m-auto;
   background-image:url("~/assets/images/blue-blur-2.webp"),
   url("~/assets/images/home-header.webp");
-  background-position:right 90% , left 0% ;
+
 
 }
 
@@ -55,6 +55,7 @@ export default {
   @apply  m-auto  px-5  pb-44
   lg:px-10   max-w-screen-1.5lg lg:pb-56
   ;
+  scroll-padding-top: 96px;
 }
 
 .article_header>div h1>span{
