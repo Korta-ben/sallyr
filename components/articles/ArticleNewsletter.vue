@@ -5,6 +5,13 @@
       class="text-srwhite font-bold text-4xl lg:text-12.5 text-center leading-10 pb-5 lg:leading-11"></h2>
       <p v-html="block.newsletter_subtext"
          class="text-srwhite font-bold text-xl lg:text-2xl text-center"></p>
+      <script>
+        hbspt.forms.create({
+          region: "eu1",
+          portalId: "25028945",
+          formId: "ba72938e-1259-4322-ace9-3db028331e78"
+        });
+      </script>
     </div>
 
   </section>
