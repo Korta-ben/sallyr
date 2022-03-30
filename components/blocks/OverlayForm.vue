@@ -5,7 +5,7 @@
 md:text-22.5 md:leading-25">
       Let’s get in touch!
     </h3>
-    <div class=" m-auto w-full sm:w-138.5   bg-srwhite py-4 md:py-11 px-8.5 " v-if="this.$route.name !== 'articles-slug'">
+    <div class=" m-auto w-full sm:w-138.5   bg-srwhite py-4 md:py-11 px-8.5 " >
       <form class="grid grid-cols-2	gap-x-16" method="POST" @submit.prevent="sendEmail">
         <input name="fullname" placeholder="Full Name*" required
               v-model="fullname" class="border-b text-sm pr-2.5 pb-4 mb-4 border-srskyblue h-8 ">
@@ -30,16 +30,7 @@ md:text-22.5 md:leading-25">
 
     </div>
 
-<!--    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/v2.js"></script>-->
-    <div class="max-w-4xl m-auto" v-if="this.$route.name === 'articles-slug'">
-      <script>
-        hbspt.forms.create({
-          region: "eu1",
-          portalId: "25028945",
-          formId: "ba72938e-1259-4322-ace9-3db028331e78"
-        });
-      </script>
-    </div>
+
 
   </div>
 
