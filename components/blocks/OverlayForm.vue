@@ -1,7 +1,7 @@
 <template>
   <div class="form-overlay fixed bg-srwhite  px-5  w-full z-50 h-full  ">
     <img @click="clickHandler" src="~/assets/images/close.svg" class="ml-auto mt-4 cursor-pointer">
-    <h3 class="text-center text-2xl xl:mr-48 font-bold text-xl pb-4 leading-7 pt-4  text-srblue
+    <h3 class="text-center text-2xl  font-bold text-xl pb-4 leading-7 pt-4  text-srblue
 md:text-22.5 md:leading-25">
       Let’s get in touch!
     </h3>
