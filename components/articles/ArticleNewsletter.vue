@@ -35,5 +35,7 @@ export default {
 </script>
 
 <style >
-
+input.hs-input{
+  color:#f2f2f8
+}
 </style>
