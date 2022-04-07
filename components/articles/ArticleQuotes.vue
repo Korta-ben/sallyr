@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-16 ">
+  <section class="py-16 ">
     <div class="px-5  max-w-screen-1.5lg m-auto">
       <div v-for="quote in block.quotes" class="flex flex-col
       lg:grid lg:grid-cols-4 lg:justify-items-center lg:items-center">
@@ -8,7 +8,7 @@
         <p v-html="quote.reference" class="font-normal text-lg lg:col-span-4"></p>
       </div>
     </div>
-    <div  class="boxeslink mx-auto my-17.5" @click="clickHandler">
+    <div v-if="block.show_cta_button" class="boxeslink mx-auto my-17.5" @click="clickHandler">
       {{ block.quotes_cta_label }}
     </div>
   </section>

@@ -12,7 +12,7 @@
         <p class="text-lg font-normal lg:w-2/3" v-html="box.box_sub_text">
         </p>
       </div>
-      <a href="#newsletter" class="boxeslink mx-auto mt-3.5">
+      <a  href="#newsletter" class="boxeslink mx-auto mt-3.5">
         {{ block.boxes_cta_label }}
       </a>
     </div>
