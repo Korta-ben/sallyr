@@ -134,7 +134,7 @@ export default {
             dataLayer.push(arguments);
           }
           gtag("js", new Date());
-          gtag("config", "GTM-N5DJRK2");
+          gtag("config", "UA-75786022-1");
         }
       },
       {
