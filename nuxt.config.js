@@ -120,25 +120,6 @@ export default {
     ],
     optional: [
       {
-        name:  'Google Analitycs',
-        //if you don't set identifier, slugified name will be used
-        identifier: 'ga',
-        //else
-        description:  'Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.',
-        initialState: true,
-        src:  'https://www.googletagmanager.com/gtag/js?id=UA-75786022-1',
-        async: true,
-        cookies: ["_ga", "_gat_gtag_UA_75786022_1", "_gid"],
-        accepted: () => {
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-          gtag("config", "UA-75786022-1");
-        }
-      },
-      {
         name:  'Google Tag Manager',
         //if you don't set identifier, slugified name will be used
         identifier: 'gtm',
@@ -160,24 +141,14 @@ export default {
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-N5DJRK2')
           );
-          // gtag("config", "GTM-N5DJRK2");
+
         }
       },
 
     ]
 
   },
-  // googleAnalytics: {
-  //   id: 'UA-75786022-1', //Your ID here
-  //   debug: { sendHitTask: true },
-  //   beforeFirstHit (){
-  //     if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === 'ga'){
-  //       $nuxt.$ga.enable();
-  //     } else {
-  //       $nuxt.$ga.disable();
-  //     }
-  //   }
-  // },
+
   gtm: {
     id: 'GTM-N5DJRK2'
   },
