@@ -72,7 +72,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
-    // '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics'
 
   ],
 
@@ -134,7 +134,7 @@ export default {
             dataLayer.push(arguments);
           }
           gtag("js", new Date());
-          gtag("config", "UA-75786022-1");
+          gtag("config", "GTM-N5DJRK2");
         }
         // async:  true,
         // cookies:["ga", "gat_gtag_UA-75786022-1", "gid"],
@@ -154,17 +154,17 @@ export default {
     ]
 
   },
-  // googleAnalytics: {
-  //   id: 'UA-75786022-1', //Your ID here
-  //   debug: { sendHitTask: true },
-  //   beforeFirstHit (){
-  //     if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === 'ga'){
-  //       $nuxt.$ga.enable();
-  //     } else {
-  //       $nuxt.$ga.disable();
-  //     }
-  //   }
-  // },
+  googleAnalytics: {
+    id: 'UA-75786022-1', //Your ID here
+    debug: { sendHitTask: true },
+    beforeFirstHit (){
+      if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === 'ga'){
+        $nuxt.$ga.enable();
+      } else {
+        $nuxt.$ga.disable();
+      }
+    }
+  },
 
   formulate:{
     options:{
