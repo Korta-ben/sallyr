@@ -83,6 +83,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@braid/vue-formulate/nuxt',
+    '@nuxtjs/gtm',
     ['cookie-universal-nuxt', {alias: 'cookieUniversal'}],
     ['nuxt-cookie-control',{
       domain: 'sally-r.com',
@@ -177,6 +178,9 @@ export default {
   //     }
   //   }
   // },
+  gtm: {
+    id: 'GTM-N5DJRK2'
+  },
 
   formulate:{
     options:{
