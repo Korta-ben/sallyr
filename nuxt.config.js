@@ -136,35 +136,47 @@ export default {
           gtag("js", new Date());
           gtag("config", "GTM-N5DJRK2");
         }
-        // async:  true,
-        // cookies:["ga", "gat_gtag_UA-75786022-1", "gid"],
-        // accepted: () =>{
-        //   window.dataLayer = window.dataLayer || [];
-        //   function gtag() {
-        //     dataLayer.push(arguments);
-        //   }
-        //   gtag("js", new Date());
-        //   gtag("config", "UA-75786022-1");
-        //
-        // },
-        // declined: () =>{
-        // }
-      }
+      },
+      {
+        name:  'Google Tag Manager',
+        //if you don't set identifier, slugified name will be used
+        identifier: 'gtm',
+        //else
+        description:  'Google Tag manager.',
+        initialState: true,
+        src:  'https://www.googletagmanager.com/gtag/js?id=GTM-N5DJRK2',
+        async: true,
+        cookies: ["_ga", "_gat_gtag_UA_75786022_1", "_gid"],
+        accepted: () => {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag(
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-N5DJRK2')
+          );
+          // gtag("config", "GTM-N5DJRK2");
+        }
+      },
 
     ]
 
   },
-  googleAnalytics: {
-    id: 'UA-75786022-1', //Your ID here
-    debug: { sendHitTask: true },
-    beforeFirstHit (){
-      if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === 'ga'){
-        $nuxt.$ga.enable();
-      } else {
-        $nuxt.$ga.disable();
-      }
-    }
-  },
+  // googleAnalytics: {
+  //   id: 'UA-75786022-1', //Your ID here
+  //   debug: { sendHitTask: true },
+  //   beforeFirstHit (){
+  //     if ($nuxt.$cookieUniversal.get('cookie_control_consent') && $nuxt.$cookieUniversal.get('cookie_control_enabled_cookies') === 'ga'){
+  //       $nuxt.$ga.enable();
+  //     } else {
+  //       $nuxt.$ga.disable();
+  //     }
+  //   }
+  // },
 
   formulate:{
     options:{
