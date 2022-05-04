@@ -46,7 +46,7 @@ export default {
 
   async asyncData ({ params }) {
     const { story } = await axios.get(
-      `https://api.hubapi.com/cms/v3/blogs/posts/47035281138/?hapikey=eu1-cfe2-5c66-4c77-94fc-e951acb57b1f`,
+      `https://api.hubapi.com/cms/v3/blogs/posts/47035281138/?hapikey=${process.env.HAPI}`,
         {
           headers: {
             'Content-Type': 'application/json'

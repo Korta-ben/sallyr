@@ -72,7 +72,7 @@ export default {
 
   async asyncData ({ $axios }) {
     const stories = await
-      $axios.$get('https://api.hubapi.com/cms/v3/blogs/posts?hapikey=eu1-cfe2-5c66-4c77-94fc-e951acb57b1f')
+      $axios.$get(`https://api.hubapi.com/cms/v3/blogs/posts?hapikey=${process.env.HAPI}`)
     return { stories }
 
   },

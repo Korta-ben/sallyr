@@ -12,7 +12,8 @@ export default {
   publicRuntimeConfig: {
     PostMarkKey: process.env.PM_KEY,
     SmtpUser: process.env.SMTPU,
-    SmtpPass: process.env.SMTPP
+    SmtpPass: process.env.SMTPP,
+    HubSpotApi : process.env.HAPI
   },
   head: {
 
