@@ -13,7 +13,7 @@ export default {
     PostMarkKey: process.env.PM_KEY,
     SmtpUser: process.env.SMTPU,
     SmtpPass: process.env.SMTPP,
-    HubSpotApi : process.env.HAPI
+    HubSpotApi : process.env.HAPI,
   },
   head: {
 
