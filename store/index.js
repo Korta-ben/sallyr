@@ -11,6 +11,7 @@ export const state = () => {
   thePricing:[]
   theSlider:[]
   theCalculationResponse:[]
+  theBlogg:[]
 
 }
 
@@ -47,7 +48,10 @@ export const mutations = {
   },
   setTheCalculationResponse(state, theCalculationResponse){
     state.theCalculationResponse = theCalculationResponse
-  }
+  },
+  setTheBlogg(state, theBlogg){
+    state.theBlogg = theBlogg;
+  },
 
 
 
@@ -70,6 +74,7 @@ export const actions = {
       const  theIntegritetspolicy  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/561?acf_format=standard')
       const  thePricing  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/pages/49?acf_format=standard')
       const  theSlider  = await axios.get('https://api.sally-r.com/wp-json/wp/v2/slider?acf_format=standard')
+      const  theBlogg  = await axios.get(`https://api.hubapi.com/cms/v3/blogs/posts?hapikey=${process.env.HAPI}`)
 
 
 
@@ -83,6 +88,7 @@ export const actions = {
       commit('setTheIntegritetspolicy', theIntegritetspolicy.data);
       commit('setThePricing', thePricing.data);
       commit('setTheSlider', thePricing.data);
+      commit('setTheBlogg', theBlogg.data);
 
 
     }catch (e) {
@@ -156,5 +162,8 @@ export const getters = {
   },
   getTheCalculationResponse(state){
     return state.theCalculationResponse
+  },
+  getTheBlogg(state){
+    return state.theBlogg
   },
 }

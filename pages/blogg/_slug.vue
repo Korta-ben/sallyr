@@ -17,19 +17,24 @@
 <!--    </div>-->
 
     <section class="pt-14 pb-23.25 px-5
-          lg:pt-23.25 lg:pb-30.25">
+          lg:pt-23.25 lg:pb-30.25 max-w-5xl m-auto">
 
-      <h1 class="text-center" v-html="story.htmlTitle">
+      <h1 v-html="blog.htmlTitle"
+          class="font-bold text-5xl leading-13.75 text-center py-11.5 "></h1>
 
-      </h1>
+      <div class="lg:pt-36 pb-5">
+        <img :src="blog.featuredImage" class="lg:max-w-lg m-auto">
+      </div>
+      <div class="text-lg font-normal " v-html="blog.postBody">
 
+      </div>
     </section>
   </div>
 </template>
 
 
 <script>
-import axios from "axios";
+
 
 export default {
   data () {
@@ -40,23 +45,10 @@ export default {
 
   computed: {
 
-    // teams() {  return this.$store.getters.getTheTeam.acf.member.filter(o => o.name == "Fredrik Tunberg") },
-    // cards() { return  this.$store.getters.getTheTeam.acf.universal_text_box }
-  },
+    blog({params}){
+      return  this.$store.getters.getTheBlogg.results.find(o => o.name === this.$route.params.slug)
 
-  async asyncData ({ params }) {
-    const { story } = await axios.get(
-      `https://api.hubapi.com/cms/v3/blogs/posts/47035281138/?hapikey=${process.env.HAPI}`,
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-    )
-
-
-    console.log(story)
-    return { story }
+    }
   },
 }
 

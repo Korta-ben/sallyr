@@ -9,26 +9,24 @@
         <span class="whitespace-nowrap">Sally R?</span></h2>
       <div class="story-wrapper grid grid-cols-1 gap-6 lg:grid-cols-2  xl:max-w-screen-1.5lg m-auto">
         <!--        story start-->
-        <div v-for="story in stories.results" :key="story.id"
+        <div v-for="blog in blogs" :key="blog.id"
              class="story flex flex-col bg-srwhite rounded-tl-2xl
  md:flex-row md:flex-row-reverse justify-between">
 
           <div
-            :style="{ 'background-image': 'url(' + story.featuredImage +')' }"
+            :style="{ 'background-image': 'url(' + blog.featuredImage +')' }"
             class="rounded-tl-2xl h-40 bg-no-repeat bg-cover bg-center	w-full
          md:h-72   md:rounded-none md:w-45.5 lg:w-1/3">
 
           </div>
           <div class="p-11.5 lg:w-2/3 flex flex-col justify-around">
-            <h3 class="font-bold  text-xl leading-6 text-srblue pb-9" v-html="story.name">
+            <h3 class="font-bold  text-xl leading-6 text-srblue pb-9" v-html="blog.name">
             </h3>
 
             <div class="read-mores font-bold text-base leading-4 text-srblue">
-              <NuxtLink :to="{ name: 'blogg-slug', params: {slug:(story.name.split(' ').join('-').toLowerCase()), id:story.id }}" class="sub-button">
+              <NuxtLink :to="{ name: 'blogg-slug', params: {slug:blog.name}}" class="sub-button">
                 Read More
               </NuxtLink>
-<!--              <a :href="story.url" target="_blank-->
-<!--">Go to press release</a>-->
             </div>
           </div>
         </div>
@@ -36,21 +34,6 @@
       </div>
     </section>
 
-
-
-
-    <!--    <UniversalCard class="team-wwu md:max-w-md w-full m-auto" v-for="card in cards" :key="card.index" :card="card"></UniversalCard>-->
-    <!--    <section class="team-wwu md:max-w-md w-full m-auto  pt-16 " >-->
-    <!--      <div >-->
-    <!--        <h3  v-html="cards[0].sub_heading"></h3>-->
-    <!--        <div class="main-button-wrapper" >-->
-    <!--          <a class="main-button nuxt-link-exact-active current-page"-->
-    <!--             @click="showOverlayForm = !showOverlayForm" v-html="cards[0].button_text">-->
-    <!--          </a>-->
-    <!--        </div>-->
-    <!--        &lt;!&ndash;&ndash;&gt; &lt;!&ndash;&ndash;&gt;-->
-    <!--      </div>-->
-    <!--    </section>-->
   </div>
 </template>
 
@@ -68,14 +51,15 @@ export default {
 
     // teams() {  return this.$store.getters.getTheTeam.acf.member.filter(o => o.name == "Fredrik Tunberg") },
     // cards() { return  this.$store.getters.getTheTeam.acf.universal_text_box }
+    blogs() { return this.$store.getters.getTheBlogg.results }
   },
 
-  async asyncData ({ $axios }) {
-    const stories = await
-      $axios.$get(`https://api.hubapi.com/cms/v3/blogs/posts?hapikey=${process.env.HAPI}`)
-    return { stories }
-
-  },
+  // async asyncData ({ $axios }) {
+  //   const stories = await
+  //     $axios.$get(`https://api.hubapi.com/cms/v3/blogs/posts?hapikey=${process.env.HAPI}`)
+  //   return { stories }
+  //
+  // },
 }
 
 </script>
