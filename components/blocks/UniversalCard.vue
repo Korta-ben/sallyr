@@ -1,6 +1,5 @@
 <template>
   <section :class="card.box_layout +' '+ card.additional_css_class" >
-
     <div >
       <TheEcosystem v-if="card.has_animation && card.animations == 'ecosystem'"/>
       <TheGreenHouse v-if="card.has_animation && card.animations == 'greenhouse1'" />
@@ -26,7 +25,6 @@
       <TheLinesBackground v-if="card.blue_line_background" class="lines-bg"/>
       <TheLinesGreenBackground  v-if="card.has_green_line_background" class="linesbg" />
     </div>
-
   </section>
 </template>
 

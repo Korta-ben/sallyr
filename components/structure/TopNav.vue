@@ -36,9 +36,17 @@
 
               class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
               <NuxtLink class="w-full"
-                        to="/news">
+                        to="/blog">
 
-                News</NuxtLink>
+                Blog</NuxtLink>
+            </li>
+            <li
+
+              class="py-3 text-sm px-5 border-l-4 border-srwhite  hover:border-srblue flex">
+              <NuxtLink class="w-full"
+                        to="/press">
+
+                Press</NuxtLink>
             </li>
 
 
