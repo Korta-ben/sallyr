@@ -24,7 +24,7 @@
             </h3>
 
             <div class="read-mores font-bold text-base leading-4 text-srblue">
-              <NuxtLink :to="{ name: 'blogg-slug', params: {slug:blog.name}}" class="sub-button">
+              <NuxtLink :to="{ name: 'blog-slug', params: {slug:blog.name}}" class="sub-button">
                 Read More
               </NuxtLink>
             </div>
