@@ -23,7 +23,7 @@
           class="font-bold text-5xl leading-13.75 text-center py-11.5 "></h1>
 
       <div class="lg:pt-36 pb-5">
-        <img :src="blog.featuredImage" class="sm:max-w-lg m-auto">
+        <img :src="blog.featuredImage" class="w-100 m-auto">
       </div>
       <div class="text-lg font-normal " v-html="blog.postBody">
 
