@@ -17,7 +17,7 @@
 <!--    </div>-->
 
     <section class="pt-14 pb-23.25 px-5
-          lg:pt-23.25 lg:pb-30.25 max-w-5xl m-auto">
+          lg:pt-23.25 lg:pb-30.25 w-199.25 m-auto">
 
       <h1 v-html="blog.htmlTitle"
           class="font-bold text-5xl leading-13.75 text-center py-11.5 "></h1>
