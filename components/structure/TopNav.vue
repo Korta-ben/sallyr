@@ -137,9 +137,17 @@
 
                 class="py-1 text-sm">
                 <NuxtLink
-                  to="/news">
+                  to="/blog">
 
-                  News</NuxtLink>
+                  Blog</NuxtLink>
+              </li>
+              <li
+
+                class="py-1 text-sm">
+                <NuxtLink
+                  to="/press">
+
+                  Press</NuxtLink>
               </li>
 
             </ul>
